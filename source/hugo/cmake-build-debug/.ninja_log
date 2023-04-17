@@ -1,0 +1,22 @@
+# ninja log v5
+3	423	0	hugo_autogen/include/ui_mainwindow.h	ed0046149d49e898
+8784	10616	1678473045441283107	CMakeFiles/hugo.dir/objetos/neuron.cpp.o	630ab59ade7c355c
+5473	8783	1678473044112260235	CMakeFiles/hugo.dir/objetos/axon.cpp.o	56de5e8e36a9162a
+3	423	0	hugo_autogen/mocs_compilation.cpp	ed0046149d49e898
+6373	8776	1678904763844931338	CMakeFiles/hugo.dir/graphics/graphic_dendrite.cpp.o	a18c08071e943112
+8404	9897	1678473045277156773	CMakeFiles/hugo.dir/objetos/soma.cpp.o	1981d8cf43cd88ee
+424	4247	1678904759332278294	CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o	40657242941aea6b
+2	227	1681743981575115906	build.ninja	7148f974a4ce8d5b
+6042	8671	1678904763768922546	CMakeFiles/hugo.dir/graphics/graphic_soma.cpp.o	5fece7251b09671d
+438	4347	1678904759396287785	CMakeFiles/hugo.dir/mainwindow.cpp.o	3f091ba364c2348d
+425	4213	1678904759228262871	CMakeFiles/hugo.dir/hugo.cpp.o	e87e64d8e23886c2
+6376	8989	1678904764100950345	CMakeFiles/hugo.dir/base_datos_objetos.cpp.o	f7d19094bfda35ad
+8989	10021	1678904765124799153	hugo	ec10e4c58cfaf1
+3	423	0	CMakeFiles/hugo_autogen	ed0046149d49e898
+3	423	0	/home/alberto/nuevo/source/hugo/cmake-build-debug/hugo_autogen/mocs_compilation.cpp	ed0046149d49e898
+4349	6041	1678904761152548831	CMakeFiles/hugo.dir/graphics/graphic_axon.cpp.o	c95b648548b0e83d
+3	423	0	/home/alberto/nuevo/source/hugo/cmake-build-debug/hugo_autogen/include/ui_mainwindow.h	ed0046149d49e898
+4247	6373	1678904761432590988	CMakeFiles/hugo.dir/graphics/graphic_neuron.cpp.o	1f882910e6a86c84
+3	423	0	/home/alberto/nuevo/source/hugo/cmake-build-debug/CMakeFiles/hugo_autogen	ed0046149d49e898
+6060	8403	1678473043788010739	CMakeFiles/hugo.dir/objetos/dendrites.cpp.o	580a16a8c3c28913
+4217	6376	1678904761432590988	CMakeFiles/hugo.dir/myopenglwidget.cpp.o	d7aac792a4387c0c

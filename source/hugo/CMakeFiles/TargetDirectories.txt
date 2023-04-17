@@ -1,0 +1,4 @@
+/home/alberto/nuevo/source/hugo/CMakeFiles/rebuild_cache.dir
+/home/alberto/nuevo/source/hugo/CMakeFiles/edit_cache.dir
+/home/alberto/nuevo/source/hugo/CMakeFiles/hugo.dir
+/home/alberto/nuevo/source/hugo/CMakeFiles/hugo_autogen.dir
