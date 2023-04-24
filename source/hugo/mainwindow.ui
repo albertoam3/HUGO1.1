@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>976</width>
-    <height>654</height>
+    <width>986</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -143,7 +143,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>700</x>
-      <y>300</y>
+      <y>190</y>
       <width>211</width>
       <height>25</height>
      </rect>
@@ -156,7 +156,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>700</x>
-      <y>340</y>
+      <y>230</y>
       <width>112</width>
       <height>23</height>
      </rect>
@@ -168,8 +168,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QRadioButton" name="terminales">
     <property name="geometry">
      <rect>
-      <x>790</x>
-      <y>340</y>
+      <x>780</x>
+      <y>230</y>
       <width>112</width>
       <height>23</height>
      </rect>
@@ -178,18 +178,40 @@ p, li { white-space: pre-wrap; }
      <string>Terminales</string>
     </property>
    </widget>
+   <widget class="QTextEdit" name="texto_neurona">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>260</y>
+      <width>251</width>
+      <height>311</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>976</width>
+     <width>986</width>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuopen">
+    <property name="title">
+     <string>open</string>
+    </property>
+    <addaction name="actionswc_file"/>
+   </widget>
+   <addaction name="menuopen"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionswc_file">
+   <property name="text">
+    <string>swc  file</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -200,5 +222,26 @@ p, li { white-space: pre-wrap; }
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionswc_file</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openSWCFileThroughDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>492</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>writeText(nsol::NeuronsMap)</slot>
+  <slot>openSWCFileThroughDialog()</slot>
+ </slots>
 </ui>

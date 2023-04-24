@@ -1,15 +1,16 @@
 {
-	"BUILD_DIR" : "/home/alberto/nuevo/source/hugo/cmake-build-debug/hugo_autogen",
-	"CMAKE_BINARY_DIR" : "/home/alberto/nuevo/source/hugo/cmake-build-debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/alberto/nuevo/source/hugo/cmake-build-debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/alberto/nuevo/source/hugo",
+	"BUILD_DIR" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen",
+	"CMAKE_BINARY_DIR" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo",
 	"CMAKE_EXECUTABLE" : "/snap/clion/234/bin/cmake/linux/x64/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/home/alberto/nuevo/source/hugo/CMakeLists.txt",
+		"/home/alberto/CLionProjects/HUGO1.1/source/hugo/CMakeLists.txt",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeDetermineSystem.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeSystem.cmake.in",
-		"/home/alberto/nuevo/source/hugo/cmake-build-debug/CMakeFiles/3.25.2/CMakeSystem.cmake",
+		"/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles/3.25.2/CMakeSystem.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeUnixFindMake.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeDetermineCXXCompiler.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeDetermineCompiler.cmake",
@@ -59,12 +60,15 @@
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeFindBinUtils.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/GNU-FindBinUtils.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCXXCompiler.cmake.in",
-		"/home/alberto/nuevo/source/hugo/cmake-build-debug/CMakeFiles/3.25.2/CMakeCXXCompiler.cmake",
+		"/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles/3.25.2/CMakeCXXCompiler.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/UnixPaths.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeFindCodeBlocks.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/ProcessorCount.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake",
@@ -84,7 +88,7 @@
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeDetermineCompileFeatures.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/Internal/FeatureTesting.cmake",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCXXCompiler.cmake.in",
-		"/home/alberto/nuevo/source/hugo/cmake-build-debug/CMakeFiles/3.25.2/CMakeCXXCompiler.cmake",
+		"/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles/3.25.2/CMakeCXXCompiler.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake",
@@ -129,96 +133,152 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5OpenGL/Qt5OpenGLConfigVersion.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5OpenGL/Qt5OpenGLConfig.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
-		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake"
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"/home/alberto/code/nsol/build/nsolConfigVersion.cmake",
+		"/home/alberto/code/nsol/build/nsolConfig.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/local/share/eigen3/cmake/Eigen3ConfigVersion.cmake",
+		"/usr/local/share/eigen3/cmake/Eigen3Config.cmake",
+		"/usr/local/share/eigen3/cmake/Eigen3Targets.cmake",
+		"/home/alberto/code/nsol/build/FiReS/FiReSConfigVersion.cmake",
+		"/home/alberto/code/nsol/build/FiReS/FiReSConfig.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeFindDependencyMacro.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindBoost.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageMessage.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake",
+		"/home/alberto/code/nsol/build/FiReS/FiReSTargets.cmake",
+		"/home/alberto/code/nsol/build/FiReS/options.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/home/alberto/code/nsol/build/Brion/BrionConfigVersion.cmake",
+		"/home/alberto/code/nsol/build/Brion/BrionConfig.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeFindDependencyMacro.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindBoost.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageMessage.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake",
+		"/home/alberto/code/nsol/build/Servus/ServusConfigVersion.cmake",
+		"/home/alberto/code/nsol/build/Servus/ServusConfig.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/home/alberto/code/nsol/build/Servus/ServusTargets.cmake",
+		"/home/alberto/code/nsol/build/Servus/options.cmake",
+		"/home/alberto/code/nsol/build/vmmlib/vmmlibConfigVersion.cmake",
+		"/home/alberto/code/nsol/build/vmmlib/vmmlibConfig.cmake",
+		"/home/alberto/code/nsol/build/vmmlib/vmmlibTargets.cmake",
+		"/home/alberto/code/nsol/build/vmmlib/options.cmake",
+		"/home/alberto/code/nsol/build/Brion/BrionTargets.cmake",
+		"/home/alberto/code/nsol/build/Brion/options.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindOpenMP.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeParseImplicitLinkInfo.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake",
+		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageMessage.cmake",
+		"/home/alberto/code/nsol/build/nsolTargets.cmake",
+		"/home/alberto/code/nsol/build/options.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "/home/alberto/nuevo/source/hugo",
+	"CMAKE_SOURCE_DIR" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
 		[
-			"/home/alberto/nuevo/source/hugo/base_datos_objetos.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.h",
 			"MU",
 			"EWIEGA46WW/moc_base_datos_objetos.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/graphics/graphic_axon.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.h",
 			"MU",
 			"4NLTMHEJ4E/moc_graphic_axon.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/graphics/graphic_dendrite.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.h",
 			"MU",
 			"4NLTMHEJ4E/moc_graphic_dendrite.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/graphics/graphic_neuron.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.h",
 			"MU",
 			"4NLTMHEJ4E/moc_graphic_neuron.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/graphics/graphic_objects.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h",
 			"MU",
 			"4NLTMHEJ4E/moc_graphic_objects.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/graphics/graphic_soma.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.h",
 			"MU",
 			"4NLTMHEJ4E/moc_graphic_soma.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/mainwindow.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/myopenglwidget.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.h",
 			"MU",
 			"EWIEGA46WW/moc_myopenglwidget.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/objetos/axon.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.h",
 			"MU",
 			"C4X553CNME/moc_axon.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/objetos/dendrites.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/dendrites.h",
 			"MU",
 			"C4X553CNME/moc_dendrites.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/objetos/neuron.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.h",
 			"MU",
 			"C4X553CNME/moc_neuron.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/objetos/objetos.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/objetos.h",
 			"MU",
 			"C4X553CNME/moc_objetos.cpp",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/objetos/soma.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/soma.h",
 			"MU",
 			"C4X553CNME/moc_soma.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/alberto/nuevo/source/hugo/cmake-build-debug/hugo_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/alberto/nuevo/source/hugo/cmake-build-debug/hugo_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_OPENGL_LIB", "QT_WIDGETS_LIB" ],
+	"INCLUDE_DIR" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"BRAIN_USE_MVD3",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_OPENGL_LIB",
+		"QT_WIDGETS_LIB"
+	],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -228,21 +288,37 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/home/alberto/nuevo/source/hugo/cmake-build-debug",
-		"/home/alberto/nuevo/source/hugo",
+		"/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug",
+		"/home/alberto/CLionProjects/HUGO1.1/source/hugo",
 		"/usr/include/x86_64-linux-gnu/qt5",
 		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
 		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
 		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
 		"/usr/include/x86_64-linux-gnu/qt5/QtOpenGL",
+		"/home/alberto/code/nsol/source",
+		"/home/alberto/code/nsol/build/include",
+		"/home/alberto/code/nsol/build",
+		"/usr/include/hdf5/serial",
+		"/home/alberto/code/nsol/source/Brion",
+		"/home/alberto/code/nsol/build/Brion/include",
+		"/home/alberto/code/nsol/build/Brion",
+		"/home/alberto/code/nsol/source/Servus",
+		"/home/alberto/code/nsol/build/Servus/include",
+		"/home/alberto/code/nsol/build/Servus",
+		"/home/alberto/code/nsol/source/vmmlib",
+		"/home/alberto/code/nsol/build/vmmlib/include",
+		"/home/alberto/code/nsol/build/vmmlib",
+		"/home/alberto/code/nsol/source/FiReS",
+		"/home/alberto/code/nsol/build/FiReS/include",
+		"/home/alberto/code/nsol/build/FiReS",
+		"/usr/include",
 		"/usr/include/c++/9",
 		"/usr/include/x86_64-linux-gnu/c++/9",
 		"/usr/include/c++/9/backward",
 		"/usr/lib/gcc/x86_64-linux-gnu/9/include",
 		"/usr/local/include",
-		"/usr/include/x86_64-linux-gnu",
-		"/usr/include"
+		"/usr/include/x86_64-linux-gnu"
 	],
 	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
 	"MOC_OPTIONS" : [],
@@ -255,47 +331,79 @@
 		"-c",
 		"/snap/clion/234/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/alberto/nuevo/source/hugo/cmake-build-debug/hugo_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "/home/alberto/nuevo/source/hugo/cmake-build-debug/CMakeFiles/hugo_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles/hugo_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
 	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 12,
-	"SETTINGS_FILE" : "/home/alberto/nuevo/source/hugo/cmake-build-debug/CMakeFiles/hugo_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles/hugo_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/home/alberto/nuevo/source/hugo/base_datos_objetos.cpp", "MU", null ],
 		[
-			"/home/alberto/nuevo/source/hugo/graphics/graphic_axon.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/graphics/graphic_dendrite.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/graphics/graphic_neuron.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/alberto/nuevo/source/hugo/graphics/graphic_soma.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.cpp",
 			"MU",
 			null
 		],
-		[ "/home/alberto/nuevo/source/hugo/hugo.cpp", "MU", null ],
-		[ "/home/alberto/nuevo/source/hugo/mainwindow.cpp", "MU", null ],
-		[ "/home/alberto/nuevo/source/hugo/myopenglwidget.cpp", "MU", null ],
-		[ "/home/alberto/nuevo/source/hugo/objetos/axon.cpp", "MU", null ],
-		[ "/home/alberto/nuevo/source/hugo/objetos/dendrites.cpp", "MU", null ],
-		[ "/home/alberto/nuevo/source/hugo/objetos/neuron.cpp", "MU", null ],
-		[ "/home/alberto/nuevo/source/hugo/objetos/soma.cpp", "MU", null ]
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/hugo.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/dendrites.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/soma.cpp",
+			"MU",
+			null
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

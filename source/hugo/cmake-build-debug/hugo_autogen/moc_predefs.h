@@ -29,6 +29,7 @@
 #define __GCC_IEC_559 2
 #define __FLT32X_DECIMAL_DIG__ 17
 #define __FLT_EVAL_METHOD__ 0
+#define BRAIN_USE_MVD3 1
 #define __unix__ 1
 #define __cpp_binary_literals 201304
 #define __FLT64_DECIMAL_DIG__ 17

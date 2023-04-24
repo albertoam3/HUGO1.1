@@ -13,6 +13,8 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QWidget>
+#include <QFileDialog>
+#include <QTextEdit>
 
 #include "objetos/axon.h"
 #include "objetos/dendrites.h"
@@ -23,6 +25,8 @@
 #include "graphics/graphic_soma.h"
 #include "graphics/graphic_dendrite.h"
 #include "base_datos_objetos.h"
+
+#include <nsol/nsol.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -59,7 +63,19 @@ public:
     ~MainWindow();
     void connect_buttons();
     void selecction();
+
+    void openSWCFile( const std::string& fileName );
+
+    void loadData( const std::string& arg1 ,
+                   const std::string& arg2 ,
+                   const std::string& type);
+
+
+
 public Q_SLOTS:
+    void writeText(const nsol::NeuronsMap neurons);
+    void openSWCFileThroughDialog();
+
     void pintar();
     void reset();
     void load();
@@ -71,5 +87,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     void creat_list();
+protected:
+    QString _lastOpenedFileName;
 };
 #endif // MAINWINDOW_H

@@ -15,12 +15,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt5OpenGL REQUIRED)
 find_package(Qt5Gui 5.4 REQUIRED)
+find_package(nsol REQUIRED)
 
 list( APPEND HUGO_DEPENDENT_LIBRARIES
         Qt5::Widgets
         Qt5::Gui
         Qt5::OpenGL
         GL
+        nsol
         )
 
 if(ANDROID)

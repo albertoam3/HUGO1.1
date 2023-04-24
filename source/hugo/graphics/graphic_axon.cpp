@@ -52,6 +52,24 @@ void graphic_axon::draw(QOpenGLWidget* windowPaint){
 
 //Devuelve las coordinates en las que se encuentra el objeto
 void graphic_axon::coordinates(){
+    int auxXMin,auxXMax,auxYMin,auxYMax;
+    //en proceso de arreglar
+    if(ax->getX1()>ax->getX2()){
+        auxXMin=ax->getX2();
+        auxXMax=ax->getX1();
+    }
+    else{
+        auxXMin=ax->getX1();
+        auxXMax=ax->getX2();
+    }
+    if(ax->getY1()>ax->getY2()){
+        auxYMin=ax->getY2();
+        auxYMax=ax->getY1();
+    }
+    else{
+        auxYMin=ax->getY1();
+        auxYMax=ax->getY2();
+    }
     min_X= ax->getX1() + displacementX + init_x -0.03;
     min_Y= ax->getY1() + displacementY + init_y -0.03;
     max_X= dist*cos(angle) + displacementX + init_x +0.03;

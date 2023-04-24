@@ -104,3 +104,89 @@ void MainWindow::on_terminales_clicked()
 {
     _openGLWidget->select_draw_den(true);
 }
+
+void MainWindow::loadData( const std::string& m_fileName, const std::string& arg2 ,
+                           const std::string& type )
+{
+    nsol::DataSet* m_dataset = new nsol::DataSet( );
+    m_dataset->loadNeuronFromFile< nsol::Node ,
+            nsol::NeuronMorphologySection ,
+            nsol::Dendrite ,
+            nsol::Axon ,
+            nsol::Soma ,
+            nsol::NeuronMorphology ,
+            nsol::Neuron >( m_fileName , 1 );
+
+    std::cout << "Fichero leído con éxito\n";
+
+    const auto& neurons = m_dataset->neurons();
+
+
+    writeText(neurons);
+
+
+}
+
+void MainWindow::writeText(const nsol::NeuronsMap neurons){
+
+    QTextEdit* textEdit = this->centralWidget()->findChild<QTextEdit*>("texto_neurona");
+
+    std::string neuronData = "";
+
+    QString text = "";
+
+    for (auto& neuronPair : neurons) {
+        auto gid = neuronPair.first;
+        auto &neuron = neuronPair.second;
+
+        // Acceder a los parámetros de la neurona
+        auto gidNeuron = neuron->gid();
+        auto layer = neuron->layer();
+        auto morphoType = neuron->morphologicalType();
+
+
+        neuronData += "Neurona - GID: " + std::to_string(gidNeuron) + ", Layer: " + std::to_string(layer) +
+                      ", Morpho Type: " + std::to_string(morphoType) + "\n";
+
+        // Acceder a las estructuras morfológicas de la neurona
+        const auto &soma = neuron->morphology()->soma();
+        const auto &axon = neuron->morphology()->axon();
+        const auto &dendrites = neuron->morphology()->dendrites();
+
+
+        neuronData += "Soma Radius: " + std::to_string(soma->meanRadius()) + "\n";
+        neuronData += "Axon Branch Number: " + std::to_string(axon->numBranches()) + "\n";
+
+       // for (auto dendrite:dendrites) {
+         //   neuronData += "Dendrite Branch Number: " + std::to_string(dendrite->numBranches()) + "\n";
+        //}
+
+        printf("%zu\n", neurons.size());
+
+
+    }
+    text = QString::fromStdString(neuronData);
+
+    textEdit->setText(text);
+
+}
+
+void MainWindow::openSWCFile( const std::string& fileName )
+{
+    loadData( fileName , std::string( ) , "swc");
+
+}
+
+void MainWindow::openSWCFileThroughDialog()
+{
+    QString path = QFileDialog::getOpenFileName(
+            this, tr( "Open Swc File" ), _lastOpenedFileName,
+            tr( "swc ( *.swc);; All files (*)" ), nullptr,
+            QFileDialog::DontUseNativeDialog );
+
+    if ( path != QString( "" ))
+    {
+        std::string fileName = path.toStdString( );
+        openSWCFile( fileName );
+    }
+}

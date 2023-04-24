@@ -10,13 +10,16 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
@@ -27,6 +30,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionswc_file;
     QWidget *centralwidget;
     myopenglwidget *openGLWidget;
     QPushButton *draw;
@@ -37,14 +41,22 @@ public:
     QPushButton *reset;
     QLineEdit *lineEdit;
     QComboBox *elemC;
+    QPushButton *pushButton;
+    QLineEdit *lineEdit_2;
+    QRadioButton *igual;
+    QRadioButton *terminales;
+    QTextEdit *texto_neurona;
     QMenuBar *menubar;
+    QMenu *menuopen;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(976, 654);
+        MainWindow->resize(986, 650);
+        actionswc_file = new QAction(MainWindow);
+        actionswc_file->setObjectName(QString::fromUtf8("actionswc_file"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         openGLWidget = new myopenglwidget(centralwidget);
@@ -67,23 +79,44 @@ public:
         textEdit->setGeometry(QRect(260, 60, 211, 31));
         reset = new QPushButton(centralwidget);
         reset->setObjectName(QString::fromUtf8("reset"));
-        reset->setGeometry(QRect(370, 560, 89, 25));
+        reset->setGeometry(QRect(380, 560, 89, 25));
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setGeometry(QRect(700, 50, 221, 25));
         elemC = new QComboBox(centralwidget);
         elemC->setObjectName(QString::fromUtf8("elemC"));
         elemC->setGeometry(QRect(700, 80, 86, 25));
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(810, 80, 89, 25));
+        lineEdit_2 = new QLineEdit(centralwidget);
+        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        lineEdit_2->setGeometry(QRect(700, 190, 211, 25));
+        igual = new QRadioButton(centralwidget);
+        igual->setObjectName(QString::fromUtf8("igual"));
+        igual->setGeometry(QRect(700, 230, 112, 23));
+        terminales = new QRadioButton(centralwidget);
+        terminales->setObjectName(QString::fromUtf8("terminales"));
+        terminales->setGeometry(QRect(780, 230, 112, 23));
+        texto_neurona = new QTextEdit(centralwidget);
+        texto_neurona->setObjectName(QString::fromUtf8("texto_neurona"));
+        texto_neurona->setGeometry(QRect(690, 260, 251, 311));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 976, 22));
+        menubar->setGeometry(QRect(0, 0, 986, 22));
+        menuopen = new QMenu(menubar);
+        menuopen->setObjectName(QString::fromUtf8("menuopen"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
 
+        menubar->addAction(menuopen->menuAction());
+        menuopen->addAction(actionswc_file);
+
         retranslateUi(MainWindow);
+        QObject::connect(actionswc_file, SIGNAL(triggered()), MainWindow, SLOT(openSWCFileThroughDialog()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -91,6 +124,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
+        actionswc_file->setText(QApplication::translate("MainWindow", "swc  file", nullptr));
         draw->setText(QApplication::translate("MainWindow", "Draw", nullptr));
         load->setText(QApplication::translate("MainWindow", "Load", nullptr));
         plainTextEdit->setPlainText(QApplication::translate("MainWindow", "Cargar objeto", nullptr));
@@ -101,6 +135,11 @@ public:
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Pintar objetos cargados</p></body></html>", nullptr));
         reset->setText(QApplication::translate("MainWindow", "Reset", nullptr));
         lineEdit->setText(QApplication::translate("MainWindow", "Elementos cargados", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "PushButton", nullptr));
+        lineEdit_2->setText(QApplication::translate("MainWindow", "Separaci\303\263n de las dendritas", nullptr));
+        igual->setText(QApplication::translate("MainWindow", "Igual", nullptr));
+        terminales->setText(QApplication::translate("MainWindow", "Terminales", nullptr));
+        menuopen->setTitle(QApplication::translate("MainWindow", "open", nullptr));
     } // retranslateUi
 
 };
