@@ -15,6 +15,8 @@
 #include "graphics/graphic_soma.h"
 #include "graphics/graphic_dendrite.h"
 
+#include <nsol/nsol.h>
+
 class base_datos_objetos {
 private:
     std::vector<graphic_objects*> list;

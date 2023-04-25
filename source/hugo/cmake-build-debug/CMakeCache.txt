@@ -251,8 +251,8 @@ Servus_DIR:PATH=/home/alberto/code/nsol/build/Servus
 //The directory containing a CMake configuration file for boost_headers.
 boost_headers_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0
 
-//No help, variable specified on the command line.
-nsol_DIR:PATH=/home/alberto/code/nsol/build
+//The directory containing a CMake configuration file for nsol.
+nsol_DIR:PATH=nsol_DIR-NOTFOUND
 
 //Value Computed by CMake
 source_BINARY_DIR:STATIC=/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug

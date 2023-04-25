@@ -56,6 +56,8 @@ private:
 
     base_datos_objetos* base;
 
+    nsol::NeuronsMap neurons;
+
 
 
 public:
@@ -73,7 +75,7 @@ public:
 
 
 public Q_SLOTS:
-    void writeText(const nsol::NeuronsMap neurons);
+    void writeText();
     void openSWCFileThroughDialog();
 
     void pintar();

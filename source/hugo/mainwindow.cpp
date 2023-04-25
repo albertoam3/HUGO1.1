@@ -119,15 +119,14 @@ void MainWindow::loadData( const std::string& m_fileName, const std::string& arg
 
     std::cout << "Fichero leído con éxito\n";
 
-    const auto& neurons = m_dataset->neurons();
+    neurons = m_dataset->neurons();
 
-
-    writeText(neurons);
+    writeText();
 
 
 }
 
-void MainWindow::writeText(const nsol::NeuronsMap neurons){
+void MainWindow::writeText(){
 
     QTextEdit* textEdit = this->centralWidget()->findChild<QTextEdit*>("texto_neurona");
 
@@ -157,8 +156,8 @@ void MainWindow::writeText(const nsol::NeuronsMap neurons){
         neuronData += "Soma Radius: " + std::to_string(soma->meanRadius()) + "\n";
         neuronData += "Axon Branch Number: " + std::to_string(axon->numBranches()) + "\n";
 
-       // for (auto dendrite:dendrites) {
-         //   neuronData += "Dendrite Branch Number: " + std::to_string(dendrite->numBranches()) + "\n";
+        //for (const auto &dendrite:dendrites) {
+          // neuronData += "Dendrite Branch Number: " + std::to_string(dendrite->numBranches()) + "\n";
         //}
 
         printf("%zu\n", neurons.size());

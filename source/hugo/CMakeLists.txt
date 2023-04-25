@@ -15,6 +15,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt5OpenGL REQUIRED)
 find_package(Qt5Gui 5.4 REQUIRED)
+
+
+
+set(CMAKE_PREFIX_PATH "/home/alberto/code/nsol/build" ${CMAKE_PREFIX_PATH})
+
 find_package(nsol REQUIRED)
 
 list( APPEND HUGO_DEPENDENT_LIBRARIES
