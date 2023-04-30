@@ -1,20 +1,4 @@
 /snap/clion/234/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -Dnsol_DIR:PATH=/home/alberto/code/nsol/build -DFiReS_DIR:PATH=/home/alberto/code/nsol/build/FiReS -DBrion_DIR:PATH=/home/alberto/code/nsol/build/Brion -DServus_DIR:PATH=/home/alberto/code/nsol/build/Servus -Dvmmlib_DIR:PATH=/home/alberto/code/nsol/build/vmmlib -G "CodeBlocks - Unix Makefiles" -S /home/alberto/CLionProjects/HUGO1.1/source/hugo -B /home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug
-CMake Error at CMakeLists.txt:23 (find_package):
-  By not providing "Findnsol.cmake" in CMAKE_MODULE_PATH this project has
-  asked CMake to find a package configuration file provided by "nsol", but
-  CMake did not find one.
-
-  Could not find a package configuration file provided by "nsol" with any of
-  the following names:
-
-    nsolConfig.cmake
-    nsol-config.cmake
-
-  Add the installation prefix of "nsol" to CMAKE_PREFIX_PATH or set
-  "nsol_DIR" to a directory containing one of the above files.  If "nsol"
-  provides a separate development package or SDK, be sure it has been
-  installed.
-
-
--- Configuring incomplete, errors occurred!
-See also "/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug

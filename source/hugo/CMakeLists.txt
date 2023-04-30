@@ -63,7 +63,8 @@ else()
           graphics/graphic_axon.h 
           graphics/graphic_soma.cpp 
           graphics/graphic_soma.h 
-          graphics/graphic_dendrite.cpp 
+          graphics/graphic_dendrite.cpp
+          graphics/neuron_g.h
           graphics/graphic_dendrite.h 
           base_datos_objetos.cpp 
           base_datos_objetos.h)

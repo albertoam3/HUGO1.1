@@ -72,7 +72,7 @@ public:
                    const std::string& arg2 ,
                    const std::string& type);
 
-
+    void addList(const std::string& st);
 
 public Q_SLOTS:
     void writeText();

@@ -5,6 +5,7 @@
 #define HUGO_OBJETOS_H
 
 #include <QOpenGLWidget>
+#include <nsol/nsol.h>
 
 //Clase padre de los distintos objetos
 class objetos
@@ -12,6 +13,7 @@ class objetos
 private:
     //Declaración de la pantalla windowPaint
     QOpenGLWidget *windowPaint;
+
 public:
 
 };

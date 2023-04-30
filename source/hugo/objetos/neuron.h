@@ -23,6 +23,9 @@ private:
     soma* som;
     axon* ax;
     std::vector<dendrites> dends;
+    nsol::Neuron neruona;
+
+
 public:
     neuron(soma* _som, axon* _ax);
     neuron(soma* _som, axon* _ax,std::vector<dendrites> _dends );

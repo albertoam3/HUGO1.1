@@ -1,24 +1,23 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include <string>
 #include <vector>
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-{
+        : QMainWindow(parent), ui(new Ui::MainWindow) {
     /*Declaración e inicialización de la list con las distintas partes de la neurona y el botón para pintar
     La list es momentanea, pretende ser una list con los objetos cargados
      */
     ui->setupUi(this);
     setWindowTitle("HUGO");
-    button_draw= ui->centralwidget->findChild<QPushButton*>("draw");
-    button_reset= ui->centralwidget->findChild<QPushButton*>("reset");
-    button_load=ui->centralwidget->findChild<QPushButton*>("load");
+    button_draw = ui->centralwidget->findChild<QPushButton *>("draw");
+    button_reset = ui->centralwidget->findChild<QPushButton *>("reset");
+    button_load = ui->centralwidget->findChild<QPushButton *>("load");
 
-    list=ui->centralwidget->findChild<QComboBox*>("list");
-    elementosCargados=ui->centralwidget->findChild<QComboBox*>("elemC");
+    list = ui->centralwidget->findChild<QComboBox *>("list");
+    elementosCargados = ui->centralwidget->findChild<QComboBox *>("elemC");
     //Asigno a _openGLWidget la pantalla creada con mainwindow.ui
-    _openGLWidget=ui->centralwidget->findChild<myopenglwidget*>("openGLWidget");
+    _openGLWidget = ui->centralwidget->findChild<myopenglwidget *>("openGLWidget");
     _openGLWidget->setFocus();
 
     connect_buttons();
@@ -26,13 +25,13 @@ MainWindow::MainWindow(QWidget *parent)
     //Creo cuatro objetos para probar distintas formas de pintar, esto tambien es momentaneo
 
 
-    base=new base_datos_objetos();
+    base = new base_datos_objetos();
 
-    ax=new axon(0.0f,0.5f,0.0f,0.0f);
-    den=new dendrites(-0.2f, -0.2f, 0.2f,0.2f);
-    dendrites* den2=new dendrites(-0.2f,0.2f,-0.2f,0.2f);
-    dendrites* den3=new dendrites(0.0f,0.0f,0.0f,0.3f);
-    dendrites* den4=new dendrites(0.0f,0.0f,0.0f,0.5f);
+    ax = new axon(0.0f, 0.5f, 0.0f, 0.0f);
+    den = new dendrites(-0.2f, -0.2f, 0.2f, 0.2f);
+    dendrites *den2 = new dendrites(-0.2f, 0.2f, -0.2f, 0.2f);
+    dendrites *den3 = new dendrites(0.0f, 0.0f, 0.0f, 0.3f);
+    dendrites *den4 = new dendrites(0.0f, 0.0f, 0.0f, 0.5f);
 
     std::vector<dendrites> dends;
     dends.push_back(*den);
@@ -40,14 +39,14 @@ MainWindow::MainWindow(QWidget *parent)
     dends.push_back(*den3);
     dends.push_back(*den4);
 
-    som= new soma(0.2f);
-    neu= new neuron(som,ax,dends);
+    som = new soma(0.2f);
+    neu = new neuron(som, ax, dends);
 
 
-    gneu=new graphic_neuron(neu);
-    gax=new graphic_axon(ax);
-    gsom=new graphic_soma(som);
-    gden=new graphic_dendrite(den);
+    gneu = new graphic_neuron(neu);
+    gax = new graphic_axon(ax);
+    gsom = new graphic_soma(som);
+    gden = new graphic_dendrite(den);
 
     base->add(gneu);
     base->add(gax);
@@ -58,39 +57,42 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete ui;
 }
+
 //Método para el botón
 void MainWindow::connect_buttons() {
     QObject::connect(button_draw, SIGNAL(clicked()), this, SLOT(pintar()));
     QObject::connect(button_reset, SIGNAL(clicked()), this, SLOT(reset()));
     QObject::connect(button_load, SIGNAL(clicked()), this, SLOT(load()));
 }
+
 //Pongo a true la openGLWidget, para poder pintarla.
-void MainWindow::pintar(){
+void MainWindow::pintar() {
     _openGLWidget->setDraw(true);
 }
 
-void MainWindow::reset(){
+void MainWindow::reset() {
     _openGLWidget->resetList();
     elementosCargados->clear();
 }
-void MainWindow::load(){
+
+void MainWindow::load() {
     this->selecction();
 }
 
 //Selecciono el objeto de la list que pinto y se lo mando a qopenGLWidget
 void MainWindow::selecction() {
-    int index=list->currentIndex();
-    _openGLWidget->setGraphicsObject(base->get(index));
-    elementosCargados->addItem(base->get(index)->getName());
-
+    int index = list->currentIndex();
+    if(index<base->getList().size()){
+        _openGLWidget->setGraphicsObject(base->get(index));
+        elementosCargados->addItem(base->get(index)->getName());
+    }
 }
 
 void MainWindow::creat_list() {
-    for(int i=0;i<base->getList().size();i++){
+    for (int i = 0; i < base->getList().size(); i++) {
         list->addItem(base->get(i)->getName());
     }
 }
@@ -118,12 +120,13 @@ void MainWindow::loadData( const std::string& m_fileName, const std::string& arg
             nsol::Neuron >( m_fileName , 1 );
 
     std::cout << "Fichero leído con éxito\n";
-
+//Ahora mismo añado todo a mi base de datos y borro lo anterior, el objetivo seria añadir todo pero sin borrar lo anterior
     neurons = m_dataset->neurons();
 
     writeText();
-
-
+    for (auto& neuronPair : neurons) {
+        this->addList(std::to_string(neuronPair.first));
+    }
 }
 
 void MainWindow::writeText(){
@@ -174,6 +177,7 @@ void MainWindow::openSWCFile( const std::string& fileName )
 {
     loadData( fileName , std::string( ) , "swc");
 
+
 }
 
 void MainWindow::openSWCFileThroughDialog()
@@ -188,4 +192,8 @@ void MainWindow::openSWCFileThroughDialog()
         std::string fileName = path.toStdString( );
         openSWCFile( fileName );
     }
+}
+void MainWindow::addList(const std::string& st){
+    QString qstr = QString::fromStdString(st);
+    list->addItem(qstr);
 }
