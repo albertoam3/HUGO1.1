@@ -13,11 +13,11 @@ dendrite_g::dendrite_g(nsol::Dendrite* _den){
     name="dendrite";
     displacementX=0;
     displacementY=0;
-    terminal_nodes=0;
+    terminal_nodes=dend->numBranches();
 }
 void dendrite_g::draw(QOpenGLWidget* windowPaint){
 
-    glPointSize(5+terminal_nodes*pint);
+    glPointSize(terminal_nodes*pint);
     glBegin(GL_POINTS); // Iniciar el modo de dibujo de puntos
     glColor3f(1.0, 0.0, 0.0); // Establecer el color del punto a rojo
 
@@ -50,10 +50,10 @@ void dendrite_g::drawSelc(QOpenGLWidget* windowPaint){
 
 //Devuelve las coordinates en las que se encuentra el objeto
 void dendrite_g::coordinates(){
-    min_X= displacementX + init_x - 0.03;
-    min_Y= displacementY + init_y - 0.03;
-    max_X= displacementX + init_x + 0.03;
-    max_Y= displacementY + init_y + 0.03;
+    min_X= displacementX + init_x - 0.005*terminal_nodes;
+    min_Y= displacementY + init_y - 0.005*terminal_nodes;
+    max_X= displacementX + init_x + 0.005*terminal_nodes;
+    max_Y= displacementY + init_y + 0.005*terminal_nodes;
     min_Z=displacementZ-0.03;
     max_Z=displacementZ+0.03;
 }

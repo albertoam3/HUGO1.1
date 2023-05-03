@@ -125,6 +125,7 @@ void MainWindow::loadData( const std::string& m_fileName, const std::string& arg
 
     writeText();
     for (auto& neuronPair : neurons) {
+    	 base->add(new neuron_g(neuronPair.second));
         this->addList(std::to_string(neuronPair.first));
     }
 }
@@ -159,9 +160,9 @@ void MainWindow::writeText(){
         neuronData += "Soma Radius: " + std::to_string(soma->meanRadius()) + "\n";
         neuronData += "Axon Branch Number: " + std::to_string(axon->numBranches()) + "\n";
 
-        //for (const auto &dendrite:dendrites) {
-          // neuronData += "Dendrite Branch Number: " + std::to_string(dendrite->numBranches()) + "\n";
-        //}
+        for (auto &dendrite: *dendrites) {
+           neuronData += "Dendrite Branch Number: " + std::to_string(dendrite->numBranches()) + "\n";
+        }
 
         printf("%zu\n", neurons.size());
 

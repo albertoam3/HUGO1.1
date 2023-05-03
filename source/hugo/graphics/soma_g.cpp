@@ -16,8 +16,8 @@ void soma_g::draw(QOpenGLWidget* windowPaint){
     glColor3f(0.7f, 0.5f, 0.2f);
     float calcX,calcY;
     for(float i=0;i<10;i+=0.01){
-        calcX=som->getRad()*cos(i);
-        calcY=som->getRad()*sin(i);
+        calcX=som->meanRadius()*cos(i);
+        calcY=som->meanRadius()*sin(i);
         glVertex2f(calcX + displacementX + init_x, calcY + displacementY + init_y);
     }
     glEnd();
@@ -48,10 +48,10 @@ void soma_g::drawSelc(QOpenGLWidget* windowPaint){
 
 //Devuelve las coordinates en las que se encuentra el objeto
 void soma_g::coordinates(){
-    min_X= -som->getRad() + displacementX + init_x;
-    min_Y= -som->getRad() + displacementY + init_y;
-    max_X= som->getRad() + displacementX + init_x;
-    max_Y= som->getRad() + displacementY + init_y;
+    min_X= -som->meanRadius() + displacementX + init_x;
+    min_Y= -som->meanRadius() + displacementY + init_y;
+    max_X= som->meanRadius() + displacementX + init_x;
+    max_Y= som->meanRadius() + displacementY + init_y;
     min_Z=displacementZ-0.03;
     max_Z=displacementZ+0.03;
 }
@@ -82,5 +82,5 @@ bool soma_g::isSelected() {
 }
 
 float soma_g::getRadio() {
-    return som->getRad();
+    return som->meanRadius();
 }

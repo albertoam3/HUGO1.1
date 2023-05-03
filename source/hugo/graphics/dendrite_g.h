@@ -11,7 +11,7 @@
 
 class dendrite_g : public graphic_objects{
 private:
-    dendrites *dend;
+    nsol::Dendrite *dend;
     int terminal_nodes;
 
 public:

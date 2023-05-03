@@ -42,6 +42,7 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     bool isSelected();
 
     int getTerminalNodes() const;
+    void setTerminalNodes(int terminalNodes);
 
     void setAngle(float angle);
 };

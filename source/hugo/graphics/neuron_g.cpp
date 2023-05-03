@@ -10,8 +10,8 @@ neuron_g::neuron_g(nsol::Neuron *_neu){
     ax.push_back(new axon_g(neu->morphology()->axon()));
     som=new soma_g(neu->morphology()->soma());
     const auto &den=neu->morphology()->dendrites();
-    for (auto & i : den) {
-        dends.push_back(*new dendrite_g(&i));
+    for (auto &dendrite: *den) {
+        dends.push_back(*new dendrite_g(dendrite));
     }
 
     selected=false;
@@ -20,16 +20,10 @@ neuron_g::neuron_g(nsol::Neuron *_neu){
     init_x=0;
     init_y=0;
     coordinates();
-    name="neuron";
+    name=neu->gid();
     angleXTam=false;
 
-    int a=5;
-    for (auto & item : dends) {
-        item.setTerminalNodes(a);
-        a += 5;
-    }
 }
-
 void neuron_g::draw(QOpenGLWidget* windowPaint){
 
    if(angleXTam==false)
@@ -47,10 +41,10 @@ void neuron_g::draw(QOpenGLWidget* windowPaint){
             if(dend.isSelected())
                 dend.drawSelc(windowPaint);
         }
-        if (som->isSelected())
-            som->drawSelc(windowPaint);
-        else if (ax[0]->isSelected())
+        if (ax[0]->isSelected())
             ax[0]->drawSelc(windowPaint);
+        else if (som->isSelected())
+            som->drawSelc(windowPaint);
 
     }
 }
@@ -93,11 +87,12 @@ bool neuron_g::select(QOpenGLWidget* windowPaint, float x, float y,float z)  {
                 selected = true;
                 break;
             }
-        if (!selected && som->select(windowPaint, x, y,z)) {
-            selected = true;
-        } else if ( !selected && ax[0]->select(windowPaint, x, y,z) ) {
+        if ( !selected && ax[0]->select(windowPaint, x, y,z) ) {
             selected = true;
         }
+        else if (!selected && som->select(windowPaint, x, y,z)) {
+            selected = true;
+        } 
     }
     else {
         for (auto &dend: dends)
@@ -105,10 +100,11 @@ bool neuron_g::select(QOpenGLWidget* windowPaint, float x, float y,float z)  {
                 selected = dend.select(windowPaint, x, y,z);
                 break;
             }
-        if (som->isSelected())
-            selected = som->select(windowPaint, x, y,z);
-        else if (ax[0]->isSelected())
+        if (ax[0]->isSelected())
             selected = ax[0]->select(windowPaint, x, y,z);
+        else if (som->isSelected())
+            selected = som->select(windowPaint, x, y,z);
+
     }
     return selected;
 }
@@ -147,8 +143,7 @@ void neuron_g::auxDrawAngleEqual(QOpenGLWidget* windowPaint) {
     float aux=an;
     float radio=som->getRadio();
     ax[0]->setDisplacements(displacementX, displacementY);
-    ax[0]->coordInitials(init_x, init_y);
-    ax[0]->setAngle(an);
+    ax[0]->coordInitials(init_x+radio*cos(an), init_y+radio*sin(an));
     ax[0]->draw(windowPaint);
     an+=aux;
     for (auto & item : dends) {
@@ -164,8 +159,8 @@ void neuron_g::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
     float i=0;
     i+=ax[0]->getTerminalNodes();
     ax[0]->setDisplacements(displacementX, displacementY);
-    ax[0]->coordInitials(init_x, init_y);
-    ax[0]->setAngle(i/angle_tam()*2*pi);
+    ax[0]->coordInitials(init_x+radio*cos(i/angle_tam()*2*pi), init_y+radio*sin(i/angle_tam()*2*pi));
+   
     ax[0]->draw(windowPaint);
 
     for(auto & item: dends){

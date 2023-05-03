@@ -24,6 +24,10 @@
 #include "graphics/graphic_axon.h"
 #include "graphics/graphic_soma.h"
 #include "graphics/graphic_dendrite.h"
+#include "graphics/soma_g.h"
+#include "graphics/neuron_g.h"
+#include "graphics/axon_g.h"
+#include "graphics/dendrite_g.h"
 #include "base_datos_objetos.h"
 
 #include <nsol/nsol.h>

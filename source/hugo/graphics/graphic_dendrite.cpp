@@ -14,6 +14,7 @@ graphic_dendrite::graphic_dendrite(dendrites* _den){
     displacementX=0;
     displacementY=0;
     terminal_nodes=0;
+    
 }
 void graphic_dendrite::draw(QOpenGLWidget* windowPaint){
 

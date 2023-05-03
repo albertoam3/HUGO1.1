@@ -3,92 +3,69 @@
 //
 
 #include "axon_g.h"
+constexpr float pint=0.5f;
 
 axon_g::axon_g(nsol::Axon* _ax){
     ax=_ax;
-    name="axon";
+    name="dendrite";
     displacementX=0;
     displacementY=0;
-    terminal_nodes=300;
-    angle=0;
-    dist=0;
+    terminal_nodes=ax->numBranches();
+    
 }
 void axon_g::draw(QOpenGLWidget* windowPaint){
-    glColor3f(0.3f, 0.1f, 0.9f);
-    glLineWidth(3.0); // Establecer el ancho de la línea
 
-    dist=sqrt(pow(ax->getX2()-ax->getX1(),2) + pow(ax->getY2()- ax->getY1() ,2));
-    coordinates();
-    glBegin(GL_LINES); // Comenzar a dibujar la línea
-    glVertex2f(ax->getX1() + displacementX + init_x, ax->getY1() + displacementY + init_y); // Definir el punto de inicio de la línea
-    glVertex2f(dist*cos(angle) + displacementX + init_x , dist*sin(angle) + displacementY + init_y); // Definir el punto final de la línea
-    glEnd(); // Terminar de dibujar la línea
+    glPointSize(terminal_nodes*pint);
+    glBegin(GL_POINTS); // Iniciar el modo de dibujo de puntos
+    glColor3f(0.0, 1.0, 0.0); // Establecer el color del punto a rojo
 
-    glFlush(); // Renderizar los cambios en la pantalla
-
+    glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
+    glEnd();
     if(selected)
         drawSelc(windowPaint);
 }
 
- void axon_g::drawSelc(QOpenGLWidget* windowPaint){
-     glLineWidth(4.0);
-     glBegin(GL_LINES);
-     coordinates();
-     glColor3f(0.7f, 0.1f, 0.1f);
-     glVertex2f(max_X, max_Y);
-     glVertex2f(max_X, min_Y);
+void axon_g::drawSelc(QOpenGLWidget* windowPaint){
+    glLineWidth(4.0);
+    glBegin(GL_LINES);
+    coordinates();
+    glColor3f(0.0f, 0.3f, 0.1f);
+    glVertex2f(max_X, max_Y);
+    glVertex2f(max_X, min_Y);
 
-     glVertex2f(max_X, max_Y);
-     glVertex2f(min_X, max_Y);
+    glVertex2f(max_X, max_Y);
+    glVertex2f(min_X, max_Y);
 
-     glVertex2f(min_X, max_Y);
-     glVertex2f(min_X, min_Y);
+    glVertex2f(min_X, max_Y);
+    glVertex2f(min_X, min_Y);
 
-     glVertex2f(max_X, min_Y);
-     glVertex2f(min_X, min_Y);
-     glEnd();
+    glVertex2f(max_X, min_Y);
+    glVertex2f(min_X, min_Y);
+    glEnd();
+
 }
 
 
 //Devuelve las coordinates en las que se encuentra el objeto
 void axon_g::coordinates(){
-    int auxXMin,auxXMax,auxYMin,auxYMax;
-    //en proceso de arreglar
-    if(ax->getX1()>ax->getX2()){
-        auxXMin=ax->getX2();
-        auxXMax=ax->getX1();
-    }
-    else{
-        auxXMin=ax->getX1();
-        auxXMax=ax->getX2();
-    }
-    if(ax->getY1()>ax->getY2()){
-        auxYMin=ax->getY2();
-        auxYMax=ax->getY1();
-    }
-    else{
-        auxYMin=ax->getY1();
-        auxYMax=ax->getY2();
-    }
-    min_X= ax->getX1() + displacementX + init_x -0.03;
-    min_Y= ax->getY1() + displacementY + init_y -0.03;
-    max_X= dist*cos(angle) + displacementX + init_x +0.03;
-    max_Y= dist*sin(angle) + displacementY + init_y +0.03;
+    min_X= displacementX + init_x - 0.005*terminal_nodes;
+    min_Y= displacementY + init_y - 0.005*terminal_nodes;
+    max_X= displacementX + init_x + 0.005*terminal_nodes;
+    max_Y= displacementY + init_y + 0.005*terminal_nodes;
     min_Z=displacementZ-0.03;
     max_Z=displacementZ+0.03;
-
 }
+
+
 
 //Comprueba si el objeto esta selected
 bool axon_g::select(QOpenGLWidget* windowPaint, float x, float y,float z){
     coordinates();
-    if(x>min_X && x<max_X && y>min_Y && y<max_Y){
+    if(x>min_X && x<max_X && y>min_Y && y<max_Y && z>min_Z && z<max_Z)
         selected=!selected;
-
-        }
     if(coord_include(x,y)){
         drawSelc(windowPaint);
-        QString texto="Axon ,nodos terminales: ";
+        QString texto="Axon,nodos terminales: ";
         texto+=QString::number(getTerminalNodes());
         seeToolTip(texto,windowPaint);
     }
@@ -96,8 +73,8 @@ bool axon_g::select(QOpenGLWidget* windowPaint, float x, float y,float z){
 }
 
 //Cuando pintamos el objeto desde 0, quita el boton selected en caso de que estuviera.
-bool axon_g::resetSelect(){
-    selected=false;
+bool axon_g::resetSelect() {
+    selected = false;
     return selected;
 
 }
@@ -110,7 +87,8 @@ int axon_g::getTerminalNodes() const {
     return terminal_nodes;
 }
 
-void axon_g::setAngle(float angle) {
-    graphic_axon::angle = angle;
+void axon_g::setTerminalNodes(int terminalNodes) {
+    terminal_nodes = terminalNodes;
 }
+
 
