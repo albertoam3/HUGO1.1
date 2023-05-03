@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+dfca357ad2efd76a3a6dc32d64316f68 CMakeFiles/hugo_autogen

@@ -30,17 +30,8 @@ list( APPEND HUGO_DEPENDENT_LIBRARIES
         nsol
         )
 
-if(ANDROID)
-  add_library(hugo SHARED
-          hugo.cpp
-          mainwindow.cpp
-          mainwindow.h
-          myopenglwidget.cpp
-          myopenglwidget.h
-          mainwindow.ui
-  )
-else()
-  add_executable(hugo
+
+add_executable(hugo
           hugo.cpp
           mainwindow.cpp
           mainwindow.h
@@ -65,9 +56,15 @@ else()
           graphics/graphic_soma.h 
           graphics/graphic_dendrite.cpp
           graphics/neuron_g.h
+          graphics/neuron_g.cpp
+          graphics/soma_g.h
+          graphics/soma_g.cpp
+          graphics/axon_g.h
+          graphics/axon_g.cpp
+          graphics/dendrite_g.h
+          graphics/dendrite_g.cpp
           graphics/graphic_dendrite.h 
           base_datos_objetos.cpp 
           base_datos_objetos.h)
-endif()
 
 target_link_libraries(hugo ${HUGO_DEPENDENT_LIBRARIES})

@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[11];
-    char stringdata0[129];
+    QByteArrayData data[9];
+    char stringdata0[104];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,18 +34,15 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 9), // "writeText"
 QT_MOC_LITERAL(2, 21, 0), // ""
-QT_MOC_LITERAL(3, 22, 16), // "nsol::NeuronsMap"
-QT_MOC_LITERAL(4, 39, 7), // "neurons"
-QT_MOC_LITERAL(5, 47, 24), // "openSWCFileThroughDialog"
-QT_MOC_LITERAL(6, 72, 6), // "pintar"
-QT_MOC_LITERAL(7, 79, 5), // "reset"
-QT_MOC_LITERAL(8, 85, 4), // "load"
-QT_MOC_LITERAL(9, 90, 16), // "on_igual_clicked"
-QT_MOC_LITERAL(10, 107, 21) // "on_terminales_clicked"
+QT_MOC_LITERAL(3, 22, 24), // "openSWCFileThroughDialog"
+QT_MOC_LITERAL(4, 47, 6), // "pintar"
+QT_MOC_LITERAL(5, 54, 5), // "reset"
+QT_MOC_LITERAL(6, 60, 4), // "load"
+QT_MOC_LITERAL(7, 65, 16), // "on_igual_clicked"
+QT_MOC_LITERAL(8, 82, 21) // "on_terminales_clicked"
 
     },
-    "MainWindow\0writeText\0\0nsol::NeuronsMap\0"
-    "neurons\0openSWCFileThroughDialog\0"
+    "MainWindow\0writeText\0\0openSWCFileThroughDialog\0"
     "pintar\0reset\0load\0on_igual_clicked\0"
     "on_terminales_clicked"
 };
@@ -65,16 +62,16 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   49,    2, 0x0a /* Public */,
+       1,    0,   49,    2, 0x0a /* Public */,
+       3,    0,   50,    2, 0x0a /* Public */,
+       4,    0,   51,    2, 0x0a /* Public */,
        5,    0,   52,    2, 0x0a /* Public */,
        6,    0,   53,    2, 0x0a /* Public */,
-       7,    0,   54,    2, 0x0a /* Public */,
-       8,    0,   55,    2, 0x0a /* Public */,
-       9,    0,   56,    2, 0x08 /* Private */,
-      10,    0,   57,    2, 0x08 /* Private */,
+       7,    0,   54,    2, 0x08 /* Private */,
+       8,    0,   55,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 3,    4,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -91,7 +88,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->writeText((*reinterpret_cast< const nsol::NeuronsMap(*)>(_a[1]))); break;
+        case 0: _t->writeText(); break;
         case 1: _t->openSWCFileThroughDialog(); break;
         case 2: _t->pintar(); break;
         case 3: _t->reset(); break;
@@ -101,6 +98,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject MainWindow::staticMetaObject = { {

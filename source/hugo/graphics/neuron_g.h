@@ -2,8 +2,8 @@
 // Created by alberto on 30/04/23.
 //
 
-#ifndef HUGO_GRAPHIC_NEURON_H
-#define HUGO_GRAPHIC_NEURON_H
+#ifndef HUGO_NEURON_G_H
+#define HUGO_NEURON_G_H
 
 #include "objetos/neuron.h"
 #include <QOpenGLWidget>
@@ -12,18 +12,21 @@
 #include "graphic_soma.h"
 #include "graphic_dendrite.h"
 #include <nsol/nsol.h>
+#include "soma_g.h"
+#include "axon_g.h"
+#include "dendrite_g.h"
 
 #include "vector"
 #include "cmath"
 
-class graphic_neuron : public graphic_objects{
+class neuron_g : public graphic_objects{
 private:
-    nsol::neuron *neu;
-    std::vector<graphic_axon*> ax;
-    graphic_soma* som;
-    std::vector<graphic_dendrite> dends;
+    nsol::Neuron *neu;
+    std::vector<axon_g*> ax;
+    soma_g* som;
+    std::vector<dendrite_g> dends;
 public:
-    graphic_neuron(neuron *_neu);
+    neuron_g(nsol::Neuron *_neu);
 
     //Dibujar la neurona
     void draw(QOpenGLWidget* windowPaint);
@@ -52,4 +55,4 @@ public:
 };
 
 
-#endif //HUGO_GRAPHIC_NEURON_H
+#endif //HUGO_NEURON_G_H

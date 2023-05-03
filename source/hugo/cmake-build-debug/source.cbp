@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="source"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\..\..\usr\local\share\eigen3\;CMake Files\..\..\..\..\..\..\usr\local\share\eigen3\cmake\;CMake Files\..\..\..\..\code\;CMake Files\..\..\..\..\code\nsol\;CMake Files\..\..\..\..\code\nsol\build\;CMake Files\..\..\..\..\code\nsol\build\FiReS\;CMake Files\..\..\..\..\code\nsol\build\Brion\;CMake Files\..\..\..\..\code\nsol\build\Servus\;CMake Files\..\..\..\..\code\nsol\build\vmmlib\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hugo">
+				<Option output="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_OPENGL_LIB"/>
+					<Add option="-DBRAIN_USE_MVD3"/>
+					<Add directory="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug"/>
+					<Add directory="/home/alberto/CLionProjects/HUGO1.1/source/hugo"/>
+					<Add directory="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtOpenGL"/>
+					<Add directory="/home/alberto/code/nsol/source"/>
+					<Add directory="/home/alberto/code/nsol/build/include"/>
+					<Add directory="/home/alberto/code/nsol/build"/>
+					<Add directory="/usr/include/hdf5/serial"/>
+					<Add directory="/home/alberto/code/nsol/source/Brion"/>
+					<Add directory="/home/alberto/code/nsol/build/Brion/include"/>
+					<Add directory="/home/alberto/code/nsol/build/Brion"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/home/alberto/code/nsol/source/Servus"/>
+					<Add directory="/home/alberto/code/nsol/build/Servus/include"/>
+					<Add directory="/home/alberto/code/nsol/build/Servus"/>
+					<Add directory="/home/alberto/code/nsol/source/vmmlib"/>
+					<Add directory="/home/alberto/code/nsol/build/vmmlib/include"/>
+					<Add directory="/home/alberto/code/nsol/build/vmmlib"/>
+					<Add directory="/home/alberto/code/nsol/source/FiReS"/>
+					<Add directory="/home/alberto/code/nsol/build/FiReS/include"/>
+					<Add directory="/home/alberto/code/nsol/build/FiReS"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 hugo"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hugo/fast">
+				<Option output="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_OPENGL_LIB"/>
+					<Add option="-DBRAIN_USE_MVD3"/>
+					<Add directory="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug"/>
+					<Add directory="/home/alberto/CLionProjects/HUGO1.1/source/hugo"/>
+					<Add directory="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtOpenGL"/>
+					<Add directory="/home/alberto/code/nsol/source"/>
+					<Add directory="/home/alberto/code/nsol/build/include"/>
+					<Add directory="/home/alberto/code/nsol/build"/>
+					<Add directory="/usr/include/hdf5/serial"/>
+					<Add directory="/home/alberto/code/nsol/source/Brion"/>
+					<Add directory="/home/alberto/code/nsol/build/Brion/include"/>
+					<Add directory="/home/alberto/code/nsol/build/Brion"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/home/alberto/code/nsol/source/Servus"/>
+					<Add directory="/home/alberto/code/nsol/build/Servus/include"/>
+					<Add directory="/home/alberto/code/nsol/build/Servus"/>
+					<Add directory="/home/alberto/code/nsol/source/vmmlib"/>
+					<Add directory="/home/alberto/code/nsol/build/vmmlib/include"/>
+					<Add directory="/home/alberto/code/nsol/build/vmmlib"/>
+					<Add directory="/home/alberto/code/nsol/source/FiReS"/>
+					<Add directory="/home/alberto/code/nsol/build/FiReS/include"/>
+					<Add directory="/home/alberto/code/nsol/build/FiReS"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 hugo/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hugo_autogen">
+				<Option working_dir="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 hugo_autogen"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/include/ui_mainwindow.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/mocs_compilation.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/soma_g.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/soma_g.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/hugo.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.ui">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/dendrites.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/dendrites.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/objetos.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/soma.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/soma.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5OpenGL/Qt5OpenGLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5OpenGL/Qt5OpenGLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5OpenGL\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/local/share/eigen3/cmake/Eigen3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/local/share/eigen3/cmake/Eigen3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/local/share/eigen3/cmake/Eigen3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/nsolConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/nsolConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/nsolTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/options.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/FiReS/FiReSConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\FiReS\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/FiReS/FiReSConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\FiReS\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/FiReS/FiReSTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\FiReS\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/FiReS/options.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\FiReS\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/Brion/BrionConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\Brion\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/Brion/BrionConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\Brion\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/Brion/BrionTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\Brion\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/Brion/options.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\Brion\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/Servus/ServusConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\Servus\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/Servus/ServusConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\Servus\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/Servus/ServusTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\Servus\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/Servus/options.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\Servus\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/vmmlib/options.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\vmmlib\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/vmmlib/vmmlibConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\vmmlib\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/vmmlib/vmmlibConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\vmmlib\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../code/nsol/build/vmmlib/vmmlibTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\code\nsol\build\vmmlib\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
