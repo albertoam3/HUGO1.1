@@ -169,16 +169,28 @@ void myopenglwidget::mouseMoveEvent(QMouseEvent *event_) {
 
 //Este método pasara a ser con control mas rueda del raton
 void myopenglwidget::keyPressEvent(QKeyEvent *event_) {
-    QWidget::keyPressEvent(event_);
-    scala = 0;
-    if (event_->key() == Qt::Key_Up) {
-        scala = 0.05;
-    } else if (event_->key() == Qt::Key_Down) {
-        scala = -0.05;
-    }
-    scalaTotal += scala;
-    update();
+   //A falta de implementar
 }
+
+void myopenglwidget::wheelEvent(QWheelEvent *event) {
+    if (event->modifiers() & Qt::ControlModifier) { // Verificar si se presionó la tecla de control
+        int delta = event->angleDelta().y(); // Obtener el desplazamiento de la rueda del ratón
+
+        scala = 0;
+        if (delta > 0) {
+            scala = 0.05;
+        } else if (delta < 0) {
+            scala = -0.05;
+        }
+
+        scalaTotal += scala;
+        update();
+    }
+}
+
+
+
+
 //metodo auxiliar que habria que cambiar
 void myopenglwidget::positionDraws() {
     int i = gobject.size();
@@ -252,6 +264,21 @@ void myopenglwidget::rotate(float x,float y,float z){
     rot = rYaw * rPitch * rRoll;
     rotation= rot*rotation;
 
+}
+
+
+void myopenglwidget::rotate2D(float x, float y) {
+    Eigen::Matrix2f rot;
+	
+    float angle = atan2(y, x);
+
+    float sinAngle = sin(angle);
+    float cosAngle = cos(angle);
+
+    rot << cosAngle, -sinAngle,
+           sinAngle, cosAngle;
+
+    rotation2D = rot * rotation2D;
 }
 
 void myopenglwidget::transform() {

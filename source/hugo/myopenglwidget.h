@@ -31,6 +31,7 @@ private:
 
     Eigen::Vector3f position;
     Eigen::Matrix3f rotation;
+    Eigen::Matrix2f rotation2D;
 
     Eigen::Matrix4f model_view;
     Eigen::Vector3f result;
@@ -51,13 +52,17 @@ protected:
     void paintGL() override;
     void resizeGL(int w,int h) override;
     void initializeGL() override;
-     void mousePressEvent( QMouseEvent* event_ ) override;
-     void mouseMoveEvent( QMouseEvent* event_ ) override;
-     void keyPressEvent(QKeyEvent* event_) override;
+    void mousePressEvent( QMouseEvent* event_ ) override;
+    void mouseMoveEvent( QMouseEvent* event_ ) override;
+    void keyPressEvent(QKeyEvent* event_) override;
+    void wheelEvent(QWheelEvent *event) override;
+     
     //int calculatePosition(int i);
     void positionDraws();
 private:
     void rotate(float x,float y,float z);
+    void rotate2D(float x, float y);
+    
     void transform();
 
 };

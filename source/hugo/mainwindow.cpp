@@ -158,12 +158,22 @@ void MainWindow::writeText(){
 
 
         neuronData += "Soma Radius: " + std::to_string(soma->meanRadius()) + "\n";
+        std::cout<<"soma nodes: " << soma->nodes().size()<<"\n";
         neuronData += "Axon Branch Number: " + std::to_string(axon->numBranches()) + "\n";
 
         for (auto &dendrite: *dendrites) {
            neuronData += "Dendrite Branch Number: " + std::to_string(dendrite->numBranches()) + "\n";
         }
-
+        nsol::Nodes no=axon->firstSection()->nodes();
+        nsol::NeuronMorphologySectionPtr sect=axon->firstSection();
+	std::cout << "1 sección del axon:"<< no.size()<<"\n";
+	int i=1;
+	while(sect->forwardNeighbors().size()>0){
+		i++;
+		sect= dynamic_cast<nsol::NeuronMorphologySection*>(sect->children().at(0));
+		std::cout << i<<" sección del axon:"<< sect->nodes().size()<<"\n";
+	
+	}
         printf("%zu\n", neurons.size());
 
 

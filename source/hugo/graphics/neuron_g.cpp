@@ -26,10 +26,10 @@ neuron_g::neuron_g(nsol::Neuron *_neu){
 }
 void neuron_g::draw(QOpenGLWidget* windowPaint){
 
-   if(angleXTam==false)
+   if(angleXTam==false){
        auxDrawAngleEqual(windowPaint);
-   else
-       auxDrawAngleTam(windowPaint);
+  // else
+    //   auxDrawAngleTam(windowPaint);
 
     som->setDisplacements(displacementX, displacementY);
     som->coordInitials(init_x, init_y);
@@ -46,6 +46,58 @@ void neuron_g::draw(QOpenGLWidget* windowPaint){
         else if (som->isSelected())
             som->drawSelc(windowPaint);
 
+    }
+    }
+    else{
+	int x=0;
+	int y=0;
+	int z=0;
+	int i=0;
+    	for(nsol::Node* n: neu->morphology()->soma()->nodes()){
+    		glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+    	}
+    	
+    	for (nsol::Neurite* n:neu->morphology()->neurites()){
+    		i++;
+    	  	if(i%1==0){
+    	  		z = (z == 0) ? 1 : 0;
+    	  	}
+    	  	if(i%2==0){
+    	  		y = (y == 0) ? 1 : 0;
+    	  	}
+    	  	if(i%4==0){
+    	  		x = (x == 0) ? 1 : 0;
+    	  	}
+    	  	
+    	  	glBegin(GL_LINES);
+    	  	glColor3f(x, y, z);
+    	  	std::stack<nsol::SectionPtr> sPS;
+
+     	   	sPS.push(n->firstSection());
+	
+    		while (!sPS.empty( ))
+    		{
+      			nsol::NeuronMorphologySectionPtr lS =
+        		dynamic_cast< nsol::NeuronMorphologySectionPtr >( sPS.top( ));
+      			sPS.pop( );
+      			for (nsol::Sections::iterator child = lS->children( ).begin( );
+           			child != lS->children( ).end( ); child++)
+      			{
+        			for(nsol::Node* n: lS->nodes()){
+        				if(n==lS->firstNode() || n==lS->lastNode())
+    						glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+    					else{
+    						glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+    						glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+    					}
+    				}
+        			
+        		sPS.push(*child);
+      			}	
+    		}
+    		glEnd();
+    	}
+    	
     }
 }
 
