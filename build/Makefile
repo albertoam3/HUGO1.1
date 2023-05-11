@@ -352,6 +352,33 @@ graphics/neuron_g.cpp.s:
 	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neuron_g.cpp.s
 .PHONY : graphics/neuron_g.cpp.s
 
+graphics/sectionH.o: graphics/sectionH.cpp.o
+
+.PHONY : graphics/sectionH.o
+
+# target to build an object file
+graphics/sectionH.cpp.o:
+	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/sectionH.cpp.o
+.PHONY : graphics/sectionH.cpp.o
+
+graphics/sectionH.i: graphics/sectionH.cpp.i
+
+.PHONY : graphics/sectionH.i
+
+# target to preprocess a source file
+graphics/sectionH.cpp.i:
+	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/sectionH.cpp.i
+.PHONY : graphics/sectionH.cpp.i
+
+graphics/sectionH.s: graphics/sectionH.cpp.s
+
+.PHONY : graphics/sectionH.s
+
+# target to generate assembly for a file
+graphics/sectionH.cpp.s:
+	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/sectionH.cpp.s
+.PHONY : graphics/sectionH.cpp.s
+
 graphics/soma_g.o: graphics/soma_g.cpp.o
 
 .PHONY : graphics/soma_g.o
@@ -629,6 +656,9 @@ help:
 	@echo "... graphics/neuron_g.o"
 	@echo "... graphics/neuron_g.i"
 	@echo "... graphics/neuron_g.s"
+	@echo "... graphics/sectionH.o"
+	@echo "... graphics/sectionH.i"
+	@echo "... graphics/sectionH.s"
 	@echo "... graphics/soma_g.o"
 	@echo "... graphics/soma_g.i"
 	@echo "... graphics/soma_g.s"

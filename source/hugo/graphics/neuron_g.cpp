@@ -13,6 +13,7 @@ neuron_g::neuron_g(nsol::Neuron *_neu){
     for (auto &dendrite: *den) {
         dends.push_back(*new dendrite_g(dendrite));
     }
+ 
 
     selected=false;
     displacementX=0;

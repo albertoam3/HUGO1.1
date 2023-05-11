@@ -3,9 +3,6 @@
 //
 
 #include "dendrite_g.h"
-
-
-
 constexpr float pint=0.5f;
 
 dendrite_g::dendrite_g(nsol::Dendrite* _den){

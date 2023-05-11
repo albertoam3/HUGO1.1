@@ -63,6 +63,8 @@ add_executable(hugo
           graphics/axon_g.cpp
           graphics/dendrite_g.h
           graphics/dendrite_g.cpp
+          graphics/sectionH.h
+          graphics/sectionH.cpp
           graphics/graphic_dendrite.h 
           base_datos_objetos.cpp 
           base_datos_objetos.h)

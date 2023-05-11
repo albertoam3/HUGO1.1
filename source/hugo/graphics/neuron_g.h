@@ -15,6 +15,7 @@
 #include "soma_g.h"
 #include "axon_g.h"
 #include "dendrite_g.h"
+#include "sectionH.h"
 
 #include "vector"
 #include "cmath"
@@ -25,6 +26,8 @@ private:
     std::vector<axon_g*> ax;
     soma_g* som;
     std::vector<dendrite_g> dends;
+ 
+    
 public:
     neuron_g(nsol::Neuron *_neu);
 

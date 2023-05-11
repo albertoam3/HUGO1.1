@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/hugo.dir/graphics/graphic_neuron.cpp.o"
   "CMakeFiles/hugo.dir/graphics/graphic_soma.cpp.o"
   "CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o"
+  "CMakeFiles/hugo.dir/graphics/sectionH.cpp.o"
   "CMakeFiles/hugo.dir/graphics/soma_g.cpp.o"
   "CMakeFiles/hugo.dir/hugo.cpp.o"
   "CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o"
