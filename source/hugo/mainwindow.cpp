@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
     button_draw = ui->centralwidget->findChild<QPushButton *>("draw");
     button_reset = ui->centralwidget->findChild<QPushButton *>("reset");
     button_load = ui->centralwidget->findChild<QPushButton *>("load");
+    button_2D = ui->centralwidget->findChild<QPushButton *>("boton2D");
+    button_3D = ui->centralwidget->findChild<QPushButton *>("boton3D");
 
     list = ui->centralwidget->findChild<QComboBox *>("list");
     elementosCargados = ui->centralwidget->findChild<QComboBox *>("elemC");
@@ -66,6 +68,9 @@ void MainWindow::connect_buttons() {
     QObject::connect(button_draw, SIGNAL(clicked()), this, SLOT(pintar()));
     QObject::connect(button_reset, SIGNAL(clicked()), this, SLOT(reset()));
     QObject::connect(button_load, SIGNAL(clicked()), this, SLOT(load()));
+    QObject::connect(button_load, SIGNAL(clicked()), this, SLOT(load()));
+    QObject::connect(button_2D, SIGNAL(clicked()), this, SLOT(_2D_clicked()));
+    QObject::connect(button_3D, SIGNAL(clicked()), this, SLOT(_3D_clicked()));
 }
 
 //Pongo a true la openGLWidget, para poder pintarla.
@@ -208,3 +213,14 @@ void MainWindow::addList(const std::string& st){
     QString qstr = QString::fromStdString(st);
     list->addItem(qstr);
 }
+
+void MainWindow::_2D_clicked(){
+	_openGLWidget->setDimension(false);
+}
+
+
+void MainWindow::_3D_clicked(){
+	_openGLWidget->setDimension(true);
+
+}
+

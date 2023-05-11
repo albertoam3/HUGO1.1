@@ -28,6 +28,7 @@ private:
     float rotationX,rotationY;
     bool _rotation;
     bool _translation;
+    
 
     Eigen::Vector3f position;
     Eigen::Matrix3f rotation;
@@ -46,6 +47,7 @@ public:
     void setGraphicsObject(graphic_objects *gobj);
     void resetList();
     void select_draw_den(bool a);
+    void setDimension(bool a);
 
 protected:
 

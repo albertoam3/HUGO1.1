@@ -23,20 +23,21 @@ neuron_g::neuron_g(nsol::Neuron *_neu){
     name=neu->gid();
     angleXTam=false;
 
+
 }
 void neuron_g::draw(QOpenGLWidget* windowPaint){
-
-   if(angleXTam==false){
+   if(dimension==false){	
+     if(angleXTam==false)
        auxDrawAngleEqual(windowPaint);
-  // else
-    //   auxDrawAngleTam(windowPaint);
+     else
+       auxDrawAngleTam(windowPaint);
 
-    som->setDisplacements(displacementX, displacementY);
-    som->coordInitials(init_x, init_y);
-    som->draw(windowPaint);
+     som->setDisplacements(displacementX, displacementY);
+     som->coordInitials(init_x, init_y);
+     som->draw(windowPaint);
 
-    coordinates();
-    if(selected) {
+     coordinates();
+     if(selected) {
         for(auto & dend : dends){
             if(dend.isSelected())
                 dend.drawSelc(windowPaint);
@@ -46,8 +47,9 @@ void neuron_g::draw(QOpenGLWidget* windowPaint){
         else if (som->isSelected())
             som->drawSelc(windowPaint);
 
+     }
     }
-    }
+    
     else{
 	int x=0;
 	int y=0;
@@ -223,5 +225,6 @@ void neuron_g::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
     }
 
 }
+
 
 

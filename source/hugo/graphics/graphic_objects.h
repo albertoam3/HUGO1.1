@@ -30,6 +30,7 @@ protected:
     float init_y;
     float init_z;
     bool angleXTam;
+    bool dimension;
 public:
 
 /*Metodo que esta definido en cada clase hijo, quieres pintaran lo que necesiten en la pantalla openGLWidget
@@ -86,6 +87,9 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     }
     void seeToolTip(QString texto,QOpenGLWidget *windowPaint){
         QToolTip::showText(QCursor::pos(), texto, windowPaint, QRect(), 5000);
+    }
+    void setDimension(bool a){
+   	dimension=a;
     }
 
 };

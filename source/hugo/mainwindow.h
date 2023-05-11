@@ -44,8 +44,12 @@ private:
     QPushButton *button_reset;
     QPushButton *button_load;
     QComboBox *list;
-
+  
     QComboBox* elementosCargados;
+
+    QPushButton * button_3D;
+    QPushButton * button_2D;
+    
 
     myopenglwidget *_openGLWidget;
     axon* ax;
@@ -85,10 +89,14 @@ public Q_SLOTS:
     void pintar();
     void reset();
     void load();
+    
+    void _2D_clicked();
+    void _3D_clicked();
 private slots:
     void on_igual_clicked();
 
     void on_terminales_clicked();
+    
 
 private:
     Ui::MainWindow *ui;

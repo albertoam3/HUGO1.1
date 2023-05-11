@@ -265,6 +265,13 @@ void myopenglwidget::rotate(float x,float y,float z){
     rotation= rot*rotation;
 
 }
+void myopenglwidget::setDimension(bool a){
+	
+	  for (auto &i: gobject) {
+	  	i->setDimension(a);
+	  }
+	  update();
+}
 
 
 void myopenglwidget::rotate2D(float x, float y) {
