@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -46,6 +47,11 @@ public:
     QRadioButton *igual;
     QRadioButton *terminales;
     QTextEdit *texto_neurona;
+    QPushButton *boton3D;
+    QPushButton *boton2D;
+    QRadioButton *igual_ramas;
+    QRadioButton *dif_rama;
+    QLabel *label;
     QMenuBar *menubar;
     QMenu *menuopen;
     QStatusBar *statusbar;
@@ -91,16 +97,31 @@ public:
         pushButton->setGeometry(QRect(810, 80, 89, 25));
         lineEdit_2 = new QLineEdit(centralwidget);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(700, 190, 211, 25));
+        lineEdit_2->setGeometry(QRect(690, 150, 211, 25));
         igual = new QRadioButton(centralwidget);
         igual->setObjectName(QString::fromUtf8("igual"));
-        igual->setGeometry(QRect(700, 230, 112, 23));
+        igual->setGeometry(QRect(690, 190, 112, 23));
         terminales = new QRadioButton(centralwidget);
         terminales->setObjectName(QString::fromUtf8("terminales"));
-        terminales->setGeometry(QRect(780, 230, 112, 23));
+        terminales->setGeometry(QRect(770, 190, 112, 23));
         texto_neurona = new QTextEdit(centralwidget);
         texto_neurona->setObjectName(QString::fromUtf8("texto_neurona"));
-        texto_neurona->setGeometry(QRect(690, 260, 251, 311));
+        texto_neurona->setGeometry(QRect(690, 300, 251, 311));
+        boton3D = new QPushButton(centralwidget);
+        boton3D->setObjectName(QString::fromUtf8("boton3D"));
+        boton3D->setGeometry(QRect(40, 150, 89, 25));
+        boton2D = new QPushButton(centralwidget);
+        boton2D->setObjectName(QString::fromUtf8("boton2D"));
+        boton2D->setGeometry(QRect(40, 190, 89, 25));
+        igual_ramas = new QRadioButton(centralwidget);
+        igual_ramas->setObjectName(QString::fromUtf8("igual_ramas"));
+        igual_ramas->setGeometry(QRect(690, 260, 112, 23));
+        dif_rama = new QRadioButton(centralwidget);
+        dif_rama->setObjectName(QString::fromUtf8("dif_rama"));
+        dif_rama->setGeometry(QRect(820, 260, 112, 23));
+        label = new QLabel(centralwidget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(690, 230, 201, 17));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -139,6 +160,11 @@ public:
         lineEdit_2->setText(QApplication::translate("MainWindow", "Separaci\303\263n de las dendritas", nullptr));
         igual->setText(QApplication::translate("MainWindow", "Igual", nullptr));
         terminales->setText(QApplication::translate("MainWindow", "Terminales", nullptr));
+        boton3D->setText(QApplication::translate("MainWindow", "3D", nullptr));
+        boton2D->setText(QApplication::translate("MainWindow", "2D", nullptr));
+        igual_ramas->setText(QApplication::translate("MainWindow", "Igual", nullptr));
+        dif_rama->setText(QApplication::translate("MainWindow", "Diferente", nullptr));
+        label->setText(QApplication::translate("MainWindow", "Tama\303\261o de las ramas\302\264", nullptr));
         menuopen->setTitle(QApplication::translate("MainWindow", "open", nullptr));
     } // retranslateUi
 
