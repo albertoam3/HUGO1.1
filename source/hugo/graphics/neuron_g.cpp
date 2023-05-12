@@ -199,11 +199,13 @@ void neuron_g::auxDrawAngleEqual(QOpenGLWidget* windowPaint) {
     float radio=som->getRadio();
     ax[0]->setDisplacements(displacementX, displacementY);
     ax[0]->coordInitials(init_x+radio*cos(an), init_y+radio*sin(an));
+    ax[0]->setScala(scala);
     ax[0]->draw(windowPaint);
     an+=aux;
     for (auto & item : dends) {
         item.setDisplacements(displacementX, displacementY);
         item.coordInitials(init_x+radio*cos(an), init_y+radio*sin(an));
+        item.setScala(scala);
         item.draw(windowPaint);
         an+=aux;
     }
@@ -215,13 +217,14 @@ void neuron_g::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
     i+=ax[0]->getTerminalNodes();
     ax[0]->setDisplacements(displacementX, displacementY);
     ax[0]->coordInitials(init_x+radio*cos(i/angle_tam()*2*pi), init_y+radio*sin(i/angle_tam()*2*pi));
-   
+    ax[0]->draw(windowPaint);
     ax[0]->draw(windowPaint);
 
     for(auto & item: dends){
         item.setDisplacements(displacementX,displacementY);
         i+=item.getTerminalNodes();
         item.coordInitials(init_x+radio*cos(i/angle_tam()*2*pi),init_y+radio*sin(i/angle_tam()*2*pi));
+        item.setScala(scala);
         item.draw(windowPaint);
     }
 

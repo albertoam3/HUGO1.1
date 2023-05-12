@@ -31,6 +31,8 @@ protected:
     float init_z;
     bool angleXTam;
     bool dimension;
+    
+    float scala;
 public:
 
 /*Metodo que esta definido en cada clase hijo, quieres pintaran lo que necesiten en la pantalla openGLWidget
@@ -90,6 +92,10 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     }
     void setDimension(bool a){
    	dimension=a;
+    }
+    
+    void setScala(float scalaX){
+    	scala=scalaX;
     }
 
 };

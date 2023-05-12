@@ -14,11 +14,13 @@ graphic_dendrite::graphic_dendrite(dendrites* _den){
     displacementX=0;
     displacementY=0;
     terminal_nodes=0;
+    scala=1;
     
 }
 void graphic_dendrite::draw(QOpenGLWidget* windowPaint){
-
-    glPointSize(5+terminal_nodes*pint);
+    std::cout<<scala<<"\n";
+    tamano_punto=(5+terminal_nodes*pint)*scala;
+    glPointSize(tamano_punto);
     glBegin(GL_POINTS); // Iniciar el modo de dibujo de puntos
     glColor3f(1.0, 0.0, 0.0); // Establecer el color del punto a rojo
 
@@ -51,10 +53,10 @@ void graphic_dendrite::drawSelc(QOpenGLWidget* windowPaint){
 
 //Devuelve las coordinates en las que se encuentra el objeto
 void graphic_dendrite::coordinates(){
-    min_X= displacementX + init_x - 0.03;
-    min_Y= displacementY + init_y - 0.03;
-    max_X= displacementX + init_x + 0.03;
-    max_Y= displacementY + init_y + 0.03;
+    min_X= displacementX + init_x - 0.04;
+    min_Y= displacementY + init_y - 0.04;
+    max_X= displacementX + init_x + 0.04;
+    max_Y= displacementY + init_y + 0.04;
     min_Z=displacementZ-0.03;
     max_Z=displacementZ+0.03;
 }

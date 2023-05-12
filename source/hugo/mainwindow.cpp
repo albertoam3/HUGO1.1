@@ -68,7 +68,6 @@ void MainWindow::connect_buttons() {
     QObject::connect(button_draw, SIGNAL(clicked()), this, SLOT(pintar()));
     QObject::connect(button_reset, SIGNAL(clicked()), this, SLOT(reset()));
     QObject::connect(button_load, SIGNAL(clicked()), this, SLOT(load()));
-    QObject::connect(button_load, SIGNAL(clicked()), this, SLOT(load()));
     QObject::connect(button_2D, SIGNAL(clicked()), this, SLOT(_2D_clicked()));
     QObject::connect(button_3D, SIGNAL(clicked()), this, SLOT(_3D_clicked()));
 }
@@ -102,12 +101,12 @@ void MainWindow::creat_list() {
     }
 }
 
-void MainWindow::on_igual_clicked()
+void MainWindow::on_igual_ang_clicked()
 {
     _openGLWidget->select_draw_den(false);
 }
 
-void MainWindow::on_terminales_clicked()
+void MainWindow::on_terminales_ang_clicked()
 {
     _openGLWidget->select_draw_den(true);
 }
@@ -131,7 +130,7 @@ void MainWindow::loadData( const std::string& m_fileName, const std::string& arg
     writeText();
     for (auto& neuronPair : neurons) {
     	 base->add(new neuron_g(neuronPair.second));
-        this->addList(std::to_string(neuronPair.first));
+         this->addList(std::to_string(neuronPair.first));
     }
 }
 

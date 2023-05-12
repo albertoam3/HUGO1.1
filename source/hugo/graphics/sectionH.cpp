@@ -14,10 +14,9 @@ float sectionH::getTamTotal(){
 	for (nsol::Section* s : sec->children()) {
     		nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
 		sectionH secAux(section);
-		tam+=secAux.getTamSection();
+		tam+=secAux.getTamTotal();
 	}
 	tam+=getTamSection();
-	std::cout<<tam<< "tamTotal";
 	return tam;
 
 }
@@ -32,14 +31,13 @@ float sectionH::getTamSection(){
 			first=false;
 		else{
 			a=s;
-			s=a;
+			s=node;
 			tam+= std::sqrt( std::pow(s->point()[0] - a->point()[0], 2) +
         		std::pow(s->point()[1] - a->point()[1], 2) +
         		std::pow(s->point()[2] - a->point()[2], 2));
 		}	
 	
 	}
-	std::cout<<tam<<"tamSeccion";
 	return tam;
 }
 

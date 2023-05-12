@@ -49,6 +49,7 @@ private:
 
     QPushButton * button_3D;
     QPushButton * button_2D;
+
     
 
     myopenglwidget *_openGLWidget;
@@ -93,9 +94,9 @@ public Q_SLOTS:
     void _2D_clicked();
     void _3D_clicked();
 private slots:
-    void on_igual_clicked();
+    void on_igual_ang_clicked();
 
-    void on_terminales_clicked();
+    void on_terminales_ang_clicked();
     
 
 private:

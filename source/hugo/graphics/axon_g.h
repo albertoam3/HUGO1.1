@@ -7,6 +7,7 @@
 
 #include "graphic_objects.h"
 #include "nsol/nsol.h"
+#include "sectionH.h"
 
 
 class axon_g : public graphic_objects{
@@ -15,6 +16,8 @@ private:
     float terminal_nodes;
     float angle;
     float dist;
+    sectionH* firstSection;
+    float tam;
 
 public:
 

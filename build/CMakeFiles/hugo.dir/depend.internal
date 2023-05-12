@@ -642,6 +642,7 @@ CMakeFiles/hugo.dir/graphics/axon_g.cpp.o
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.cpp
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
+ /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
  /home/alberto/code/nsol/build/Brion/include/brain/api.h
  /home/alberto/code/nsol/build/Brion/include/brain/brain.h
  /home/alberto/code/nsol/build/Brion/include/brain/version.h
@@ -1124,6 +1125,7 @@ CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.cpp
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
+ /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
  /home/alberto/code/nsol/build/Brion/include/brain/api.h
  /home/alberto/code/nsol/build/Brion/include/brain/brain.h
  /home/alberto/code/nsol/build/Brion/include/brain/version.h
@@ -6607,16 +6609,13 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPaintEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QSurfaceFormat
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qabstracttextdocumentlayout.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontdatabase.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qglyphrun.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qguiapplication.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h
@@ -6637,7 +6636,6 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qrawfont.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h
@@ -6645,7 +6643,6 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextlayout.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h
@@ -6660,13 +6657,13 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QComboBox
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGridLayout
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGroupBox
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenu
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenuBar
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QOpenGLWidget
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPlainTextEdit
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QRadioButton
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QStatusBar
@@ -6688,6 +6685,7 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfiledialog.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgroupbox.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h
@@ -6696,7 +6694,6 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenu.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenubar.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qopenglwidget.h
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qplaintextedit.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qradiobutton.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h

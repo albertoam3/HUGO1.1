@@ -13,6 +13,7 @@ class graphic_dendrite : public graphic_objects{
 private:
     dendrites *dend;
     int terminal_nodes;
+    float tamano_punto;
 
 public:
 

@@ -11,11 +11,14 @@ axon_g::axon_g(nsol::Axon* _ax){
     displacementX=0;
     displacementY=0;
     terminal_nodes=ax->numBranches();
+    firstSection=new sectionH(ax->firstSection());
+    tam=0;
+    scala=1;
     
 }
 void axon_g::draw(QOpenGLWidget* windowPaint){
 
-    glPointSize(terminal_nodes*pint);
+    glPointSize(terminal_nodes*pint*scala*3);
     glBegin(GL_POINTS); // Iniciar el modo de dibujo de puntos
     glColor3f(0.0, 1.0, 0.0); // Establecer el color del punto a rojo
 
@@ -23,8 +26,11 @@ void axon_g::draw(QOpenGLWidget* windowPaint){
     glEnd();
     if(selected)
         drawSelc(windowPaint);
+    if(tam==0){
+    	tam=firstSection->getTamTotal()/100;
+    }
+    std::cout<<tam<<": tamaño del axón \n";
 }
-
 void axon_g::drawSelc(QOpenGLWidget* windowPaint){
     glLineWidth(4.0);
     glBegin(GL_LINES);

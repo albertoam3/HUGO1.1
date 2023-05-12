@@ -7,13 +7,15 @@
 
 #include "graphic_objects.h"
 #include "nsol/nsol.h"
+#include "sectionH.h"
 
 
 class dendrite_g : public graphic_objects{
 private:
     nsol::Dendrite *dend;
     int terminal_nodes;
-
+    sectionH* firstSection;
+    float tam;
 public:
 
 

@@ -43,6 +43,7 @@ void myopenglwidget::paintGL() {
         rotation=Eigen::Matrix3f::Identity();
         for (auto &i: gobject) {
             i->setDisplacements(0, 0);
+            
         }
         model_view=Eigen::Matrix4f::Identity();
     } else {
@@ -62,6 +63,7 @@ void myopenglwidget::paintGL() {
     }
 
     for (auto &i: gobject) {
+    	i->setScala(scalaTotal);
         i->draw(this);
     }
 }
@@ -297,7 +299,5 @@ void myopenglwidget::transform() {
     //Aplicar la transformación inversa al punto de origen
     Eigen::Vector4f transformedPoint = invMvMat4 * Eigen::Vector4f(p.x(), p.y(), p.z(), 1.0f);
     result = transformedPoint.head<3>();
-    //Imprimir el resultado
-    std::cout << "Resultado: (" << result.x() << ", " << result.y() << ", " << result.z() << ")" << std::endl;
-
+  
 }

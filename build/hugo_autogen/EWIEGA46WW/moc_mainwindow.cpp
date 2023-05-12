@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[11];
-    char stringdata0[128];
+    char stringdata0[136];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,13 +40,13 @@ QT_MOC_LITERAL(5, 54, 5), // "reset"
 QT_MOC_LITERAL(6, 60, 4), // "load"
 QT_MOC_LITERAL(7, 65, 11), // "_2D_clicked"
 QT_MOC_LITERAL(8, 77, 11), // "_3D_clicked"
-QT_MOC_LITERAL(9, 89, 16), // "on_igual_clicked"
-QT_MOC_LITERAL(10, 106, 21) // "on_terminales_clicked"
+QT_MOC_LITERAL(9, 89, 20), // "on_igual_ang_clicked"
+QT_MOC_LITERAL(10, 110, 25) // "on_terminales_ang_clicked"
 
     },
     "MainWindow\0writeText\0\0openSWCFileThroughDialog\0"
     "pintar\0reset\0load\0_2D_clicked\0_3D_clicked\0"
-    "on_igual_clicked\0on_terminales_clicked"
+    "on_igual_ang_clicked\0on_terminales_ang_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -101,8 +101,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 4: _t->load(); break;
         case 5: _t->_2D_clicked(); break;
         case 6: _t->_3D_clicked(); break;
-        case 7: _t->on_igual_clicked(); break;
-        case 8: _t->on_terminales_clicked(); break;
+        case 7: _t->on_igual_ang_clicked(); break;
+        case 8: _t->on_terminales_ang_clicked(); break;
         default: ;
         }
     }

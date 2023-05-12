@@ -44,6 +44,7 @@ void graphic_neuron::draw(QOpenGLWidget* windowPaint){
     som->coordInitials(init_x, init_y);
     som->draw(windowPaint);
 
+
     coordinates();
     if(selected) {
         for(auto & dend : dends){
@@ -152,12 +153,16 @@ void graphic_neuron::auxDrawAngleEqual(QOpenGLWidget* windowPaint) {
     ax[0]->setDisplacements(displacementX, displacementY);
     ax[0]->coordInitials(init_x, init_y);
     ax[0]->setAngle(an);
+    ax[0]->setScala(scala);
     ax[0]->draw(windowPaint);
+
     an+=aux;
     for (auto & item : dends) {
         item.setDisplacements(displacementX, displacementY);
         item.coordInitials(init_x+radio*cos(an), init_y+radio*sin(an));
+        item.setScala(scala);
         item.draw(windowPaint);
+        
         an+=aux;
     }
 
@@ -169,12 +174,14 @@ void graphic_neuron::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
     ax[0]->setDisplacements(displacementX, displacementY);
     ax[0]->coordInitials(init_x, init_y);
     ax[0]->setAngle(i/angle_tam()*2*pi);
+    ax[0]->setScala(scala);
     ax[0]->draw(windowPaint);
 
     for(auto & item: dends){
         item.setDisplacements(displacementX,displacementY);
         i+=item.getTerminalNodes();
         item.coordInitials(init_x+radio*cos(i/angle_tam()*2*pi),init_y+radio*sin(i/angle_tam()*2*pi));
+        item.setScala(scala);
         item.draw(windowPaint);
     }
 

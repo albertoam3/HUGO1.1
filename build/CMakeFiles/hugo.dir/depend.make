@@ -641,6 +641,7 @@ CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/s
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.cpp
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
+CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/code/nsol/build/Brion/include/brain/api.h
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/code/nsol/build/Brion/include/brain/brain.h
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/code/nsol/build/Brion/include/brain/version.h
@@ -1123,6 +1124,7 @@ CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.cpp
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
+CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/code/nsol/build/Brion/include/brain/api.h
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/code/nsol/build/Brion/include/brain/brain.h
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/code/nsol/build/Brion/include/brain/version.h
@@ -6606,16 +6608,13 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QO
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPaintEvent
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QSurfaceFormat
-CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qabstracttextdocumentlayout.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h
-CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontdatabase.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h
-CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qglyphrun.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qguiapplication.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h
@@ -6636,7 +6635,6 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qp
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h
-CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qrawfont.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h
@@ -6644,7 +6642,6 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qs
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h
-CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextlayout.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h
@@ -6659,13 +6656,13 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidget
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QComboBox
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGridLayout
+CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGroupBox
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenu
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenuBar
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QOpenGLWidget
-CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPlainTextEdit
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QRadioButton
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QStatusBar
@@ -6687,6 +6684,7 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidget
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfiledialog.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h
+CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgroupbox.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h
@@ -6695,7 +6693,6 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidget
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenu.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenubar.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qopenglwidget.h
-CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qplaintextedit.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qradiobutton.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h
