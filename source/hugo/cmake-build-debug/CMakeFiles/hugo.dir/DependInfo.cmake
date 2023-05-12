@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.cpp" "CMakeFiles/hugo.dir/graphics/graphic_neuron.cpp.o" "gcc" "CMakeFiles/hugo.dir/graphics/graphic_neuron.cpp.o.d"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.cpp" "CMakeFiles/hugo.dir/graphics/graphic_soma.cpp.o" "gcc" "CMakeFiles/hugo.dir/graphics/graphic_soma.cpp.o.d"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.cpp" "CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o" "gcc" "CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o.d"
+  "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.cpp" "CMakeFiles/hugo.dir/graphics/sectionH.cpp.o" "gcc" "CMakeFiles/hugo.dir/graphics/sectionH.cpp.o.d"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/soma_g.cpp" "CMakeFiles/hugo.dir/graphics/soma_g.cpp.o" "gcc" "CMakeFiles/hugo.dir/graphics/soma_g.cpp.o.d"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/hugo.cpp" "CMakeFiles/hugo.dir/hugo.cpp.o" "gcc" "CMakeFiles/hugo.dir/hugo.cpp.o.d"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/mocs_compilation.cpp" "CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o.d"

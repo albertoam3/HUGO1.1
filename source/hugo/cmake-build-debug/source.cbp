@@ -209,6 +209,12 @@
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.h">
 			<Option target="hugo"/>
 		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h">
+			<Option target="hugo"/>
+		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/soma_g.cpp">
 			<Option target="hugo"/>
 		</Unit>
