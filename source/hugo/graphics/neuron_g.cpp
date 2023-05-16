@@ -52,9 +52,9 @@ void neuron_g::draw(QOpenGLWidget* windowPaint){
     }
     
     else{
-	int x=0;
-	int y=0;
-	int z=0;
+	float x=0;
+	float y=0;
+	float z=0;
 	int i=0;
     	for(nsol::Node* n: neu->morphology()->soma()->nodes()){
     		glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
@@ -71,7 +71,11 @@ void neuron_g::draw(QOpenGLWidget* windowPaint){
     	  	if(i%4==0){
     	  		x = (x == 0) ? 1 : 0;
     	  	}
-    	  	
+    	  	if(i==8){
+    	  		x=0.9f;
+    	  		y=0.5f;
+    	  		z=0.0f;
+    	  	}
     	  	glBegin(GL_LINES);
     	  	glColor3f(x, y, z);
     	  	std::stack<nsol::SectionPtr> sPS;
