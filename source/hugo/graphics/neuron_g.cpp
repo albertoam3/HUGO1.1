@@ -71,14 +71,19 @@ void neuron_g::draw(QOpenGLWidget* windowPaint){
 	float y=0;
 	float z=0;
 	int i=0;
-	//glEnable(GL_POINT_SMOOTH);
+	float radius;
     	for(nsol::Node* n: neu->morphology()->soma()->nodes()){
+			radius = n->radius();
 			if(radiusView){
-				float radius = n->radius() / 100;
 				glPointSize(radius);
+			} else {
+				glPointSize(1.0);
 			}
+			glBegin(GL_POINTS);
     		glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+    		glEnd();
     	}
+    	
     	
     	for (nsol::Neurite* n:neu->morphology()->neurites()){
     		i++;
