@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alberto/CLionProjects/HUGO1.1/source/hugo
+CMAKE_SOURCE_DIR = /home/jesarebar/Code/HuGo1.1/HUGO1.1/source/hugo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alberto/CLionProjects/HUGO1.1/build
+CMAKE_BINARY_DIR = /home/jesarebar/Code/HuGo1.1/HUGO1.1/build
 
 # Utility rule file for hugo_autogen.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/alberto/CLionProjects/HUGO1.1/build
 include CMakeFiles/hugo_autogen.dir/progress.make
 
 CMakeFiles/hugo_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target hugo"
-	/usr/bin/cmake -E cmake_autogen /home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo_autogen.dir/AutogenInfo.json ""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jesarebar/Code/HuGo1.1/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target hugo"
+	/usr/bin/cmake -E cmake_autogen /home/jesarebar/Code/HuGo1.1/HUGO1.1/build/CMakeFiles/hugo_autogen.dir/AutogenInfo.json ""
 
 hugo_autogen: CMakeFiles/hugo_autogen
 hugo_autogen: CMakeFiles/hugo_autogen.dir/build.make
@@ -72,6 +72,6 @@ CMakeFiles/hugo_autogen.dir/clean:
 .PHONY : CMakeFiles/hugo_autogen.dir/clean
 
 CMakeFiles/hugo_autogen.dir/depend:
-	cd /home/alberto/CLionProjects/HUGO1.1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alberto/CLionProjects/HUGO1.1/source/hugo /home/alberto/CLionProjects/HUGO1.1/source/hugo /home/alberto/CLionProjects/HUGO1.1/build /home/alberto/CLionProjects/HUGO1.1/build /home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jesarebar/Code/HuGo1.1/HUGO1.1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jesarebar/Code/HuGo1.1/HUGO1.1/source/hugo /home/jesarebar/Code/HuGo1.1/HUGO1.1/source/hugo /home/jesarebar/Code/HuGo1.1/HUGO1.1/build /home/jesarebar/Code/HuGo1.1/HUGO1.1/build /home/jesarebar/Code/HuGo1.1/HUGO1.1/build/CMakeFiles/hugo_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/hugo_autogen.dir/depend
 
