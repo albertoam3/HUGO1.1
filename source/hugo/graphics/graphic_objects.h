@@ -32,6 +32,7 @@ protected:
     bool angleXTam;
     bool neurites_tam;
     bool dimension;
+    bool radiusView;
     
     float scala;
 public:
@@ -93,6 +94,9 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     }
     void setDimension(bool a){
    	dimension=a;
+    }
+    void setRadiusView(bool a){
+   	radiusView=a;
     }
     
     void setScala(float scalaX){

@@ -49,6 +49,7 @@ public:
     void select_draw_den(bool a);
     void select_tam_den(bool a);
     void setDimension(bool a);
+    void setRadiusView(bool a);
 
 protected:
 

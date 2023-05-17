@@ -249,6 +249,19 @@
      <string>ELEMENTOS CARGADOS</string>
     </property>
    </widget>
+   <widget class="QCheckBox" name="radioBox">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>120</y>
+      <width>92</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Radio</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

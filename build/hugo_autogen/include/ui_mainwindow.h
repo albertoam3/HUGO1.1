@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
@@ -51,6 +52,7 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
+    QCheckBox *radioBox;
     QMenuBar *menubar;
     QMenu *menuopen;
     QStatusBar *statusbar;
@@ -121,6 +123,9 @@ public:
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(700, 50, 221, 17));
+        radioBox = new QCheckBox(centralwidget);
+        radioBox->setObjectName(QString::fromUtf8("radioBox"));
+        radioBox->setGeometry(QRect(40, 120, 92, 23));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -160,6 +165,7 @@ public:
         label->setText(QApplication::translate("MainWindow", "CARGAR OBJETO", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "PINTAR OBJETOS CARGADOS", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "ELEMENTOS CARGADOS", nullptr));
+        radioBox->setText(QApplication::translate("MainWindow", "Radio", nullptr));
         menuopen->setTitle(QApplication::translate("MainWindow", "open", nullptr));
     } // retranslateUi
 

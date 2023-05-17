@@ -16,6 +16,7 @@
 #include <QWidget>
 #include <QFileDialog>
 #include <QTextEdit>
+#include <QCheckBox>
 
 #include "objetos/axon.h"
 #include "objetos/dendrites.h"
@@ -53,6 +54,8 @@ private:
     
     QRadioButton *button_dif_rama;
     QRadioButton *button_igual_rama;
+    
+    QCheckBox* radioBox;
     
 
     
@@ -98,6 +101,8 @@ public Q_SLOTS:
     
     void _2D_clicked();
     void _3D_clicked();
+    
+    void checkboxStateChanged(int state);
     
     void igual_tam();
     void dif_tam();

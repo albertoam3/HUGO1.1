@@ -4006,6 +4006,7 @@ CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
+CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QCheckBox
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QComboBox
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGridLayout
@@ -4025,6 +4026,7 @@ CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabs
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractspinbox.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h
+CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcheckbox.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcombobox.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdesktopwidget.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h
@@ -4630,6 +4632,7 @@ CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-lin
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
+CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QCheckBox
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QComboBox
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGridLayout
@@ -4648,6 +4651,7 @@ CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-lin
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractslider.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractspinbox.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h
+CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcheckbox.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcombobox.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfiledialog.h
@@ -5257,6 +5261,7 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qw
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QAction
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
+CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QCheckBox
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QComboBox
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGridLayout
@@ -5282,6 +5287,7 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidget
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qactiongroup.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h
+CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcheckbox.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcombobox.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdesktopwidget.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h

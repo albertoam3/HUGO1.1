@@ -283,6 +283,14 @@ void myopenglwidget::setDimension(bool a){
 	  update();
 }
 
+void myopenglwidget::setRadiusView(bool a){
+	
+	  for (auto &i: gobject) {
+	  	i->setRadiusView(a);
+	  }
+	  update();
+}
+
 
 void myopenglwidget::rotate2D(float x, float y) {
     Eigen::Matrix2f rot;

@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     button_load = ui->centralwidget->findChild<QPushButton *>("load");
     button_2D = ui->centralwidget->findChild<QPushButton *>("boton2D");
     button_3D = ui->centralwidget->findChild<QPushButton *>("boton3D");
+    radioBox = ui->centralwidget->findChild<QCheckBox *>("radioBox");
     
     button_igual_rama = ui->centralwidget->findChild<QGroupBox *>("groupBox_2")->findChild<QRadioButton *>("igual_ramas");
     button_dif_rama = ui->centralwidget->findChild<QGroupBox *>("groupBox_2")->findChild<QRadioButton *>("dif_rama");
@@ -75,6 +76,7 @@ void MainWindow::connect_buttons() {
     QObject::connect(button_3D, SIGNAL(clicked()), this, SLOT(_3D_clicked()));
     QObject::connect(button_igual_rama, SIGNAL(clicked()), this, SLOT(igual_tam()));
     QObject::connect(button_dif_rama, SIGNAL(clicked()), this, SLOT(dif_tam()));
+    QObject::connect(radioBox, &QCheckBox::stateChanged, this, &MainWindow::checkboxStateChanged);
 }
 
 //Pongo a true la openGLWidget, para poder pintarla.
@@ -226,6 +228,15 @@ void MainWindow::_2D_clicked(){
 void MainWindow::_3D_clicked(){
 	_openGLWidget->setDimension(true);
 
+}
+
+void MainWindow::checkboxStateChanged(int state)
+{
+    if (state == Qt::Checked) {
+        _openGLWidget->setRadiusView(true);
+    } else {
+        _openGLWidget->setRadiusView(false);
+    }
 }
 
 void MainWindow::igual_tam(){
