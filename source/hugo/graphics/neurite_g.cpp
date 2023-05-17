@@ -91,4 +91,8 @@ void axon_g::setTerminalNodes(int terminalNodes) {
     terminal_nodes = terminalNodes;
 }
 
+//Implementar bien
+float neurite_g::getTam(){
+	return tam;
+}
 

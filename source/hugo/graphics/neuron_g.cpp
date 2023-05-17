@@ -8,12 +8,20 @@ const float pi = 3.14159265359;
 neuron_g::neuron_g(nsol::Neuron *_neu){
     neu=_neu;
     ax.push_back(new axon_g(neu->morphology()->axon()));
+    tam_max_neurite=ax[0]->getTam();
+    
     som=new soma_g(neu->morphology()->soma());
     const auto &den=neu->morphology()->dendrites();
     for (auto &dendrite: *den) {
         dends.push_back(*new dendrite_g(dendrite));
+        
     }
- 
+    for (auto &d :dends){
+    	if(d.getTam()>tam_max_neurite)
+    		tam_max_neurite=d.getTam();
+    		
+    }
+    		
 
     selected=false;
     displacementX=0;
@@ -23,11 +31,18 @@ neuron_g::neuron_g(nsol::Neuron *_neu){
     coordinates();
     name=neu->gid();
     angleXTam=false;
+  
 
 
 }
 void neuron_g::draw(QOpenGLWidget* windowPaint){
-   if(dimension==false){	
+   if(dimension==false){
+     tamNeurite();
+     for(auto & dend : dends){
+                dend.setNeuritesTam(neurites_tam);
+     }
+     ax[0]->setNeuritesTam(neurites_tam);
+       
      if(angleXTam==false)
        auxDrawAngleEqual(windowPaint);
      else
@@ -234,5 +249,27 @@ void neuron_g::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
 
 }
 
+void neuron_g::tamNeurite(){
+	if(neurites_tam==false){
+	 	ax[0]->setTamMult(2);	
+	  	for (auto & item : dends) {
+        		item.setTamMult(2);
+		}
+	}
+	else{
+		std::cout<<ax[0]->getTam()<<" y "<<tam_max_neurite<<"\n";
+		ax[0]->setTamMult(2*(ax[0]->getTam()/tam_max_neurite));	
+	  	for (auto & item : dends) {
+        		item.setTamMult(2*(item.getTam()/tam_max_neurite));
+	
+		}
+	}
+	
+}
+
+//Falta de implementar
+float neuron_g::getTam(){
+	return 0;
+}
 
 

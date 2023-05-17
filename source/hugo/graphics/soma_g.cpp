@@ -84,3 +84,8 @@ bool soma_g::isSelected() {
 float soma_g::getRadio() {
     return som->meanRadius();
 }
+
+
+float soma_g::getTam(){
+	return 3.1416*som->meanRadius()*som->meanRadius();
+}

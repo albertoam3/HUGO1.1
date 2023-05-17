@@ -84,3 +84,6 @@ bool graphic_soma::isSelected() {
 float graphic_soma::getRadio() {
     return som->getRad();
 }
+float graphic_soma::getTam(){
+	return 0;
+}

@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/235/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /snap/clion/237/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/235/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /snap/clion/237/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ include CMakeFiles/hugo_autogen.dir/progress.make
 
 CMakeFiles/hugo_autogen:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target hugo"
-	/snap/clion/235/bin/cmake/linux/x64/bin/cmake -E cmake_autogen /home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles/hugo_autogen.dir/AutogenInfo.json Debug
+	/snap/clion/237/bin/cmake/linux/x64/bin/cmake -E cmake_autogen /home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles/hugo_autogen.dir/AutogenInfo.json Debug
 
 hugo_autogen: CMakeFiles/hugo_autogen
 hugo_autogen: CMakeFiles/hugo_autogen.dir/build.make

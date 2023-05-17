@@ -16,6 +16,7 @@ private:
     int terminal_nodes;
     sectionH* firstSection;
     float tam;
+    float tam_mult;
 public:
 
 
@@ -45,6 +46,8 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 
     void setTerminalNodes(int terminalNodes);
     void getMensaje();
+    float getTam();
+    void setTamMult(float t);
 };
 
 

@@ -95,5 +95,8 @@ int graphic_dendrite::getTerminalNodes() const {
 void graphic_dendrite::setTerminalNodes(int terminalNodes) {
     terminal_nodes = terminalNodes;
 }
+float graphic_dendrite::getTam(){
+	return 0;
+}
 
 

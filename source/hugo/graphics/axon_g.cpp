@@ -14,10 +14,19 @@ axon_g::axon_g(nsol::Axon* _ax){
     firstSection=new sectionH(ax->firstSection());
     tam=0;
     scala=1;
+    tam=firstSection->getTamTotal()/100;
     
 }
 void axon_g::draw(QOpenGLWidget* windowPaint){
-
+ //  if(neurites_tam==false){	
+    
+    glPointSize(terminal_nodes*pint*scala*3);
+    glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
+    glColor3f(0.0, 1.0, 0.0); 
+    glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
+     glVertex2f(displacementX+init_x+tam_mult*(displacementX+init_x),displacementY+init_y+tam_mult*(displacementY+init_y));
+    glEnd();  
+   /* }else{
     glPointSize(terminal_nodes*pint*scala*3);
     glBegin(GL_POINTS); // Iniciar el modo de dibujo de puntos
     glColor3f(0.0, 1.0, 0.0); // Establecer el color del punto a rojo
@@ -30,6 +39,7 @@ void axon_g::draw(QOpenGLWidget* windowPaint){
     	tam=firstSection->getTamTotal()/100;
     }
     std::cout<<tam<<": tamaño del axón \n";
+    }*/
 }
 void axon_g::drawSelc(QOpenGLWidget* windowPaint){
     glLineWidth(4.0);
@@ -95,6 +105,14 @@ int axon_g::getTerminalNodes() const {
 
 void axon_g::setTerminalNodes(int terminalNodes) {
     terminal_nodes = terminalNodes;
+}
+
+float axon_g::getTam(){
+	return tam;
+}
+
+void axon_g::setTamMult(float t){
+	tam_mult=t;
 }
 
 

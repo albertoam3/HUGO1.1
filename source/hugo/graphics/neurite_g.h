@@ -47,6 +47,7 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     void setTerminalNodes(int terminalNodes);
 
     void setAngle(float angle);
+    float getTam();
 };
 
 

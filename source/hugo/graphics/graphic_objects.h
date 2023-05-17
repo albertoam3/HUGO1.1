@@ -30,6 +30,7 @@ protected:
     float init_y;
     float init_z;
     bool angleXTam;
+    bool neurites_tam;
     bool dimension;
     
     float scala;
@@ -97,7 +98,11 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     void setScala(float scalaX){
     	scala=scalaX;
     }
-
+    void setNeuritesTam(bool c){
+    	neurites_tam=c;
+    }
+    
+    virtual float getTam()=0;
 };
 #endif //HUGO_GRAPHIC_OBJECTS_H
 

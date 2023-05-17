@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[11];
-    char stringdata0[136];
+    QByteArrayData data[13];
+    char stringdata0[154];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,13 +40,16 @@ QT_MOC_LITERAL(5, 54, 5), // "reset"
 QT_MOC_LITERAL(6, 60, 4), // "load"
 QT_MOC_LITERAL(7, 65, 11), // "_2D_clicked"
 QT_MOC_LITERAL(8, 77, 11), // "_3D_clicked"
-QT_MOC_LITERAL(9, 89, 20), // "on_igual_ang_clicked"
-QT_MOC_LITERAL(10, 110, 25) // "on_terminales_ang_clicked"
+QT_MOC_LITERAL(9, 89, 9), // "igual_tam"
+QT_MOC_LITERAL(10, 99, 7), // "dif_tam"
+QT_MOC_LITERAL(11, 107, 20), // "on_igual_ang_clicked"
+QT_MOC_LITERAL(12, 128, 25) // "on_terminales_ang_clicked"
 
     },
     "MainWindow\0writeText\0\0openSWCFileThroughDialog\0"
     "pintar\0reset\0load\0_2D_clicked\0_3D_clicked\0"
-    "on_igual_ang_clicked\0on_terminales_ang_clicked"
+    "igual_tam\0dif_tam\0on_igual_ang_clicked\0"
+    "on_terminales_ang_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,7 +59,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,17 +67,21 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x0a /* Public */,
-       3,    0,   60,    2, 0x0a /* Public */,
-       4,    0,   61,    2, 0x0a /* Public */,
-       5,    0,   62,    2, 0x0a /* Public */,
-       6,    0,   63,    2, 0x0a /* Public */,
-       7,    0,   64,    2, 0x0a /* Public */,
-       8,    0,   65,    2, 0x0a /* Public */,
-       9,    0,   66,    2, 0x08 /* Private */,
-      10,    0,   67,    2, 0x08 /* Private */,
+       1,    0,   69,    2, 0x0a /* Public */,
+       3,    0,   70,    2, 0x0a /* Public */,
+       4,    0,   71,    2, 0x0a /* Public */,
+       5,    0,   72,    2, 0x0a /* Public */,
+       6,    0,   73,    2, 0x0a /* Public */,
+       7,    0,   74,    2, 0x0a /* Public */,
+       8,    0,   75,    2, 0x0a /* Public */,
+       9,    0,   76,    2, 0x0a /* Public */,
+      10,    0,   77,    2, 0x0a /* Public */,
+      11,    0,   78,    2, 0x08 /* Private */,
+      12,    0,   79,    2, 0x08 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -101,8 +108,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 4: _t->load(); break;
         case 5: _t->_2D_clicked(); break;
         case 6: _t->_3D_clicked(); break;
-        case 7: _t->on_igual_ang_clicked(); break;
-        case 8: _t->on_terminales_ang_clicked(); break;
+        case 7: _t->igual_tam(); break;
+        case 8: _t->dif_tam(); break;
+        case 9: _t->on_igual_ang_clicked(); break;
+        case 10: _t->on_terminales_ang_clicked(); break;
         default: ;
         }
     }
@@ -138,13 +147,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 11;
     }
     return _id;
 }

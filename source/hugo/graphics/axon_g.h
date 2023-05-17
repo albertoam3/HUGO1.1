@@ -18,6 +18,7 @@ private:
     float dist;
     sectionH* firstSection;
     float tam;
+    float tam_mult;
 
 public:
 
@@ -48,6 +49,8 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     void setTerminalNodes(int terminalNodes);
 
     void setAngle(float angle);
+    float getTam();
+    void setTamMult(float t);
 };
 
 

@@ -46,3 +46,4 @@ nsol::NeuronMorphologySection sectionH::getSection(){
 
 	return *sec;
 }
+

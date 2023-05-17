@@ -113,4 +113,6 @@ int graphic_axon::getTerminalNodes() const {
 void graphic_axon::setAngle(float angle) {
     graphic_axon::angle = angle;
 }
-
+float graphic_axon::getTam(){
+	return 0;
+}

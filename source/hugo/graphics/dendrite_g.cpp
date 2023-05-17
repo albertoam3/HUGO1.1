@@ -14,21 +14,30 @@ dendrite_g::dendrite_g(nsol::Dendrite* _den){
     firstSection=new sectionH(dend->firstSection());
     tam=0;
     scala=1;
+    tam=firstSection->getTamTotal()/100;
 }
 void dendrite_g::draw(QOpenGLWidget* windowPaint){
-
+   //  if(neurites_tam==false){	
+    glPointSize(terminal_nodes*pint*scala*3);
+    glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
+    glColor3f(1.0, 0.0, 0.0); 
+    glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
+    glVertex2f(displacementX+init_x+tam_mult*(displacementX+init_x),displacementY+init_y+tam_mult*(displacementY+init_y));
+    glEnd();  
+   /* }else{
     glPointSize(terminal_nodes*pint*scala*3);
     glBegin(GL_POINTS); // Iniciar el modo de dibujo de puntos
-    glColor3f(1.0, 0.0, 0.0); // Establecer el color del punto a rojo
+    glColor3f(0.0, 1.0, 0.0); // Establecer el color del punto a rojo
 
     glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
     glEnd();
     if(selected)
         drawSelc(windowPaint);
-     if(tam==0){
+    if(tam==0){
     	tam=firstSection->getTamTotal()/100;
     }
-    std::cout<<tam<<": tamaño de la dendrita \n";
+    std::cout<<tam<<": tamaño del axón \n";
+    }*/
 }
 
 void dendrite_g::drawSelc(QOpenGLWidget* windowPaint){
@@ -95,6 +104,12 @@ int dendrite_g::getTerminalNodes() const {
 
 void dendrite_g::setTerminalNodes(int terminalNodes) {
     terminal_nodes = terminalNodes;
+}
+float dendrite_g::getTam(){
+	return tam;
+}
+void dendrite_g::setTamMult(float t){
+	tam_mult=t;
 }
 
 

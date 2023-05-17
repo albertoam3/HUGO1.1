@@ -15,6 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
     button_load = ui->centralwidget->findChild<QPushButton *>("load");
     button_2D = ui->centralwidget->findChild<QPushButton *>("boton2D");
     button_3D = ui->centralwidget->findChild<QPushButton *>("boton3D");
+    
+    button_igual_rama = ui->centralwidget->findChild<QGroupBox *>("groupBox_2")->findChild<QRadioButton *>("igual_ramas");
+    button_dif_rama = ui->centralwidget->findChild<QGroupBox *>("groupBox_2")->findChild<QRadioButton *>("dif_rama");
 
     list = ui->centralwidget->findChild<QComboBox *>("list");
     elementosCargados = ui->centralwidget->findChild<QComboBox *>("elemC");
@@ -70,6 +73,8 @@ void MainWindow::connect_buttons() {
     QObject::connect(button_load, SIGNAL(clicked()), this, SLOT(load()));
     QObject::connect(button_2D, SIGNAL(clicked()), this, SLOT(_2D_clicked()));
     QObject::connect(button_3D, SIGNAL(clicked()), this, SLOT(_3D_clicked()));
+    QObject::connect(button_igual_rama, SIGNAL(clicked()), this, SLOT(igual_tam()));
+    QObject::connect(button_dif_rama, SIGNAL(clicked()), this, SLOT(dif_tam()));
 }
 
 //Pongo a true la openGLWidget, para poder pintarla.
@@ -222,4 +227,13 @@ void MainWindow::_3D_clicked(){
 	_openGLWidget->setDimension(true);
 
 }
+
+void MainWindow::igual_tam(){
+	_openGLWidget->select_tam_den(false);
+}
+
+void MainWindow::dif_tam(){
+ 	_openGLWidget->select_tam_den(true);
+}
+
 

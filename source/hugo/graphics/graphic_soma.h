@@ -35,6 +35,7 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     bool isSelected();
 
     float getRadio();
+    float getTam();
 };
 
 

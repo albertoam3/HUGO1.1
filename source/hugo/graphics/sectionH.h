@@ -22,6 +22,7 @@ public:
     float getTamTotal();
     float getTamSection();
     nsol::NeuronMorphologySection getSection();
+    
 };
 
 

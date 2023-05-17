@@ -47,6 +47,7 @@ public:
     float angle_tam();
     void auxDrawAngleEqual(QOpenGLWidget* windowPaint);
     void auxDrawAngleTam(QOpenGLWidget* windowPaint);
+    float getTam();
 
 
 };

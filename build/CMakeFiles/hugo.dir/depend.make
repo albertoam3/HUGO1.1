@@ -5414,6 +5414,7 @@ CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLin
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QOpenGLWidget
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton
+CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QRadioButton
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTextEdit
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QToolTip
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget
@@ -5437,6 +5438,7 @@ CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlin
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qopenglwidget.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h
+CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qradiobutton.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qslider.h
@@ -6036,6 +6038,7 @@ CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-lin
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QOpenGLWidget
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton
+CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QRadioButton
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTextEdit
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QToolTip
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget
@@ -6057,6 +6060,7 @@ CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-lin
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qopenglwidget.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h
+CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qradiobutton.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qslider.h

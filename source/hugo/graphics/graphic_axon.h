@@ -44,6 +44,7 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     int getTerminalNodes() const;
 
     void setAngle(float angle);
+    float getTam();
 };
 
 

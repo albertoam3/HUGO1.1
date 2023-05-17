@@ -26,7 +26,7 @@ private:
     std::vector<axon_g*> ax;
     soma_g* som;
     std::vector<dendrite_g> dends;
- 
+    float tam_max_neurite;
     
 public:
     neuron_g(nsol::Neuron *_neu);
@@ -53,7 +53,8 @@ public:
     float angle_tam();
     void auxDrawAngleEqual(QOpenGLWidget* windowPaint);
     void auxDrawAngleTam(QOpenGLWidget* windowPaint);
-    
+    float getTam();
+    void tamNeurite();
 
 };
 

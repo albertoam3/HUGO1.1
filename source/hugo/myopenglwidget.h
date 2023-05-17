@@ -47,6 +47,7 @@ public:
     void setGraphicsObject(graphic_objects *gobj);
     void resetList();
     void select_draw_den(bool a);
+    void select_tam_den(bool a);
     void setDimension(bool a);
 
 protected:

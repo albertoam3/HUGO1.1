@@ -7,6 +7,7 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QComboBox>
+#include <QRadioButton>
 
 #include <QLineEdit>
 
@@ -49,6 +50,10 @@ private:
 
     QPushButton * button_3D;
     QPushButton * button_2D;
+    
+    QRadioButton *button_dif_rama;
+    QRadioButton *button_igual_rama;
+    
 
     
 
@@ -93,6 +98,10 @@ public Q_SLOTS:
     
     void _2D_clicked();
     void _3D_clicked();
+    
+    void igual_tam();
+    void dif_tam();
+    
 private slots:
     void on_igual_ang_clicked();
 

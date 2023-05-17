@@ -237,6 +237,14 @@ void myopenglwidget::select_draw_den(bool a) {
     }
     update();
 }
+void myopenglwidget::select_tam_den(bool a) {
+    for (auto &i: gobject) {
+        i->setNeuritesTam(a);
+    }
+    update();
+}
+
+
 
 void myopenglwidget::rotate(float x,float y,float z){
     Eigen::Matrix3f rot;

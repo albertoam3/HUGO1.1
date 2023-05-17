@@ -186,5 +186,7 @@ void graphic_neuron::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
     }
 
 }
-
+float graphic_neuron::getTam(){
+	return 0;
+}
 
