@@ -1,7 +1,5 @@
-//Esta clase pretende ser la clase padre de la cual hereden axon_g y dendrite_g, aun falta crearla, he dejado puesta la clase axon ya que realmente el objetivo será cambiar axon por neurite
-
 //
-// Created by alberto on 11/05/23.
+// Created by alberto on 29/05/23.
 //
 
 #ifndef HUGO_NEURITE_G_H
@@ -9,19 +7,23 @@
 
 #include "graphic_objects.h"
 #include "nsol/nsol.h"
+#include "sectionH.h"
 
 
-class axon_g : public graphic_objects{
+class neurite_g : public graphic_objects{
 private:
-    nsol::Axon *ax;
+    nsol::Neurite *neurite;
     float terminal_nodes;
     float angle;
     float dist;
+    sectionH* firstSection;
+    float tam;
+    float tam_mult;
 
 public:
 
 
-    axon_g(nsol::Axon* _ax);
+    neurite_g(nsol::Neurite* _neurite);
 /*Metodo que esta definido en cada clase hijo, quieres pintaran lo que necesiten en la pantalla openGLWidget
 con un desplazamiento de X y otro desplazamiento de Y*/
     void draw(QOpenGLWidget* windowPaint);
@@ -48,7 +50,12 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 
     void setAngle(float angle);
     float getTam();
+    void setTamMult(float t);
+   
+protected:   
+    virtual float color()=0 ;
 };
 
 
 #endif //HUGO_NEURITE_G_H
+

@@ -48,6 +48,11 @@
 			"4NLTMHEJ4E/moc_graphic_soma.cpp"
 		],
 		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h",
+			"MU",
+			"4NLTMHEJ4E/moc_neurite_g.cpp"
+		],
+		[
 			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.h",
 			"MU",
 			"4NLTMHEJ4E/moc_neuron_g.cpp"
@@ -200,6 +205,10 @@
 		],
 		[
 			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.cpp",
+			"MU"
+		],
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp",
 			"MU"
 		],
 		[

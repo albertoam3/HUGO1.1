@@ -325,6 +325,33 @@ graphics/graphic_soma.cpp.s:
 	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_soma.cpp.s
 .PHONY : graphics/graphic_soma.cpp.s
 
+graphics/neurite_g.o: graphics/neurite_g.cpp.o
+
+.PHONY : graphics/neurite_g.o
+
+# target to build an object file
+graphics/neurite_g.cpp.o:
+	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o
+.PHONY : graphics/neurite_g.cpp.o
+
+graphics/neurite_g.i: graphics/neurite_g.cpp.i
+
+.PHONY : graphics/neurite_g.i
+
+# target to preprocess a source file
+graphics/neurite_g.cpp.i:
+	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neurite_g.cpp.i
+.PHONY : graphics/neurite_g.cpp.i
+
+graphics/neurite_g.s: graphics/neurite_g.cpp.s
+
+.PHONY : graphics/neurite_g.s
+
+# target to generate assembly for a file
+graphics/neurite_g.cpp.s:
+	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neurite_g.cpp.s
+.PHONY : graphics/neurite_g.cpp.s
+
 graphics/neuron_g.o: graphics/neuron_g.cpp.o
 
 .PHONY : graphics/neuron_g.o
@@ -653,6 +680,9 @@ help:
 	@echo "... graphics/graphic_soma.o"
 	@echo "... graphics/graphic_soma.i"
 	@echo "... graphics/graphic_soma.s"
+	@echo "... graphics/neurite_g.o"
+	@echo "... graphics/neurite_g.i"
+	@echo "... graphics/neurite_g.s"
 	@echo "... graphics/neuron_g.o"
 	@echo "... graphics/neuron_g.i"
 	@echo "... graphics/neuron_g.s"

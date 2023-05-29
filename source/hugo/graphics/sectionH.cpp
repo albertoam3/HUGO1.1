@@ -13,12 +13,11 @@ float sectionH::getTamTotal(){
 	float tam=0;
 	for (nsol::Section* s : sec->children()) {
     		nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
-		sectionH secAux(section);
-		tam+=secAux.getTamTotal();
+			sectionH secAux(section);
+			tam+=secAux.getTamTotal();
 	}
 	tam+=getTamSection();
 	return tam;
-
 }
 
 float sectionH::getTamSection(){

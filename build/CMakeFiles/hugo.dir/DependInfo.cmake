@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/graphics/graphic_dendrite.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/graphics/graphic_neuron.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/graphics/graphic_soma.cpp.o"
+  "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/graphics/sectionH.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/soma_g.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/graphics/soma_g.cpp.o"

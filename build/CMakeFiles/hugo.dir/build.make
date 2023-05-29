@@ -252,9 +252,22 @@ CMakeFiles/hugo.dir/graphics/axon_g.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hugo.dir/graphics/axon_g.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.cpp -o CMakeFiles/hugo.dir/graphics/axon_g.cpp.s
 
+CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o: CMakeFiles/hugo.dir/flags.make
+CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o -c /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp
+
+CMakeFiles/hugo.dir/graphics/neurite_g.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hugo.dir/graphics/neurite_g.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp > CMakeFiles/hugo.dir/graphics/neurite_g.cpp.i
+
+CMakeFiles/hugo.dir/graphics/neurite_g.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hugo.dir/graphics/neurite_g.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp -o CMakeFiles/hugo.dir/graphics/neurite_g.cpp.s
+
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: CMakeFiles/hugo.dir/flags.make
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o -c /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.cpp
 
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.i: cmake_force
@@ -267,7 +280,7 @@ CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.s: cmake_force
 
 CMakeFiles/hugo.dir/graphics/sectionH.cpp.o: CMakeFiles/hugo.dir/flags.make
 CMakeFiles/hugo.dir/graphics/sectionH.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/hugo.dir/graphics/sectionH.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/hugo.dir/graphics/sectionH.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hugo.dir/graphics/sectionH.cpp.o -c /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.cpp
 
 CMakeFiles/hugo.dir/graphics/sectionH.cpp.i: cmake_force
@@ -280,7 +293,7 @@ CMakeFiles/hugo.dir/graphics/sectionH.cpp.s: cmake_force
 
 CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: CMakeFiles/hugo.dir/flags.make
 CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/hugo.dir/base_datos_objetos.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/hugo.dir/base_datos_objetos.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hugo.dir/base_datos_objetos.cpp.o -c /home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.cpp
 
 CMakeFiles/hugo.dir/base_datos_objetos.cpp.i: cmake_force
@@ -308,6 +321,7 @@ hugo_OBJECTS = \
 "CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o" \
 "CMakeFiles/hugo.dir/graphics/soma_g.cpp.o" \
 "CMakeFiles/hugo.dir/graphics/axon_g.cpp.o" \
+"CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o" \
 "CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o" \
 "CMakeFiles/hugo.dir/graphics/sectionH.cpp.o" \
 "CMakeFiles/hugo.dir/base_datos_objetos.cpp.o"
@@ -330,6 +344,7 @@ hugo: CMakeFiles/hugo.dir/graphics/graphic_dendrite.cpp.o
 hugo: CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o
 hugo: CMakeFiles/hugo.dir/graphics/soma_g.cpp.o
 hugo: CMakeFiles/hugo.dir/graphics/axon_g.cpp.o
+hugo: CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o
 hugo: CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o
 hugo: CMakeFiles/hugo.dir/graphics/sectionH.cpp.o
 hugo: CMakeFiles/hugo.dir/base_datos_objetos.cpp.o
@@ -353,7 +368,7 @@ hugo: /home/alberto/code/nsol/build/lib/libBrion.so.3.0.0
 hugo: /home/alberto/code/nsol/build/lib/libServus.so.1.6.0
 hugo: /home/alberto/code/nsol/build/lib/libFiReS.so.0.1.6
 hugo: CMakeFiles/hugo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable hugo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable hugo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hugo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

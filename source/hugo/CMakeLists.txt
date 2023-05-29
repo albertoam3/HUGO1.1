@@ -61,6 +61,8 @@ add_executable(hugo
           graphics/soma_g.cpp
           graphics/axon_g.h
           graphics/axon_g.cpp
+          graphics/neurite_g.h
+          graphics/neurite_g.cpp
           graphics/dendrite_g.h
           graphics/dendrite_g.cpp
           graphics/sectionH.h

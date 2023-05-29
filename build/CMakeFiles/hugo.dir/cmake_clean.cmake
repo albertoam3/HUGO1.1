@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/hugo.dir/graphics/graphic_dendrite.cpp.o"
   "CMakeFiles/hugo.dir/graphics/graphic_neuron.cpp.o"
   "CMakeFiles/hugo.dir/graphics/graphic_soma.cpp.o"
+  "CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o"
   "CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o"
   "CMakeFiles/hugo.dir/graphics/sectionH.cpp.o"
   "CMakeFiles/hugo.dir/graphics/soma_g.cpp.o"
