@@ -1086,25 +1086,17 @@ lapacke_mangling.h
 
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.cpp
+base_datos_objetos.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.h
+
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.h
 graphics/graphic_objects.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
 vector
 -
-graphics/graphic_neuron.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.h
-graphics/graphic_axon.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.h
-graphics/graphic_soma.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.h
-graphics/graphic_dendrite.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.h
 nsol/nsol.h
 -
-
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.cpp
-axon_g.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
 
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
 graphic_objects.h
@@ -1116,10 +1108,6 @@ sectionH.h
 neurite_g.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h
 
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.cpp
-dendrite_g.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
-
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
 graphic_objects.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
@@ -1129,36 +1117,6 @@ sectionH.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
 neurite_g.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h
-
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.h
-graphic_objects.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
-objetos/axon.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/objetos/axon.h
-
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.h
-graphic_objects.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
-objetos/dendrites.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/objetos/dendrites.h
-
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.h
-objetos/neuron.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/objetos/neuron.h
-QOpenGLWidget
--
-graphic_objects.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
-graphic_axon.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.h
-graphic_soma.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.h
-graphic_dendrite.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.h
-vector
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/vector
-cmath
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/cmath
 
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
 QOpenGLWidget
@@ -1172,16 +1130,6 @@ QToolTip
 QPoint
 -
 
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.h
-graphic_objects.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
-objetos/soma.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/objetos/soma.h
-
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp
-neurite_g.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h
-
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h
 graphic_objects.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
@@ -1190,12 +1138,6 @@ nsol/nsol.h
 sectionH.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
 
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.cpp
-neuron_g.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.h
-iostream
--
-
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.h
 objetos/neuron.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/objetos/neuron.h
@@ -1203,12 +1145,6 @@ QOpenGLWidget
 -
 graphic_objects.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
-graphic_axon.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.h
-graphic_soma.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.h
-graphic_dendrite.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.h
 nsol/nsol.h
 -
 soma_g.h
@@ -1281,14 +1217,6 @@ objetos/neuron.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.h
 objetos/soma.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/soma.h
-graphics/graphic_neuron.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.h
-graphics/graphic_axon.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.h
-graphics/graphic_soma.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.h
-graphics/graphic_dendrite.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.h
 graphics/soma_g.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/soma_g.h
 graphics/neuron_g.h
@@ -1313,8 +1241,6 @@ objetos/objetos.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/objetos.h
 QMouseEvent
 -
-graphics/graphic_neuron.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.h
 graphics/graphic_objects.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
 Eigen/Dense

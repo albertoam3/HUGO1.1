@@ -6,7 +6,6 @@
 #include <QColor>
 #include "objetos/objetos.h"
 #include <QMouseEvent>
-#include "graphics/graphic_neuron.h"
 #include "graphics/graphic_objects.h"
 #include <Eigen/Dense>
 

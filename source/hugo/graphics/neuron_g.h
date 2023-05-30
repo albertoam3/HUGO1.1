@@ -8,9 +8,6 @@
 #include "objetos/neuron.h"
 #include <QOpenGLWidget>
 #include "graphic_objects.h"
-#include "graphic_axon.h"
-#include "graphic_soma.h"
-#include "graphic_dendrite.h"
 #include <nsol/nsol.h>
 #include "soma_g.h"
 #include "axon_g.h"

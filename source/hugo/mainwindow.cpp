@@ -32,32 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     base = new base_datos_objetos();
 
-    ax = new axon(0.0f, 0.5f, 0.0f, 0.0f);
-    den = new dendrites(-0.2f, -0.2f, 0.2f, 0.2f);
-    dendrites *den2 = new dendrites(-0.2f, 0.2f, -0.2f, 0.2f);
-    dendrites *den3 = new dendrites(0.0f, 0.0f, 0.0f, 0.3f);
-    dendrites *den4 = new dendrites(0.0f, 0.0f, 0.0f, 0.5f);
-
-    std::vector<dendrites> dends;
-    dends.push_back(*den);
-    dends.push_back(*den2);
-    dends.push_back(*den3);
-    dends.push_back(*den4);
-
-    som = new soma(0.2f);
-    neu = new neuron(som, ax, dends);
-
-
-    gneu = new graphic_neuron(neu);
-    gax = new graphic_axon(ax);
-    gsom = new graphic_soma(som);
-    gden = new graphic_dendrite(den);
-
-    base->add(gneu);
-    base->add(gax);
-    base->add(gsom);
-    base->add(gden);
-
+ 
     creat_list();
 
 }

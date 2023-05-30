@@ -82,12 +82,12 @@ clean: CMakeFiles/hugo_autogen.dir/clean
 CMakeFiles/hugo.dir/all: CMakeFiles/hugo_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target hugo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target hugo"
 .PHONY : CMakeFiles/hugo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/hugo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hugo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/hugo.dir/rule
@@ -108,7 +108,7 @@ CMakeFiles/hugo.dir/clean:
 CMakeFiles/hugo_autogen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo_autogen.dir/build.make CMakeFiles/hugo_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo_autogen.dir/build.make CMakeFiles/hugo_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles --progress-num=20 "Built target hugo_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/CMakeFiles --progress-num=17 "Built target hugo_autogen"
 .PHONY : CMakeFiles/hugo_autogen.dir/all
 
 # Build rule for subdir invocation for target.

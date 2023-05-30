@@ -217,114 +217,6 @@ graphics/dendrite_g.cpp.s:
 	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.s
 .PHONY : graphics/dendrite_g.cpp.s
 
-graphics/graphic_axon.o: graphics/graphic_axon.cpp.o
-
-.PHONY : graphics/graphic_axon.o
-
-# target to build an object file
-graphics/graphic_axon.cpp.o:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_axon.cpp.o
-.PHONY : graphics/graphic_axon.cpp.o
-
-graphics/graphic_axon.i: graphics/graphic_axon.cpp.i
-
-.PHONY : graphics/graphic_axon.i
-
-# target to preprocess a source file
-graphics/graphic_axon.cpp.i:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_axon.cpp.i
-.PHONY : graphics/graphic_axon.cpp.i
-
-graphics/graphic_axon.s: graphics/graphic_axon.cpp.s
-
-.PHONY : graphics/graphic_axon.s
-
-# target to generate assembly for a file
-graphics/graphic_axon.cpp.s:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_axon.cpp.s
-.PHONY : graphics/graphic_axon.cpp.s
-
-graphics/graphic_dendrite.o: graphics/graphic_dendrite.cpp.o
-
-.PHONY : graphics/graphic_dendrite.o
-
-# target to build an object file
-graphics/graphic_dendrite.cpp.o:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_dendrite.cpp.o
-.PHONY : graphics/graphic_dendrite.cpp.o
-
-graphics/graphic_dendrite.i: graphics/graphic_dendrite.cpp.i
-
-.PHONY : graphics/graphic_dendrite.i
-
-# target to preprocess a source file
-graphics/graphic_dendrite.cpp.i:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_dendrite.cpp.i
-.PHONY : graphics/graphic_dendrite.cpp.i
-
-graphics/graphic_dendrite.s: graphics/graphic_dendrite.cpp.s
-
-.PHONY : graphics/graphic_dendrite.s
-
-# target to generate assembly for a file
-graphics/graphic_dendrite.cpp.s:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_dendrite.cpp.s
-.PHONY : graphics/graphic_dendrite.cpp.s
-
-graphics/graphic_neuron.o: graphics/graphic_neuron.cpp.o
-
-.PHONY : graphics/graphic_neuron.o
-
-# target to build an object file
-graphics/graphic_neuron.cpp.o:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_neuron.cpp.o
-.PHONY : graphics/graphic_neuron.cpp.o
-
-graphics/graphic_neuron.i: graphics/graphic_neuron.cpp.i
-
-.PHONY : graphics/graphic_neuron.i
-
-# target to preprocess a source file
-graphics/graphic_neuron.cpp.i:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_neuron.cpp.i
-.PHONY : graphics/graphic_neuron.cpp.i
-
-graphics/graphic_neuron.s: graphics/graphic_neuron.cpp.s
-
-.PHONY : graphics/graphic_neuron.s
-
-# target to generate assembly for a file
-graphics/graphic_neuron.cpp.s:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_neuron.cpp.s
-.PHONY : graphics/graphic_neuron.cpp.s
-
-graphics/graphic_soma.o: graphics/graphic_soma.cpp.o
-
-.PHONY : graphics/graphic_soma.o
-
-# target to build an object file
-graphics/graphic_soma.cpp.o:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_soma.cpp.o
-.PHONY : graphics/graphic_soma.cpp.o
-
-graphics/graphic_soma.i: graphics/graphic_soma.cpp.i
-
-.PHONY : graphics/graphic_soma.i
-
-# target to preprocess a source file
-graphics/graphic_soma.cpp.i:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_soma.cpp.i
-.PHONY : graphics/graphic_soma.cpp.i
-
-graphics/graphic_soma.s: graphics/graphic_soma.cpp.s
-
-.PHONY : graphics/graphic_soma.s
-
-# target to generate assembly for a file
-graphics/graphic_soma.cpp.s:
-	$(MAKE) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/graphic_soma.cpp.s
-.PHONY : graphics/graphic_soma.cpp.s
-
 graphics/neurite_g.o: graphics/neurite_g.cpp.o
 
 .PHONY : graphics/neurite_g.o
@@ -668,18 +560,6 @@ help:
 	@echo "... graphics/dendrite_g.o"
 	@echo "... graphics/dendrite_g.i"
 	@echo "... graphics/dendrite_g.s"
-	@echo "... graphics/graphic_axon.o"
-	@echo "... graphics/graphic_axon.i"
-	@echo "... graphics/graphic_axon.s"
-	@echo "... graphics/graphic_dendrite.o"
-	@echo "... graphics/graphic_dendrite.i"
-	@echo "... graphics/graphic_dendrite.s"
-	@echo "... graphics/graphic_neuron.o"
-	@echo "... graphics/graphic_neuron.i"
-	@echo "... graphics/graphic_neuron.s"
-	@echo "... graphics/graphic_soma.o"
-	@echo "... graphics/graphic_soma.i"
-	@echo "... graphics/graphic_soma.s"
 	@echo "... graphics/neurite_g.o"
 	@echo "... graphics/neurite_g.i"
 	@echo "... graphics/neurite_g.s"

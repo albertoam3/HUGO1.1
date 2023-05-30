@@ -47,14 +47,7 @@ add_executable(hugo
           objetos/objetos.h
           objetos/neuron.cpp
           objetos/neuron.h
-          graphics/graphic_neuron.h
-          graphics/graphic_neuron.cpp
           graphics/graphic_objects.h
-          graphics/graphic_axon.cpp
-          graphics/graphic_axon.h 
-          graphics/graphic_soma.cpp 
-          graphics/graphic_soma.h 
-          graphics/graphic_dendrite.cpp
           graphics/neuron_g.h
           graphics/neuron_g.cpp
           graphics/soma_g.h
@@ -67,7 +60,6 @@ add_executable(hugo
           graphics/dendrite_g.cpp
           graphics/sectionH.h
           graphics/sectionH.cpp
-          graphics/graphic_dendrite.h 
           base_datos_objetos.cpp 
           base_datos_objetos.h)
 

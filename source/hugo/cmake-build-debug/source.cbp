@@ -176,31 +176,13 @@
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.cpp">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.h">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.cpp">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.h">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.cpp">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.h">
-			<Option target="hugo"/>
-		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.cpp">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h">
 			<Option target="hugo"/>
 		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.cpp">

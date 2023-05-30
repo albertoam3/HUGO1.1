@@ -145,33 +145,15 @@
 			null
 		],
 		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.h",
-			"MU",
-			"4NLTMHEJ4E/moc_graphic_axon.cpp",
-			null
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.h",
-			"MU",
-			"4NLTMHEJ4E/moc_graphic_dendrite.cpp",
-			null
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.h",
-			"MU",
-			"4NLTMHEJ4E/moc_graphic_neuron.cpp",
-			null
-		],
-		[
 			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h",
 			"MU",
 			"4NLTMHEJ4E/moc_graphic_objects.cpp",
 			null
 		],
 		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h",
 			"MU",
-			"4NLTMHEJ4E/moc_graphic_soma.cpp",
+			"4NLTMHEJ4E/moc_neurite_g.cpp",
 			null
 		],
 		[
@@ -327,22 +309,7 @@
 			null
 		],
 		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp",
 			"MU",
 			null
 		],

@@ -21,10 +21,6 @@
 #include "objetos/dendrites.h"
 #include "objetos/neuron.h"
 #include "objetos/soma.h"
-#include "graphics/graphic_neuron.h"
-#include "graphics/graphic_axon.h"
-#include "graphics/graphic_soma.h"
-#include "graphics/graphic_dendrite.h"
 #include "graphics/soma_g.h"
 #include "graphics/neuron_g.h"
 #include "graphics/axon_g.h"
@@ -63,10 +59,6 @@ private:
     neuron* neu;
     soma* som;
 
-    graphic_neuron* gneu;
-    graphic_axon* gax;
-    graphic_soma* gsom;
-    graphic_dendrite* gden;
 
     base_datos_objetos* base;
 

@@ -9,12 +9,6 @@
 #include <vector>
 
 
-
-#include "graphics/graphic_neuron.h"
-#include "graphics/graphic_axon.h"
-#include "graphics/graphic_soma.h"
-#include "graphics/graphic_dendrite.h"
-
 #include <nsol/nsol.h>
 
 class base_datos_objetos {

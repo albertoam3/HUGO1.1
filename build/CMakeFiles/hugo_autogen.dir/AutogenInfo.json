@@ -23,29 +23,9 @@
 			"4NLTMHEJ4E/moc_dendrite_g.cpp"
 		],
 		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.h",
-			"MU",
-			"4NLTMHEJ4E/moc_graphic_axon.cpp"
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.h",
-			"MU",
-			"4NLTMHEJ4E/moc_graphic_dendrite.cpp"
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.h",
-			"MU",
-			"4NLTMHEJ4E/moc_graphic_neuron.cpp"
-		],
-		[
 			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h",
 			"MU",
 			"4NLTMHEJ4E/moc_graphic_objects.cpp"
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.h",
-			"MU",
-			"4NLTMHEJ4E/moc_graphic_soma.cpp"
 		],
 		[
 			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h",
@@ -189,22 +169,6 @@
 		],
 		[
 			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.cpp",
-			"MU"
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_axon.cpp",
-			"MU"
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_dendrite.cpp",
-			"MU"
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_neuron.cpp",
-			"MU"
-		],
-		[
-			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_soma.cpp",
 			"MU"
 		],
 		[
