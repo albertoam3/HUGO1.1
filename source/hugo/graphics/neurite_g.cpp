@@ -23,7 +23,7 @@ void neurite_g::draw(QOpenGLWidget* windowPaint){
     glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
     glColor3f(1.0, color(), 0.0); 
     glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
-     glVertex2f(displacementX+init_x+tam_mult*(displacementX+init_x),displacementY+init_y+tam_mult*(displacementY+init_y));
+    glVertex2f(displacementX+init_x+tam_mult*(displacementX+init_x),displacementY+init_y+tam_mult*(displacementY+init_y));
     glEnd();  
 
 }

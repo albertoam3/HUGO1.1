@@ -16,12 +16,21 @@ private:
     float tamTotal;
     //Tamaño de esta sección
     float tamSeccion;
+    static const double PI;
+
 
 public:
     sectionH(nsol::NeuronMorphologySection* _sec);
     float getTamTotal();
     float getTamSection();
     nsol::NeuronMorphologySection getSection();
+    
+private:    
+    float distanciaEntreRegistros(nsol::Node* r1, nsol::Node* r2);
+    float areaCono(nsol::Node* r1,nsol::Node* r2);
+    float volumenCono(nsol::Node* r1, nsol::Node* r2);
+
+
     
 };
 
