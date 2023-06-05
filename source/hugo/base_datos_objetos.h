@@ -5,7 +5,7 @@
 #ifndef HUGO_BASE_DATOS_OBJETOS_H
 #define HUGO_BASE_DATOS_OBJETOS_H
 
-#include "graphics/graphic_objects.h"
+#include "graphics/neuron_g.h"
 #include <vector>
 
 
@@ -13,14 +13,14 @@
 
 class base_datos_objetos {
 private:
-    std::vector<graphic_objects*> list;
+    std::vector<neuron_g*> list;
 
 public:
     base_datos_objetos();
-    void add(graphic_objects* obj);
-    graphic_objects* get(int i);
+    void add(neuron_g* neu);
+    neuron_g* get(int i);
 
-    const std::vector<graphic_objects *> &getList() const;
+    const std::vector<neuron_g *> &getList() const;
 };
 
 

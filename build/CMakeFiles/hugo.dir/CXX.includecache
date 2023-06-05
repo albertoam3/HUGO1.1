@@ -682,33 +682,17 @@ stdint.h
 
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
-QOpenGLWidget
--
-iostream
--
-cmath
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/cmath
-QToolTip
--
-QPoint
--
-
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp
-neurite_g.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h
-
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h
-graphic_objects.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
-nsol/nsol.h
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/nsol/nsol.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.cpp
 sectionH.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
 
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
 nsol/nsol.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/nsol/nsol.h
+QOpenGLWidget
+-
+math.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/math.h
 
 /home/alberto/code/nsol/build/Brion/include/brain/api.h
 brion/defines.h
@@ -2696,10 +2680,6 @@ qfile.h
 qfileinfo.h
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/QPoint
-qpoint.h
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h
-
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
 qstring.h
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h
@@ -3794,10 +3774,6 @@ QtGui/qtguiglobal.h
 qopenglwidget.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qopenglwidget.h
 
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QToolTip
-qtooltip.h
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtooltip.h
-
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget
 qwidget.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
@@ -3818,12 +3794,6 @@ QtWidgets/qtwidgetsglobal.h
 QtCore/qobject.h
 -
 QtCore/qalgorithms.h
--
-
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtooltip.h
-QtWidgets/qtwidgetsglobal.h
--
-QtWidgets/qwidget.h
 -
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h

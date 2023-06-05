@@ -61,7 +61,6 @@ void myopenglwidget::paintGL() {
         model_view=*reinterpret_cast<Eigen::Matrix4f *>(modelview_matrix);
 
     }
-
     for (auto &i: gobject) {
     	i->setScala(scalaTotal);
         i->draw(this);
@@ -232,12 +231,14 @@ void myopenglwidget::positionDraws() {
 }
 
 void myopenglwidget::select_draw_den(bool a) {
+  
     for (auto &i: gobject) {
         i->setAngleXTam(a);
     }
     update();
 }
 void myopenglwidget::select_tam_den(bool a) {
+  
     for (auto &i: gobject) {
         i->setNeuritesTam(a);
     }
@@ -308,4 +309,12 @@ void myopenglwidget::transform() {
     Eigen::Vector4f transformedPoint = invMvMat4 * Eigen::Vector4f(p.x(), p.y(), p.z(), 1.0f);
     result = transformedPoint.head<3>();
   
+}
+void myopenglwidget::setTree(bool a){
+	
+
+	 for (auto &i: gobject) {
+        i->setTree(a);
+    }
+	update();
 }

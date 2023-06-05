@@ -6,6 +6,8 @@
 #define HUGO_SECTIONH_H
 
 #include "nsol/nsol.h"
+#include <QOpenGLWidget>
+#include "math.h"
 
 class sectionH {
 private:
@@ -23,12 +25,16 @@ public:
     sectionH(nsol::NeuronMorphologySection* _sec);
     float getTamTotal();
     float getTamSection();
+    float getVolumenAcumulado();
+    float getVolumenSeccion();
     nsol::NeuronMorphologySection getSection();
+    void drawSections(float x1, float x2, float tam_mult,float angle,float hipotenusa,float dif_angle);
     
 private:    
     float distanciaEntreRegistros(nsol::Node* r1, nsol::Node* r2);
     float areaCono(nsol::Node* r1,nsol::Node* r2);
     float volumenCono(nsol::Node* r1, nsol::Node* r2);
+    
 
 
     

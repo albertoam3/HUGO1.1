@@ -15,17 +15,25 @@ neurite_g::neurite_g(nsol::Neurite* _neurite){
     tam=0;
     scala=1;
     tam=firstSection->getTamTotal()/100;
+    tree=false;
     
 }
 void neurite_g::draw(QOpenGLWidget* windowPaint){
     
-    glPointSize(terminal_nodes*pint*scala*3);
-    glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
-    glColor3f(1.0, color(), 0.0); 
-    glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
-    glVertex2f(displacementX+init_x+tam_mult*(displacementX+init_x),displacementY+init_y+tam_mult*(displacementY+init_y));
-    glEnd();  
-
+    if(tree){
+		drawTree(windowPaint);
+	}
+	else{
+		
+		glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
+		glColor3f(1.0, color(), 0.0); 
+		glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
+		glVertex2f(tam_mult*(init_x)+displacementX+init_x,tam_mult*(init_y)+ displacementY+init_y);
+		if(selected){
+			drawSelc(windowPaint);
+		}
+		glEnd();
+	}  
 }
 void neurite_g::drawSelc(QOpenGLWidget* windowPaint){
     glLineWidth(4.0);
@@ -50,10 +58,23 @@ void neurite_g::drawSelc(QOpenGLWidget* windowPaint){
 
 //Devuelve las coordinates en las que se encuentra el objeto
 void neurite_g::coordinates(){
-    min_X= displacementX + init_x - 0.005*terminal_nodes;
-    min_Y= displacementY + init_y - 0.005*terminal_nodes;
-    max_X= displacementX + init_x + 0.005*terminal_nodes;
-    max_Y= displacementY + init_y + 0.005*terminal_nodes;
+    if(displacementX+init_x >displacementX+init_x+tam_mult*(init_x)){
+		max_X=displacementX+init_x+0.02;
+		min_X=displacementX+init_x+tam_mult*(displacementX+init_x)-0.02;
+	}
+	else{
+		min_X=displacementX+init_x-0.02;
+		max_X=displacementX+init_x+tam_mult*(init_x)+0.02;
+	}
+	
+	if(displacementY+init_y >displacementY+init_y+tam_mult*(displacementY+init_y)){
+		max_Y=displacementY+init_y+0.02;
+		min_Y=displacementY+init_y+tam_mult*(init_y)-0.02;
+	}
+	else{
+		min_Y=displacementY+init_y-0.02;
+		max_Y=displacementY+init_y+tam_mult*(init_y)+0.02;
+	}
     min_Z=displacementZ-0.03;
     max_Z=displacementZ+0.03;
 }
@@ -101,3 +122,34 @@ void neurite_g::setTamMult(float t){
 	tam_mult=t;
 }
 
+
+void neurite_g::drawTree(QOpenGLWidget* windowPaint){
+		
+		glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
+		glColor3f(1.0, color(), 0.0); 
+		float x=tam_mult*(init_x)+ displacementX+init_x;
+		float y=tam_mult*(init_y)+ displacementY+init_y;
+		glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
+		glVertex2f(x,y);
+
+		float hipotenusa=0;
+		float dif_angle=dif_angle=0.7;
+		float distancia=std::sqrt(std::pow(tam_mult*x,2)+pow(tam_mult*y,2));
+		hipotenusa=distancia/std::cos(0.52359878)*0.4;
+		firstSection->drawSections(x,y,tam_mult,angle,hipotenusa,dif_angle);
+	
+		
+		if(selected){
+			drawSelc(windowPaint);
+		}
+		glEnd();
+	
+	
+}
+
+
+void neurite_g::setAngle(float a){
+	
+	angle=a;
+	
+}	

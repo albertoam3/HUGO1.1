@@ -7,15 +7,15 @@ base_datos_objetos::base_datos_objetos() {
 
 }
 
-void base_datos_objetos::add(graphic_objects* obj) {
-    list.push_back(obj);
+void base_datos_objetos::add(neuron_g* neu) {
+    list.push_back(neu);
 }
 
-graphic_objects* base_datos_objetos::get(int i) {
+neuron_g* base_datos_objetos::get(int i) {
     return list[i];
 }
 
-const std::vector<graphic_objects *> &base_datos_objetos::getList() const {
+const std::vector<neuron_g *> &base_datos_objetos::getList() const {
     return list;
 }
 

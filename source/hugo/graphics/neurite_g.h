@@ -8,7 +8,7 @@
 #include "graphic_objects.h"
 #include "nsol/nsol.h"
 #include "sectionH.h"
-
+#include <QLineEdit>
 
 class neurite_g : public graphic_objects{
 private:
@@ -48,9 +48,13 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     int getTerminalNodes() const;
     void setTerminalNodes(int terminalNodes);
 
-    void setAngle(float angle);
     float getTam();
     void setTamMult(float t);
+    
+    void drawTree(QOpenGLWidget* windowPaint);
+
+    void setAngle(float a);   
+
    
 protected:   
     virtual float color()=0 ;

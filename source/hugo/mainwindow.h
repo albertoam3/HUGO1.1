@@ -103,6 +103,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     void creat_list();
+    void checkBoxStateChanged(int state);
 protected:
     QString _lastOpenedFileName;
 };

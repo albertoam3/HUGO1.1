@@ -34,6 +34,9 @@ protected:
     bool dimension;
     
     float scala;
+    
+    bool tree;
+    
 public:
 
 /*Metodo que esta definido en cada clase hijo, quieres pintaran lo que necesiten en la pantalla openGLWidget
@@ -103,6 +106,11 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     }
     
     virtual float getTam()=0;
+    
+    
+	void setTree(bool a){
+		tree=a;
+	}
 };
 #endif //HUGO_GRAPHIC_OBJECTS_H
 

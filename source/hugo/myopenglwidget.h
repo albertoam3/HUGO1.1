@@ -48,6 +48,7 @@ public:
     void select_draw_den(bool a);
     void select_tam_den(bool a);
     void setDimension(bool a);
+    void setTree(bool a);
 
 protected:
 
@@ -61,6 +62,8 @@ protected:
      
     //int calculatePosition(int i);
     void positionDraws();
+    
+    
 private:
     void rotate(float x,float y,float z);
     void rotate2D(float x, float y);
