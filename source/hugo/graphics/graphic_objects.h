@@ -31,8 +31,9 @@ protected:
     float init_z;
     bool angleXTam;
     bool neurites_tam;
+    bool neurites_grosor;
     bool dimension;
-    
+
     float scala;
     
     bool tree;
@@ -94,6 +95,11 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     void seeToolTip(QString texto,QOpenGLWidget *windowPaint){
         QToolTip::showText(QCursor::pos(), texto, windowPaint, QRect(), 5000);
     }
+    
+    void setNeuritesGrosor(bool grosor){
+		neurites_grosor=grosor;
+	}
+    
     void setDimension(bool a){
    	dimension=a;
     }
@@ -104,6 +110,8 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     void setNeuritesTam(bool c){
     	neurites_tam=c;
     }
+    
+
     
     virtual float getTam()=0;
     

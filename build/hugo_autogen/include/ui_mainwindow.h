@@ -53,6 +53,9 @@ public:
     QLabel *label_2;
     QLabel *label_3;
     QCheckBox *setArbol;
+    QGroupBox *groupBox_3;
+    QRadioButton *igual_grosor;
+    QRadioButton *dif_grosor;
     QMenuBar *menubar;
     QMenu *menuopen;
     QStatusBar *statusbar;
@@ -83,10 +86,10 @@ public:
         reset->setGeometry(QRect(380, 560, 89, 25));
         elemC = new QComboBox(centralwidget);
         elemC->setObjectName(QString::fromUtf8("elemC"));
-        elemC->setGeometry(QRect(700, 80, 86, 25));
+        elemC->setGeometry(QRect(690, 40, 86, 25));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(810, 80, 89, 25));
+        pushButton->setGeometry(QRect(800, 40, 89, 25));
         texto_neurona = new QTextEdit(centralwidget);
         texto_neurona->setObjectName(QString::fromUtf8("texto_neurona"));
         texto_neurona->setGeometry(QRect(730, 350, 251, 311));
@@ -98,7 +101,7 @@ public:
         boton2D->setGeometry(QRect(40, 190, 89, 25));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(730, 130, 201, 91));
+        groupBox->setGeometry(QRect(680, 80, 201, 91));
         igual_ang = new QRadioButton(groupBox);
         igual_ang->setObjectName(QString::fromUtf8("igual_ang"));
         igual_ang->setGeometry(QRect(10, 30, 112, 23));
@@ -107,7 +110,7 @@ public:
         terminales_ang->setGeometry(QRect(10, 50, 112, 23));
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(730, 230, 251, 91));
+        groupBox_2->setGeometry(QRect(680, 180, 251, 91));
         igual_ramas = new QRadioButton(groupBox_2);
         igual_ramas->setObjectName(QString::fromUtf8("igual_ramas"));
         igual_ramas->setGeometry(QRect(10, 30, 112, 23));
@@ -122,10 +125,19 @@ public:
         label_2->setGeometry(QRect(260, 70, 221, 20));
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(700, 50, 221, 17));
+        label_3->setGeometry(QRect(690, 20, 221, 17));
         setArbol = new QCheckBox(centralwidget);
         setArbol->setObjectName(QString::fromUtf8("setArbol"));
-        setArbol->setGeometry(QRect(950, 150, 92, 23));
+        setArbol->setGeometry(QRect(960, 210, 92, 23));
+        groupBox_3 = new QGroupBox(centralwidget);
+        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
+        groupBox_3->setGeometry(QRect(900, 90, 161, 80));
+        igual_grosor = new QRadioButton(groupBox_3);
+        igual_grosor->setObjectName(QString::fromUtf8("igual_grosor"));
+        igual_grosor->setGeometry(QRect(10, 30, 112, 23));
+        dif_grosor = new QRadioButton(groupBox_3);
+        dif_grosor->setObjectName(QString::fromUtf8("dif_grosor"));
+        dif_grosor->setGeometry(QRect(10, 50, 112, 23));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -166,6 +178,9 @@ public:
         label_2->setText(QApplication::translate("MainWindow", "PINTAR OBJETOS CARGADOS", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "ELEMENTOS CARGADOS", nullptr));
         setArbol->setText(QApplication::translate("MainWindow", "\303\241rbol", nullptr));
+        groupBox_3->setTitle(QApplication::translate("MainWindow", "Grosor de las ramas", nullptr));
+        igual_grosor->setText(QApplication::translate("MainWindow", "Igual", nullptr));
+        dif_grosor->setText(QApplication::translate("MainWindow", "Diferente", nullptr));
         menuopen->setTitle(QApplication::translate("MainWindow", "open", nullptr));
     } // retranslateUi
 

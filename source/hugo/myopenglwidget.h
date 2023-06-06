@@ -49,6 +49,7 @@ public:
     void select_tam_den(bool a);
     void setDimension(bool a);
     void setTree(bool a);
+    void select_grosor_den(bool a);
 
 protected:
 

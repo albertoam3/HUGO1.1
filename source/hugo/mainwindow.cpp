@@ -17,6 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
     button_igual_rama = ui->centralwidget->findChild<QGroupBox *>("groupBox_2")->findChild<QRadioButton *>("igual_ramas");
     button_dif_rama = ui->centralwidget->findChild<QGroupBox *>("groupBox_2")->findChild<QRadioButton *>("dif_rama");
 
+	button_igual_grosor = ui->centralwidget->findChild<QGroupBox *>("groupBox_3")->findChild<QRadioButton *>("igual_grosor");
+    button_dif_grosor = ui->centralwidget->findChild<QGroupBox *>("groupBox_3")->findChild<QRadioButton *>("dif_grosor");
+
     list = ui->list;
     elementosCargados = ui->elemC;
     //Asigno a _openGLWidget la pantalla creada con mainwindow.ui
@@ -49,6 +52,10 @@ void MainWindow::connect_buttons() {
     QObject::connect(button_igual_rama, SIGNAL(clicked()), this, SLOT(igual_tam()));
     QObject::connect(button_dif_rama, SIGNAL(clicked()), this, SLOT(dif_tam()));
     QObject::connect(ui->setArbol, &QCheckBox::stateChanged, this, &MainWindow::checkBoxStateChanged);
+    QObject::connect(button_igual_grosor, SIGNAL(clicked()), this, SLOT(igual_grosor()));
+    QObject::connect(button_dif_grosor, SIGNAL(clicked()), this, SLOT(dif_grosor()));
+    
+    
 
 }
 
@@ -206,7 +213,15 @@ void MainWindow::checkBoxStateChanged(int state) {
 }
 
 
+void MainWindow::igual_grosor(){
+	_openGLWidget->select_grosor_den(false);
+	
+	
+}
 
-
+void MainWindow::dif_grosor(){
+	_openGLWidget->select_grosor_den(true);
+	
+}
 
 

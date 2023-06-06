@@ -40,19 +40,20 @@ void neuron_g::draw(QOpenGLWidget* windowPaint){
    if(dimension==false){
      
      tamNeurite();
-     
+     grosorNeurite();
      for(auto & dend : dends){
 				
                 dend.setNeuritesTam(neurites_tam);
                 dend.setDisplacements(displacementX,displacementY);
                 dend.setTree(tree);
+                
      }
      ax[0]->setNeuritesTam(neurites_tam);
      ax[0]->setDisplacements(displacementX,displacementY);
      ax[0]->setTree(tree);
-       
-	(angleXTam == false) ? auxDrawAngleEqual(windowPaint) : auxDrawAngleTam(windowPaint);
-
+     
+	 (angleXTam == false) ? auxDrawAngleEqual(windowPaint) : auxDrawAngleTam(windowPaint);
+	
 
      som->setDisplacements(displacementX, displacementY);
      som->coordInitials(init_x, init_y);
@@ -276,7 +277,30 @@ void neuron_g::tamNeurite(){
 	}
 	
 }
+void neuron_g::grosorNeurite(){
+	if(neurites_grosor==false){
 
+	 	ax[0]->setGrosor(1);
+	 	ax[0]->setNeuritesGrosor(false);	
+	  	for (auto & item : dends) {
+        		item.setGrosor(1);
+        		item.setNeuritesGrosor(false);
+		}
+	}
+	else{
+
+		ax[0]->setGrosor(ax[0]->grosorTotal()/100);	
+		ax[0]->setNeuritesGrosor(true);	
+	  	for (auto & item : dends) {
+        		item.setGrosor(item.grosorTotal()/100);
+        		item.setNeuritesGrosor(true);
+	
+		}
+	}
+	
+}
+	
+	
 
 //Falta de implementar
 float neuron_g::getTam(){

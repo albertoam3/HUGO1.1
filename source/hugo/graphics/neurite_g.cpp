@@ -16,7 +16,7 @@ neurite_g::neurite_g(nsol::Neurite* _neurite){
     scala=1;
     tam=firstSection->getTamTotal()/100;
     tree=false;
-    
+    neurites_grosor=false;
 }
 void neurite_g::draw(QOpenGLWidget* windowPaint){
     
@@ -24,7 +24,8 @@ void neurite_g::draw(QOpenGLWidget* windowPaint){
 		drawTree(windowPaint);
 	}
 	else{
-		
+
+		glLineWidth(grosor);
 		glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
 		glColor3f(1.0, color(), 0.0); 
 		glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
@@ -125,18 +126,28 @@ void neurite_g::setTamMult(float t){
 
 void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 		
+		bool g;
+		if(neurites_grosor==true){
+			glLineWidth(firstSection->getVolumenSeccion()/60*10);
+			g=true;
+		}
+		else{
+			g=false;
+			glLineWidth(1);
+		}
+		
 		glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
 		glColor3f(1.0, color(), 0.0); 
 		float x=tam_mult*(init_x)+ displacementX+init_x;
 		float y=tam_mult*(init_y)+ displacementY+init_y;
-		glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
+		glVertex2f(displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
 		glVertex2f(x,y);
 
 		float hipotenusa=0;
 		float dif_angle=dif_angle=0.7;
-		float distancia=std::sqrt(std::pow(tam_mult*x,2)+pow(tam_mult*y,2));
+		float distancia=std::sqrt(std::pow(tam_mult*(x-displacementX),2)+pow(tam_mult*(y-displacementY),2));
 		hipotenusa=distancia/std::cos(0.52359878)*0.4;
-		firstSection->drawSections(x,y,tam_mult,angle,hipotenusa,dif_angle);
+		firstSection->drawSections(x,y,angle,hipotenusa,dif_angle,g);
 	
 		
 		if(selected){
@@ -153,3 +164,12 @@ void neurite_g::setAngle(float a){
 	angle=a;
 	
 }	
+
+void neurite_g::setGrosor(float a){
+	grosor=a;
+}
+
+float neurite_g::grosorTotal(){
+	return firstSection->getVolumenAcumulado();
+	
+}

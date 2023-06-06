@@ -28,7 +28,7 @@ public:
     float getVolumenAcumulado();
     float getVolumenSeccion();
     nsol::NeuronMorphologySection getSection();
-    void drawSections(float x1, float x2, float tam_mult,float angle,float hipotenusa,float dif_angle);
+    void drawSections(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g);
     
 private:    
     float distanciaEntreRegistros(nsol::Node* r1, nsol::Node* r2);

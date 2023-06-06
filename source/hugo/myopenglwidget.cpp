@@ -245,6 +245,14 @@ void myopenglwidget::select_tam_den(bool a) {
     update();
 }
 
+void myopenglwidget::select_grosor_den(bool a) {
+
+    for (auto &i: gobject) {
+        i->setNeuritesGrosor(a);
+    }
+    update();
+}
+
 
 
 void myopenglwidget::rotate(float x,float y,float z){

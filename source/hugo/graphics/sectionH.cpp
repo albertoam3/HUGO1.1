@@ -102,7 +102,7 @@ nsol::NeuronMorphologySection sectionH::getSection(){
 	return *sec;
 }
 
-void sectionH::drawSections(float x1, float x2, float tam_mult,float angle,float hipotenusa,float dif_angle){
+void sectionH::drawSections(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g){
 		
 	if(sec->children().size()==2){
 		float valorX,valorY,valorX2,valorY2;
@@ -114,20 +114,33 @@ void sectionH::drawSections(float x1, float x2, float tam_mult,float angle,float
 		valorY2=x2+sin(angle+1.30899694*dif_angle)*hipotenusa;
 		dif_angle*=0.6;
 			
-		glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
-		glVertex2f(valorX,valorY);
 		
-		glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
-		glVertex2f(valorX2,valorY2);	
+		
 		int i=0;
 		for (nsol::Section* s : sec->children()) {
 			nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
 			sectionH secAux(section);
 			if(i==0){
-				secAux.drawSections(valorX,valorY,tam_mult,angle,hipotenusa,dif_angle);
+				if(g){
+					float grosor=secAux.getVolumenSeccion();
+					glEnd();
+					glLineWidth(grosor/50*10);
+					glBegin(GL_LINES);	
+				}
+				glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
+				glVertex2f(valorX,valorY);
+				secAux.drawSections(valorX,valorY,angle,hipotenusa,dif_angle,g);
 			}
 			else{
-				secAux.drawSections(valorX2,valorY2,tam_mult,angle,hipotenusa,dif_angle);
+				if(g){
+					float grosor=secAux.getVolumenSeccion();
+					glEnd();
+					glLineWidth(grosor/50*10);
+					glBegin(GL_LINES);	
+				}
+				glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
+				glVertex2f(valorX2,valorY2);	
+				secAux.drawSections(valorX2,valorY2,angle,hipotenusa,dif_angle,g);
 			}
 			i++;
 		}

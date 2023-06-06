@@ -19,6 +19,8 @@ private:
     sectionH* firstSection;
     float tam;
     float tam_mult;
+    float grosor;
+    
 
 public:
 
@@ -53,8 +55,12 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     
     void drawTree(QOpenGLWidget* windowPaint);
 
-    void setAngle(float a);   
-
+    void setAngle(float a);  
+     
+	void setGrosor(float a);
+	
+	float grosorTotal();
+	
    
 protected:   
     virtual float color()=0 ;

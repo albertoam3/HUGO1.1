@@ -37,18 +37,16 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 private:
-    QPushButton *button_draw;
-    QPushButton *button_reset;
-    QPushButton *button_load;
+ 
     QComboBox *list;
   
     QComboBox* elementosCargados;
-
-    QPushButton * button_3D;
-    QPushButton * button_2D;
     
     QRadioButton *button_dif_rama;
     QRadioButton *button_igual_rama;
+    
+    QRadioButton *button_dif_grosor;
+    QRadioButton *button_igual_grosor;
     
 
     
@@ -93,6 +91,8 @@ public Q_SLOTS:
     
     void igual_tam();
     void dif_tam();
+    void dif_grosor();
+    void igual_grosor();
     
 private slots:
     void on_igual_ang_clicked();
