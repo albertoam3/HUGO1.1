@@ -682,9 +682,31 @@ stdint.h
 
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.cpp
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
+QOpenGLWidget
+-
+iostream
+-
+cmath
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/cmath
+QToolTip
+-
+QPoint
+-
+
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp
+neurite_g.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h
+
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h
+graphic_objects.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
+nsol/nsol.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/nsol/nsol.h
 sectionH.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
+QLineEdit
+-
 
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
 nsol/nsol.h
@@ -2680,6 +2702,10 @@ qfile.h
 qfileinfo.h
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h
 
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QPoint
+qpoint.h
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h
+
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
 qstring.h
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h
@@ -3650,6 +3676,14 @@ QtGui/qcolor.h
 QtGui/qbrush.h
 -
 
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h
+QtGui/qtguiglobal.h
+-
+QtGui/qcolor.h
+-
+QtGui/qbrush.h
+-
+
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h
 QtGui/qtguiglobal.h
 -
@@ -3714,6 +3748,46 @@ QtCore/qpair.h
 QtCore/qobjectdefs.h
 -
 
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h
+QtGui/qtguiglobal.h
+-
+QtCore/qstring.h
+-
+QtCore/qshareddata.h
+-
+QtGui/qtextformat.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h
+QtGui/qtguiglobal.h
+-
+QtGui/qcolor.h
+-
+QtGui/qfont.h
+-
+QtCore/qshareddata.h
+-
+QtCore/qvector.h
+-
+QtCore/qvariant.h
+-
+QtGui/qpen.h
+-
+QtGui/qbrush.h
+-
+QtGui/qtextoption.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h
+QtGui/qtguiglobal.h
+-
+QtCore/qnamespace.h
+-
+QtCore/qchar.h
+-
+QtCore/qmetatype.h
+-
+
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h
@@ -3770,13 +3844,39 @@ QtGui/qwindowdefs_win.h
 QtGui/qtguiglobal.h
 -
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
+qlineedit.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlineedit.h
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QOpenGLWidget
 qopenglwidget.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qopenglwidget.h
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QToolTip
+qtooltip.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtooltip.h
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget
 qwidget.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qwidget.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlineedit.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+QtGui/qtextcursor.h
+-
+QtCore/qstring.h
+-
+QtCore/qmargins.h
+-
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qopenglwidget.h
 QtWidgets/qtwidgetsglobal.h
@@ -3794,6 +3894,12 @@ QtWidgets/qtwidgetsglobal.h
 QtCore/qobject.h
 -
 QtCore/qalgorithms.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtooltip.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qwidget.h
 -
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h

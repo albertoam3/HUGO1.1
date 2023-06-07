@@ -38,6 +38,8 @@ protected:
     
     bool tree;
     
+    float variableGrosor;
+    
 public:
 
 /*Metodo que esta definido en cada clase hijo, quieres pintaran lo que necesiten en la pantalla openGLWidget
@@ -112,6 +114,11 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     }
     
 
+    void setNeuritesVariableGrosor(float a){
+		variableGrosor=a;
+		
+	}
+    
     
     virtual float getTam()=0;
     

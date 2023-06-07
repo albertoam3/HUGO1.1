@@ -80,7 +80,7 @@ void myopenglwidget::setDraw(bool a) {
     mouseX = 0;
     mouseY = 0;
     for (auto &i: gobject) {
-        i->displacement(mouseX, mouseY,0);
+        i->displacementN(mouseX, mouseY,0);
         i->resetSelect();
     }
     positionDraws();
@@ -88,7 +88,7 @@ void myopenglwidget::setDraw(bool a) {
 
 }
 
-void myopenglwidget::setGraphicsObject(graphic_objects *gobj) {
+void myopenglwidget::setGraphicsObject(neuron_g *gobj) {
     gobject.push_back(gobj);
 
 }
@@ -146,7 +146,7 @@ void myopenglwidget::mouseMoveEvent(QMouseEvent *event_) {
             if (i != nullptr && i->isSelected()) {
                 encontrado = true;
                 if (i->coord_include(result.x(), result.y()))
-                    i->displacement(result.x(), result.y(),result.z());
+                    i->displacementN(result.x(), result.y(),result.z());
             }
         }
         if (!encontrado) {
@@ -253,7 +253,13 @@ void myopenglwidget::select_grosor_den(bool a) {
     update();
 }
 
-
+void myopenglwidget::variableGrosor(float a){
+	for (auto &i: gobject) {
+        i->setNeuritesVariableGrosor(a);
+    }
+    update();
+	
+}
 
 void myopenglwidget::rotate(float x,float y,float z){
     Eigen::Matrix3f rot;

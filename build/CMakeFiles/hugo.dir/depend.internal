@@ -5530,11 +5530,20 @@ CMakeFiles/hugo.dir/myopenglwidget.cpp.o
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
+ /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
+ /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h
+ /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.h
+ /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
+ /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/soma_g.h
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.cpp
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.h
+ /home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.h
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/dendrites.h
+ /home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.h
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/objetos.h
+ /home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/soma.h
  /home/alberto/code/nsol/build/Brion/include/brain/api.h
  /home/alberto/code/nsol/build/Brion/include/brain/brain.h
  /home/alberto/code/nsol/build/Brion/include/brain/version.h
@@ -5839,6 +5848,8 @@ CMakeFiles/hugo.dir/myopenglwidget.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QMouseEvent
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QOpenGLContext
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QOpenGLFunctions
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QPaintEvent
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QSurfaceFormat
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h
@@ -5857,8 +5868,10 @@ CMakeFiles/hugo.dir/myopenglwidget.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qopenglfunctions.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qopenglversionfunctions.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainterpath.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h
@@ -5866,6 +5879,9 @@ CMakeFiles/hugo.dir/myopenglwidget.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qsurfaceformat.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h
@@ -5873,9 +5889,12 @@ CMakeFiles/hugo.dir/myopenglwidget.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QOpenGLWidget
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QToolTip
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlineedit.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qopenglwidget.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtooltip.h

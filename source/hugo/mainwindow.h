@@ -41,25 +41,13 @@ private:
     QComboBox *list;
   
     QComboBox* elementosCargados;
-    
-    QRadioButton *button_dif_rama;
-    QRadioButton *button_igual_rama;
-    
-    QRadioButton *button_dif_grosor;
-    QRadioButton *button_igual_grosor;
-    
-
-    
-
+ 
     myopenglwidget *_openGLWidget;
     axon* ax;
     dendrites* den;
     neuron* neu;
     soma* som;
-
-
     base_datos_objetos* base;
-
     nsol::NeuronsMap neurons;
 
 
@@ -104,6 +92,7 @@ private:
     Ui::MainWindow *ui;
     void creat_list();
     void checkBoxStateChanged(int state);
+    void initGrosorComboBox();
 protected:
     QString _lastOpenedFileName;
 };

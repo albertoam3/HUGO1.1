@@ -11,16 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("HUGO");
 
-    
-    
-    
-    button_igual_rama = ui->centralwidget->findChild<QGroupBox *>("groupBox_2")->findChild<QRadioButton *>("igual_ramas");
-    button_dif_rama = ui->centralwidget->findChild<QGroupBox *>("groupBox_2")->findChild<QRadioButton *>("dif_rama");
-
-	button_igual_grosor = ui->centralwidget->findChild<QGroupBox *>("groupBox_3")->findChild<QRadioButton *>("igual_grosor");
-    button_dif_grosor = ui->centralwidget->findChild<QGroupBox *>("groupBox_3")->findChild<QRadioButton *>("dif_grosor");
-
-    list = ui->list;
+    ui->list;
     elementosCargados = ui->elemC;
     //Asigno a _openGLWidget la pantalla creada con mainwindow.ui
     _openGLWidget = ui->openGLWidget;
@@ -33,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     base = new base_datos_objetos();
 
- 
+	initGrosorComboBox();
     creat_list();
 
 }
@@ -49,11 +40,11 @@ void MainWindow::connect_buttons() {
     QObject::connect(ui->load, SIGNAL(clicked()), this, SLOT(load()));
     QObject::connect(ui->boton2D, SIGNAL(clicked()), this, SLOT(_2D_clicked()));
     QObject::connect(ui->boton3D, SIGNAL(clicked()), this, SLOT(_3D_clicked()));
-    QObject::connect(button_igual_rama, SIGNAL(clicked()), this, SLOT(igual_tam()));
-    QObject::connect(button_dif_rama, SIGNAL(clicked()), this, SLOT(dif_tam()));
+    QObject::connect(ui->igual_ramas, SIGNAL(clicked()), this, SLOT(igual_tam()));
+    QObject::connect(ui->dif_rama, SIGNAL(clicked()), this, SLOT(dif_tam()));
     QObject::connect(ui->setArbol, &QCheckBox::stateChanged, this, &MainWindow::checkBoxStateChanged);
-    QObject::connect(button_igual_grosor, SIGNAL(clicked()), this, SLOT(igual_grosor()));
-    QObject::connect(button_dif_grosor, SIGNAL(clicked()), this, SLOT(dif_grosor()));
+    QObject::connect(ui->igual_grosor, SIGNAL(clicked()), this, SLOT(igual_grosor()));
+    QObject::connect(ui->dif_grosor, SIGNAL(clicked()), this, SLOT(dif_grosor()));
     
     
 
@@ -75,7 +66,7 @@ void MainWindow::load() {
 
 //Selecciono el objeto de la list que pinto y se lo mando a qopenGLWidget
 void MainWindow::selecction() {
-    int index = list->currentIndex();
+    int index = ui->list->currentIndex();
     if(index<base->getList().size()){
         _openGLWidget->setGraphicsObject(base->get(index));
         elementosCargados->addItem(base->get(index)->getName());
@@ -84,7 +75,7 @@ void MainWindow::selecction() {
 
 void MainWindow::creat_list() {
     for (int i = 0; i < base->getList().size(); i++) {
-        list->addItem(base->get(i)->getName());
+        ui->list->addItem(base->get(i)->getName());
     }
 }
 
@@ -185,7 +176,7 @@ void MainWindow::openSWCFileThroughDialog()
 }
 void MainWindow::addList(const std::string& st){
     QString qstr = QString::fromStdString(st);
-    list->addItem(qstr);
+    ui->list->addItem(qstr);
 }
 
 void MainWindow::_2D_clicked(){
@@ -220,8 +211,16 @@ void MainWindow::igual_grosor(){
 }
 
 void MainWindow::dif_grosor(){
-	_openGLWidget->select_grosor_den(true);
+	 _openGLWidget->select_grosor_den(true);
+	 _openGLWidget->variableGrosor(ui->grosorComboBox->currentIndex());
+	  std::cout<<ui->grosorComboBox->currentIndex()<<"\n";
 	
 }
 
-
+void MainWindow::initGrosorComboBox(){
+	ui->grosorComboBox->addItem("Tamaño");
+	ui->grosorComboBox->addItem("Volumen");
+	ui->grosorComboBox->addItem("Nodos terminales");
+	
+	
+}

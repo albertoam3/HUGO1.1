@@ -56,6 +56,7 @@ public:
     QGroupBox *groupBox_3;
     QRadioButton *igual_grosor;
     QRadioButton *dif_grosor;
+    QComboBox *grosorComboBox;
     QMenuBar *menubar;
     QMenu *menuopen;
     QStatusBar *statusbar;
@@ -64,7 +65,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1072, 706);
+        MainWindow->resize(1110, 706);
         actionswc_file = new QAction(MainWindow);
         actionswc_file->setObjectName(QString::fromUtf8("actionswc_file"));
         centralwidget = new QWidget(MainWindow);
@@ -101,7 +102,7 @@ public:
         boton2D->setGeometry(QRect(40, 190, 89, 25));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(680, 80, 201, 91));
+        groupBox->setGeometry(QRect(680, 80, 191, 91));
         igual_ang = new QRadioButton(groupBox);
         igual_ang->setObjectName(QString::fromUtf8("igual_ang"));
         igual_ang->setGeometry(QRect(10, 30, 112, 23));
@@ -128,20 +129,23 @@ public:
         label_3->setGeometry(QRect(690, 20, 221, 17));
         setArbol = new QCheckBox(centralwidget);
         setArbol->setObjectName(QString::fromUtf8("setArbol"));
-        setArbol->setGeometry(QRect(960, 210, 92, 23));
+        setArbol->setGeometry(QRect(680, 290, 92, 23));
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(900, 90, 161, 80));
+        groupBox_3->setGeometry(QRect(890, 90, 201, 80));
         igual_grosor = new QRadioButton(groupBox_3);
         igual_grosor->setObjectName(QString::fromUtf8("igual_grosor"));
         igual_grosor->setGeometry(QRect(10, 30, 112, 23));
         dif_grosor = new QRadioButton(groupBox_3);
         dif_grosor->setObjectName(QString::fromUtf8("dif_grosor"));
         dif_grosor->setGeometry(QRect(10, 50, 112, 23));
+        grosorComboBox = new QComboBox(groupBox_3);
+        grosorComboBox->setObjectName(QString::fromUtf8("grosorComboBox"));
+        grosorComboBox->setGeometry(QRect(100, 30, 86, 25));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1072, 22));
+        menubar->setGeometry(QRect(0, 0, 1110, 22));
         menuopen = new QMenu(menubar);
         menuopen->setObjectName(QString::fromUtf8("menuopen"));
         MainWindow->setMenuBar(menubar);

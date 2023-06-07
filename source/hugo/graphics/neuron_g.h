@@ -24,7 +24,8 @@ private:
     soma_g* som;
     std::vector<dendrite_g> dends;
     float tam_max_neurite;
-
+    
+    float variableGrosor;
     
 public:
     neuron_g(nsol::Neuron *_neu);
@@ -54,8 +55,9 @@ public:
     float getTam();
     void tamNeurite();
     void grosorNeurite();
-
-
+    void setNeuritesVariableGrosor(float a);
+	void displacementN(float x,float y,float z);
+	
 };
 
 

@@ -10,6 +10,15 @@
 #include "sectionH.h"
 #include <QLineEdit>
 
+
+enum class VariableEstado
+  {
+    Tamano= 0 ,
+    Volumen,
+    nodosTerminales
+  };
+
+
 class neurite_g : public graphic_objects{
 private:
     nsol::Neurite *neurite;
@@ -20,6 +29,7 @@ private:
     float tam;
     float tam_mult;
     float grosor;
+    VariableEstado variable_grosor;
     
 
 public:
@@ -60,6 +70,8 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 	void setGrosor(float a);
 	
 	float grosorTotal();
+	
+	void setVariableGrosor(int a);
 	
    
 protected:   

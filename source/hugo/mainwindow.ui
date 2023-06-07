@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1072</width>
+    <width>1110</width>
     <height>706</height>
    </rect>
   </property>
@@ -137,7 +137,7 @@
      <rect>
       <x>680</x>
       <y>80</y>
-      <width>201</width>
+      <width>191</width>
       <height>91</height>
      </rect>
     </property>
@@ -252,8 +252,8 @@
    <widget class="QCheckBox" name="setArbol">
     <property name="geometry">
      <rect>
-      <x>960</x>
-      <y>210</y>
+      <x>680</x>
+      <y>290</y>
       <width>92</width>
       <height>23</height>
      </rect>
@@ -265,9 +265,9 @@
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>900</x>
+      <x>890</x>
       <y>90</y>
-      <width>161</width>
+      <width>201</width>
       <height>80</height>
      </rect>
     </property>
@@ -300,6 +300,16 @@
       <string>Diferente</string>
      </property>
     </widget>
+    <widget class="QComboBox" name="grosorComboBox">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>30</y>
+       <width>86</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -307,7 +317,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1072</width>
+     <width>1110</width>
      <height>22</height>
     </rect>
    </property>

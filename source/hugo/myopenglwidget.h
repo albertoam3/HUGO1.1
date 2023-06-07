@@ -7,6 +7,7 @@
 #include "objetos/objetos.h"
 #include <QMouseEvent>
 #include "graphics/graphic_objects.h"
+#include "graphics/neuron_g.h"
 #include <Eigen/Dense>
 
 
@@ -18,7 +19,7 @@ private:
     float mouseX,mouseY;
     bool buttonDrawActive;
     objetos *objet_paint;
-    std::vector<graphic_objects*> gobject;
+    std::vector<neuron_g*> gobject;
 
 
     float translationX,translationY;
@@ -43,13 +44,14 @@ public:
 
     myopenglwidget(QWidget *parent =nullptr);
     void setDraw(bool a);
-    void setGraphicsObject(graphic_objects *gobj);
+    void setGraphicsObject(neuron_g *gobj);
     void resetList();
     void select_draw_den(bool a);
     void select_tam_den(bool a);
     void setDimension(bool a);
     void setTree(bool a);
     void select_grosor_den(bool a);
+    void variableGrosor(float a);
 
 protected:
 

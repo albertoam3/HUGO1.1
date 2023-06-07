@@ -17,6 +17,7 @@ neurite_g::neurite_g(nsol::Neurite* _neurite){
     tam=firstSection->getTamTotal()/100;
     tree=false;
     neurites_grosor=false;
+    variable_grosor=VariableEstado::Tamano;
 }
 void neurite_g::draw(QOpenGLWidget* windowPaint){
     
@@ -24,7 +25,21 @@ void neurite_g::draw(QOpenGLWidget* windowPaint){
 		drawTree(windowPaint);
 	}
 	else{
-
+		switch(variable_grosor){
+			case VariableEstado::Tamano:
+				//std::cout<<"holaaaq\n";
+				break;
+			case VariableEstado::Volumen:
+				//std::cout<<"Adios\n";
+				break;
+			case VariableEstado::nodosTerminales:
+				//std::cout<<"Me quedo\n";
+				break;
+				
+				
+			
+		}
+		
 		glLineWidth(grosor);
 		glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
 		glColor3f(1.0, color(), 0.0); 
@@ -171,5 +186,23 @@ void neurite_g::setGrosor(float a){
 
 float neurite_g::grosorTotal(){
 	return firstSection->getVolumenAcumulado();
+	
+}
+void neurite_g::setVariableGrosor(int a){
+	
+  switch ( a )
+      {
+         case 0:
+            variable_grosor=VariableEstado::Tamano;
+            break;
+         case 1:
+            variable_grosor=VariableEstado::Volumen;
+            break;
+         case 2:
+			variable_grosor=VariableEstado::nodosTerminales;
+			break;
+         default:
+			variable_grosor=VariableEstado::Tamano;
+      }
 	
 }

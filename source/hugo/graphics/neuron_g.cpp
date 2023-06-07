@@ -72,7 +72,6 @@ void neuron_g::draw(QOpenGLWidget* windowPaint){
 
      }
     }
-    
     else{
 	float x=0;
 	float y=0;
@@ -306,5 +305,20 @@ void neuron_g::grosorNeurite(){
 float neuron_g::getTam(){
 	return 0;
 }
+
+void neuron_g::displacementN(float x,float y,float z){
+	graphic_objects::displacement(x,y,z);
+}
+
+
+void neuron_g::setNeuritesVariableGrosor(float a){
+		
+		std::cout<<"Envio un "<<a<<"\n";
+		ax[0]->setVariableGrosor(a);	
+	  	for (auto & item : dends) {
+        		item.setVariableGrosor(a);
+        	}
+}
+
 
 
