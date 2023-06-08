@@ -1,91 +1,91 @@
 {
-	"BUILD_DIR" : "/home/jesarebar/Code/HUGOV2/HUGO1.1/build/hugo_autogen",
-	"CMAKE_BINARY_DIR" : "/home/jesarebar/Code/HUGOV2/HUGO1.1/build",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/jesarebar/Code/HUGOV2/HUGO1.1/build",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo",
+	"BUILD_DIR" : "/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen",
+	"CMAKE_BINARY_DIR" : "/home/alberto/CLionProjects/HUGO1.1/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/alberto/CLionProjects/HUGO1.1/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
-	"CMAKE_SOURCE_DIR" : "/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo",
+	"CMAKE_SOURCE_DIR" : "/home/alberto/CLionProjects/HUGO1.1/source/hugo",
 	"HEADERS" : 
 	[
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/base_datos_objetos.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.h",
 			"MU",
 			"EWIEGA46WW/moc_base_datos_objetos.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/axon_g.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h",
 			"MU",
 			"4NLTMHEJ4E/moc_axon_g.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/dendrite_g.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h",
 			"MU",
 			"4NLTMHEJ4E/moc_dendrite_g.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/graphic_objects.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h",
 			"MU",
 			"4NLTMHEJ4E/moc_graphic_objects.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/neurite_g.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h",
 			"MU",
 			"4NLTMHEJ4E/moc_neurite_g.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/neuron_g.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.h",
 			"MU",
 			"4NLTMHEJ4E/moc_neuron_g.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/sectionH.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h",
 			"MU",
 			"4NLTMHEJ4E/moc_sectionH.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/soma_g.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/soma_g.h",
 			"MU",
 			"4NLTMHEJ4E/moc_soma_g.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/mainwindow.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/myopenglwidget.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.h",
 			"MU",
 			"EWIEGA46WW/moc_myopenglwidget.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/objetos/axon.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.h",
 			"MU",
 			"C4X553CNME/moc_axon.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/objetos/dendrites.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/dendrites.h",
 			"MU",
 			"C4X553CNME/moc_dendrites.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/objetos/neuron.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.h",
 			"MU",
 			"C4X553CNME/moc_neuron.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/objetos/objetos.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/objetos.h",
 			"MU",
 			"C4X553CNME/moc_objetos.cpp"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/objetos/soma.h",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/soma.h",
 			"MU",
 			"C4X553CNME/moc_soma.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/jesarebar/Code/HUGOV2/HUGO1.1/build/hugo_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/jesarebar/Code/HUGOV2/HUGO1.1/build/hugo_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"BRAIN_USE_MVD3",
@@ -104,30 +104,30 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/home/jesarebar/Code/HUGOV2/HUGO1.1/build",
-		"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo",
+		"/home/alberto/CLionProjects/HUGO1.1/build",
+		"/home/alberto/CLionProjects/HUGO1.1/source/hugo",
 		"/usr/include/x86_64-linux-gnu/qt5",
 		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
 		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
 		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
 		"/usr/include/x86_64-linux-gnu/qt5/QtOpenGL",
-		"/home/jesarebar/Code/nsol/source",
-		"/home/jesarebar/Code/nsol/build/include",
-		"/home/jesarebar/Code/nsol/build",
+		"/home/alberto/code/nsol/source",
+		"/home/alberto/code/nsol/build/include",
+		"/home/alberto/code/nsol/build",
 		"/usr/include/hdf5/serial",
-		"/home/jesarebar/Code/nsol/source/Brion",
-		"/home/jesarebar/Code/nsol/build/Brion/include",
-		"/home/jesarebar/Code/nsol/build/Brion",
-		"/home/jesarebar/Code/nsol/source/Servus",
-		"/home/jesarebar/Code/nsol/build/Servus/include",
-		"/home/jesarebar/Code/nsol/build/Servus",
-		"/home/jesarebar/Code/nsol/source/vmmlib",
-		"/home/jesarebar/Code/nsol/build/vmmlib/include",
-		"/home/jesarebar/Code/nsol/build/vmmlib",
-		"/home/jesarebar/Code/nsol/source/FiReS",
-		"/home/jesarebar/Code/nsol/build/FiReS/include",
-		"/home/jesarebar/Code/nsol/build/FiReS",
+		"/home/alberto/code/nsol/source/Brion",
+		"/home/alberto/code/nsol/build/Brion/include",
+		"/home/alberto/code/nsol/build/Brion",
+		"/home/alberto/code/nsol/source/Servus",
+		"/home/alberto/code/nsol/build/Servus/include",
+		"/home/alberto/code/nsol/build/Servus",
+		"/home/alberto/code/nsol/source/vmmlib",
+		"/home/alberto/code/nsol/build/vmmlib/include",
+		"/home/alberto/code/nsol/build/vmmlib",
+		"/home/alberto/code/nsol/source/FiReS",
+		"/home/alberto/code/nsol/build/FiReS/include",
+		"/home/alberto/code/nsol/build/FiReS",
 		"/usr/include",
 		"/usr/include/c++/9",
 		"/usr/include/x86_64-linux-gnu/c++/9",
@@ -147,69 +147,69 @@
 		"-c",
 		"/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/jesarebar/Code/HUGOV2/HUGO1.1/build/hugo_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "/home/jesarebar/Code/HUGOV2/HUGO1.1/build/CMakeFiles/hugo_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
 	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
 	"QT_VERSION_MAJOR" : 5,
-	"SETTINGS_FILE" : "/home/jesarebar/Code/HUGOV2/HUGO1.1/build/CMakeFiles/hugo_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/base_datos_objetos.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.cpp",
 			"MU"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/axon_g.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.cpp",
 			"MU"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/dendrite_g.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.cpp",
 			"MU"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/neurite_g.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp",
 			"MU"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/neuron_g.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.cpp",
 			"MU"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/sectionH.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.cpp",
 			"MU"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/graphics/soma_g.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/soma_g.cpp",
 			"MU"
 		],
-		[ "/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/hugo.cpp", "MU" ],
+		[ "/home/alberto/CLionProjects/HUGO1.1/source/hugo/hugo.cpp", "MU" ],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/mainwindow.cpp",
-			"MU"
-		],
-		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/myopenglwidget.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.cpp",
 			"MU"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/objetos/axon.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.cpp",
 			"MU"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/objetos/dendrites.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.cpp",
 			"MU"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/objetos/neuron.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/dendrites.cpp",
 			"MU"
 		],
 		[
-			"/home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo/objetos/soma.cpp",
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.cpp",
+			"MU"
+		],
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/soma.cpp",
 			"MU"
 		]
 	],

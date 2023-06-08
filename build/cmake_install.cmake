@@ -1,4 +1,4 @@
-# Install script for directory: /home/jesarebar/Code/HUGOV2/HUGO1.1/source/hugo
+# Install script for directory: /home/alberto/CLionProjects/HUGO1.1/source/hugo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/jesarebar/Code/HUGOV2/HUGO1.1/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alberto/CLionProjects/HUGO1.1/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

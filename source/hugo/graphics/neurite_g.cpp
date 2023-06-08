@@ -60,7 +60,7 @@ void neurite_g::draw(QOpenGLWidget* windowPaint){
 		if(neurites_tam)
 			glVertex2f(tam_mult*(init_x)+displacementX+init_x,tam_mult*(init_y)+ displacementY+init_y);
 		else
-			glVertex2f(1.5*(init_x)+displacementX+init_x,1.5*(init_y)+ displacementY+init_y);
+			glVertex2f(2*(init_x)+displacementX+init_x,2*(init_y)+ displacementY+init_y);
 			
 		if(selected){
 			drawSelc(windowPaint);
@@ -91,22 +91,33 @@ void neurite_g::drawSelc(QOpenGLWidget* windowPaint){
 
 //Devuelve las coordinates en las que se encuentra el objeto
 void neurite_g::coordinates(){
-    if(displacementX+init_x >displacementX+init_x+tam_mult*(init_x)){
+	float mult;
+	
+	if(neurites_tam){
+		mult=tam_mult;
+	}
+	else{
+		mult=2;
+		
+	}
+   
+   
+    if(displacementX+init_x >displacementX+init_x+mult*(init_x)){
 		max_X=displacementX+init_x+0.02;
-		min_X=displacementX+init_x+tam_mult*(displacementX+init_x)-0.02;
+		min_X=displacementX+init_x+mult*(displacementX+init_x)-0.02;
 	}
 	else{
 		min_X=displacementX+init_x-0.02;
-		max_X=displacementX+init_x+tam_mult*(init_x)+0.02;
+		max_X=displacementX+init_x+mult*(init_x)+0.02;
 	}
 	
-	if(displacementY+init_y >displacementY+init_y+tam_mult*(displacementY+init_y)){
+	if(displacementY+init_y >displacementY+init_y+mult*(displacementY+init_y)){
 		max_Y=displacementY+init_y+0.02;
-		min_Y=displacementY+init_y+tam_mult*(init_y)-0.02;
+		min_Y=displacementY+init_y+mult*(init_y)-0.02;
 	}
 	else{
 		min_Y=displacementY+init_y-0.02;
-		max_Y=displacementY+init_y+tam_mult*(init_y)+0.02;
+		max_Y=displacementY+init_y+mult*(init_y)+0.02;
 	}
     min_Z=displacementZ-0.03;
     max_Z=displacementZ+0.03;
@@ -117,7 +128,7 @@ void neurite_g::coordinates(){
 //Comprueba si el objeto esta selected
 bool neurite_g::select(QOpenGLWidget* windowPaint, float x, float y,float z){
     coordinates();
-    if(x>min_X && x<max_X && y>min_Y && y<max_Y && z>min_Z && z<max_Z)
+    if(x>min_X && x<max_X && y>min_Y && y<max_Y)
         selected=!selected;
     if(coord_include(x,y)){
         drawSelc(windowPaint);
