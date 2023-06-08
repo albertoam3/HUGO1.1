@@ -16,6 +16,9 @@
 #include <QWidget>
 #include <QFileDialog>
 #include <QTextEdit>
+#include <QDir>
+#include <QFileInfo>
+#include <QListWidgetItem>
 
 #include "objetos/axon.h"
 #include "objetos/dendrites.h"
@@ -50,7 +53,7 @@ private:
     base_datos_objetos* base;
     nsol::NeuronsMap neurons;
 
-
+    QString path;
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -59,16 +62,18 @@ public:
     void selecction();
 
     void openSWCFile( const std::string& fileName );
-
+	void showDirectory(const QString& path);
     void loadData( const std::string& arg1 ,
                    const std::string& arg2 ,
                    const std::string& type);
-
+                   
+    void openFile(QListWidgetItem *item);
     void addList(const std::string& st);
 
 public Q_SLOTS:
     void writeText();
     void openSWCFileThroughDialog();
+    void loadDirectory();
 
     void pintar();
     void reset();
@@ -95,5 +100,6 @@ private:
     void initGrosorComboBox();
 protected:
     QString _lastOpenedFileName;
+    QString _lastOpenedDirectory;
 };
 #endif // MAINWINDOW_H

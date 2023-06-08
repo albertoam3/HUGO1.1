@@ -26,6 +26,13 @@ MainWindow::MainWindow(QWidget *parent)
 
 	initGrosorComboBox();
     creat_list();
+    
+    ui->listWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+	
+	auto temp = new QListWidgetItem("Cargue un directorio");
+	ui->listWidget->addItem(temp);
+	
+	QObject::connect(ui->listWidget, &QListWidget::itemDoubleClicked, this, &MainWindow::openFile);
 
 }
 
@@ -159,6 +166,45 @@ void MainWindow::openSWCFile( const std::string& fileName )
     loadData( fileName , std::string( ) , "swc");
 
 
+}
+
+void MainWindow::loadDirectory(){
+		QString directoryPath = QFileDialog::getExistingDirectory(
+            this, tr( "Selecciona un directorio" ), _lastOpenedDirectory,
+        QFileDialog::ShowDirsOnly | QFileDialog::DontUseNativeDialog);
+
+		if ( directoryPath != QString( "" ))
+		{
+			this->path = directoryPath;
+			showDirectory( directoryPath);
+		}
+	}
+	
+void MainWindow::showDirectory(const QString& path){
+	QStringList fileFilters; 
+	QDir directory(path);
+	fileFilters << "*.swc";
+	directory.setFilter(QDir::Files | QDir::NoDotAndDotDot);
+	directory.setNameFilters(fileFilters);
+	
+	if (directory.exists()) {
+    
+		QFileInfoList fileList = directory.entryInfoList();
+		
+		ui->listWidget->takeItem(0);
+
+		for (const QFileInfo &fileInfo : fileList) {
+			ui->listWidget->addItem(fileInfo.fileName());
+		}
+	} 
+}
+
+void MainWindow::openFile(QListWidgetItem *item) {
+    QString fileName = ui->listWidget->item(ui->listWidget->row(item))->text();
+    QString folderPath = this->path;
+    std::string folderPathString = folderPath.toStdString();
+    std::string fileNameString = fileName.toStdString();
+    openSWCFile(folderPathString + "/" + fileNameString);
 }
 
 void MainWindow::openSWCFileThroughDialog()

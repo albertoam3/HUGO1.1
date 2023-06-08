@@ -16,6 +16,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -57,6 +58,8 @@ public:
     QRadioButton *igual_grosor;
     QRadioButton *dif_grosor;
     QComboBox *grosorComboBox;
+    QListWidget *listWidget;
+    QPushButton *loadButton;
     QMenuBar *menubar;
     QMenu *menuopen;
     QStatusBar *statusbar;
@@ -93,7 +96,7 @@ public:
         pushButton->setGeometry(QRect(800, 40, 89, 25));
         texto_neurona = new QTextEdit(centralwidget);
         texto_neurona->setObjectName(QString::fromUtf8("texto_neurona"));
-        texto_neurona->setGeometry(QRect(730, 350, 251, 311));
+        texto_neurona->setGeometry(QRect(20, 330, 171, 301));
         boton3D = new QPushButton(centralwidget);
         boton3D->setObjectName(QString::fromUtf8("boton3D"));
         boton3D->setGeometry(QRect(40, 150, 89, 25));
@@ -142,6 +145,12 @@ public:
         grosorComboBox = new QComboBox(groupBox_3);
         grosorComboBox->setObjectName(QString::fromUtf8("grosorComboBox"));
         grosorComboBox->setGeometry(QRect(100, 30, 86, 25));
+        listWidget = new QListWidget(centralwidget);
+        listWidget->setObjectName(QString::fromUtf8("listWidget"));
+        listWidget->setGeometry(QRect(670, 411, 411, 201));
+        loadButton = new QPushButton(centralwidget);
+        loadButton->setObjectName(QString::fromUtf8("loadButton"));
+        loadButton->setGeometry(QRect(670, 380, 411, 25));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -158,6 +167,7 @@ public:
 
         retranslateUi(MainWindow);
         QObject::connect(actionswc_file, SIGNAL(triggered()), MainWindow, SLOT(openSWCFileThroughDialog()));
+        QObject::connect(loadButton, SIGNAL(clicked()), MainWindow, SLOT(loadDirectory()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -185,6 +195,7 @@ public:
         groupBox_3->setTitle(QApplication::translate("MainWindow", "Grosor de las ramas", nullptr));
         igual_grosor->setText(QApplication::translate("MainWindow", "Igual", nullptr));
         dif_grosor->setText(QApplication::translate("MainWindow", "Diferente", nullptr));
+        loadButton->setText(QApplication::translate("MainWindow", "CARGAR DIRECTORIO", nullptr));
         menuopen->setTitle(QApplication::translate("MainWindow", "open", nullptr));
     } // retranslateUi
 
