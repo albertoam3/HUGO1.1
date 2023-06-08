@@ -30,6 +30,10 @@ private:
     float tam_mult;
     float grosor;
     VariableEstado variable_grosor;
+    float max_terminal_nodes;
+    float min_terminal_nodes;
+    float max_longitud;
+    float min_longitud;
     
 
 public:
@@ -70,6 +74,15 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 	void setGrosor(float a);
 	
 	float grosorTotal();
+	
+	void setMaxTerminalNodes(float a);
+	
+	void setMinTerminalNodes(float a);
+	
+	void setMaxLongitud(float a);
+	
+	void setMinLongitud(float a);
+	
 	
 	void setVariableGrosor(int a);
 	

@@ -25,26 +25,43 @@ void neurite_g::draw(QOpenGLWidget* windowPaint){
 		drawTree(windowPaint);
 	}
 	else{
-		switch(variable_grosor){
-			case VariableEstado::Tamano:
-				//std::cout<<"holaaaq\n";
-				break;
-			case VariableEstado::Volumen:
-				//std::cout<<"Adios\n";
-				break;
-			case VariableEstado::nodosTerminales:
-				//std::cout<<"Me quedo\n";
-				break;
+		
+		float aux,n;
+		if(neurites_grosor){
+			switch(variable_grosor){
+				case VariableEstado::Tamano:
+					aux=(tam-min_longitud)/(max_longitud-min_longitud);
+					n=aux*9 +1;
+					glLineWidth(n);
+					break;
+				case VariableEstado::Volumen:
+					glLineWidth(grosor);
+					break;
+				case VariableEstado::nodosTerminales:
+					aux=(terminal_nodes-min_terminal_nodes)/(max_terminal_nodes-min_terminal_nodes);
+					n=aux*9 +1;
+					
+					glLineWidth(n);
+					break;
 				
-				
-			
+			}
 		}
 		
-		glLineWidth(grosor);
+		else{
+			
+			glLineWidth(1);		
+			
+		}
+
 		glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
 		glColor3f(1.0, color(), 0.0); 
 		glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
-		glVertex2f(tam_mult*(init_x)+displacementX+init_x,tam_mult*(init_y)+ displacementY+init_y);
+		
+		if(neurites_tam)
+			glVertex2f(tam_mult*(init_x)+displacementX+init_x,tam_mult*(init_y)+ displacementY+init_y);
+		else
+			glVertex2f(1.5*(init_x)+displacementX+init_x,1.5*(init_y)+ displacementY+init_y);
+			
 		if(selected){
 			drawSelc(windowPaint);
 		}
@@ -206,3 +223,28 @@ void neurite_g::setVariableGrosor(int a){
       }
 	
 }
+
+
+
+
+void neurite_g::setMaxTerminalNodes(float a){
+	
+	max_terminal_nodes=a;
+}
+
+void neurite_g::setMinTerminalNodes(float a){
+	
+	min_terminal_nodes=a;
+}
+	
+
+void neurite_g::setMaxLongitud(float a){
+	
+	max_longitud=a;
+}
+
+void neurite_g::setMinLongitud(float a){
+	
+	min_longitud=a;
+}
+	

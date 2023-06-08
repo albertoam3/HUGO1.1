@@ -20,8 +20,8 @@ neuron_g::neuron_g(nsol::Neuron *_neu){
     	if(d.getTam()>tam_max_neurite)
     		tam_max_neurite=d.getTam();
     		
-    }
     		
+    }
 
     selected=false;
     displacementX=0;
@@ -34,21 +34,26 @@ neuron_g::neuron_g(nsol::Neuron *_neu){
     tree=0;
   
 
+	tamNeurite();
+    grosorNeurite();
+	calculateMaxMinNodosTerminales();
+	calculateMaxMinLongitud();
 
 }
 void neuron_g::draw(QOpenGLWidget* windowPaint){
    if(dimension==false){
      
-     tamNeurite();
-     grosorNeurite();
+
      for(auto & dend : dends){
 				
                 dend.setNeuritesTam(neurites_tam);
+                dend.setNeuritesGrosor(neurites_grosor);
                 dend.setDisplacements(displacementX,displacementY);
                 dend.setTree(tree);
                 
      }
      ax[0]->setNeuritesTam(neurites_tam);
+     ax[0]->setNeuritesGrosor(neurites_grosor);
      ax[0]->setDisplacements(displacementX,displacementY);
      ax[0]->setTree(tree);
      
@@ -260,43 +265,20 @@ void neuron_g::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
 }
 
 void neuron_g::tamNeurite(){
-	if(neurites_tam==false){
-	 	ax[0]->setTamMult(1.5);	
-	  	for (auto & item : dends) {
-        		item.setTamMult(1.5);
-		}
-	}
-	else{
-		
 		ax[0]->setTamMult(2*(ax[0]->getTam()/tam_max_neurite));	
 	  	for (auto & item : dends) {
         		item.setTamMult(2*(item.getTam()/tam_max_neurite));
 	
 		}
-	}
 	
 }
 void neuron_g::grosorNeurite(){
-	if(neurites_grosor==false){
-
-	 	ax[0]->setGrosor(1);
-	 	ax[0]->setNeuritesGrosor(false);	
-	  	for (auto & item : dends) {
-        		item.setGrosor(1);
-        		item.setNeuritesGrosor(false);
-		}
-	}
-	else{
-
 		ax[0]->setGrosor(ax[0]->grosorTotal()/100);	
-		ax[0]->setNeuritesGrosor(true);	
 	  	for (auto & item : dends) {
         		item.setGrosor(item.grosorTotal()/100);
-        		item.setNeuritesGrosor(true);
 	
 		}
-	}
-	
+
 }
 	
 	
@@ -312,13 +294,57 @@ void neuron_g::displacementN(float x,float y,float z){
 
 
 void neuron_g::setNeuritesVariableGrosor(float a){
-		
-		std::cout<<"Envio un "<<a<<"\n";
 		ax[0]->setVariableGrosor(a);	
 	  	for (auto & item : dends) {
         		item.setVariableGrosor(a);
         	}
 }
 
+void neuron_g::calculateMaxMinNodosTerminales(){
+	int aux=ax[0]->getTerminalNodes();
+	int max=aux;
+	int min=aux;
+	
+	for (auto & item : dends) {
+			aux=item.getTerminalNodes();
+			if(aux>max){
+					max=aux;
+			}
+			if(aux<min){
+					min=aux;
+			}
+       }
+       
+       ax[0]->setMaxTerminalNodes(max);
+       ax[0]->setMinTerminalNodes(min);
+       for (auto & item : dends) {
+       		item.setMaxTerminalNodes(max);
+       		item.setMinTerminalNodes(min);
+       	}	
+}
 
+void neuron_g::calculateMaxMinLongitud(){
+	float aux=ax[0]->getTam();
+	float max=aux;
+	float min=aux;
+	
+	for (auto & item : dends) {
+			aux=item.getTam();
+			if(aux>max){
+					max=aux;
+			}
+			if(aux<min){
+					min=aux;
+			}
+       }
+       
+       ax[0]->setMaxLongitud(max);
+       ax[0]->setMinLongitud(min);
+       for (auto & item : dends) {
+       		item.setMaxLongitud(max);
+       		item.setMinLongitud(min);
+       	}	
+}
+	
+	
 

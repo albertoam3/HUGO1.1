@@ -58,6 +58,10 @@ public:
     void setNeuritesVariableGrosor(float a);
 	void displacementN(float x,float y,float z);
 	
+	void calculateMaxMinNodosTerminales();
+	void calculateMaxMinLongitud();
+	
+	
 };
 
 
