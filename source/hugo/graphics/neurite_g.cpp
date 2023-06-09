@@ -181,14 +181,20 @@ void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 		
 		glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
 		glColor3f(1.0, color(), 0.0); 
-		float x=tam_mult*(init_x)+ displacementX+init_x;
-		float y=tam_mult*(init_y)+ displacementY+init_y;
+		float mult;
+		if(neurites_tam)
+			mult=tam_mult*0.75;
+		else
+			mult=1.5;
+		
+		float x=mult*(init_x)+ displacementX+init_x;
+		float y=mult*(init_y)+ displacementY+init_y;
 		glVertex2f(displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
 		glVertex2f(x,y);
 
 		float hipotenusa=0;
 		float dif_angle=dif_angle=0.7;
-		float distancia=std::sqrt(std::pow(tam_mult*(x-displacementX),2)+pow(tam_mult*(y-displacementY),2));
+		float distancia=std::sqrt(std::pow(mult*(x-displacementX),2)+pow(mult*(y-displacementY),2));
 		hipotenusa=distancia/std::cos(0.52359878)*0.4;
 		firstSection->drawSections(x,y,angle,hipotenusa,dif_angle,g);
 	
