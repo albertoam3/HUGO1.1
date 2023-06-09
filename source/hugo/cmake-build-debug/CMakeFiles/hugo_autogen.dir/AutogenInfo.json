@@ -187,6 +187,12 @@
 			null
 		],
 		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.h",
+			"MU",
+			"EWIEGA46WW/moc_myopenglwidget2d.cpp",
+			null
+		],
+		[
 			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.h",
 			"MU",
 			"C4X553CNME/moc_axon.cpp",
@@ -340,6 +346,11 @@
 		],
 		[
 			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.cpp",
 			"MU",
 			null
 		],

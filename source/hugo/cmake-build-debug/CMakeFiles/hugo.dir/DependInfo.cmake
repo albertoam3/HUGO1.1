@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/mocs_compilation.cpp" "CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o.d"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.cpp" "CMakeFiles/hugo.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/hugo.dir/mainwindow.cpp.o.d"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.cpp" "CMakeFiles/hugo.dir/myopenglwidget.cpp.o" "gcc" "CMakeFiles/hugo.dir/myopenglwidget.cpp.o.d"
+  "/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.cpp" "CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o" "gcc" "CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o.d"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.cpp" "CMakeFiles/hugo.dir/objetos/axon.cpp.o" "gcc" "CMakeFiles/hugo.dir/objetos/axon.cpp.o.d"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/dendrites.cpp" "CMakeFiles/hugo.dir/objetos/dendrites.cpp.o" "gcc" "CMakeFiles/hugo.dir/objetos/dendrites.cpp.o.d"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.cpp" "CMakeFiles/hugo.dir/objetos/neuron.cpp.o" "gcc" "CMakeFiles/hugo.dir/objetos/neuron.cpp.o.d"

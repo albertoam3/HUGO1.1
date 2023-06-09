@@ -25,7 +25,8 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
-#include <myopenglwidget.h>
+#include <myopenglwidget2d.h>
+#include "myopenglwidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -60,7 +61,7 @@ public:
     QComboBox *grosorComboBox;
     QListWidget *listWidget;
     QPushButton *loadButton;
-    myopenglwidget *openGLWidget_2;
+    myopenglwidget2d *openGLWidget2D;
     QMenuBar *menubar;
     QMenu *menuopen;
     QStatusBar *statusbar;
@@ -152,9 +153,9 @@ public:
         loadButton = new QPushButton(centralwidget);
         loadButton->setObjectName(QString::fromUtf8("loadButton"));
         loadButton->setGeometry(QRect(920, 350, 411, 25));
-        openGLWidget_2 = new myopenglwidget(centralwidget);
-        openGLWidget_2->setObjectName(QString::fromUtf8("openGLWidget_2"));
-        openGLWidget_2->setGeometry(QRect(660, 110, 441, 441));
+        openGLWidget2D = new myopenglwidget2d(centralwidget);
+        openGLWidget2D->setObjectName(QString::fromUtf8("openGLWidget2D"));
+        openGLWidget2D->setGeometry(QRect(700, 110, 271, 231));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

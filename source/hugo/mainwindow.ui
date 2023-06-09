@@ -334,7 +334,7 @@
      <string>CARGAR DIRECTORIO</string>
     </property>
    </widget>
-   <widget class="myopenglwidget2D" name="widget" native="true">
+   <widget class="myopenglwidget2d" name="openGLWidget2D" native="true">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -377,7 +377,7 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>myopenglwidget2D</class>
+   <class>myopenglwidget2d</class>
    <extends>QWidget</extends>
    <header location="global">myopenglwidget2d.h</header>
    <container>1</container>

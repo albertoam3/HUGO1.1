@@ -24,6 +24,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/hugo.dir/mainwindow.cpp.o.d"
   "CMakeFiles/hugo.dir/myopenglwidget.cpp.o"
   "CMakeFiles/hugo.dir/myopenglwidget.cpp.o.d"
+  "CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o"
+  "CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o.d"
   "CMakeFiles/hugo.dir/objetos/axon.cpp.o"
   "CMakeFiles/hugo.dir/objetos/axon.cpp.o.d"
   "CMakeFiles/hugo.dir/objetos/dendrites.cpp.o"

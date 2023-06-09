@@ -221,6 +221,12 @@
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.h">
 			<Option target="hugo"/>
 		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.h">
+			<Option target="hugo"/>
+		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.cpp">
 			<Option target="hugo"/>
 		</Unit>

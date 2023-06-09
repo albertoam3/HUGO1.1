@@ -406,6 +406,30 @@ myopenglwidget.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myopenglwidget.cpp.s
 .PHONY : myopenglwidget.cpp.s
 
+myopenglwidget2d.o: myopenglwidget2d.cpp.o
+.PHONY : myopenglwidget2d.o
+
+# target to build an object file
+myopenglwidget2d.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o
+.PHONY : myopenglwidget2d.cpp.o
+
+myopenglwidget2d.i: myopenglwidget2d.cpp.i
+.PHONY : myopenglwidget2d.i
+
+# target to preprocess a source file
+myopenglwidget2d.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myopenglwidget2d.cpp.i
+.PHONY : myopenglwidget2d.cpp.i
+
+myopenglwidget2d.s: myopenglwidget2d.cpp.s
+.PHONY : myopenglwidget2d.s
+
+# target to generate assembly for a file
+myopenglwidget2d.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myopenglwidget2d.cpp.s
+.PHONY : myopenglwidget2d.cpp.s
+
 objetos/axon.o: objetos/axon.cpp.o
 .PHONY : objetos/axon.o
 
@@ -545,6 +569,9 @@ help:
 	@echo "... myopenglwidget.o"
 	@echo "... myopenglwidget.i"
 	@echo "... myopenglwidget.s"
+	@echo "... myopenglwidget2d.o"
+	@echo "... myopenglwidget2d.i"
+	@echo "... myopenglwidget2d.s"
 	@echo "... objetos/axon.o"
 	@echo "... objetos/axon.i"
 	@echo "... objetos/axon.s"

@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/EWIEGA46WW/moc_mainwindow.cpp
+mainwindow.h
+/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/EWIEGA46WW/mainwindow.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/EWIEGA46WW/moc_myopenglwidget.cpp
+myopenglwidget.h
+/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/EWIEGA46WW/myopenglwidget.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/mocs_compilation.cpp
+EWIEGA46WW/moc_mainwindow.cpp
+/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/EWIEGA46WW/moc_mainwindow.cpp
+EWIEGA46WW/moc_myopenglwidget.cpp
+/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/EWIEGA46WW/moc_myopenglwidget.cpp
+
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/Cholesky
 Core
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/Core
@@ -1150,6 +1172,12 @@ graphic_objects.h
 nsol/nsol.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/nsol/nsol.h
 
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/hugo.cpp
+mainwindow.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.h
+QApplication
+-
+
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.cpp
 mainwindow.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.h
@@ -1162,6 +1190,8 @@ vector
 
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.h
 myopenglwidget.h
+-
+myopenglwidget2d.h
 -
 QMainWindow
 -
@@ -1210,17 +1240,29 @@ base_datos_objetos.h
 nsol/nsol.h
 -
 
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.cpp
-myopenglwidget.h
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.h
-QOpenGLContext
+QOpenGLWidget
 -
-GL/gl.h
+QOpenGLFunctions
 -
-objetos/dendrites.h
+QColor
+-
+objetos/objetos.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/objetos.h
+QMouseEvent
+-
+graphics/graphic_objects.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
+graphics/neuron_g.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.h
+Eigen/Dense
 -
 
-/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.cpp
+myopenglwidget2d.h
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.h
+
+/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.h
 QOpenGLWidget
 -
 QOpenGLFunctions
@@ -4100,10 +4142,6 @@ qcolor.h
 qevent.h
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h
 
-/usr/include/x86_64-linux-gnu/qt5/QtGui/QOpenGLContext
-qopenglcontext.h
-/usr/include/x86_64-linux-gnu/qt5/QtGui/qopenglcontext.h
-
 /usr/include/x86_64-linux-gnu/qt5/QtGui/QOpenGLFunctions
 qopenglfunctions.h
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qopenglfunctions.h
@@ -5215,6 +5253,8 @@ QtWidgets/QTextEdit
 -
 QtWidgets/QWidget
 -
-myopenglwidget.h
+myopenglwidget2d.h
 -
+myopenglwidget.h
+hugo_autogen/include/myopenglwidget.h
 

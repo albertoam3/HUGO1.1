@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/hugo.dir/mainwindow.cpp.o"
   "CMakeFiles/hugo.dir/myopenglwidget.cpp.o"
+  "CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o"
   "CMakeFiles/hugo.dir/objetos/axon.cpp.o"
   "CMakeFiles/hugo.dir/objetos/dendrites.cpp.o"
   "CMakeFiles/hugo.dir/objetos/neuron.cpp.o"

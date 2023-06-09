@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <myopenglwidget.h>
+#include <myopenglwidget2d.h>
 
 //Qt
 #include <QMainWindow>
@@ -46,7 +47,7 @@ private:
     QComboBox* elementosCargados;
  
     myopenglwidget *_openGLWidget;
-    myopenglwidget* openGLWidget2D;
+    myopenglwidget2d* openGLWidget2d;
     axon* ax;
     dendrites* den;
     neuron* neu;

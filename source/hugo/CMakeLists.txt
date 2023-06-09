@@ -38,6 +38,8 @@ add_executable(hugo
           myopenglwidget.cpp
           myopenglwidget.h
           mainwindow.ui
+          myopenglwidget2d.h
+          myopenglwidget2d.cpp
           objetos/axon.cpp
           objetos/axon.h
           objetos/dendrites.cpp

@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/mocs_compilation.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/mainwindow.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/myopenglwidget.cpp.o"
+  "/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/objetos/axon.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/dendrites.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/objetos/dendrites.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/objetos/neuron.cpp.o"
