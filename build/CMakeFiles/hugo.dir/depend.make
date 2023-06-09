@@ -4073,6 +4073,7 @@ CMakeFiles/hugo.dir/hugo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwid
 
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: hugo_autogen/EWIEGA46WW/moc_mainwindow.cpp
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: hugo_autogen/EWIEGA46WW/moc_myopenglwidget.cpp
+CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: hugo_autogen/EWIEGA46WW/moc_myopenglwidget2d.cpp
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: hugo_autogen/mocs_compilation.cpp
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/Cholesky
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/Core

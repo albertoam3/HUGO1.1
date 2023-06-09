@@ -22,11 +22,21 @@ QtCore/qbytearray.h
 QtCore/qmetatype.h
 -
 
+/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/EWIEGA46WW/moc_myopenglwidget2d.cpp
+myopenglwidget2d.h
+/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/EWIEGA46WW/myopenglwidget2d.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
 /home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/mocs_compilation.cpp
 EWIEGA46WW/moc_mainwindow.cpp
 /home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/EWIEGA46WW/moc_mainwindow.cpp
 EWIEGA46WW/moc_myopenglwidget.cpp
 /home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/EWIEGA46WW/moc_myopenglwidget.cpp
+EWIEGA46WW/moc_myopenglwidget2d.cpp
+/home/alberto/CLionProjects/HUGO1.1/build/hugo_autogen/EWIEGA46WW/moc_myopenglwidget2d.cpp
 
 /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/Cholesky
 Core

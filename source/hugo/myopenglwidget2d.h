@@ -14,6 +14,7 @@
 class myopenglwidget2d : public QOpenGLWidget, public QOpenGLFunctions
 
 {
+	Q_OBJECT
 public:
   myopenglwidget2d(QWidget *parent =nullptr);
   
