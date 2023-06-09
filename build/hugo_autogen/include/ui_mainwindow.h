@@ -60,6 +60,7 @@ public:
     QComboBox *grosorComboBox;
     QListWidget *listWidget;
     QPushButton *loadButton;
+    myopenglwidget *openGLWidget_2;
     QMenuBar *menubar;
     QMenu *menuopen;
     QStatusBar *statusbar;
@@ -68,7 +69,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1110, 706);
+        MainWindow->resize(1346, 706);
         actionswc_file = new QAction(MainWindow);
         actionswc_file->setObjectName(QString::fromUtf8("actionswc_file"));
         centralwidget = new QWidget(MainWindow);
@@ -105,7 +106,7 @@ public:
         boton2D->setGeometry(QRect(40, 190, 89, 25));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(680, 80, 191, 91));
+        groupBox->setGeometry(QRect(1060, 10, 191, 91));
         igual_ang = new QRadioButton(groupBox);
         igual_ang->setObjectName(QString::fromUtf8("igual_ang"));
         igual_ang->setGeometry(QRect(10, 30, 112, 23));
@@ -114,7 +115,7 @@ public:
         terminales_ang->setGeometry(QRect(10, 50, 112, 23));
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(680, 180, 251, 91));
+        groupBox_2->setGeometry(QRect(1060, 210, 251, 91));
         igual_ramas = new QRadioButton(groupBox_2);
         igual_ramas->setObjectName(QString::fromUtf8("igual_ramas"));
         igual_ramas->setGeometry(QRect(10, 30, 112, 23));
@@ -132,10 +133,10 @@ public:
         label_3->setGeometry(QRect(690, 20, 221, 17));
         setArbol = new QCheckBox(centralwidget);
         setArbol->setObjectName(QString::fromUtf8("setArbol"));
-        setArbol->setGeometry(QRect(680, 290, 92, 23));
+        setArbol->setGeometry(QRect(1080, 310, 92, 23));
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(890, 90, 201, 80));
+        groupBox_3->setGeometry(QRect(1060, 110, 201, 80));
         igual_grosor = new QRadioButton(groupBox_3);
         igual_grosor->setObjectName(QString::fromUtf8("igual_grosor"));
         igual_grosor->setGeometry(QRect(10, 30, 112, 23));
@@ -147,14 +148,17 @@ public:
         grosorComboBox->setGeometry(QRect(100, 30, 86, 25));
         listWidget = new QListWidget(centralwidget);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
-        listWidget->setGeometry(QRect(670, 411, 411, 201));
+        listWidget->setGeometry(QRect(920, 380, 411, 201));
         loadButton = new QPushButton(centralwidget);
         loadButton->setObjectName(QString::fromUtf8("loadButton"));
-        loadButton->setGeometry(QRect(670, 380, 411, 25));
+        loadButton->setGeometry(QRect(920, 350, 411, 25));
+        openGLWidget_2 = new myopenglwidget(centralwidget);
+        openGLWidget_2->setObjectName(QString::fromUtf8("openGLWidget_2"));
+        openGLWidget_2->setGeometry(QRect(660, 110, 441, 441));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1110, 22));
+        menubar->setGeometry(QRect(0, 0, 1346, 22));
         menuopen = new QMenu(menubar);
         menuopen->setObjectName(QString::fromUtf8("menuopen"));
         MainWindow->setMenuBar(menubar);

@@ -291,7 +291,6 @@ void myopenglwidget::rotate(float x,float y,float z){
 
 }
 void myopenglwidget::setDimension(bool a){
-	
 	  for (auto &i: gobject) {
 	  	i->setDimension(a);
 	  }

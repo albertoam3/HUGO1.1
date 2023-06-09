@@ -16,7 +16,10 @@ MainWindow::MainWindow(QWidget *parent)
     //Asigno a _openGLWidget la pantalla creada con mainwindow.ui
     _openGLWidget = ui->openGLWidget;
     _openGLWidget->setFocus();
-
+    _openGLWidget->setDimension(true);
+    openGLWidget2D= ui->openGLWidget_2;
+	openGLWidget2D->setFocus();
+	openGLWidget2D->setDimension(false);
     connect_buttons();
 
     //Creo cuatro objetos para probar distintas formas de pintar, esto tambien es momentaneo

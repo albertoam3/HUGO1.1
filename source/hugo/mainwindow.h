@@ -46,6 +46,7 @@ private:
     QComboBox* elementosCargados;
  
     myopenglwidget *_openGLWidget;
+    myopenglwidget* openGLWidget2D;
     axon* ax;
     dendrites* den;
     neuron* neu;
