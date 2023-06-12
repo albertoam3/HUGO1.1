@@ -10,7 +10,6 @@ myopenglwidget::myopenglwidget(QWidget *parent)
     buttonDrawActive = false;
     mouseX = 0;
     mouseY = 0;
-    objet_paint = nullptr;
     translationX = 0;
     translationY = 0;
     scala = 0.0f;
@@ -63,7 +62,8 @@ void myopenglwidget::paintGL() {
     }
     for (auto &i: gobject) {
     	i->setScala(scalaTotal);
-        i->draw(this);
+        i->draw(this,true);
+        //i->draw(this);
     }
 }
 
@@ -168,10 +168,7 @@ void myopenglwidget::mouseMoveEvent(QMouseEvent *event_) {
     ejeYAux = mouseY;
 }
 
-//Este método pasara a ser con control mas rueda del raton
-void myopenglwidget::keyPressEvent(QKeyEvent *event_) {
-   //A falta de implementar
-}
+
 
 void myopenglwidget::wheelEvent(QWheelEvent *event) {
     if (event->modifiers() & Qt::ControlModifier) { // Verificar si se presionó la tecla de control
@@ -230,36 +227,6 @@ void myopenglwidget::positionDraws() {
     }
 }
 
-void myopenglwidget::select_draw_den(bool a) {
-  
-    for (auto &i: gobject) {
-        i->setAngleXTam(a);
-    }
-    update();
-}
-void myopenglwidget::select_tam_den(bool a) {
-  
-    for (auto &i: gobject) {
-        i->setNeuritesTam(a);
-    }
-    update();
-}
-
-void myopenglwidget::select_grosor_den(bool a) {
-
-    for (auto &i: gobject) {
-        i->setNeuritesGrosor(a);
-    }
-    update();
-}
-
-void myopenglwidget::variableGrosor(float a){
-	for (auto &i: gobject) {
-        i->setNeuritesVariableGrosor(a);
-    }
-    update();
-	
-}
 
 void myopenglwidget::rotate(float x,float y,float z){
     Eigen::Matrix3f rot;
@@ -290,27 +257,7 @@ void myopenglwidget::rotate(float x,float y,float z){
     rotation= rot*rotation;
 
 }
-void myopenglwidget::setDimension(bool a){
-	  for (auto &i: gobject) {
-	  	i->setDimension(a);
-	  }
-	  update();
-}
 
-
-void myopenglwidget::rotate2D(float x, float y) {
-    Eigen::Matrix2f rot;
-	
-    float angle = atan2(y, x);
-
-    float sinAngle = sin(angle);
-    float cosAngle = cos(angle);
-
-    rot << cosAngle, -sinAngle,
-           sinAngle, cosAngle;
-
-    rotation2D = rot * rotation2D;
-}
 
 void myopenglwidget::transform() {
     //Punto de origen
@@ -322,12 +269,4 @@ void myopenglwidget::transform() {
     Eigen::Vector4f transformedPoint = invMvMat4 * Eigen::Vector4f(p.x(), p.y(), p.z(), 1.0f);
     result = transformedPoint.head<3>();
   
-}
-void myopenglwidget::setTree(bool a){
-	
-
-	 for (auto &i: gobject) {
-        i->setTree(a);
-    }
-	update();
 }

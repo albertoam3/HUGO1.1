@@ -81,8 +81,6 @@ public Q_SLOTS:
     void reset();
     void load();
     
-    void _2D_clicked();
-    void _3D_clicked();
     
     void igual_tam();
     void dif_tam();

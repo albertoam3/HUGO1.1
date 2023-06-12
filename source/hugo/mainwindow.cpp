@@ -16,11 +16,9 @@ MainWindow::MainWindow(QWidget *parent)
     //Asigno a _openGLWidget la pantalla creada con mainwindow.ui
     _openGLWidget = ui->openGLWidget;
     _openGLWidget->setFocus();
-    _openGLWidget->setDimension(true);
    
     openGLWidget2d= ui->openGLWidget2D;
 	openGLWidget2d->setFocus();
-	//openGLWidget2d->setDimension(false);
     connect_buttons();
 
     //Creo cuatro objetos para probar distintas formas de pintar, esto tambien es momentaneo
@@ -49,8 +47,6 @@ void MainWindow::connect_buttons() {
     QObject::connect(ui->draw, SIGNAL(clicked()), this, SLOT(pintar()));
     QObject::connect(ui->reset, SIGNAL(clicked()), this, SLOT(reset()));
     QObject::connect(ui->load, SIGNAL(clicked()), this, SLOT(load()));
-    QObject::connect(ui->boton2D, SIGNAL(clicked()), this, SLOT(_2D_clicked()));
-    QObject::connect(ui->boton3D, SIGNAL(clicked()), this, SLOT(_3D_clicked()));
     QObject::connect(ui->igual_ramas, SIGNAL(clicked()), this, SLOT(igual_tam()));
     QObject::connect(ui->dif_rama, SIGNAL(clicked()), this, SLOT(dif_tam()));
     QObject::connect(ui->setArbol, &QCheckBox::stateChanged, this, &MainWindow::checkBoxStateChanged);
@@ -64,10 +60,12 @@ void MainWindow::connect_buttons() {
 //Pongo a true la openGLWidget, para poder pintarla.
 void MainWindow::pintar() {
     _openGLWidget->setDraw(true);
+    openGLWidget2d->setDraw(true);
 }
 
 void MainWindow::reset() {
     _openGLWidget->resetList();
+    openGLWidget2d->resetList();
     elementosCargados->clear();
 }
 
@@ -80,6 +78,7 @@ void MainWindow::selecction() {
     int index = ui->list->currentIndex();
     if(index<base->getList().size()){
         _openGLWidget->setGraphicsObject(base->get(index));
+        openGLWidget2d->setNeuronG(base->get(index));
         elementosCargados->addItem(base->get(index)->getName());
     }
 }
@@ -92,12 +91,12 @@ void MainWindow::creat_list() {
 
 void MainWindow::on_igual_ang_clicked()
 {
-    _openGLWidget->select_draw_den(false);
+    openGLWidget2d->select_draw_den(false);
 }
 
 void MainWindow::on_terminales_ang_clicked()
 {
-    _openGLWidget->select_draw_den(true);
+    openGLWidget2d->select_draw_den(true);
 }
 
 void MainWindow::loadData( const std::string& m_fileName, const std::string& arg2 ,
@@ -229,41 +228,31 @@ void MainWindow::addList(const std::string& st){
     ui->list->addItem(qstr);
 }
 
-void MainWindow::_2D_clicked(){
-	_openGLWidget->setDimension(false);
-}
-
-
-void MainWindow::_3D_clicked(){
-	_openGLWidget->setDimension(true);
-
-}
 
 void MainWindow::igual_tam(){
-	_openGLWidget->select_tam_den(false);
+	openGLWidget2d->select_tam_den(false);
 }
 
 void MainWindow::dif_tam(){
- 	_openGLWidget->select_tam_den(true);
+ 	openGLWidget2d->select_tam_den(true);
 }
 
 void MainWindow::checkBoxStateChanged(int state) {
     bool tree = (state == Qt::Checked) ? true : false;
-    _openGLWidget->setTree(tree);
+    openGLWidget2d->setTree(tree);
  
 }
 
 
 void MainWindow::igual_grosor(){
-	_openGLWidget->select_grosor_den(false);
+	openGLWidget2d->select_grosor_den(false);
 	
 	
 }
 
 void MainWindow::dif_grosor(){
-	 _openGLWidget->select_grosor_den(true);
-	 _openGLWidget->variableGrosor(ui->grosorComboBox->currentIndex());
-	  std::cout<<ui->grosorComboBox->currentIndex()<<"\n";
+	 openGLWidget2d->select_grosor_den(true);
+	 openGLWidget2d->variableGrosor(ui->grosorComboBox->currentIndex());
 	
 }
 

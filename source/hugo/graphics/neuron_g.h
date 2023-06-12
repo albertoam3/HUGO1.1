@@ -32,6 +32,12 @@ public:
 
     //Dibujar la neurona
     void draw(QOpenGLWidget* windowPaint);
+    
+    
+    void draw(QOpenGLWidget* windowPaint,bool dim);
+    
+    void draw3D(QOpenGLWidget* windowPaint);
+    void draw2D(QOpenGLWidget* windowPaint);
     //Dibujar el caudrado que la select, en este caso el soma
     void drawSelc(QOpenGLWidget* windowPaint);
 

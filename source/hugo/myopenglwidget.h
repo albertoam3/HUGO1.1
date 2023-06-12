@@ -18,7 +18,6 @@ class myopenglwidget : public QOpenGLWidget, public QOpenGLFunctions
 private:
     float mouseX,mouseY;
     bool buttonDrawActive;
-    objetos *objet_paint;
     std::vector<neuron_g*> gobject;
 
 
@@ -46,12 +45,7 @@ public:
     void setDraw(bool a);
     void setGraphicsObject(neuron_g *gobj);
     void resetList();
-    void select_draw_den(bool a);
-    void select_tam_den(bool a);
-    void setDimension(bool a);
-    void setTree(bool a);
-    void select_grosor_den(bool a);
-    void variableGrosor(float a);
+
 
 protected:
 
@@ -60,7 +54,6 @@ protected:
     void initializeGL() override;
     void mousePressEvent( QMouseEvent* event_ ) override;
     void mouseMoveEvent( QMouseEvent* event_ ) override;
-    void keyPressEvent(QKeyEvent* event_) override;
     void wheelEvent(QWheelEvent *event) override;
      
     //int calculatePosition(int i);
@@ -69,7 +62,6 @@ protected:
     
 private:
     void rotate(float x,float y,float z);
-    void rotate2D(float x, float y);
     
     void transform();
 
