@@ -86,6 +86,9 @@ public Q_SLOTS:
     void dif_tam();
     void dif_grosor();
     void igual_grosor();
+    void set_dend();
+    void set_nada();
+    void set_tree();
     
 private slots:
     void on_igual_ang_clicked();

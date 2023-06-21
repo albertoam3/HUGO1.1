@@ -37,6 +37,7 @@ protected:
     float scala;
     
     bool tree;
+    bool dendograma;
     
     float variableGrosor;
     
@@ -126,6 +127,10 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 	void setTree(bool a){
 		tree=a;
 	}
+
+    void setDendograma(bool a){
+        dendograma=a;
+    }
 };
 #endif //HUGO_GRAPHIC_OBJECTS_H
 

@@ -18,7 +18,7 @@ find_package(Qt5Gui 5.4 REQUIRED)
 
 
 
-set(CMAKE_PREFIX_PATH "/home/alberto/code/nsol/build" ${CMAKE_PREFIX_PATH})
+set(CMAKE_PREFIX_PATH "/home/alberto/hbp/nsol/build" ${CMAKE_PREFIX_PATH})
 
 find_package(nsol REQUIRED)
 

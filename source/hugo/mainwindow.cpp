@@ -49,7 +49,11 @@ void MainWindow::connect_buttons() {
     QObject::connect(ui->load, SIGNAL(clicked()), this, SLOT(load()));
     QObject::connect(ui->igual_ramas, SIGNAL(clicked()), this, SLOT(igual_tam()));
     QObject::connect(ui->dif_rama, SIGNAL(clicked()), this, SLOT(dif_tam()));
-    QObject::connect(ui->setArbol, &QCheckBox::stateChanged, this, &MainWindow::checkBoxStateChanged);
+    //QObject::connect(ui->setArbol, &QCheckBox::stateChanged, this, &MainWindow::checkBoxStateChanged);
+    QObject::connect(ui->setDendograma,SIGNAL(clicked()),this,SLOT(set_dend()));
+    QObject::connect(ui->setNada,SIGNAL(clicked()),this,SLOT(set_nada()));
+    QObject::connect(ui->setArbol, SIGNAL(clicked()), this, SLOT(set_tree()));
+
     QObject::connect(ui->igual_grosor, SIGNAL(clicked()), this, SLOT(igual_grosor()));
     QObject::connect(ui->dif_grosor, SIGNAL(clicked()), this, SLOT(dif_grosor()));
     
@@ -263,3 +267,23 @@ void MainWindow::initGrosorComboBox(){
 	
 	
 }
+
+void MainWindow::set_dend() {
+    openGLWidget2d->setDendograma(true);
+    openGLWidget2d->setTree(false);
+}
+
+void MainWindow::set_nada(){
+    openGLWidget2d->setDendograma(false);
+    openGLWidget2d->setTree(false);
+
+
+}
+
+void MainWindow::set_tree() {
+    openGLWidget2d->setDendograma(false);
+    openGLWidget2d->setTree(true);
+}
+
+
+

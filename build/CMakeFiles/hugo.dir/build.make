@@ -305,7 +305,7 @@ hugo: CMakeFiles/hugo.dir/graphics/sectionH.cpp.o
 hugo: CMakeFiles/hugo.dir/base_datos_objetos.cpp.o
 hugo: CMakeFiles/hugo.dir/build.make
 hugo: /usr/lib/x86_64-linux-gnu/libQt5OpenGL.so.5.12.8
-hugo: /home/alberto/code/nsol/build/lib/libnsol.so.0.4.0
+hugo: /home/alberto/hbp/nsol/build/lib/libnsol.so.0.4.0
 hugo: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8
 hugo: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8
 hugo: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8
@@ -318,10 +318,10 @@ hugo: /usr/lib/x86_64-linux-gnu/libsz.so
 hugo: /usr/lib/x86_64-linux-gnu/libz.so
 hugo: /usr/lib/x86_64-linux-gnu/libdl.so
 hugo: /usr/lib/x86_64-linux-gnu/libm.so
-hugo: /home/alberto/code/nsol/build/lib/libBrain.so.3.0.0
-hugo: /home/alberto/code/nsol/build/lib/libBrion.so.3.0.0
-hugo: /home/alberto/code/nsol/build/lib/libServus.so.1.6.0
-hugo: /home/alberto/code/nsol/build/lib/libFiReS.so.0.1.6
+hugo: /home/alberto/hbp/nsol/build/lib/libBrain.so.2.0.0
+hugo: /home/alberto/hbp/nsol/build/lib/libBrion.so.2.0.0
+hugo: /home/alberto/hbp/nsol/build/lib/libServus.so.1.6.0
+hugo: /home/alberto/hbp/nsol/build/lib/libFiReS.so.0.1.6
 hugo: CMakeFiles/hugo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable hugo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hugo.dir/link.txt --verbose=$(VERBOSE)

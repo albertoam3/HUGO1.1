@@ -1,4 +1,5 @@
 //
+//
 // Created by alberto on 29/05/23.
 //
 
@@ -23,17 +24,18 @@ class neurite_g : public graphic_objects{
 private:
     nsol::Neurite *neurite;
     float terminal_nodes;
-    float angle;
-    float dist;
+    float angle{};
+    float angle_hueco;
+    float dist{};
     sectionH* firstSection;
     float tam;
-    float tam_mult;
-    float grosor;
+    float tam_mult{};
+    float grosor{};
     VariableEstado variable_grosor;
-    float max_terminal_nodes;
-    float min_terminal_nodes;
-    float max_longitud;
-    float min_longitud;
+    float max_terminal_nodes{};
+    float min_terminal_nodes{};
+    float max_longitud{};
+    float min_longitud{};
     
 
 public:
@@ -69,6 +71,8 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     
     void drawTree(QOpenGLWidget* windowPaint);
 
+    void drawDendograma(QOpenGLWidget* windowPaint);
+
     void setAngle(float a);  
      
 	void setGrosor(float a);
@@ -85,7 +89,8 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 	
 	
 	void setVariableGrosor(int a);
-	
+
+    void setAngleHueco(float a);
    
 protected:   
     virtual float color()=0 ;

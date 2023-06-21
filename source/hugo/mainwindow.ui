@@ -223,19 +223,6 @@
      <string>ELEMENTOS CARGADOS</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="setArbol">
-    <property name="geometry">
-     <rect>
-      <x>910</x>
-      <y>240</y>
-      <width>92</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>árbol</string>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
@@ -317,6 +304,58 @@
       <height>401</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>280</y>
+      <width>131</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Forma de pintar</string>
+    </property>
+    <widget class="QRadioButton" name="setDendograma">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Dendograma</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="setArbol">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Arbol</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="setNada">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>112</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>nada</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

@@ -18,12 +18,16 @@ neurite_g::neurite_g(nsol::Neurite* _neurite){
     tree=false;
     neurites_grosor=false;
     variable_grosor=VariableEstado::Tamano;
+
 }
 void neurite_g::draw(QOpenGLWidget* windowPaint){
     
     if(tree){
 		drawTree(windowPaint);
-	}
+	}else if(dendograma){
+        drawDendograma((windowPaint));
+
+    }
 	else{
 		
 		float aux,n;
@@ -100,24 +104,23 @@ void neurite_g::coordinates(){
 		mult=2;
 		
 	}
-   
-   
+
     if(displacementX+init_x >displacementX+init_x+mult*(init_x)){
-		max_X=displacementX+init_x+0.02;
-		min_X=displacementX+init_x+mult*(displacementX+init_x)-0.02;
+		max_X=displacementX+init_x+0.05;
+		min_X=displacementX+init_x+mult*(displacementX+init_x)-0.05;
 	}
 	else{
-		min_X=displacementX+init_x-0.02;
-		max_X=displacementX+init_x+mult*(init_x)+0.02;
+		min_X=displacementX+init_x-0.05;
+		max_X=displacementX+init_x+mult*(init_x)+0.05;
 	}
 	
 	if(displacementY+init_y >displacementY+init_y+mult*(displacementY+init_y)){
-		max_Y=displacementY+init_y+0.02;
-		min_Y=displacementY+init_y+mult*(init_y)-0.02;
+		max_Y=displacementY+init_y+0.05;
+		min_Y=displacementY+init_y+mult*(init_y)-0.05;
 	}
 	else{
-		min_Y=displacementY+init_y-0.02;
-		max_Y=displacementY+init_y+mult*(init_y)+0.02;
+		min_Y=displacementY+init_y-0.05;
+		max_Y=displacementY+init_y+mult*(init_y)+0.05;
 	}
     min_Z=displacementZ-0.03;
     max_Z=displacementZ+0.03;
@@ -128,6 +131,8 @@ void neurite_g::coordinates(){
 //Comprueba si el objeto esta selected
 bool neurite_g::select(QOpenGLWidget* windowPaint, float x, float y,float z){
     coordinates();
+    firstSection->selected(x,y,z);
+
     if(x>min_X && x<max_X && y>min_Y && y<max_Y)
         selected=!selected;
     if(coord_include(x,y)){
@@ -196,7 +201,7 @@ void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 		float dif_angle=dif_angle=0.7;
 		float distancia=std::sqrt(std::pow(mult*(x-displacementX),2)+pow(mult*(y-displacementY),2));
 		hipotenusa=distancia/std::cos(0.52359878)*0.4;
-		firstSection->drawSections(x,y,angle,hipotenusa,dif_angle,g);
+		firstSection->drawSectionsTree(x,y,angle,hipotenusa,dif_angle,g);
 	
 		
 		if(selected){
@@ -206,6 +211,40 @@ void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 	
 	
 }
+void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
+    bool g;
+    if(neurites_grosor==true){
+        glLineWidth(firstSection->getVolumenSeccion()/60*10);
+        g=true;
+    }
+    else{
+        g=false;
+        glLineWidth(1);
+    }
+
+    glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
+    glColor3f(1.0, color(), 0.0);
+    float mult;
+    if(neurites_tam)
+        mult=tam_mult*0.40;
+    else
+        mult=0.6;
+
+    float x=mult*(init_x)+ displacementX+init_x;
+    float y=mult*(init_y)+ displacementY+init_y;
+    glVertex2f(displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
+    glVertex2f(x,y);
+
+    float hipotenusa=0;
+    float dif_angle=dif_angle=0.7;
+    float distancia=std::sqrt(std::pow(mult*(x-displacementX),2)+pow(mult*(y-displacementY),2));
+    hipotenusa=distancia/std::cos(0.52359878)*0.4;
+    firstSection->drawSectionsDendograma(x,y,angle_hueco,init_x,init_y);
+}
+
+
+
+
 
 
 void neurite_g::setAngle(float a){
@@ -264,4 +303,10 @@ void neurite_g::setMinLongitud(float a){
 	
 	min_longitud=a;
 }
+
+void neurite_g::setAngleHueco(float a) {
+    angle_hueco=a;
+}
+
+
 	

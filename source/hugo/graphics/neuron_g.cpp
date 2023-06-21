@@ -32,6 +32,9 @@ neuron_g::neuron_g(nsol::Neuron *_neu){
     name=neu->gid();
     angleXTam=false;
     tree=0;
+    dendograma=0;
+    neurites_grosor=0;
+    neurites_tam=0;
   
 
 	tamNeurite();
@@ -50,12 +53,14 @@ void neuron_g::draw(QOpenGLWidget* windowPaint){
                 dend.setNeuritesGrosor(neurites_grosor);
                 dend.setDisplacements(displacementX,displacementY);
                 dend.setTree(tree);
+                dend.setDendograma(dendograma);
                 
      }
      ax[0]->setNeuritesTam(neurites_tam);
      ax[0]->setNeuritesGrosor(neurites_grosor);
      ax[0]->setDisplacements(displacementX,displacementY);
      ax[0]->setTree(tree);
+
      
 	 (angleXTam == false) ? auxDrawAngleEqual(windowPaint) : auxDrawAngleTam(windowPaint);
 	
@@ -152,13 +157,15 @@ void neuron_g::draw2D(QOpenGLWidget* windowPaint){
                 dend.setNeuritesGrosor(neurites_grosor);
                 dend.setDisplacements(displacementX,displacementY);
                 dend.setTree(tree);
+                dend.setDendograma(dendograma);
                 
      }
      ax[0]->setNeuritesTam(neurites_tam);
      ax[0]->setNeuritesGrosor(neurites_grosor);
      ax[0]->setDisplacements(displacementX,displacementY);
      ax[0]->setTree(tree);
-     
+
+     ax[0]->setDendograma(dendograma);
 	 (angleXTam == false) ? auxDrawAngleEqual(windowPaint) : auxDrawAngleTam(windowPaint);
 	
 
@@ -333,13 +340,16 @@ void neuron_g::auxDrawAngleEqual(QOpenGLWidget* windowPaint) {
     ax[0]->coordInitials(init_x+radio*cos(an), init_y+radio*sin(an));
     ax[0]->setAngle(an);
     ax[0]->setScala(scala);
+    ax[0]->setAngleHueco(aux);
     ax[0]->draw(windowPaint);
+
     an+=aux;
     for (auto & item : dends) {
         item.setDisplacements(displacementX, displacementY);
         item.coordInitials(init_x+radio*cos(an), init_y+radio*sin(an));
         item.setScala(scala);
         item.setAngle(an);
+        item.setAngleHueco(aux);
         item.draw(windowPaint);
         an+=aux;
     }
@@ -352,7 +362,6 @@ void neuron_g::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
     ax[0]->setDisplacements(displacementX, displacementY);
     ax[0]->setAngle(i/angle_tam()*2*pi);
     ax[0]->coordInitials(init_x+radio*cos(i/angle_tam()*2*pi), init_y+radio*sin(i/angle_tam()*2*pi));
-    ax[0]->draw(windowPaint);
     ax[0]->draw(windowPaint);
 
     for(auto & item: dends){

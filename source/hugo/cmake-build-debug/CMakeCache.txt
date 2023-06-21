@@ -20,8 +20,8 @@ Boost_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0
 //Path to a file.
 Boost_INCLUDE_DIR:PATH=/usr/include
 
-//No help, variable specified on the command line.
-Brion_DIR:PATH=/home/alberto/code/nsol/build/Brion
+//The directory containing a CMake configuration file for Brion.
+Brion_DIR:PATH=/home/alberto/hbp/nsol/build/Brion
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
@@ -42,7 +42,7 @@ CMAKE_CODEBLOCKS_EXECUTABLE:FILEPATH=CMAKE_CODEBLOCKS_EXECUTABLE-NOTFOUND
 
 //Additional command line arguments when CodeBlocks invokes make.
 // Enter e.g. -j<some_number> to get parallel builds
-CMAKE_CODEBLOCKS_MAKE_ARGUMENTS:STRING=-j4
+CMAKE_CODEBLOCKS_MAKE_ARGUMENTS:STRING=-j8
 
 //Enable colored diagnostics throughout.
 CMAKE_COLOR_DIAGNOSTICS:BOOL=ON
@@ -207,10 +207,10 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //The directory containing a CMake configuration file for Eigen3.
-Eigen3_DIR:PATH=/usr/local/share/eigen3/cmake
+Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
 
-//No help, variable specified on the command line.
-FiReS_DIR:PATH=/home/alberto/code/nsol/build/FiReS
+//The directory containing a CMake configuration file for FiReS.
+FiReS_DIR:PATH=/home/alberto/hbp/nsol/build/FiReS
 
 //CXX compiler flags for OpenMP parallelization
 OpenMP_CXX_FLAGS:STRING=-fopenmp
@@ -245,14 +245,14 @@ Qt5Widgets_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets
 //The directory containing a CMake configuration file for Qt5.
 Qt5_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5
 
-//No help, variable specified on the command line.
-Servus_DIR:PATH=/home/alberto/code/nsol/build/Servus
+//The directory containing a CMake configuration file for Servus.
+Servus_DIR:PATH=/home/alberto/hbp/nsol/build/Servus
 
 //The directory containing a CMake configuration file for boost_headers.
 boost_headers_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0
 
-//No help, variable specified on the command line.
-nsol_DIR:PATH=/home/alberto/code/nsol/build
+//The directory containing a CMake configuration file for nsol.
+nsol_DIR:PATH=/home/alberto/hbp/nsol/build
 
 //Value Computed by CMake
 source_BINARY_DIR:STATIC=/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug
@@ -263,8 +263,8 @@ source_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 source_SOURCE_DIR:STATIC=/home/alberto/CLionProjects/HUGO1.1/source/hugo
 
-//No help, variable specified on the command line.
-vmmlib_DIR:PATH=/home/alberto/code/nsol/build/vmmlib
+//The directory containing a CMake configuration file for vmmlib.
+vmmlib_DIR:PATH=/home/alberto/hbp/nsol/build/vmmlib
 
 
 ########################

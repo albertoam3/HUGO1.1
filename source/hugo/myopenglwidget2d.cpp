@@ -18,8 +18,6 @@ myopenglwidget2d::myopenglwidget2d(QWidget *parent)  : QOpenGLWidget{parent} {
 	
 }
 
-
-
 void myopenglwidget2d::setNeuronG(neuron_g *neuG){
 	  neuronG.push_back(neuG);
 	  
@@ -253,6 +251,13 @@ void myopenglwidget2d::rotate(float x,float y,float z){
 
     rotation = rot * rotation;
 
+}
+
+void myopenglwidget2d::setDendograma(bool a) {
+    for (auto &i: neuronG) {
+        i->setDendograma(a);
+    }
+    update();
 }
 
 

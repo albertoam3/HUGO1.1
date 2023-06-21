@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
@@ -52,7 +51,6 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
-    QCheckBox *setArbol;
     QGroupBox *groupBox_3;
     QRadioButton *igual_grosor;
     QRadioButton *dif_grosor;
@@ -60,6 +58,10 @@ public:
     QListWidget *listWidget;
     QPushButton *loadButton;
     myopenglwidget2d *openGLWidget2D;
+    QGroupBox *groupBox_4;
+    QRadioButton *setDendograma;
+    QRadioButton *setArbol;
+    QRadioButton *setNada;
     QMenuBar *menubar;
     QMenu *menuopen;
     QStatusBar *statusbar;
@@ -124,9 +126,6 @@ public:
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(650, 20, 221, 17));
-        setArbol = new QCheckBox(centralwidget);
-        setArbol->setObjectName(QString::fromUtf8("setArbol"));
-        setArbol->setGeometry(QRect(910, 240, 92, 23));
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         groupBox_3->setGeometry(QRect(1110, 20, 201, 80));
@@ -148,6 +147,18 @@ public:
         openGLWidget2D = new myopenglwidget2d(centralwidget);
         openGLWidget2D->setObjectName(QString::fromUtf8("openGLWidget2D"));
         openGLWidget2D->setGeometry(QRect(450, 110, 421, 401));
+        groupBox_4 = new QGroupBox(centralwidget);
+        groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
+        groupBox_4->setGeometry(QRect(910, 280, 131, 101));
+        setDendograma = new QRadioButton(groupBox_4);
+        setDendograma->setObjectName(QString::fromUtf8("setDendograma"));
+        setDendograma->setGeometry(QRect(10, 30, 112, 23));
+        setArbol = new QRadioButton(groupBox_4);
+        setArbol->setObjectName(QString::fromUtf8("setArbol"));
+        setArbol->setGeometry(QRect(10, 50, 112, 23));
+        setNada = new QRadioButton(groupBox_4);
+        setNada->setObjectName(QString::fromUtf8("setNada"));
+        setNada->setGeometry(QRect(10, 70, 112, 23));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -186,11 +197,14 @@ public:
         label->setText(QApplication::translate("MainWindow", "CARGAR OBJETO", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "PINTAR OBJETOS CARGADOS", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "ELEMENTOS CARGADOS", nullptr));
-        setArbol->setText(QApplication::translate("MainWindow", "\303\241rbol", nullptr));
         groupBox_3->setTitle(QApplication::translate("MainWindow", "Grosor de las ramas", nullptr));
         igual_grosor->setText(QApplication::translate("MainWindow", "Igual", nullptr));
         dif_grosor->setText(QApplication::translate("MainWindow", "Diferente", nullptr));
         loadButton->setText(QApplication::translate("MainWindow", "CARGAR DIRECTORIO", nullptr));
+        groupBox_4->setTitle(QApplication::translate("MainWindow", "Forma de pintar", nullptr));
+        setDendograma->setText(QApplication::translate("MainWindow", "Dendograma", nullptr));
+        setArbol->setText(QApplication::translate("MainWindow", "Arbol", nullptr));
+        setNada->setText(QApplication::translate("MainWindow", "nada", nullptr));
         menuopen->setTitle(QApplication::translate("MainWindow", "open", nullptr));
     } // retranslateUi
 

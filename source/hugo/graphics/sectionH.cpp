@@ -102,9 +102,8 @@ nsol::NeuronMorphologySection sectionH::getSection(){
 	return *sec;
 }
 
-void sectionH::drawSections(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g){
-		
-	if(sec->children().size()==2){
+void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g){
+
 		float valorX,valorY,valorX2,valorY2;
 		
 		hipotenusa*=0.8;
@@ -129,7 +128,7 @@ void sectionH::drawSections(float x1, float x2,float angle,float hipotenusa,floa
 				}
 				glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
 				glVertex2f(valorX,valorY);
-				secAux.drawSections(valorX,valorY,angle,hipotenusa,dif_angle,g);
+				secAux.drawSectionsTree(valorX,valorY,angle,hipotenusa,dif_angle,g);
 			}
 			else{
 				if(g){
@@ -140,11 +139,49 @@ void sectionH::drawSections(float x1, float x2,float angle,float hipotenusa,floa
 				}
 				glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
 				glVertex2f(valorX2,valorY2);	
-				secAux.drawSections(valorX2,valorY2,angle,hipotenusa,dif_angle,g);
+				secAux.drawSectionsTree(valorX2,valorY2,angle,hipotenusa,dif_angle,g);
 			}
 			i++;
 		}
+}
 
-	}
-	
+void sectionH::selected(float x, float y, float z) {
+
+}
+
+void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float init_x,float init_y) {
+    int i=0;
+    for (nsol::Section* s : sec->children()) {
+        nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
+        sectionH secAux(section);
+        if(i==0){
+            glBegin(GL_LINES);
+            glColor3f(1.0, 0.0, 0.0);
+            glVertex2f( x, y); // Especificar las coordenadas del punto a dibujar
+            glVertex2f(x +init_x,y+init_y);
+            glEnd();
+            glPointSize(5.0);  // Establece el tamaño del punto
+
+            glBegin(GL_POINTS);  // Inicia el modo de dibujo de puntos
+            glColor3f(0.0, 0.0, 1.0);  // Establece el color del punto (rojo en este caso)
+            glVertex2f(x, y);  // Establece las coordenadas del punto (en este caso, el origen)
+            glEnd();  // Finaliza el dibujo de puntos
+
+            secAux.drawSectionsDendograma(x+init_x,y+init_y,angle_hueco,init_x,init_y);
+        }
+        else{
+            glBegin(GL_LINES);
+            glColor3f(0.0, 1.0, 0.0);
+
+            glVertex2f( x, y); // Especificar las coordenadas del punto a dibujar
+            std::cout<<"x: "<<x<<"\n";
+            std::cout<<"y: "<<y<<"\n";
+            std::cout<<"angle huecoX: "<<x*(angle_hueco)<<"\n";
+            std::cout<<"angle huecoY: "<<y*cos(angle_hueco)<<"\n";
+            glVertex2f(x*cos(angle_hueco),y*sin(angle_hueco));
+
+            glEnd();
+        }
+        i++;
+    }
 }
