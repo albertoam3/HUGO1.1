@@ -10,14 +10,17 @@ neurite_g::neurite_g(nsol::Neurite* _neurite){
     name="neurite";
     displacementX=0;
     displacementY=0;
-    terminal_nodes=this->neurite->numBranches();
+
     firstSection=new sectionH(this->neurite->firstSection());
+    terminal_nodes=this->terminalNodes();
     tam=0;
     scala=1;
     tam=firstSection->getTamTotal()/100;
     tree=false;
     neurites_grosor=false;
     variable_grosor=VariableEstado::Tamano;
+    max_volumen_seccion = new float;
+    min_volumen_seccion = new float;
 
 }
 void neurite_g::draw(QOpenGLWidget* windowPaint){
@@ -214,14 +217,16 @@ void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     bool g;
     if(neurites_grosor==true){
-        glLineWidth(firstSection->getVolumenSeccion()/60*10);
         g=true;
+        float aux,n;
+        aux=(firstSection->getVolumenSeccion()-(*max_volumen_seccion))/((*max_volumen_seccion)-(*min_volumen_seccion));
+        n=aux*4 +1;
+        glLineWidth(n);
     }
     else{
         g=false;
         glLineWidth(1);
     }
-
     glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
     glColor3f(1.0, color(), 0.0);
     float mult;
@@ -235,11 +240,8 @@ void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     glVertex2f(displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
     glVertex2f(x,y);
 
-    float hipotenusa=0;
-    float dif_angle=dif_angle=0.7;
-    float distancia=std::sqrt(std::pow(mult*(x-displacementX),2)+pow(mult*(y-displacementY),2));
-    hipotenusa=distancia/std::cos(0.52359878)*0.4;
-    firstSection->drawSectionsDendograma(x,y,angle_hueco,init_x,init_y);
+    int n=0;
+    firstSection->drawSectionsDendograma(x,y,angle_hueco,angle,init_x*0.5,init_y*0.5,terminal_nodes,&n,g,*max_volumen_seccion,*min_volumen_seccion);
 }
 
 
@@ -258,7 +260,9 @@ void neurite_g::setGrosor(float a){
 }
 
 float neurite_g::grosorTotal(){
-	return firstSection->getVolumenAcumulado();
+    *max_volumen_seccion=firstSection->getVolumenSeccion();
+    *min_volumen_seccion=firstSection->getVolumenSeccion();
+	return firstSection->getVolumenAcumulado(max_volumen_seccion,min_volumen_seccion);
 	
 }
 void neurite_g::setVariableGrosor(int a){
@@ -308,5 +312,8 @@ void neurite_g::setAngleHueco(float a) {
     angle_hueco=a;
 }
 
+float neurite_g::terminalNodes() {
+        return firstSection->terminalNodes();
+}
 
 	

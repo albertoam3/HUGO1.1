@@ -15,7 +15,9 @@ myopenglwidget2d::myopenglwidget2d(QWidget *parent)  : QOpenGLWidget{parent} {
     position=Eigen::Vector3f(0, 0, 0);
     rotationX=0;
     rotationY=0;
-	
+    QSurfaceFormat format;
+    format.setSamples(8); // Número de muestras para antialiasing
+    this->setFormat(format);
 }
 
 void myopenglwidget2d::setNeuronG(neuron_g *neuG){
@@ -84,6 +86,20 @@ void myopenglwidget2d::initializeGL() {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_COLOR_MATERIAL);
     glEnable(GL_MODELVIEW);
+
+
+
+    // Habilitar antialiasing
+    glEnable(GL_BLEND);
+    glEnable(GL_LINE_SMOOTH);
+    glEnable(GL_POLYGON_SMOOTH);
+    glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
+    glHint(GL_POLYGON_SMOOTH_HINT, GL_NICEST);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_MULTISAMPLE);
+
+    QSurfaceFormat format = this->format();
+    std::cout<< "Multisampling supported:" << format.samples()<<"\n";
 }
 void myopenglwidget2d::paintGL() {
    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

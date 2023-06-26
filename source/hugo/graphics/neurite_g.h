@@ -36,6 +36,8 @@ private:
     float min_terminal_nodes{};
     float max_longitud{};
     float min_longitud{};
+    float *max_volumen_seccion;
+    float *min_volumen_seccion;
     
 
 public:
@@ -91,9 +93,13 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 	void setVariableGrosor(int a);
 
     void setAngleHueco(float a);
-   
+
+
+
 protected:   
     virtual float color()=0 ;
+private:
+    float terminalNodes();
 };
 
 

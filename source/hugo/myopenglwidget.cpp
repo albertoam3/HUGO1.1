@@ -21,6 +21,9 @@ myopenglwidget::myopenglwidget(QWidget *parent)
     position=Eigen::Vector3f(0, 0, 0);
     rotationX=0;
     rotationY=0;
+    QSurfaceFormat format;
+    format.setSamples(8); // Número de muestras para antialiasing
+    this->setFormat(format);
 }
 
 //Métodos necesarios para la utilización de la pantalla QOpenGLWidget : initializeGL,paintGL,resizeGL
@@ -30,6 +33,16 @@ void myopenglwidget::initializeGL() {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_COLOR_MATERIAL);
     glEnable(GL_MODELVIEW);
+
+
+    // Habilitar antialiasing
+    glEnable(GL_BLEND);
+    glEnable(GL_LINE_SMOOTH);
+    glEnable(GL_POLYGON_SMOOTH);
+    glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
+    glHint(GL_POLYGON_SMOOTH_HINT, GL_NICEST);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_MULTISAMPLE);
 }
 
 void myopenglwidget::paintGL() {

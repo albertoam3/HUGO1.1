@@ -21,18 +21,20 @@ private:
     static const double PI;
 
 
+
 public:
     sectionH(nsol::NeuronMorphologySection* _sec);
     float getTamTotal();
     float getTamSection();
-    float getVolumenAcumulado();
+    float getVolumenAcumulado(float *maxVolumenSeccion,float *minVolumenSeccion);
     float getVolumenSeccion();
+    float terminalNodes();
     nsol::NeuronMorphologySection getSection();
     void drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g);
-    void drawSectionsDendograma(float x,float y,float angle_hueco,float init_x,float init_y);
+    void drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float maxVS,float minVS);
     void selected(float x,float y, float z);
     
-private:    
+private:
     float distanciaEntreRegistros(nsol::Node* r1, nsol::Node* r2);
     float areaCono(nsol::Node* r1,nsol::Node* r2);
     float volumenCono(nsol::Node* r1, nsol::Node* r2);

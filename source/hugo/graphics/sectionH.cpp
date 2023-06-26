@@ -42,14 +42,19 @@ float sectionH::getTamSection(){
 }
 
 
-float sectionH::getVolumenAcumulado(){
+float sectionH::getVolumenAcumulado(float *maxVolumenSeccion,float *minVolumenSeccion){
 	float vol=0;
 	for (nsol::Section* s : sec->children()) {
     		nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
 			sectionH secAux(section);
-			vol+=secAux.getVolumenAcumulado();
+
+			vol+=secAux.getVolumenAcumulado(maxVolumenSeccion,minVolumenSeccion);
 	}
 	vol+=getVolumenSeccion();
+    if(getVolumenSeccion()>(*maxVolumenSeccion))
+        (*maxVolumenSeccion)=getVolumenSeccion();
+    else if (getVolumenSeccion()<(*minVolumenSeccion))
+        (*minVolumenSeccion)=getVolumenSeccion();
 	return vol;
 }
 
@@ -149,39 +154,85 @@ void sectionH::selected(float x, float y, float z) {
 
 }
 
-void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float init_x,float init_y) {
+void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float maxVS,float minVS) {
     int i=0;
     for (nsol::Section* s : sec->children()) {
         nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
         sectionH secAux(section);
         if(i==0){
+            if(g) {
+                float aux,n;
+                aux=(getVolumenSeccion()-minVS)/(maxVS-minVS);
+                n=aux*4 +1;
+                glLineWidth(n);
+            }
             glBegin(GL_LINES);
             glColor3f(1.0, 0.0, 0.0);
-            glVertex2f( x, y); // Especificar las coordenadas del punto a dibujar
+            glVertex2f( x, y);
             glVertex2f(x +init_x,y+init_y);
             glEnd();
-            glPointSize(5.0);  // Establece el tamaño del punto
+            glPointSize(5.0);
 
-            glBegin(GL_POINTS);  // Inicia el modo de dibujo de puntos
-            glColor3f(0.0, 0.0, 1.0);  // Establece el color del punto (rojo en este caso)
-            glVertex2f(x, y);  // Establece las coordenadas del punto (en este caso, el origen)
-            glEnd();  // Finaliza el dibujo de puntos
+            glBegin(GL_POINTS);
+            glColor3f(0.0, 0.0, 1.0);
+            glVertex2f(x, y);
+            glEnd();
 
-            secAux.drawSectionsDendograma(x+init_x,y+init_y,angle_hueco,init_x,init_y);
+            secAux.drawSectionsDendograma(x+init_x,y+init_y,angle_hueco,angle,init_x,init_y,terminal_nodes,cont,g,maxVS,minVS);
         }
         else{
-            glBegin(GL_LINES);
-            glColor3f(0.0, 1.0, 0.0);
+            (*cont)++;
+            if(g){
+                float aux,n;
+                aux=(getVolumenSeccion()-minVS)/(maxVS-minVS);
+                n=aux*4 +1;
+                glLineWidth(n);
+            }
 
-            glVertex2f( x, y); // Especificar las coordenadas del punto a dibujar
-            std::cout<<"x: "<<x<<"\n";
-            std::cout<<"y: "<<y<<"\n";
-            std::cout<<"angle huecoX: "<<x*(angle_hueco)<<"\n";
-            std::cout<<"angle huecoY: "<<y*cos(angle_hueco)<<"\n";
-            glVertex2f(x*cos(angle_hueco),y*sin(angle_hueco));
+            glBegin(GL_LINES);
+            glColor3f(1.0, 0.0, 0.0);
+            float modulo=sqrt(pow(x,2)+pow(y,2));
+            glVertex2f( x, y);
+            float nx=modulo*cos(angle-angle_hueco*(*cont)/terminal_nodes);
+            float ny=modulo*sin(angle-angle_hueco*(*cont)/terminal_nodes);
+
+            glVertex2f(nx,ny);
+
+            float mod_init=sqrt(pow(init_x,2)+pow(init_y,2));
+            float nix=mod_init*cos(angle-angle_hueco*(*cont)/terminal_nodes);
+            float niy=mod_init*sin(angle-angle_hueco*(*cont)/terminal_nodes);
+
+
+            glVertex2f(nx,ny);
+            glVertex2f(nx+nix,ny+niy);
+
 
             glEnd();
+            glBegin(GL_POINTS);
+            glColor3f(0.0, 0.0, 1.0);
+            glVertex2f(nx+nix, ny+niy);
+            glEnd();
+
+
+
+            secAux.drawSectionsDendograma(nx+nix,ny+niy,angle_hueco,angle,nix,niy,terminal_nodes,cont,g,maxVS,minVS);
+
         }
         i++;
     }
+}
+
+float sectionH::terminalNodes() {
+    float terminal=0;
+
+    if(sec->children().empty()){
+        terminal++;
+    }
+
+    for (nsol::Section* s : sec->children()) {
+        nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
+        sectionH secAux(section);
+        terminal+=secAux.terminalNodes();
+    }
+    return terminal;
 }
