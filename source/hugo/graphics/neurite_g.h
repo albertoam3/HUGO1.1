@@ -10,14 +10,9 @@
 #include "nsol/nsol.h"
 #include "sectionH.h"
 #include <QLineEdit>
+#include "VariableEstado.h"
 
 
-enum class VariableEstado
-  {
-    Tamano= 0 ,
-    Volumen,
-    nodosTerminales
-  };
 
 
 class neurite_g : public graphic_objects{
@@ -38,6 +33,10 @@ private:
     float min_longitud{};
     float *max_volumen_seccion;
     float *min_volumen_seccion;
+    float *max_tam_seccion;
+    float *min_tam_seccion;
+
+
     
 
 public:
@@ -82,7 +81,9 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 	float grosorTotal();
 	
 	void setMaxTerminalNodes(float a);
-	
+
+
+    float getTamTotal();
 	void setMinTerminalNodes(float a);
 	
 	void setMaxLongitud(float a);

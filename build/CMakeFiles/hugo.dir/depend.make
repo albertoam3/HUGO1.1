@@ -143,6 +143,7 @@ CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /home/alberto/CLionProjects/HUGO1.
 CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.cpp
 CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.h
+CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
 CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
 CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
@@ -499,6 +500,9 @@ CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /usr/include/x86_64-linux-gnu/qt5/
 CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/hugo.dir/base_datos_objetos.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 
+CMakeFiles/hugo.dir/graphics/VariableEstado.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.cpp
+CMakeFiles/hugo.dir/graphics/VariableEstado.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
+
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/Core
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/Core/Array.h
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/Core/ArrayBase.h
@@ -639,6 +643,7 @@ CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/s
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/CommonCwiseUnaryOps.h
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.cpp
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
@@ -1124,6 +1129,7 @@ CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/CommonCwiseUnaryOps.h
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.cpp
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
 CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
@@ -1609,6 +1615,7 @@ CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.
 CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/CommonCwiseUnaryOps.h
 CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
 CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp
 CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h
@@ -2093,6 +2100,7 @@ CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1
 CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/CommonCwiseUnaryOps.h
 CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
 CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
 CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
@@ -2590,6 +2598,7 @@ CMakeFiles/hugo.dir/graphics/sectionH.cpp.o: /home/alberto/CLionProjects/HUGO1.1
 CMakeFiles/hugo.dir/graphics/sectionH.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/CommonCwiseUnaryOps.h
 CMakeFiles/hugo.dir/graphics/sectionH.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/hugo.dir/graphics/sectionH.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+CMakeFiles/hugo.dir/graphics/sectionH.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/graphics/sectionH.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.cpp
 CMakeFiles/hugo.dir/graphics/sectionH.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h
 CMakeFiles/hugo.dir/graphics/sectionH.cpp.o: /home/alberto/hbp/nsol/build/Brion/include/brain/api.h
@@ -3606,6 +3615,7 @@ CMakeFiles/hugo.dir/hugo.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/
 CMakeFiles/hugo.dir/hugo.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.h
+CMakeFiles/hugo.dir/hugo.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
 CMakeFiles/hugo.dir/hugo.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
@@ -4235,6 +4245,7 @@ CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /home/alberto/CLionProj
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.h
+CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
 CMakeFiles/hugo.dir/hugo_autogen/mocs_compilation.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
@@ -4852,6 +4863,7 @@ CMakeFiles/hugo.dir/mainwindow.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.h
+CMakeFiles/hugo.dir/mainwindow.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
 CMakeFiles/hugo.dir/mainwindow.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
@@ -5490,6 +5502,7 @@ CMakeFiles/hugo.dir/myopenglwidget.cpp.o: /home/alberto/CLionProjects/HUGO1.1/so
 CMakeFiles/hugo.dir/myopenglwidget.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/CommonCwiseUnaryOps.h
 CMakeFiles/hugo.dir/myopenglwidget.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/hugo.dir/myopenglwidget.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+CMakeFiles/hugo.dir/myopenglwidget.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/myopenglwidget.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
 CMakeFiles/hugo.dir/myopenglwidget.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
 CMakeFiles/hugo.dir/myopenglwidget.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h
@@ -6063,6 +6076,7 @@ CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o: /home/alberto/CLionProjects/HUGO1.1/
 CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/CommonCwiseUnaryOps.h
 CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h
 CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h
 CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o: /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h

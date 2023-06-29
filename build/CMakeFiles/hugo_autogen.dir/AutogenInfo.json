@@ -13,6 +13,11 @@
 			"EWIEGA46WW/moc_base_datos_objetos.cpp"
 		],
 		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h",
+			"MU",
+			"4NLTMHEJ4E/moc_VariableEstado.cpp"
+		],
+		[
 			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h",
 			"MU",
 			"4NLTMHEJ4E/moc_axon_g.cpp"
@@ -166,6 +171,10 @@
 	[
 		[
 			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.cpp",
+			"MU"
+		],
+		[
+			"/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.cpp",
 			"MU"
 		],
 		[

@@ -8,6 +8,7 @@
 #include "nsol/nsol.h"
 #include <QOpenGLWidget>
 #include "math.h"
+#include "VariableEstado.h"
 
 class sectionH {
 private:
@@ -24,14 +25,14 @@ private:
 
 public:
     sectionH(nsol::NeuronMorphologySection* _sec);
-    float getTamTotal();
+    float getTamTotal(float *max, float *min);
     float getTamSection();
     float getVolumenAcumulado(float *maxVolumenSeccion,float *minVolumenSeccion);
     float getVolumenSeccion();
     float terminalNodes();
     nsol::NeuronMorphologySection getSection();
-    void drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g);
-    void drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float maxVS,float minVS);
+    void drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g,float max,float min,VariableEstado variable_grosor);
+    void drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float max,float min,VariableEstado variable_grosor);
     void selected(float x,float y, float z);
     
 private:

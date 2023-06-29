@@ -13,14 +13,17 @@ neurite_g::neurite_g(nsol::Neurite* _neurite){
 
     firstSection=new sectionH(this->neurite->firstSection());
     terminal_nodes=this->terminalNodes();
-    tam=0;
     scala=1;
-    tam=firstSection->getTamTotal()/100;
+
     tree=false;
     neurites_grosor=false;
     variable_grosor=VariableEstado::Tamano;
     max_volumen_seccion = new float;
     min_volumen_seccion = new float;
+    max_tam_seccion = new float;
+    min_tam_seccion = new float;
+    tam=firstSection->getTamTotal(max_tam_seccion,min_tam_seccion)/100;
+
 
 }
 void neurite_g::draw(QOpenGLWidget* windowPaint){
@@ -178,10 +181,33 @@ void neurite_g::setTamMult(float t){
 void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 		
 		bool g;
-		if(neurites_grosor==true){
-			glLineWidth(firstSection->getVolumenSeccion()/60*10);
-			g=true;
-		}
+    float max,min=0;
+    if(neurites_grosor==true){
+        g=true;
+        float aux,n;
+        switch(variable_grosor){
+            case VariableEstado::Volumen:
+
+                max=(*max_volumen_seccion);
+                min=(*min_volumen_seccion);
+                aux=(firstSection->getVolumenSeccion()-min)/(max-min);
+                break;
+            case VariableEstado::nodosTerminales:
+                max=(firstSection->terminalNodes());
+                min=1;
+                aux=(firstSection->terminalNodes()-min)/(max-min);
+                break;
+            case VariableEstado::Tamano:
+                max=(*max_tam_seccion);
+                min=(*min_tam_seccion);
+                aux=(firstSection->getTamSection()-min)/(max-min);
+
+                break;
+        }
+        n=aux*4 +1;
+        glLineWidth(n);
+
+    }
 		else{
 			g=false;
 			glLineWidth(1);
@@ -204,9 +230,8 @@ void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 		float dif_angle=dif_angle=0.7;
 		float distancia=std::sqrt(std::pow(mult*(x-displacementX),2)+pow(mult*(y-displacementY),2));
 		hipotenusa=distancia/std::cos(0.52359878)*0.4;
-		firstSection->drawSectionsTree(x,y,angle,hipotenusa,dif_angle,g);
-	
-		
+		firstSection->drawSectionsTree(x,y,angle,hipotenusa,dif_angle,g,max,min,variable_grosor);
+
 		if(selected){
 			drawSelc(windowPaint);
 		}
@@ -216,12 +241,32 @@ void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 }
 void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     bool g;
+    float max,min=0;
     if(neurites_grosor==true){
         g=true;
         float aux,n;
-        aux=(firstSection->getVolumenSeccion()-(*max_volumen_seccion))/((*max_volumen_seccion)-(*min_volumen_seccion));
+        switch(variable_grosor){
+            case VariableEstado::Volumen:
+
+                max=(*max_volumen_seccion);
+                min=(*min_volumen_seccion);
+                aux=(firstSection->getVolumenSeccion()-min)/(max-min);
+                break;
+            case VariableEstado::nodosTerminales:
+                max=(firstSection->terminalNodes());
+                min=1;
+                aux=(firstSection->terminalNodes()-min)/(max-min);
+                break;
+            case VariableEstado::Tamano:
+                max=(*max_tam_seccion);
+                min=(*min_tam_seccion);
+                aux=(firstSection->getTamSection()-min)/(max-min);
+
+                break;
+        }
         n=aux*4 +1;
         glLineWidth(n);
+
     }
     else{
         g=false;
@@ -241,7 +286,7 @@ void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     glVertex2f(x,y);
 
     int n=0;
-    firstSection->drawSectionsDendograma(x,y,angle_hueco,angle,init_x*0.5,init_y*0.5,terminal_nodes,&n,g,*max_volumen_seccion,*min_volumen_seccion);
+    firstSection->drawSectionsDendograma(x,y,angle_hueco,angle,init_x*0.5,init_y*0.5,terminal_nodes,&n,g,max,min,variable_grosor);
 }
 
 
@@ -314,6 +359,12 @@ void neurite_g::setAngleHueco(float a) {
 
 float neurite_g::terminalNodes() {
         return firstSection->terminalNodes();
+}
+
+float neurite_g::getTamTotal() {
+    *max_tam_seccion=firstSection->getTamSection();
+    *min_tam_seccion=firstSection->getTamSection();
+    return firstSection->getTamTotal(max_tam_seccion,min_tam_seccion);
 }
 
 	

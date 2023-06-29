@@ -102,7 +102,7 @@ void myopenglwidget2d::initializeGL() {
     std::cout<< "Multisampling supported:" << format.samples()<<"\n";
 }
 void myopenglwidget2d::paintGL() {
-   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
     if (buttonDrawActive) {
         position=Eigen::Vector3f(0, 0, 0);
@@ -122,6 +122,7 @@ void myopenglwidget2d::paintGL() {
         glGetFloatv(GL_MODELVIEW_MATRIX, modelview_matrix);
         Eigen::Matrix4f *aux= reinterpret_cast<Eigen::Matrix4f *>(modelview_matrix);
         aux->block< 3, 3 >( 0, 0 ) = rotation;
+
         glLoadMatrixf(aux->data());
         glScalef(scalaTotal, scalaTotal, 1.0f);
         glGetFloatv(GL_MODELVIEW_MATRIX, modelview_matrix);
@@ -147,7 +148,6 @@ void myopenglwidget2d::resizeGL(int w, int h) {
 void myopenglwidget2d::wheelEvent(QWheelEvent *event) {
     if (event->modifiers() & Qt::ControlModifier) { // Verificar si se presionó la tecla de control
         int delta = event->angleDelta().y(); // Obtener el desplazamiento de la rueda del ratón
-
         scala = 0;
         if (delta > 0) {
             scala = 0.05;
@@ -227,12 +227,6 @@ void myopenglwidget2d::mouseMoveEvent(QMouseEvent *event_) {
     ejeYAux = mouseY;
 }
 
-
-
-
-
-
-
 //privadas
 
 void myopenglwidget2d::transform() {
@@ -257,14 +251,12 @@ void myopenglwidget2d::rotate(float x,float y,float z){
     static float smoothedAngle = angle;  // Variable para almacenar el ángulo suavizado
     smoothedAngle = 0.000005 * angle + (1.0 - 0.000005) * smoothedAngle;
 
-
     float sinAngle = sin(smoothedAngle);
     float cosAngle = cos(smoothedAngle);
 
     rot << cosAngle, -sinAngle, 0.0f,
            sinAngle, cosAngle, 0.0f,
            0.0f, 0.0f, 1.0f;
-
     rotation = rot * rotation;
 
 }

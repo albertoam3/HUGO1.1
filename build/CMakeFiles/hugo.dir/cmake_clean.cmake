@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/hugo_autogen.dir/ParseCache.txt"
   "hugo_autogen"
   "CMakeFiles/hugo.dir/base_datos_objetos.cpp.o"
+  "CMakeFiles/hugo.dir/graphics/VariableEstado.cpp.o"
   "CMakeFiles/hugo.dir/graphics/axon_g.cpp.o"
   "CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o"
   "CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o"
