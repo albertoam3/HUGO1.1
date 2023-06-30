@@ -22,7 +22,7 @@ myopenglwidget::myopenglwidget(QWidget *parent)
     rotationX=0;
     rotationY=0;
     QSurfaceFormat format;
-    format.setSamples(8); // Número de muestras para antialiasing
+    format.setSamples(22); // Número de muestras para antialiasing
     this->setFormat(format);
 }
 

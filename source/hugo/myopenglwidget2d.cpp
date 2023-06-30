@@ -16,7 +16,7 @@ myopenglwidget2d::myopenglwidget2d(QWidget *parent)  : QOpenGLWidget{parent} {
     rotationX=0;
     rotationY=0;
     QSurfaceFormat format;
-    format.setSamples(8); // Número de muestras para antialiasing
+    format.setSamples(22); // Número de muestras para antialiasing
     this->setFormat(format);
 }
 
@@ -99,7 +99,6 @@ void myopenglwidget2d::initializeGL() {
     glEnable(GL_MULTISAMPLE);
 
     QSurfaceFormat format = this->format();
-    std::cout<< "Multisampling supported:" << format.samples()<<"\n";
 }
 void myopenglwidget2d::paintGL() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

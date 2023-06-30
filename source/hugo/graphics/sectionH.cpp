@@ -105,10 +105,7 @@ float sectionH::volumenCono(nsol::Node* r1,nsol::Node* r2) {
 }
 
 
-
-
 nsol::NeuronMorphologySection sectionH::getSection(){
-
 	return *sec;
 }
 
@@ -211,7 +208,6 @@ void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float an
             glVertex2f(x +init_x,y+init_y);
             glEnd();
             glPointSize(5.0);
-
             glBegin(GL_POINTS);
             glColor3f(0.0, 0.0, 1.0);
             glVertex2f(x, y);
@@ -221,6 +217,25 @@ void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float an
         }
         else {
             (*cont)++;
+
+            glColor3f(1.0, 0.0, 0.0);
+            float modulo = sqrt(pow(x, 2) + pow(y, 2));
+            float nx = modulo * cos(angle - angle_hueco * (*cont) / terminal_nodes);
+            float ny = modulo * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+            glLineWidth(1);
+            glBegin(GL_LINES);
+            float angle_aux = std::atan2(y, x);
+            if (angle_aux<=0)
+                angle_aux+= 2*3.14159;
+            glVertex2f(x,y);
+            for (float i = angle_aux; i >= angle - angle_hueco * (*cont) / terminal_nodes; i -= 0.005) {
+                float x2 = modulo * cosf(i); // Calcula la coordenada x
+                float y2 = modulo * sinf(i); // Calcula la coordenada y
+                glVertex2f(x2 + 0, y2 + 0); // Dibuja el vértice en la posición (x + cx, y + cy)
+                glVertex2f(x2 + 0, y2 + 0); // Dibuja el vértice en la posición (x + cx, y + cy)
+            }
+            glVertex2f(nx,ny);
+            glEnd();
             if (g) {
                 float aux, n;
                 switch (variable_grosor) {
@@ -237,42 +252,20 @@ void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float an
                 n = aux * 4 + 1;
                 glLineWidth(n);
             }
-            glColor3f(1.0, 0.0, 0.0);
-            float modulo = sqrt(pow(x, 2) + pow(y, 2));
-            float nx = modulo * cos(angle - angle_hueco * (*cont) / terminal_nodes);
-            float ny = modulo * sin(angle - angle_hueco * (*cont) / terminal_nodes);
-
-            glBegin(GL_LINES);
-            float angle_aux = std::atan2(y, x);
-            if (angle_aux<=0)
-                angle_aux+= 2*3.14159;
-            glVertex2f(x,y);
-            for (float i = angle_aux; i >= angle - angle_hueco * (*cont) / terminal_nodes; i -= 0.005) {
-                float x2 = modulo * cosf(i); // Calcula la coordenada x
-                float y2 = modulo * sinf(i); // Calcula la coordenada y
-                glVertex2f(x2 + 0, y2 + 0); // Dibuja el vértice en la posición (x + cx, y + cy)
-                glVertex2f(x2 + 0, y2 + 0); // Dibuja el vértice en la posición (x + cx, y + cy)
-            }
-            glVertex2f(nx,ny);
-            glEnd();
             glBegin(GL_LINES);
 
             float mod_init=sqrt(pow(init_x,2)+pow(init_y,2));
             float nix=mod_init*cos(angle-angle_hueco*(*cont)/terminal_nodes);
             float niy=mod_init*sin(angle-angle_hueco*(*cont)/terminal_nodes);
 
-
             glVertex2f(nx,ny);
             glVertex2f(nx+nix,ny+niy);
-
 
             glEnd();
             glBegin(GL_POINTS);
             glColor3f(0.0, 0.0, 1.0);
             glVertex2f(nx+nix, ny+niy);
             glEnd();
-
-
 
             secAux.drawSectionsDendograma(nx+nix,ny+niy,angle_hueco,angle,nix,niy,terminal_nodes,cont,g,max,min,variable_grosor);
 

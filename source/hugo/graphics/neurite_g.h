@@ -36,9 +36,6 @@ private:
     float *max_tam_seccion;
     float *min_tam_seccion;
 
-
-    
-
 public:
 
 
@@ -81,7 +78,6 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 	float grosorTotal();
 	
 	void setMaxTerminalNodes(float a);
-
 
     float getTamTotal();
 	void setMinTerminalNodes(float a);
