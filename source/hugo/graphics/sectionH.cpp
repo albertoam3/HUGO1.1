@@ -11,6 +11,9 @@ const double sectionH::PI = 3.14159265358979323846;
 
 sectionH::sectionH(nsol::NeuronMorphologySection* _sec){
      sec=_sec;
+     selecionada=false;
+     tamTotal=0;
+     tamSeccion=getTamSection();
 }
 
 float sectionH::getTamTotal(float *max, float *min){
@@ -119,9 +122,7 @@ void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,
 		valorX2=x1+cos(angle+1.30899694*dif_angle)*hipotenusa;
 		valorY2=x2+sin(angle+1.30899694*dif_angle)*hipotenusa;
 		dif_angle*=0.6;
-			
-		
-		
+
 		int i=0;
 		for (nsol::Section* s : sec->children()) {
 			nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
@@ -129,20 +130,7 @@ void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,
 			if(i==0){
                 if(g) {
                     glEnd();
-                    float aux,n;
-                    switch(variable_grosor) {
-                        case VariableEstado::Volumen:
-                            aux = (secAux.getVolumenSeccion() - min) / (max - min);
-                            break;
-                        case VariableEstado::nodosTerminales:
-                            aux = secAux.terminalNodes() - min / (max - min);
-                            break;
-                        case VariableEstado::Tamano:
-                            aux = (secAux.getTamSection() - min) / (max - min);
-                            break;
-                    }
-                    n = aux * 4 + 1;
-                    glLineWidth(n);
+                    getLineWidth( variable_grosor, secAux, max, min);
                     glBegin(GL_LINES);
                 }
 				glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
@@ -152,20 +140,7 @@ void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,
 			else{
                 if(g) {
                     glEnd();
-                    float aux,n;
-                    switch(variable_grosor) {
-                        case VariableEstado::Volumen:
-                            aux = (secAux.getVolumenSeccion() - min) / (max - min);
-                            break;
-                        case VariableEstado::nodosTerminales:
-                            aux = secAux.terminalNodes() - min / (max - min);
-                            break;
-                        case VariableEstado::Tamano:
-                            aux = (secAux.getTamSection() - min) / (max - min);
-                            break;
-                    }
-                    n = aux * 4 + 1;
-                    glLineWidth(n);
+                    getLineWidth( variable_grosor, secAux, max, min);
                     glBegin(GL_LINES);
                 }
 				glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
@@ -176,8 +151,8 @@ void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,
 		}
 }
 
-void sectionH::selected(float x, float y, float z) {
-
+bool sectionH::selected(float x, float y,float z) {
+    return true;
 }
 
 void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float max,float min,VariableEstado variable_grosor) {
@@ -210,7 +185,8 @@ void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float an
         glPointSize(5.0);
         glBegin(GL_POINTS);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(x, y);
+        //glVertex2f(x, y);
+        glVertex2f(x + init_x, y + init_y);
         glEnd();
         sec1->drawSectionsDendograma(x + init_x, y + init_y, angle_hueco, angle, init_x, init_y, terminal_nodes, cont,
                                       g, max, min, variable_grosor);
@@ -296,6 +272,5 @@ void sectionH::getLineWidth(VariableEstado variable_grosor,sectionH sec,float ma
     }
     n = aux * 4 + 1;
     glLineWidth(n);
-
 
 }

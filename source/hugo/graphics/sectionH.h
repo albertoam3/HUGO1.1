@@ -21,6 +21,8 @@ private:
     float tamSeccion;
     static const double PI;
 
+    float x1,x2,y1,y2;
+    bool selecionada;
 
 
 public:
@@ -33,19 +35,18 @@ public:
     nsol::NeuronMorphologySection getSection();
     void drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g,float max,float min,VariableEstado variable_grosor);
     void drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float max,float min,VariableEstado variable_grosor);
-    void selected(float x,float y, float z);
-    void drawArco(float x1,float y1,float x2,float y2,float angle,float angle_hueco, int* cont,float terminal_nodes,float modulo);
+    bool selected(float x,float y, float z);
 
 
+    void seleccion();
 
 private:
     float distanciaEntreRegistros(nsol::Node* r1, nsol::Node* r2);
     float areaCono(nsol::Node* r1,nsol::Node* r2);
     float volumenCono(nsol::Node* r1, nsol::Node* r2);
     void getLineWidth(VariableEstado variable_grosor,sectionH sec,float max,float min);
+    void drawArco(float x1,float y1,float x2,float y2,float angle,float angle_hueco, int* cont,float terminal_nodes,float modulo);
 
-
-    
 };
 
 

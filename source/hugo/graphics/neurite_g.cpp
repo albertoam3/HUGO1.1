@@ -284,7 +284,12 @@ void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     float y=mult*(init_y)+ displacementY+init_y;
     glVertex2f(displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
     glVertex2f(x,y);
-
+    glEnd();
+    glBegin(GL_POINTS);
+    glColor3f(0.0, 0.0, 1.0);
+    glVertex2f(displacementX+init_x, displacementY+init_y);
+    glVertex2f(x,y);
+    glEnd();
     int n=0;
     firstSection->drawSectionsDendograma(x,y,angle_hueco,angle,init_x*0.5,init_y*0.5,terminal_nodes,&n,g,max,min,variable_grosor);
 }
