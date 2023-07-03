@@ -180,97 +180,69 @@ void sectionH::selected(float x, float y, float z) {
 
 }
 
-void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float max,float min,VariableEstado variable_grosor){
-    int i=0;
-    for (nsol::Section* s : sec->children()) {
-        nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
-        sectionH secAux(section);
-        if(i==0){
-            if(g) {
-                float aux,n;
-                switch(variable_grosor) {
-                    case VariableEstado::Volumen:
-                        aux = (secAux.getVolumenSeccion() - min) / (max - min);
-                        break;
-                    case VariableEstado::nodosTerminales:
-                        aux = (secAux.terminalNodes() - min) / (max - min);
-                        break;
-                    case VariableEstado::Tamano:
-                        aux = (secAux.getTamSection() - min) / (max - min);
-                        break;
-                }
-                n = aux * 4 + 1;
-                glLineWidth(n);
-            }
-            glBegin(GL_LINES);
-            glColor3f(1.0, 0.0, 0.0);
-            glVertex2f( x, y);
-            glVertex2f(x +init_x,y+init_y);
-            glEnd();
-            glPointSize(5.0);
-            glBegin(GL_POINTS);
-            glColor3f(0.0, 0.0, 1.0);
-            glVertex2f(x, y);
-            glEnd();
+void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float max,float min,VariableEstado variable_grosor) {
+    int i = 0;
 
-            secAux.drawSectionsDendograma(x+init_x,y+init_y,angle_hueco,angle,init_x,init_y,terminal_nodes,cont,g,max,min,variable_grosor);
+    if (sec->children().size() == 2) {
+        nsol::NeuronMorphologySection *section1 = dynamic_cast<nsol::NeuronMorphologySection *>(sec->children()[0]);
+        nsol::NeuronMorphologySection *section2 = dynamic_cast<nsol::NeuronMorphologySection *>(sec->children()[1]);
+
+        sectionH secAux(section1);
+        sectionH secAux2(section2);
+        sectionH *sec1,*sec2;
+        //ahora mismo se va siempre por la rama más grande, con una variable de estado podriamos decidir si lo queremos asi o queremos que siga el camino que nos dan
+        if (secAux.terminalNodes()>secAux2.terminalNodes()){
+            sec1=&secAux;
+            sec2=&secAux2;
         }
-        else {
-            (*cont)++;
-
-            glColor3f(1.0, 0.0, 0.0);
-            float modulo = sqrt(pow(x, 2) + pow(y, 2));
-            float nx = modulo * cos(angle - angle_hueco * (*cont) / terminal_nodes);
-            float ny = modulo * sin(angle - angle_hueco * (*cont) / terminal_nodes);
-            glLineWidth(1);
-            glBegin(GL_LINES);
-            float angle_aux = std::atan2(y, x);
-            if (angle_aux<=0)
-                angle_aux+= 2*3.14159;
-            glVertex2f(x,y);
-            for (float i = angle_aux; i >= angle - angle_hueco * (*cont) / terminal_nodes; i -= 0.005) {
-                float x2 = modulo * cosf(i); // Calcula la coordenada x
-                float y2 = modulo * sinf(i); // Calcula la coordenada y
-                glVertex2f(x2 + 0, y2 + 0); // Dibuja el vértice en la posición (x + cx, y + cy)
-                glVertex2f(x2 + 0, y2 + 0); // Dibuja el vértice en la posición (x + cx, y + cy)
-            }
-            glVertex2f(nx,ny);
-            glEnd();
-            if (g) {
-                float aux, n;
-                switch (variable_grosor) {
-                    case VariableEstado::Volumen:
-                        aux = (secAux.getVolumenSeccion() - min) / (max - min);
-                        break;
-                    case VariableEstado::nodosTerminales:
-                        aux = (secAux.terminalNodes() - min) / (max - min);
-                        break;
-                    case VariableEstado::Tamano:
-                        aux = (secAux.getTamSection() - min) / (max - min);
-                        break;
-                }
-                n = aux * 4 + 1;
-                glLineWidth(n);
-            }
-            glBegin(GL_LINES);
-
-            float mod_init=sqrt(pow(init_x,2)+pow(init_y,2));
-            float nix=mod_init*cos(angle-angle_hueco*(*cont)/terminal_nodes);
-            float niy=mod_init*sin(angle-angle_hueco*(*cont)/terminal_nodes);
-
-            glVertex2f(nx,ny);
-            glVertex2f(nx+nix,ny+niy);
-
-            glEnd();
-            glBegin(GL_POINTS);
-            glColor3f(0.0, 0.0, 1.0);
-            glVertex2f(nx+nix, ny+niy);
-            glEnd();
-
-            secAux.drawSectionsDendograma(nx+nix,ny+niy,angle_hueco,angle,nix,niy,terminal_nodes,cont,g,max,min,variable_grosor);
-
+        else{
+             sec1=&secAux2;
+             sec2=&secAux;
         }
-        i++;
+        if (g) {
+            getLineWidth( variable_grosor,*sec1, max, min);
+        }
+        glBegin(GL_LINES);
+        glColor3f(1.0, 0.0, 0.0);
+        glVertex2f(x, y);
+        glVertex2f(x + init_x, y + init_y);
+        glEnd();
+        glPointSize(5.0);
+        glBegin(GL_POINTS);
+        glColor3f(0.0, 0.0, 1.0);
+        glVertex2f(x, y);
+        glEnd();
+        sec1->drawSectionsDendograma(x + init_x, y + init_y, angle_hueco, angle, init_x, init_y, terminal_nodes, cont,
+                                      g, max, min, variable_grosor);
+
+        (*cont)++;
+
+        glColor3f(1.0, 0.0, 0.0);
+        float modulo = sqrt(pow(x, 2) + pow(y, 2));
+        float nx = modulo * cos(angle - angle_hueco * (*cont) / terminal_nodes);
+        float ny = modulo * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+        drawArco( x, y, nx, ny, angle, angle_hueco,cont, terminal_nodes, modulo);
+        if (g) {
+            getLineWidth( variable_grosor,*sec2, max, min);
+        }
+        glBegin(GL_LINES);
+
+        float mod_init = sqrt(pow(init_x, 2) + pow(init_y, 2));
+        float nix = mod_init * cos(angle - angle_hueco * (*cont) / terminal_nodes);
+        float niy = mod_init * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+
+        glVertex2f(nx, ny);
+        glVertex2f(nx + nix, ny + niy);
+
+        glEnd();
+        glPointSize(5.0);
+        glBegin(GL_POINTS);
+        glColor3f(0.0, 0.0, 1.0);
+        glVertex2f(nx + nix, ny + niy);
+        glEnd();
+
+        sec2->drawSectionsDendograma(nx + nix, ny + niy, angle_hueco, angle, nix, niy, terminal_nodes, cont, g, max,
+                                      min, variable_grosor);
     }
 }
 
@@ -287,4 +259,43 @@ float sectionH::terminalNodes() {
         terminal+=secAux.terminalNodes();
     }
     return terminal;
+}
+
+
+void sectionH::drawArco(float x1,float y1,float x2,float y2,float angle,float angle_hueco, int* cont,float terminal_nodes,float modulo){
+    glLineWidth(1);
+    glBegin(GL_LINES);
+    float angle_aux = std::atan2(y1, x1);
+    if (angle_aux <= 0)
+        angle_aux += 2 * 3.14159;
+    glVertex2f(x1, y1);
+    for (float i = angle_aux; i >= angle - angle_hueco * (*cont) / terminal_nodes; i -= 0.005) {
+        float xAux = modulo * cosf(i); // Calcula la coordenada x
+        float yAux = modulo * sinf(i); // Calcula la coordenada y
+        glVertex2f(xAux + 0, yAux + 0); // Dibuja el vértice en la posición (x + cx, y + cy)
+        glVertex2f(xAux + 0, yAux + 0); // Dibuja el vértice en la posición (x + cx, y + cy)
+    }
+    glVertex2f(x2, y2);
+    glEnd();
+
+
+}
+
+void sectionH::getLineWidth(VariableEstado variable_grosor,sectionH sec,float max,float min){
+    float aux, n;
+    switch (variable_grosor) {
+        case VariableEstado::Volumen:
+            aux = (sec.getVolumenSeccion() - min) / (max - min);
+            break;
+        case VariableEstado::nodosTerminales:
+            aux = (sec.terminalNodes() - min) / (max - min);
+            break;
+        case VariableEstado::Tamano:
+            aux = (sec.getTamSection() - min) / (max - min);
+            break;
+    }
+    n = aux * 4 + 1;
+    glLineWidth(n);
+
+
 }
