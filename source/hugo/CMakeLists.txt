@@ -63,6 +63,6 @@ add_executable(hugo
           graphics/sectionH.h
           graphics/sectionH.cpp
           base_datos_objetos.cpp 
-          base_datos_objetos.h graphics/VariableEstado.cpp graphics/VariableEstado.h)
+          base_datos_objetos.h  graphics/VariableEstado.h)
 
 target_link_libraries(hugo ${HUGO_DEPENDENT_LIBRARIES})

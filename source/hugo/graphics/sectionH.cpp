@@ -242,7 +242,7 @@ void sectionH::drawArco(float x1,float y1,float x2,float y2,float angle,float an
     glLineWidth(1);
     glBegin(GL_LINES);
     float angle_aux = std::atan2(y1, x1);
-    if (angle_aux <= 0)
+    if (angle_aux <  angle - angle_hueco * (*cont)/terminal_nodes)
         angle_aux += 2 * 3.14159;
     glVertex2f(x1, y1);
     for (float i = angle_aux; i >= angle - angle_hueco * (*cont) / terminal_nodes; i -= 0.005) {
