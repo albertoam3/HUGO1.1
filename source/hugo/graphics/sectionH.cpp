@@ -159,7 +159,7 @@ void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,
 
 bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
     if(coord_x+0.05>x && coord_x-0.05<x && coord_y+0.05>y && coord_y-0.05<y){
-        //QString texto="Soy la seleccionada :) ";
+        QString texto="Soy la seleccionada :) ";
         seeToolTip(texto,windowPaint);
         return true;
     }else if (sec->children().size() == 2) {
