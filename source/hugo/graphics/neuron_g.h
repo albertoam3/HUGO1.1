@@ -66,7 +66,7 @@ public:
 	
 	void calculateMaxMinNodosTerminales();
 	void calculateMaxMinLongitud();
-	
+	void selectSection(QOpenGLWidget* windowPaint,float x,float y);
 	
 };
 

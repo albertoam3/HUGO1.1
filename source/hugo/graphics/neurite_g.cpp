@@ -137,7 +137,7 @@ void neurite_g::coordinates(){
 //Comprueba si el objeto esta selected
 bool neurite_g::select(QOpenGLWidget* windowPaint, float x, float y,float z){
     coordinates();
-    firstSection->selected(x,y,z);
+    //firstSection->selected(x,y,z);
 
     if(x>min_X && x<max_X && y>min_Y && y<max_Y)
         selected=!selected;
@@ -370,6 +370,10 @@ float neurite_g::getTamTotal() {
     *max_tam_seccion=firstSection->getTamSection();
     *min_tam_seccion=firstSection->getTamSection();
     return firstSection->getTamTotal(max_tam_seccion,min_tam_seccion);
+}
+
+void neurite_g::selectSection(QOpenGLWidget* windowPaint,float x, float y) {
+    firstSection->selected( windowPaint,x,y);
 }
 
 	

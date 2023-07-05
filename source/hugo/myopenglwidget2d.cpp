@@ -18,6 +18,10 @@ myopenglwidget2d::myopenglwidget2d(QWidget *parent)  : QOpenGLWidget{parent} {
     QSurfaceFormat format;
     format.setSamples(22); // Número de muestras para antialiasing
     this->setFormat(format);
+    setMouseTracking(true); // Habilitar el seguimiento del ratón
+    controlPressed=false;
+    rPressed=false;
+    tPressed=false;
 }
 
 void myopenglwidget2d::setNeuronG(neuron_g *neuG){
@@ -160,10 +164,7 @@ void myopenglwidget2d::wheelEvent(QWheelEvent *event) {
 }
 
 void myopenglwidget2d::mousePressEvent(QMouseEvent *event_) {
-    scala = 0;
-    translationX = 0;
-    translationY = 0;
-    rotationX=0;
+
     float x = event_->x();
     float y = height() - event_->y();
     //Convertir la posición del ratón en la ventana en una posición normalizada
@@ -173,19 +174,10 @@ void myopenglwidget2d::mousePressEvent(QMouseEvent *event_) {
     if (event_->button() == Qt::RightButton) {
         for (auto &i: neuronG) {
             if (i != nullptr)
-                i->select(this, result.x(), result.y(),result.z());
+                i->select(this, result.x(), result.y(), result.z());
         }
         update();
-        _rotation=true;
-        _translation=false;
-
-    } else if (event_->button() == Qt::LeftButton) {
-
-        _rotation=false;
-        _translation=true;
     }
-    ejeXAux = mouseX;
-    ejeYAux = mouseY;
 }
 
 //Cuando arrastro el ratón pulsando la tecla arrastro el objeto alli.
@@ -198,7 +190,7 @@ void myopenglwidget2d::mouseMoveEvent(QMouseEvent *event_) {
     mouseX = ((2.0f * x) / width() - 1.0f);
     mouseY = ((2.0f * y) / height() - 1.0f) ;
     transform();
-    if (_translation) {
+    if (controlPressed && tPressed) {
         bool encontrado = false;
         for (auto &i: neuronG) {
             if (i != nullptr && i->isSelected()) {
@@ -218,9 +210,16 @@ void myopenglwidget2d::mouseMoveEvent(QMouseEvent *event_) {
         }
         update();
     }
-    else if(_rotation){
+    else if(controlPressed && rPressed){
         rotate(mouseX-ejeXAux,mouseY-ejeYAux,0.0f);
         update();
+    }
+    else{
+        for (auto &i: neuronG) {
+            i->selectSection(this,result.x(),result.y());
+        }
+
+
     }
     ejeXAux = mouseX;
     ejeYAux = mouseY;
@@ -270,4 +269,22 @@ void myopenglwidget2d::setDendograma(bool a) {
 
 
 
+void myopenglwidget2d::keyPressEvent(QKeyEvent* event){
+    if (event->key() == Qt::Key_Control)
+        controlPressed = true; // Tecla Control presionada
 
+    if (event->key() == Qt::Key_R)
+        rPressed=true;
+    if(event->key() == Qt::Key_T)
+        tPressed=true;
+}
+
+void myopenglwidget2d::keyReleaseEvent(QKeyEvent* event){
+    if (event->key() == Qt::Key_Control){
+        controlPressed = false; // Tecla Control liberada
+    }
+    if (event->key() == Qt::Key_R)
+        rPressed=false;
+    if(event->key() == Qt::Key_T)
+        tPressed=false;
+}

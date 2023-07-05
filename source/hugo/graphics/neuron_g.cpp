@@ -464,6 +464,13 @@ void neuron_g::calculateMaxMinLongitud(){
        		item.setMinLongitud(min);
        	}	
 }
+
+void neuron_g::selectSection(QOpenGLWidget* windowPaint,float x, float y) {
+    ax[0]->selectSection(windowPaint,x,y);
+    for (auto & item : dends) {
+        item.selectSection(windowPaint,x,y);
+    }
+}
 	
 	
 

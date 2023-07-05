@@ -7,6 +7,7 @@
 
 #include "nsol/nsol.h"
 #include <QOpenGLWidget>
+#include <QToolTip>
 #include "math.h"
 #include "VariableEstado.h"
 
@@ -21,7 +22,9 @@ private:
     float tamSeccion;
     static const double PI;
 
-    float x1,x2,y1,y2;
+
+    float coord_x;
+    float coord_y;
     bool selecionada;
 
 
@@ -35,7 +38,7 @@ public:
     nsol::NeuronMorphologySection getSection();
     void drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g,float max,float min,VariableEstado variable_grosor);
     void drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float max,float min,VariableEstado variable_grosor);
-    bool selected(float x,float y, float z);
+    bool selected(QOpenGLWidget* windowPaint,float x,float y);
 
 
     void seleccion();
@@ -46,7 +49,8 @@ private:
     float volumenCono(nsol::Node* r1, nsol::Node* r2);
     void getLineWidth(VariableEstado variable_grosor,sectionH sec,float max,float min);
     void drawArco(float x1,float y1,float x2,float y2,float angle,float angle_hueco, int* cont,float terminal_nodes,float modulo);
-
+    void coordinates();
+    void seeToolTip(QString texto,QOpenGLWidget *windowPaint);
 };
 
 

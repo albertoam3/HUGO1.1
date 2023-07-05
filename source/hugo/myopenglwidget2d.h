@@ -30,6 +30,7 @@ private:
     bool _translation;
     float rotationX,rotationY;
     float ejeXAux{},ejeYAux{};
+    bool controlPressed,rPressed,tPressed;
 	Q_OBJECT
 public:
   myopenglwidget2d(QWidget *parent =nullptr);
@@ -50,6 +51,8 @@ protected:
     void wheelEvent(QWheelEvent *event) override;
     void mousePressEvent( QMouseEvent* event_ ) override;
     void mouseMoveEvent( QMouseEvent* event_ ) override;
+    void keyPressEvent(QKeyEvent* event) override;
+    void keyReleaseEvent(QKeyEvent* event) override;
     
     
 private:

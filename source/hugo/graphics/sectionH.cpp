@@ -2,6 +2,8 @@
 // Created by alberto on 03/05/23.
 //
 
+
+
 #include "sectionH.h"
 
 
@@ -14,6 +16,8 @@ sectionH::sectionH(nsol::NeuronMorphologySection* _sec){
      selecionada=false;
      tamTotal=0;
      tamSeccion=getTamSection();
+     coord_x=0;
+     coord_y=0;
 }
 
 float sectionH::getTamTotal(float *max, float *min){
@@ -115,7 +119,9 @@ nsol::NeuronMorphologySection sectionH::getSection(){
 void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g,float max,float min,VariableEstado variable_grosor){
 
 		float valorX,valorY,valorX2,valorY2;
-		
+		coord_x=x1;
+        coord_y=x2;
+
 		hipotenusa*=0.8;
 		valorX=x1+cos(angle-1.30899694*dif_angle)*hipotenusa;
 		valorY=x2+sin(angle-1.30899694*dif_angle)*hipotenusa;
@@ -151,12 +157,30 @@ void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,
 		}
 }
 
-bool sectionH::selected(float x, float y,float z) {
-    return true;
+bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
+    if(coord_x+0.05>x && coord_x-0.05<x && coord_y+0.05>y && coord_y-0.05<y){
+        //QString texto="Soy la seleccionada :) ";
+        seeToolTip(texto,windowPaint);
+        return true;
+    }else if (sec->children().size() == 2) {
+          //  std::cout<<"Entro por aqui\n";
+            nsol::NeuronMorphologySection *section1 = dynamic_cast<nsol::NeuronMorphologySection *>(sec->children()[0]);
+            nsol::NeuronMorphologySection *section2 = dynamic_cast<nsol::NeuronMorphologySection *>(sec->children()[1]);
+            sectionH secAux(section1);
+            sectionH secAux2(section2);
+            bool a=secAux.selected(windowPaint,x,y);
+            if (a)
+                return true;
+            else
+                return secAux2.selected(windowPaint,x,y);
+    }
+    else
+        return false;
 }
 
 void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float max,float min,VariableEstado variable_grosor) {
-    int i = 0;
+    coord_x=x;
+    coord_y=y;
 
     if (sec->children().size() == 2) {
         nsol::NeuronMorphologySection *section1 = dynamic_cast<nsol::NeuronMorphologySection *>(sec->children()[0]);
@@ -185,7 +209,6 @@ void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float an
         glPointSize(5.0);
         glBegin(GL_POINTS);
         glColor3f(0.0, 0.0, 1.0);
-        //glVertex2f(x, y);
         glVertex2f(x + init_x, y + init_y);
         glEnd();
         sec1->drawSectionsDendograma(x + init_x, y + init_y, angle_hueco, angle, init_x, init_y, terminal_nodes, cont,
@@ -197,6 +220,7 @@ void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float an
         float modulo = sqrt(pow(x, 2) + pow(y, 2));
         float nx = modulo * cos(angle - angle_hueco * (*cont) / terminal_nodes);
         float ny = modulo * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+
         drawArco( x, y, nx, ny, angle, angle_hueco,cont, terminal_nodes, modulo);
         if (g) {
             getLineWidth( variable_grosor,*sec2, max, min);
@@ -273,4 +297,11 @@ void sectionH::getLineWidth(VariableEstado variable_grosor,sectionH sec,float ma
     n = aux * 4 + 1;
     glLineWidth(n);
 
+}
+
+void sectionH::coordinates() {
+
+}
+void sectionH::seeToolTip(QString texto,QOpenGLWidget *windowPaint){
+    QToolTip::showText(QCursor::pos(), texto, windowPaint, QRect(), 500);
 }
