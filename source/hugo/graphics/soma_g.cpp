@@ -16,8 +16,8 @@ void soma_g::draw(QOpenGLWidget* windowPaint){
     glColor3f(0.7f, 0.5f, 0.2f);
     float calcX,calcY;
     for(float i=0;i<10;i+=0.01){
-        calcX=som->meanRadius()*cos(i);
-        calcY=som->meanRadius()*sin(i);
+        calcX=0.5*cos(i);
+        calcY=0.5*sin(i);
         glVertex2f(calcX + displacementX + init_x, calcY + displacementY + init_y);
     }
     glEnd();
@@ -82,7 +82,7 @@ bool soma_g::isSelected() {
 }
 
 float soma_g::getRadio() {
-    return som->meanRadius();
+    return 0.5;
 }
 
 

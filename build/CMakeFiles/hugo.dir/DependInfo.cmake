@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/base_datos_objetos.cpp.o"
-  "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/graphics/VariableEstado.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/graphics/axon_g.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o"
   "/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp" "/home/alberto/CLionProjects/HUGO1.1/build/CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o"

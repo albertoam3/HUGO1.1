@@ -166,30 +166,6 @@ base_datos_objetos.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/base_datos_objetos.cpp.s
 .PHONY : base_datos_objetos.cpp.s
 
-graphics/VariableEstado.o: graphics/VariableEstado.cpp.o
-.PHONY : graphics/VariableEstado.o
-
-# target to build an object file
-graphics/VariableEstado.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/VariableEstado.cpp.o
-.PHONY : graphics/VariableEstado.cpp.o
-
-graphics/VariableEstado.i: graphics/VariableEstado.cpp.i
-.PHONY : graphics/VariableEstado.i
-
-# target to preprocess a source file
-graphics/VariableEstado.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/VariableEstado.cpp.i
-.PHONY : graphics/VariableEstado.cpp.i
-
-graphics/VariableEstado.s: graphics/VariableEstado.cpp.s
-.PHONY : graphics/VariableEstado.s
-
-# target to generate assembly for a file
-graphics/VariableEstado.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/VariableEstado.cpp.s
-.PHONY : graphics/VariableEstado.cpp.s
-
 graphics/axon_g.o: graphics/axon_g.cpp.o
 .PHONY : graphics/axon_g.o
 
@@ -563,9 +539,6 @@ help:
 	@echo "... base_datos_objetos.o"
 	@echo "... base_datos_objetos.i"
 	@echo "... base_datos_objetos.s"
-	@echo "... graphics/VariableEstado.o"
-	@echo "... graphics/VariableEstado.i"
-	@echo "... graphics/VariableEstado.s"
 	@echo "... graphics/axon_g.o"
 	@echo "... graphics/axon_g.i"
 	@echo "... graphics/axon_g.s"

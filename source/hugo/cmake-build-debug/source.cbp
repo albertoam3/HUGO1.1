@@ -164,9 +164,6 @@
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/mocs_compilation.cpp">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.cpp">
-			<Option target="hugo"/>
-		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h">
 			<Option target="hugo"/>
 		</Unit>

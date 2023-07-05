@@ -500,9 +500,6 @@ CMakeFiles/hugo.dir/base_datos_objetos.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
-CMakeFiles/hugo.dir/graphics/VariableEstado.cpp.o
- /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.cpp
- /home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h
 CMakeFiles/hugo.dir/graphics/axon_g.cpp.o
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/Core
  /home/alberto/CLionProjects/HUGO1.1/source/hugo/Eigen/src/Core/Array.h
