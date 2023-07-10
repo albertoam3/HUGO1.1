@@ -7,7 +7,7 @@
 #include "sectionH.h"
 
 
-
+#include <vector>
 
 const double sectionH::PI = 3.14159265358979323846;
 
@@ -18,14 +18,18 @@ sectionH::sectionH(nsol::NeuronMorphologySection* _sec){
      tamSeccion=getTamSection();
      coord_x=0;
      coord_y=0;
+
+    for(nsol::Section* s : sec->children()){
+        nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
+        sectionsHijas.push_back(new sectionH(section));
+    }
 }
 
 float sectionH::getTamTotal(float *max, float *min){
 	float tam=0;
-	for (nsol::Section* s : sec->children()) {
-    		nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
-			sectionH secAux(section);
-			tam+=secAux.getTamTotal(max,min);
+	for (sectionH* s : sectionsHijas) {
+
+			tam+=s->getTamTotal(max,min);
 	}
 	tam+=getTamSection();
     if(getTamSection()>(*max))
@@ -56,12 +60,10 @@ float sectionH::getTamSection(){
 
 float sectionH::getVolumenAcumulado(float *maxVolumenSeccion,float *minVolumenSeccion){
 	float vol=0;
-	for (nsol::Section* s : sec->children()) {
-    		nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
-			sectionH secAux(section);
+    for (sectionH* s : sectionsHijas) {
+        vol+=s->getVolumenAcumulado(maxVolumenSeccion,minVolumenSeccion);
+    }
 
-			vol+=secAux.getVolumenAcumulado(maxVolumenSeccion,minVolumenSeccion);
-	}
 	vol+=getVolumenSeccion();
     if(getVolumenSeccion()>(*maxVolumenSeccion))
         (*maxVolumenSeccion)=getVolumenSeccion();
@@ -130,28 +132,26 @@ void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,
 		dif_angle*=0.6;
 
 		int i=0;
-		for (nsol::Section* s : sec->children()) {
-			nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
-			sectionH secAux(section);
+        for (sectionH* s : sectionsHijas) {
 			if(i==0){
                 if(g) {
                     glEnd();
-                    getLineWidth( variable_grosor, secAux, max, min);
+                    getLineWidth( variable_grosor, *s, max, min);
                     glBegin(GL_LINES);
                 }
 				glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
 				glVertex2f(valorX,valorY);
-				secAux.drawSectionsTree(valorX,valorY,angle,hipotenusa,dif_angle,g,max,min,variable_grosor);
+				s->drawSectionsTree(valorX,valorY,angle,hipotenusa,dif_angle,g,max,min,variable_grosor);
 			}
 			else{
                 if(g) {
                     glEnd();
-                    getLineWidth( variable_grosor, secAux, max, min);
+                    getLineWidth( variable_grosor, *s, max, min);
                     glBegin(GL_LINES);
                 }
 				glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
 				glVertex2f(valorX2,valorY2);	
-				secAux.drawSectionsTree(valorX2,valorY2,angle,hipotenusa,dif_angle,g,max,min,variable_grosor);
+				s->drawSectionsTree(valorX2,valorY2,angle,hipotenusa,dif_angle,g,max,min,variable_grosor);
 			}
 			i++;
 		}
@@ -161,42 +161,34 @@ bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
     if(coord_x+0.05>x && coord_x-0.05<x && coord_y+0.05>y && coord_y-0.05<y){
         QString texto="Soy la seleccionada :) ";
         seeToolTip(texto,windowPaint);
+        selected_hijas();
         return true;
-    }else if (sec->children().size() == 2) {
-          //  std::cout<<"Entro por aqui\n";
-            nsol::NeuronMorphologySection *section1 = dynamic_cast<nsol::NeuronMorphologySection *>(sec->children()[0]);
-            nsol::NeuronMorphologySection *section2 = dynamic_cast<nsol::NeuronMorphologySection *>(sec->children()[1]);
-            sectionH secAux(section1);
-            sectionH secAux2(section2);
-            bool a=secAux.selected(windowPaint,x,y);
+    }else if (sectionsHijas.size() == 2) {
+            bool a=sectionsHijas[0]->selected(windowPaint,x,y);
             if (a)
                 return true;
             else
-                return secAux2.selected(windowPaint,x,y);
+                return sectionsHijas[1]->selected(windowPaint,x,y);
     }
     else
         return false;
 }
 
-void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float max,float min,VariableEstado variable_grosor) {
+void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float dir_x, float dir_y, float terminal_nodes, int *cont, bool g, float max, float min, VariableEstado variable_grosor) {
     coord_x=x;
     coord_y=y;
+    std::cout<<x<<"y"<<y<<"\n";
+    if (sectionsHijas.size() == 2) {
 
-    if (sec->children().size() == 2) {
-        nsol::NeuronMorphologySection *section1 = dynamic_cast<nsol::NeuronMorphologySection *>(sec->children()[0]);
-        nsol::NeuronMorphologySection *section2 = dynamic_cast<nsol::NeuronMorphologySection *>(sec->children()[1]);
-
-        sectionH secAux(section1);
-        sectionH secAux2(section2);
         sectionH *sec1,*sec2;
         //ahora mismo se va siempre por la rama más grande, con una variable de estado podriamos decidir si lo queremos asi o queremos que siga el camino que nos dan
-        if (secAux.terminalNodes()>secAux2.terminalNodes()){
-            sec1=&secAux;
-            sec2=&secAux2;
+        if (sectionsHijas[0]->terminalNodes()>sectionsHijas[1]->terminalNodes()){
+            sec1=sectionsHijas[0];
+            sec2=sectionsHijas[1];
         }
         else{
-             sec1=&secAux2;
-             sec2=&secAux;
+             sec1=sectionsHijas[1];
+             sec2=sectionsHijas[0];
         }
         if (g) {
             getLineWidth( variable_grosor,*sec1, max, min);
@@ -204,15 +196,15 @@ void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float an
         glBegin(GL_LINES);
         glColor3f(1.0, 0.0, 0.0);
         glVertex2f(x, y);
-        glVertex2f(x + init_x, y + init_y);
+        glVertex2f(x + dir_x, y + dir_y);
         glEnd();
         glPointSize(5.0);
         glBegin(GL_POINTS);
         glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(x + init_x, y + init_y);
+        glVertex2f(x + dir_x, y + dir_y);
         glEnd();
-        sec1->drawSectionsDendograma(x + init_x, y + init_y, angle_hueco, angle, init_x, init_y, terminal_nodes, cont,
-                                      g, max, min, variable_grosor);
+        sec1->drawSectionsDendograma(x + dir_x, y + dir_y, angle_hueco, angle, dir_x, dir_y, terminal_nodes, cont,
+                                     g, max, min, variable_grosor);
 
         (*cont)++;
 
@@ -227,9 +219,10 @@ void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float an
         }
         glBegin(GL_LINES);
 
-        float mod_init = sqrt(pow(init_x, 2) + pow(init_y, 2));
+        float mod_init = sqrt(pow(dir_x, 2) + pow(dir_y, 2));
         float nix = mod_init * cos(angle - angle_hueco * (*cont) / terminal_nodes);
         float niy = mod_init * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+
 
         glVertex2f(nx, ny);
         glVertex2f(nx + nix, ny + niy);
@@ -249,14 +242,11 @@ void sectionH::drawSectionsDendograma(float x,float y,float angle_hueco,float an
 float sectionH::terminalNodes() {
     float terminal=0;
 
-    if(sec->children().empty()){
+    if(sectionsHijas.empty()){
         terminal++;
     }
-
-    for (nsol::Section* s : sec->children()) {
-        nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
-        sectionH secAux(section);
-        terminal+=secAux.terminalNodes();
+    for (sectionH* s : sectionsHijas) {
+        terminal+=s->terminalNodes();
     }
     return terminal;
 }
@@ -304,4 +294,35 @@ void sectionH::coordinates() {
 }
 void sectionH::seeToolTip(QString texto,QOpenGLWidget *windowPaint){
     QToolTip::showText(QCursor::pos(), texto, windowPaint, QRect(), 500);
+}
+
+void sectionH::draw3d( float x, float y, float z) {
+            glBegin(GL_LINES);
+            if(selecionada){
+                glColor4f(x, y, z,1);
+            }
+            else{
+                glColor4f(x, y, z,0.5);
+            }
+            for(nsol::Node* n: sec->nodes()){
+                if(n==sec->firstNode() || n==sec->lastNode())
+                    glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+                else{
+                    glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+                    glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+                }
+            }
+            glEnd();
+        for(sectionH *s: sectionsHijas){
+            s->draw3d(x,y,z);
+        }
+
+
+}
+
+void sectionH::selected_hijas() {
+    selecionada=true;
+    for(sectionH* s:sectionsHijas){
+        s->selected_hijas();
+    }
 }

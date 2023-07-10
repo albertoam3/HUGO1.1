@@ -92,6 +92,7 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     void setAngleHueco(float a);
 
     void selectSection(QOpenGLWidget* windowPaint,float x,float y);
+    void draw3d(float x,float y,float z);
 
 protected:   
     virtual float color()=0 ;

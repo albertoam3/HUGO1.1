@@ -26,6 +26,7 @@ private:
     float coord_x;
     float coord_y;
     bool selecionada;
+    std::vector<sectionH*> sectionsHijas;
 
 
 public:
@@ -37,11 +38,12 @@ public:
     float terminalNodes();
     nsol::NeuronMorphologySection getSection();
     void drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g,float max,float min,VariableEstado variable_grosor);
-    void drawSectionsDendograma(float x,float y,float angle_hueco,float angle,float init_x,float init_y,float terminal_nodes,int *cont,bool g,float max,float min,VariableEstado variable_grosor);
+    void drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float dir_x, float dir_y, float terminal_nodes, int *cont, bool g, float max, float min, VariableEstado variable_grosor);
     bool selected(QOpenGLWidget* windowPaint,float x,float y);
 
 
     void seleccion();
+    void draw3d( float x,float y,float z);
 
 private:
     float distanciaEntreRegistros(nsol::Node* r1, nsol::Node* r2);
@@ -51,6 +53,8 @@ private:
     void drawArco(float x1,float y1,float x2,float y2,float angle,float angle_hueco, int* cont,float terminal_nodes,float modulo);
     void coordinates();
     void seeToolTip(QString texto,QOpenGLWidget *windowPaint);
+    void selected_hijas();
+
 };
 
 

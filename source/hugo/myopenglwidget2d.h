@@ -9,6 +9,7 @@
 #include "graphics/graphic_objects.h"
 #include "graphics/neuron_g.h"
 #include <Eigen/Dense>
+#include "myopenglwidget.h"
 
 
 class myopenglwidget2d : public QOpenGLWidget, public QOpenGLFunctions
@@ -31,6 +32,7 @@ private:
     float rotationX,rotationY;
     float ejeXAux{},ejeYAux{};
     bool controlPressed,rPressed,tPressed;
+    myopenglwidget *mogw;
 	Q_OBJECT
 public:
   myopenglwidget2d(QWidget *parent =nullptr);
@@ -43,7 +45,11 @@ public:
   void setDendograma(bool a);
   void select_grosor_den(bool a);
   void variableGrosor(float a);
-  
+
+  void otherWidget(myopenglwidget *mogw);
+
+
+
 protected:
     void paintGL() override;
     void resizeGL(int w,int h) override;

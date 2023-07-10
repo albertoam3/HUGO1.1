@@ -22,6 +22,7 @@ myopenglwidget2d::myopenglwidget2d(QWidget *parent)  : QOpenGLWidget{parent} {
     controlPressed=false;
     rPressed=false;
     tPressed=false;
+    mogw=nullptr;
 }
 
 void myopenglwidget2d::setNeuronG(neuron_g *neuG){
@@ -218,9 +219,9 @@ void myopenglwidget2d::mouseMoveEvent(QMouseEvent *event_) {
         for (auto &i: neuronG) {
             i->selectSection(this,result.x(),result.y());
         }
-
-
     }
+    if(mogw!= nullptr)
+        mogw->update();
     ejeXAux = mouseX;
     ejeYAux = mouseY;
 }
@@ -287,4 +288,8 @@ void myopenglwidget2d::keyReleaseEvent(QKeyEvent* event){
         rPressed=false;
     if(event->key() == Qt::Key_T)
         tPressed=false;
+}
+
+void myopenglwidget2d::otherWidget(myopenglwidget *mogw) {
+    this->mogw=mogw;
 }

@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
    
     openGLWidget2d= ui->openGLWidget2D;
 	openGLWidget2d->setFocus();
+    openGLWidget2d->otherWidget(_openGLWidget);
     connect_buttons();
 
     //Creo cuatro objetos para probar distintas formas de pintar, esto tambien es momentaneo

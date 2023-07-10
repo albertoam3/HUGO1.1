@@ -275,13 +275,9 @@ void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
     glColor3f(1.0, color(), 0.0);
     float mult;
-    if(neurites_tam)
-        mult=tam_mult*0.40;
-    else
-        mult=0.6;
 
-    float x=mult*(init_x)+ displacementX+init_x;
-    float y=mult*(init_y)+ displacementY+init_y;
+    float x=0.5*(init_x)+ displacementX+init_x;
+    float y=0.5*(init_y)+ displacementY+init_y;
     glVertex2f(displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
     glVertex2f(x,y);
     glEnd();
@@ -374,6 +370,10 @@ float neurite_g::getTamTotal() {
 
 void neurite_g::selectSection(QOpenGLWidget* windowPaint,float x, float y) {
     firstSection->selected( windowPaint,x,y);
+}
+
+void neurite_g::draw3d(float x, float y, float z) {
+   firstSection->draw3d(x,y,z);
 }
 
 	

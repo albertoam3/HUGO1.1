@@ -92,7 +92,9 @@ void neuron_g::draw(QOpenGLWidget* windowPaint){
     	}
     	
     	for (nsol::Neurite* n:neu->morphology()->neurites()){
-    		i++;
+
+
+            i++;
     	  	if(i%1==0){
     	  		z = (z == 0) ? 1 : 0;
     	  	}
@@ -107,6 +109,9 @@ void neuron_g::draw(QOpenGLWidget* windowPaint){
     	  		y=0.5f;
     	  		z=0.0f;
     	  	}
+
+              //
+
     	  	glBegin(GL_LINES);
     	  	glColor3f(x, y, z);
     	  	std::stack<nsol::SectionPtr> sPS;
@@ -196,51 +201,25 @@ void neuron_g::draw3D(QOpenGLWidget* windowPaint){
     	for(nsol::Node* n: neu->morphology()->soma()->nodes()){
     		glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
     	}
-    	
-    	for (nsol::Neurite* n:neu->morphology()->neurites()){
-    		i++;
-    	  	if(i%1==0){
-    	  		z = (z == 0) ? 1 : 0;
-    	  	}
-    	  	if(i%2==0){
-    	  		y = (y == 0) ? 1 : 0;
-    	  	}
-    	  	if(i%4==0){
-    	  		x = (x == 0) ? 1 : 0;
-    	  	}
-    	  	if(i==8){
-    	  		x=0.9f;
-    	  		y=0.5f;
-    	  		z=0.0f;
-    	  	}
-    	  	glBegin(GL_LINES);
-    	  	glColor3f(x, y, z);
-    	  	std::stack<nsol::SectionPtr> sPS;
 
-     	   	sPS.push(n->firstSection());
-	
-    		while (!sPS.empty( ))
-    		{
-      			nsol::NeuronMorphologySectionPtr lS =
-        		dynamic_cast< nsol::NeuronMorphologySectionPtr >( sPS.top( ));
-      			sPS.pop( );
-      			for (nsol::Sections::iterator child = lS->children( ).begin( );
-           			child != lS->children( ).end( ); child++)
-      			{
-        			for(nsol::Node* n: lS->nodes()){
-        				if(n==lS->firstNode() || n==lS->lastNode())
-    						glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
-    					else{
-    						glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
-    						glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
-    					}
-    				}
-        			
-        		sPS.push(*child);
-      			}	
-    		}
-    		glEnd();
-    	}
+        for(dendrite_g d: dends){
+            i++;
+            if(i%1==0){
+                z = (z == 0) ? 1 : 0;
+            }
+            if(i%2==0){
+                y = (y == 0) ? 1 : 0;
+            }
+            if(i%4==0){
+                x = (x == 0) ? 1 : 0;
+            }
+            if(i==8){
+                x=0.9f;
+                y=0.5f;
+                z=0.0f;
+            }
+            d.draw3d(x,y,z);
+        }
 }
 
 void neuron_g::drawSelc(QOpenGLWidget* windowPaint){
