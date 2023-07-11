@@ -48,12 +48,19 @@ void soma_g::drawSelc(QOpenGLWidget* windowPaint){
 
 //Devuelve las coordinates en las que se encuentra el objeto
 void soma_g::coordinates(){
-    min_X= -som->meanRadius() + displacementX + init_x;
+   /* min_X= -som->meanRadius() + displacementX + init_x;
     min_Y= -som->meanRadius() + displacementY + init_y;
     max_X= som->meanRadius() + displacementX + init_x;
     max_Y= som->meanRadius() + displacementY + init_y;
     min_Z=displacementZ-0.03;
     max_Z=displacementZ+0.03;
+    */
+    min_X= -0.5 + displacementX + init_x;
+    min_Y= -0.5  + displacementY + init_y;
+    max_X= 0.5  + displacementX + init_x;
+    max_Y= 0.5 + displacementY + init_y;
+    min_Z=0.5 -0.03;
+    max_Z=0.5 +0.03;
 }
 
 //Comprueba si el objeto esta selected

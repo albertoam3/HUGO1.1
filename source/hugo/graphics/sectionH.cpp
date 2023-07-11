@@ -159,11 +159,16 @@ void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,
 
 bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
     if(coord_x+0.05>x && coord_x-0.05<x && coord_y+0.05>y && coord_y-0.05<y){
-        QString texto="Soy la seleccionada :) ";
+        QString texto="Soy la seleccionada ";
         seeToolTip(texto,windowPaint);
-        selected_hijas();
+        selected_hijas(true);
         return true;
-    }else if (sectionsHijas.size() == 2) {
+
+    }
+    else{
+        selected_hijas(false);
+    }
+    if (sectionsHijas.size() == 2) {
             bool a=sectionsHijas[0]->selected(windowPaint,x,y);
             if (a)
                 return true;
@@ -320,9 +325,9 @@ void sectionH::draw3d( float x, float y, float z) {
 
 }
 
-void sectionH::selected_hijas() {
-    selecionada=true;
+void sectionH::selected_hijas(bool sel) {
+    selecionada=sel;
     for(sectionH* s:sectionsHijas){
-        s->selected_hijas();
+        s->selected_hijas(sel);
     }
 }

@@ -450,6 +450,7 @@ void neuron_g::selectSection(QOpenGLWidget* windowPaint,float x, float y) {
         item.selectSection(windowPaint,x,y);
     }
 }
-	
+
+
 	
 

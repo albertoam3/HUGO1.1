@@ -44,7 +44,7 @@ public:
 
     void seleccion();
     void draw3d( float x,float y,float z);
-
+    void selected_hijas(bool sel);
 private:
     float distanciaEntreRegistros(nsol::Node* r1, nsol::Node* r2);
     float areaCono(nsol::Node* r1,nsol::Node* r2);
@@ -53,7 +53,7 @@ private:
     void drawArco(float x1,float y1,float x2,float y2,float angle,float angle_hueco, int* cont,float terminal_nodes,float modulo);
     void coordinates();
     void seeToolTip(QString texto,QOpenGLWidget *windowPaint);
-    void selected_hijas();
+
 
 };
 

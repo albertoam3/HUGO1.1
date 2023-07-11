@@ -94,6 +94,7 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     void selectSection(QOpenGLWidget* windowPaint,float x,float y);
     void draw3d(float x,float y,float z);
 
+
 protected:   
     virtual float color()=0 ;
 private:

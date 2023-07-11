@@ -222,6 +222,7 @@ void myopenglwidget2d::mouseMoveEvent(QMouseEvent *event_) {
     }
     if(mogw!= nullptr)
         mogw->update();
+
     ejeXAux = mouseX;
     ejeYAux = mouseY;
 }
