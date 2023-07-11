@@ -27,7 +27,8 @@ neurite_g::neurite_g(nsol::Neurite* _neurite){
 
 }
 void neurite_g::draw(QOpenGLWidget* windowPaint){
-    
+    firstSection->setDisplacementX(displacementX);
+    firstSection->setDisplacementY(displacementY);
     if(tree){
 		drawTree(windowPaint);
 	}else if(dendograma){
@@ -227,7 +228,7 @@ void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 		glVertex2f(x,y);
 
 		float hipotenusa=0;
-		float dif_angle=dif_angle=0.7;
+		float dif_angle=0.7;
 		float distancia=std::sqrt(std::pow(mult*(x-displacementX),2)+pow(mult*(y-displacementY),2));
 		hipotenusa=distancia/std::cos(0.52359878)*0.4;
 		firstSection->drawSectionsTree(x,y,angle,hipotenusa,dif_angle,g,max,min,variable_grosor);

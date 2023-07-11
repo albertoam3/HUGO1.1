@@ -18,6 +18,8 @@ sectionH::sectionH(nsol::NeuronMorphologySection* _sec){
      tamSeccion=getTamSection();
      coord_x=0;
      coord_y=0;
+     displacementX=0;
+     displacementY=0;
 
     for(nsol::Section* s : sec->children()){
         nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
@@ -214,9 +216,9 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
         (*cont)++;
 
         glColor3f(1.0, 0.0, 0.0);
-        float modulo = sqrt(pow(x, 2) + pow(y, 2));
-        float nx = modulo * cos(angle - angle_hueco * (*cont) / terminal_nodes);
-        float ny = modulo * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+        float modulo = sqrt(pow(x-displacementX, 2)+ pow(y-displacementY, 2));
+        float nx = modulo * cos(angle - angle_hueco * (*cont) / terminal_nodes) + displacementX;
+        float ny = modulo * sin(angle - angle_hueco * (*cont) / terminal_nodes) + displacementY;
 
         drawArco( x, y, nx, ny, angle, angle_hueco,cont, terminal_nodes, modulo);
         if (g) {
@@ -242,6 +244,7 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
         sec2->drawSectionsDendograma(nx + nix, ny + niy, angle_hueco, angle, nix, niy, terminal_nodes, cont, g, max,
                                       min, variable_grosor);
     }
+
 }
 
 float sectionH::terminalNodes() {
@@ -260,15 +263,15 @@ float sectionH::terminalNodes() {
 void sectionH::drawArco(float x1,float y1,float x2,float y2,float angle,float angle_hueco, int* cont,float terminal_nodes,float modulo){
     glLineWidth(1);
     glBegin(GL_LINES);
-    float angle_aux = std::atan2(y1, x1);
+    float angle_aux = std::atan2(y1-displacementY, x1-displacementX);
     if (angle_aux <  angle - angle_hueco * (*cont)/terminal_nodes)
         angle_aux += 2 * 3.14159;
     glVertex2f(x1, y1);
     for (float i = angle_aux; i >= angle - angle_hueco * (*cont) / terminal_nodes; i -= 0.005) {
-        float xAux = modulo * cosf(i); // Calcula la coordenada x
-        float yAux = modulo * sinf(i); // Calcula la coordenada y
-        glVertex2f(xAux + 0, yAux + 0); // Dibuja el vértice en la posición (x + cx, y + cy)
-        glVertex2f(xAux + 0, yAux + 0); // Dibuja el vértice en la posición (x + cx, y + cy)
+        float xAux = modulo * cos(i) ; // Calcula la coordenada x
+        float yAux = modulo * sin(i) ; // Calcula la coordenada y
+        glVertex2f(xAux + displacementX, yAux + displacementY); // Dibuja el vértice en la posición (x + cx, y + cy)
+        glVertex2f(xAux + displacementX, yAux + displacementY); // Dibuja el vértice en la posición (x + cx, y + cy)
     }
     glVertex2f(x2, y2);
     glEnd();
@@ -330,4 +333,16 @@ void sectionH::selected_hijas(bool sel) {
     for(sectionH* s:sectionsHijas){
         s->selected_hijas(sel);
     }
+}
+
+void sectionH::setDisplacementX(float displacementX) {
+    sectionH::displacementX = displacementX;
+    for (sectionH* s :sectionsHijas)
+        s->setDisplacementX(displacementX);
+}
+
+void sectionH::setDisplacementY(float displacementY) {
+    sectionH::displacementY = displacementY;
+    for (sectionH* s :sectionsHijas)
+        s->setDisplacementY(displacementY);
 }

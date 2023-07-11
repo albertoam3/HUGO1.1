@@ -27,6 +27,7 @@ private:
     float coord_y;
     bool selecionada;
     std::vector<sectionH*> sectionsHijas;
+    float displacementX,displacementY;
 
 
 public:
@@ -54,6 +55,10 @@ private:
     void coordinates();
     void seeToolTip(QString texto,QOpenGLWidget *windowPaint);
 
+public:
+    void setDisplacementX(float displacementX);
+
+    void setDisplacementY(float displacementY);
 
 };
 
