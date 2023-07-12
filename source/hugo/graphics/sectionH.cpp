@@ -14,8 +14,7 @@ const double sectionH::PI = 3.14159265358979323846;
 sectionH::sectionH(nsol::NeuronMorphologySection* _sec){
      sec=_sec;
      selecionada=false;
-     tamTotal=0;
-     tamSeccion=getTamSection();
+     getTamSection();
      coord_x=0;
      coord_y=0;
      displacementX=0;

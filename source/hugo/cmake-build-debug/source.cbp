@@ -230,33 +230,6 @@
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.cpp">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/axon.h">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/dendrites.cpp">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/dendrites.h">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.cpp">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/neuron.h">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/objetos.h">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/soma.cpp">
-			<Option target="hugo"/>
-		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/objetos/soma.h">
-			<Option target="hugo"/>
-		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

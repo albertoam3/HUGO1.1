@@ -21,7 +21,7 @@ private:
     float terminal_nodes;
     float angle{};
     float angle_hueco;
-    float dist{};
+
     sectionH* firstSection;
     float tam;
     float tam_mult{};

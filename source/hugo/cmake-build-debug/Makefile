@@ -430,102 +430,6 @@ myopenglwidget2d.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myopenglwidget2d.cpp.s
 .PHONY : myopenglwidget2d.cpp.s
 
-objetos/axon.o: objetos/axon.cpp.o
-.PHONY : objetos/axon.o
-
-# target to build an object file
-objetos/axon.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/axon.cpp.o
-.PHONY : objetos/axon.cpp.o
-
-objetos/axon.i: objetos/axon.cpp.i
-.PHONY : objetos/axon.i
-
-# target to preprocess a source file
-objetos/axon.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/axon.cpp.i
-.PHONY : objetos/axon.cpp.i
-
-objetos/axon.s: objetos/axon.cpp.s
-.PHONY : objetos/axon.s
-
-# target to generate assembly for a file
-objetos/axon.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/axon.cpp.s
-.PHONY : objetos/axon.cpp.s
-
-objetos/dendrites.o: objetos/dendrites.cpp.o
-.PHONY : objetos/dendrites.o
-
-# target to build an object file
-objetos/dendrites.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/dendrites.cpp.o
-.PHONY : objetos/dendrites.cpp.o
-
-objetos/dendrites.i: objetos/dendrites.cpp.i
-.PHONY : objetos/dendrites.i
-
-# target to preprocess a source file
-objetos/dendrites.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/dendrites.cpp.i
-.PHONY : objetos/dendrites.cpp.i
-
-objetos/dendrites.s: objetos/dendrites.cpp.s
-.PHONY : objetos/dendrites.s
-
-# target to generate assembly for a file
-objetos/dendrites.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/dendrites.cpp.s
-.PHONY : objetos/dendrites.cpp.s
-
-objetos/neuron.o: objetos/neuron.cpp.o
-.PHONY : objetos/neuron.o
-
-# target to build an object file
-objetos/neuron.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/neuron.cpp.o
-.PHONY : objetos/neuron.cpp.o
-
-objetos/neuron.i: objetos/neuron.cpp.i
-.PHONY : objetos/neuron.i
-
-# target to preprocess a source file
-objetos/neuron.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/neuron.cpp.i
-.PHONY : objetos/neuron.cpp.i
-
-objetos/neuron.s: objetos/neuron.cpp.s
-.PHONY : objetos/neuron.s
-
-# target to generate assembly for a file
-objetos/neuron.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/neuron.cpp.s
-.PHONY : objetos/neuron.cpp.s
-
-objetos/soma.o: objetos/soma.cpp.o
-.PHONY : objetos/soma.o
-
-# target to build an object file
-objetos/soma.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/soma.cpp.o
-.PHONY : objetos/soma.cpp.o
-
-objetos/soma.i: objetos/soma.cpp.i
-.PHONY : objetos/soma.i
-
-# target to preprocess a source file
-objetos/soma.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/soma.cpp.i
-.PHONY : objetos/soma.cpp.i
-
-objetos/soma.s: objetos/soma.cpp.s
-.PHONY : objetos/soma.s
-
-# target to generate assembly for a file
-objetos/soma.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/objetos/soma.cpp.s
-.PHONY : objetos/soma.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -572,18 +476,6 @@ help:
 	@echo "... myopenglwidget2d.o"
 	@echo "... myopenglwidget2d.i"
 	@echo "... myopenglwidget2d.s"
-	@echo "... objetos/axon.o"
-	@echo "... objetos/axon.i"
-	@echo "... objetos/axon.s"
-	@echo "... objetos/dendrites.o"
-	@echo "... objetos/dendrites.i"
-	@echo "... objetos/dendrites.s"
-	@echo "... objetos/neuron.o"
-	@echo "... objetos/neuron.i"
-	@echo "... objetos/neuron.s"
-	@echo "... objetos/soma.o"
-	@echo "... objetos/soma.i"
-	@echo "... objetos/soma.s"
 .PHONY : help
 
 

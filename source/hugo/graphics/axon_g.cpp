@@ -3,7 +3,6 @@
 //
 
 #include "axon_g.h"
-constexpr float pint=0.5f;
 
 axon_g::axon_g(nsol::Axon* _ax): neurite_g( _ax)
   {

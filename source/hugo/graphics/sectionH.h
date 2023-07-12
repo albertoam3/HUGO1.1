@@ -14,12 +14,7 @@
 class sectionH {
 private:
     nsol::NeuronMorphologySection *sec;
-    
-    //Tamaño total de esta sección más sus secciones hijas
-    //EL tamaño total de la primera sección sera el tamaño total de la neurita
-    float tamTotal;
-    //Tamaño de esta sección
-    float tamSeccion;
+
     static const double PI;
 
 

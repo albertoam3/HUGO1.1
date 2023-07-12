@@ -3,7 +3,7 @@
 //
 
 #include "dendrite_g.h"
-constexpr float pint=0.7f;
+
 
 dendrite_g::dendrite_g(nsol::Dendrite* _dend): neurite_g( _dend)
   {
