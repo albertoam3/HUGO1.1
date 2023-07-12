@@ -5,7 +5,7 @@
 #ifndef HUGO_NEURON_G_H
 #define HUGO_NEURON_G_H
 
-#include "objetos/neuron.h"
+
 #include <QOpenGLWidget>
 #include "graphic_objects.h"
 #include <nsol/nsol.h>

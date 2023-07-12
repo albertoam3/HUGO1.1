@@ -132,27 +132,26 @@ void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,
 		valorX2=x1+cos(angle+1.30899694*dif_angle)*hipotenusa;
 		valorY2=x2+sin(angle+1.30899694*dif_angle)*hipotenusa;
 		dif_angle*=0.6;
-
 		int i=0;
         for (sectionH* s : sectionsHijas) {
 			if(i==0){
+
                 if(g) {
-                    glEnd();
+
                     getLineWidth( variable_grosor, *s, max, min);
-                    glBegin(GL_LINES);
+
                 }
-				glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
-				glVertex2f(valorX,valorY);
-				s->drawSectionsTree(valorX,valorY,angle,hipotenusa,dif_angle,g,max,min,variable_grosor);
+                drawLine(x1,x2,valorX,valorY);
+                drawPoint(valorX,valorY);
+                s->drawSectionsTree(valorX,valorY,angle,hipotenusa,dif_angle,g,max,min,variable_grosor);
 			}
 			else{
                 if(g) {
-                    glEnd();
                     getLineWidth( variable_grosor, *s, max, min);
-                    glBegin(GL_LINES);
                 }
-				glVertex2f( x1, x2); // Especificar las coordenadas del punto a dibujar
-				glVertex2f(valorX2,valorY2);	
+                drawLine(x1,x2,valorX2,valorY2);
+                drawPoint(valorX2,valorY2);
+
 				s->drawSectionsTree(valorX2,valorY2,angle,hipotenusa,dif_angle,g,max,min,variable_grosor);
 			}
 			i++;

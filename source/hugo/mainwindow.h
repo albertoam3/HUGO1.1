@@ -21,10 +21,7 @@
 #include <QFileInfo>
 #include <QListWidgetItem>
 
-#include "objetos/axon.h"
-#include "objetos/dendrites.h"
-#include "objetos/neuron.h"
-#include "objetos/soma.h"
+
 #include "graphics/soma_g.h"
 #include "graphics/neuron_g.h"
 #include "graphics/axon_g.h"
@@ -48,10 +45,6 @@ private:
  
     myopenglwidget *_openGLWidget;
     myopenglwidget2d* openGLWidget2d;
-    axon* ax;
-    dendrites* den;
-    neuron* neu;
-    soma* som;
     base_datos_objetos* base;
     nsol::NeuronsMap neurons;
 

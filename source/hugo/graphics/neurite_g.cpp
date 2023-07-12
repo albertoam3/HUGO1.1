@@ -215,7 +215,7 @@ void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 		}
 		
 		glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
-		glColor3f(color.x(), color.y(), color.z());
+        glColor3f(1.0, 1.0, 1.0);
 		float mult;
 		if(neurites_tam)
 			mult=tam_mult*0.75;

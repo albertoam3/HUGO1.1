@@ -4,7 +4,7 @@
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 #include <QColor>
-#include "objetos/objetos.h"
+
 #include <QMouseEvent>
 #include "graphics/graphic_objects.h"
 #include "graphics/neuron_g.h"

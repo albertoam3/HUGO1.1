@@ -1,7 +1,7 @@
 #include "myopenglwidget.h"
 #include <QOpenGLContext>
 #include <GL/gl.h>
-#include <objetos/dendrites.h>
+
 
 constexpr float ROTATION_FACTOR = 0.01f;
 
