@@ -184,9 +184,8 @@ bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
 void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float dir_x, float dir_y, float terminal_nodes, int *cont, bool g, float max, float min, VariableEstado variable_grosor) {
     coord_x=x;
     coord_y=y;
-    std::cout<<x<<"y"<<y<<"\n";
-    if (sectionsHijas.size() == 2) {
 
+    if (sectionsHijas.size() == 2) {
         sectionH *sec1,*sec2;
         //ahora mismo se va siempre por la rama más grande, con una variable de estado podriamos decidir si lo queremos asi o queremos que siga el camino que nos dan
         if (sectionsHijas[0]->terminalNodes()>sectionsHijas[1]->terminalNodes()){
@@ -200,46 +199,29 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
         if (g) {
             getLineWidth( variable_grosor,*sec1, max, min);
         }
-        glBegin(GL_LINES);
-        glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(x, y);
-        glVertex2f(x + dir_x, y + dir_y);
-        glEnd();
-        glPointSize(5.0);
-        glBegin(GL_POINTS);
-        glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(x + dir_x, y + dir_y);
-        glEnd();
-        sec1->drawSectionsDendograma(x + dir_x, y + dir_y, angle_hueco, angle, dir_x, dir_y, terminal_nodes, cont,
-                                     g, max, min, variable_grosor);
+        float x2=x+dir_x;
+        float y2=y+dir_y;
 
+        drawLine(x,y,x2,y2);
+        drawPoint(x2,y2);
+
+        sec1->drawSectionsDendograma(x2, y2, angle_hueco, angle, dir_x, dir_y, terminal_nodes, cont,
+                                     g, max, min, variable_grosor);
         (*cont)++;
 
-        glColor3f(1.0, 0.0, 0.0);
         float modulo = sqrt(pow(x-displacementX, 2)+ pow(y-displacementY, 2));
         float nx = modulo * cos(angle - angle_hueco * (*cont) / terminal_nodes) + displacementX;
         float ny = modulo * sin(angle - angle_hueco * (*cont) / terminal_nodes) + displacementY;
+        float mod_init = sqrt(pow(dir_x, 2) + pow(dir_y, 2));
+        float nix = mod_init * cos(angle - angle_hueco * (*cont) / terminal_nodes);
+        float niy = mod_init * sin(angle - angle_hueco * (*cont) / terminal_nodes);
 
         drawArco( x, y, nx, ny, angle, angle_hueco,cont, terminal_nodes, modulo);
         if (g) {
             getLineWidth( variable_grosor,*sec2, max, min);
         }
-        glBegin(GL_LINES);
-
-        float mod_init = sqrt(pow(dir_x, 2) + pow(dir_y, 2));
-        float nix = mod_init * cos(angle - angle_hueco * (*cont) / terminal_nodes);
-        float niy = mod_init * sin(angle - angle_hueco * (*cont) / terminal_nodes);
-
-
-        glVertex2f(nx, ny);
-        glVertex2f(nx + nix, ny + niy);
-
-        glEnd();
-        glPointSize(5.0);
-        glBegin(GL_POINTS);
-        glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(nx + nix, ny + niy);
-        glEnd();
+        drawLine(nx,ny,nx+nix,ny+niy);
+        drawPoint(nx+nix,ny+niy);
 
         sec2->drawSectionsDendograma(nx + nix, ny + niy, angle_hueco, angle, nix, niy, terminal_nodes, cont, g, max,
                                       min, variable_grosor);
@@ -259,10 +241,10 @@ float sectionH::terminalNodes() {
     return terminal;
 }
 
-
 void sectionH::drawArco(float x1,float y1,float x2,float y2,float angle,float angle_hueco, int* cont,float terminal_nodes,float modulo){
     glLineWidth(1);
     glBegin(GL_LINES);
+    glColor3f(1.0, 1.0, 1.0);
     float angle_aux = std::atan2(y1-displacementY, x1-displacementX);
     if (angle_aux <  angle - angle_hueco * (*cont)/terminal_nodes)
         angle_aux += 2 * 3.14159;
@@ -277,6 +259,21 @@ void sectionH::drawArco(float x1,float y1,float x2,float y2,float angle,float an
     glEnd();
 
 
+}
+
+void sectionH::drawLine(float x1,float y1,float x2,float y2){
+    glBegin(GL_LINES);
+    glColor3f(1.0, 1.0, 1.0);
+    glVertex2f(x1, y1);
+    glVertex2f(x2, y2);
+    glEnd();
+}
+void sectionH::drawPoint(float x1,float y1){
+    glPointSize(5.0);
+    glBegin(GL_POINTS);
+    glColor3f(color.x(), color.y(), color.z());
+    glVertex2f(x1, y1);
+    glEnd();
 }
 
 void sectionH::getLineWidth(VariableEstado variable_grosor,sectionH sec,float max,float min){
@@ -345,4 +342,10 @@ void sectionH::setDisplacementY(float displacementY) {
     sectionH::displacementY = displacementY;
     for (sectionH* s :sectionsHijas)
         s->setDisplacementY(displacementY);
+}
+
+void sectionH::putColor(Eigen::Vector3f c) {
+    color=c;
+    for (sectionH* s :sectionsHijas)
+        s->putColor(c);
 }

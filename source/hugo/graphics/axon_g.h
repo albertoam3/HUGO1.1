@@ -16,7 +16,7 @@ class axon_g : public neurite_g{
 public:
 
     axon_g(nsol::Axon* _ax);
-    float color();
+    void put_color();
 };
 
 

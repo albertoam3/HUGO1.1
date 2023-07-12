@@ -15,9 +15,17 @@
 class dendrite_g : public neurite_g{
 
 public:
+    typedef enum TDendriteType
+    {
+        BASAL = 0,
+        APICAL
+    } TDendriteType;
 
     dendrite_g(nsol::Dendrite* _dend);
-    float color();
+    void put_color();
+    void setTDendriteType(TDendriteType den);
+private:
+    TDendriteType _dendriteType;
 };
 
 

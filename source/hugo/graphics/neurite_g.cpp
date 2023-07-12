@@ -25,10 +25,12 @@ neurite_g::neurite_g(nsol::Neurite* _neurite){
     tam=firstSection->getTamTotal(max_tam_seccion,min_tam_seccion)/100;
 
 
+
 }
 void neurite_g::draw(QOpenGLWidget* windowPaint){
     firstSection->setDisplacementX(displacementX);
     firstSection->setDisplacementY(displacementY);
+    firstSection->putColor(color);
     if(tree){
 		drawTree(windowPaint);
 	}else if(dendograma){
@@ -65,7 +67,7 @@ void neurite_g::draw(QOpenGLWidget* windowPaint){
 		}
 
 		glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
-		glColor3f(1.0, color(), 0.0); 
+		glColor3f(color.x(), color.y(), color.z());
 		glVertex2f( displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
 		
 		if(neurites_tam)
@@ -109,9 +111,7 @@ void neurite_g::coordinates(){
 	}
 	else{
 		mult=2;
-		
 	}
-
     if(displacementX+init_x >displacementX+init_x+mult*(init_x)){
 		max_X=displacementX+init_x+0.05;
 		min_X=displacementX+init_x+mult*(displacementX+init_x)-0.05;
@@ -215,7 +215,7 @@ void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 		}
 		
 		glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
-		glColor3f(1.0, color(), 0.0); 
+		glColor3f(color.x(), color.y(), color.z());
 		float mult;
 		if(neurites_tam)
 			mult=tam_mult*0.75;
@@ -274,7 +274,7 @@ void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
         glLineWidth(1);
     }
     glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
-    glColor3f(1.0, color(), 0.0);
+    glColor3f(1.0, 1.0, 1.0);
     float mult;
 
     float x=0.5*(init_x)+ displacementX+init_x;
@@ -283,7 +283,7 @@ void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     glVertex2f(x,y);
     glEnd();
     glBegin(GL_POINTS);
-    glColor3f(0.0, 0.0, 1.0);
+    glColor3f(color.x(), color.y(), color.z());
     glVertex2f(displacementX+init_x, displacementY+init_y);
     glVertex2f(x,y);
     glEnd();

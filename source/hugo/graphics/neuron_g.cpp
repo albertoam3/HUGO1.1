@@ -14,6 +14,7 @@ neuron_g::neuron_g(nsol::Neuron *_neu){
     const auto &den=neu->morphology()->dendrites();
     for (auto &dendrite: *den) {
         dends.push_back(*new dendrite_g(dendrite));
+        dends[dends.size()-1].setTDendriteType(static_cast<dendrite_g::TDendriteType>(dendrite->dendriteType()));
         
     }
     for (auto &d :dends){
@@ -123,6 +124,7 @@ void neuron_g::draw3D(QOpenGLWidget* windowPaint){
             }
             d.draw3d(x,y,z);
         }
+        ax[0]->draw3d(0.5,0.3,1.0);
 }
 
 void neuron_g::drawSelc(QOpenGLWidget* windowPaint){

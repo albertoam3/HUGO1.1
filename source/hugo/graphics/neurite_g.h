@@ -36,6 +36,8 @@ private:
     float *max_tam_seccion;
     float *min_tam_seccion;
 
+protected:
+    Eigen::Vector3f color;
 public:
 
 
@@ -95,10 +97,12 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     void draw3d(float x,float y,float z);
 
 
-protected:   
-    virtual float color()=0 ;
+protected:
+    virtual void put_color()=0 ;
+
 private:
     float terminalNodes();
+
 };
 
 

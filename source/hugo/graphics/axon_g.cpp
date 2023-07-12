@@ -7,9 +7,12 @@ constexpr float pint=0.5f;
 
 axon_g::axon_g(nsol::Axon* _ax): neurite_g( _ax)
   {
-  
+      put_color();
+
 }
-float axon_g::color(){
-	return 1.0f;
+void axon_g::put_color(){
+    color.x()=0.0f;
+    color.y()=1.0f;
+    color.z()=1.0f;
 }
 
