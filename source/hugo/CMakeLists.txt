@@ -40,15 +40,6 @@ add_executable(hugo
           mainwindow.ui
           myopenglwidget2d.h
           myopenglwidget2d.cpp
-          objetos/axon.cpp
-          objetos/axon.h
-          objetos/dendrites.cpp
-          objetos/dendrites.h
-          objetos/soma.h
-          objetos/soma.cpp
-          objetos/objetos.h
-          objetos/neuron.cpp
-          objetos/neuron.h
           graphics/graphic_objects.h
           graphics/neuron_g.h
           graphics/neuron_g.cpp
