@@ -10,6 +10,7 @@
 #include <QToolTip>
 #include "math.h"
 #include "VariableEstado.h"
+#include "VariableLongitud.h"
 
 class sectionH {
 private:
@@ -24,20 +25,23 @@ private:
     std::vector<sectionH*> sectionsHijas;
     float displacementX,displacementY;
     Eigen::Vector3f color;
+    float tamSeccion;
+    float tamPuntoInicialPuntoFinal;
 
 
 public:
     sectionH(nsol::NeuronMorphologySection* _sec);
     float getTamTotal(float *max, float *min);
     float getTamSection();
+    float getTamPuntoInicialPuntoFinal();
     float getVolumenAcumulado(float *maxVolumenSeccion,float *minVolumenSeccion);
     float getVolumenSeccion();
     float terminalNodes();
     nsol::NeuronMorphologySection getSection();
     void drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g,float max,float min,VariableEstado variable_grosor);
-    void drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float dir_x, float dir_y, float terminal_nodes, int *cont, bool g, float max, float min, VariableEstado variable_grosor);
+    void drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g, float max, float min, VariableEstado variable_grosor,VariableLongitud var_long);
     bool selected(QOpenGLWidget* windowPaint,float x,float y);
-
+    float getPoint2(VariableLongitud var_long);
 
     void seleccion();
     void draw3d( float x,float y,float z);

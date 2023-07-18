@@ -43,6 +43,7 @@ public:
   void setDendograma(bool a);
   void select_grosor_den(bool a);
   void variableGrosor(float a);
+  void variableTam(float a);
 
   void otherWidget(myopenglwidget *mogw);
 

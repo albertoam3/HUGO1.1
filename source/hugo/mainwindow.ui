@@ -157,30 +157,27 @@
     <property name="title">
      <string>Tamaño de las ramas</string>
     </property>
-    <widget class="QRadioButton" name="igual_ramas">
+    <widget class="QComboBox" name="tamanoComboBox">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>0</x>
        <y>30</y>
-       <width>112</width>
-       <height>23</height>
+       <width>231</width>
+       <height>25</height>
       </rect>
-     </property>
-     <property name="text">
-      <string>Igual</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="dif_rama">
+    <widget class="QPushButton" name="validar_tam_2">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>50</y>
-       <width>112</width>
-       <height>23</height>
+       <y>60</y>
+       <width>89</width>
+       <height>25</height>
       </rect>
      </property>
      <property name="text">
-      <string>Diferente</string>
+      <string>validar</string>
      </property>
     </widget>
    </widget>

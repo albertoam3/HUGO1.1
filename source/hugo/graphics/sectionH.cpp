@@ -24,6 +24,8 @@ sectionH::sectionH(nsol::NeuronMorphologySection* _sec){
         nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
         sectionsHijas.push_back(new sectionH(section));
     }
+    tamSeccion=getTamSection();
+    tamPuntoInicialPuntoFinal=getTamPuntoInicialPuntoFinal();
 }
 
 float sectionH::getTamTotal(float *max, float *min){
@@ -179,40 +181,45 @@ bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
         return false;
 }
 
-void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float dir_x, float dir_y, float terminal_nodes, int *cont, bool g, float max, float min, VariableEstado variable_grosor) {
+void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g, float max, float min, VariableEstado variable_grosor,VariableLongitud var_long) {
     coord_x=x;
     coord_y=y;
 
     if (sectionsHijas.size() == 2) {
-        sectionH *sec1,*sec2;
+        sectionH *sec1, *sec2;
         //ahora mismo se va siempre por la rama más grande, con una variable de estado podriamos decidir si lo queremos asi o queremos que siga el camino que nos dan
-        if (sectionsHijas[0]->terminalNodes()>sectionsHijas[1]->terminalNodes()){
-            sec1=sectionsHijas[0];
-            sec2=sectionsHijas[1];
-        }
-        else{
-             sec1=sectionsHijas[1];
-             sec2=sectionsHijas[0];
+        if (sectionsHijas[0]->terminalNodes() > sectionsHijas[1]->terminalNodes()) {
+            sec1 = sectionsHijas[0];
+            sec2 = sectionsHijas[1];
+        } else {
+            sec1 = sectionsHijas[1];
+            sec2 = sectionsHijas[0];
         }
         if (g) {
-            getLineWidth( variable_grosor,*sec1, max, min);
+            getLineWidth(variable_grosor, *sec1, max, min);
         }
-        float x2=x+dir_x;
-        float y2=y+dir_y;
+        float x2;
+        float y2;
+        x2 = x+ sec1->getPoint2(var_long) * cos(angle - angle_hueco * (*cont) / terminal_nodes);
+        y2 =y+ sec1->getPoint2(var_long) * sin(angle - angle_hueco * (*cont) / terminal_nodes);
 
-        drawLine(x,y,x2,y2);
-        drawPoint(x2,y2);
 
-        sec1->drawSectionsDendograma(x2, y2, angle_hueco, angle, dir_x, dir_y, terminal_nodes, cont,
-                                     g, max, min, variable_grosor);
+
+        drawLine(x, y, x2, y2);
+        drawPoint(x2, y2);
+
+        sec1->drawSectionsDendograma(x2, y2, angle_hueco, angle, terminal_nodes, cont,
+                                     g, max, min, variable_grosor,var_long);
         (*cont)++;
 
-        float modulo = sqrt(pow(x-displacementX, 2)+ pow(y-displacementY, 2));
+        float modulo = sqrt(pow(x - displacementX, 2) + pow(y - displacementY, 2));
         float nx = modulo * cos(angle - angle_hueco * (*cont) / terminal_nodes) + displacementX;
         float ny = modulo * sin(angle - angle_hueco * (*cont) / terminal_nodes) + displacementY;
-        float mod_init = sqrt(pow(dir_x, 2) + pow(dir_y, 2));
-        float nix = mod_init * cos(angle - angle_hueco * (*cont) / terminal_nodes);
-        float niy = mod_init * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+
+
+
+        float nix = sec2->getPoint2(var_long) * cos(angle - angle_hueco * (*cont) / terminal_nodes);
+        float niy = sec2->getPoint2(var_long) * sin(angle - angle_hueco * (*cont) / terminal_nodes);
 
         drawArco( x, y, nx, ny, angle, angle_hueco,cont, terminal_nodes, modulo);
         if (g) {
@@ -221,8 +228,8 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
         drawLine(nx,ny,nx+nix,ny+niy);
         drawPoint(nx+nix,ny+niy);
 
-        sec2->drawSectionsDendograma(nx + nix, ny + niy, angle_hueco, angle, nix, niy, terminal_nodes, cont, g, max,
-                                      min, variable_grosor);
+        sec2->drawSectionsDendograma(nx + nix, ny + niy, angle_hueco, angle, terminal_nodes, cont, g, max,
+                                      min, variable_grosor,var_long);
     }
 
 }
@@ -292,6 +299,26 @@ void sectionH::getLineWidth(VariableEstado variable_grosor,sectionH sec,float ma
 
 }
 
+float sectionH::getPoint2(VariableLongitud var_long){
+    switch (var_long) {
+        case VariableLongitud::TamanoSeccion:
+            return tamSeccion;
+
+        case VariableLongitud::TamanoPuntoInitPuntoFinal:
+           return tamPuntoInicialPuntoFinal;
+
+        case VariableLongitud::unitario:
+            return 0.25;
+
+        default:
+            return 0.25;
+
+    }
+
+}
+
+
+
 void sectionH::coordinates() {
 
 }
@@ -346,4 +373,12 @@ void sectionH::putColor(Eigen::Vector3f c) {
     color=c;
     for (sectionH* s :sectionsHijas)
         s->putColor(c);
+}
+
+float sectionH::getTamPuntoInicialPuntoFinal() {
+    nsol::Node* s=sec->firstNode();
+    nsol::Node* a=sec->lastNode();
+    float dist=distanciaEntreRegistros(s,a);
+
+    return dist;
 }

@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
     base = new base_datos_objetos();
 
 	initGrosorComboBox();
+    initTamComboBox();
     creat_list();
     
     ui->listWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
@@ -48,9 +49,8 @@ void MainWindow::connect_buttons() {
     QObject::connect(ui->draw, SIGNAL(clicked()), this, SLOT(pintar()));
     QObject::connect(ui->reset, SIGNAL(clicked()), this, SLOT(reset()));
     QObject::connect(ui->load, SIGNAL(clicked()), this, SLOT(load()));
-    QObject::connect(ui->igual_ramas, SIGNAL(clicked()), this, SLOT(igual_tam()));
-    QObject::connect(ui->dif_rama, SIGNAL(clicked()), this, SLOT(dif_tam()));
-    //QObject::connect(ui->setArbol, &QCheckBox::stateChanged, this, &MainWindow::checkBoxStateChanged);
+    QObject::connect(ui->validar_tam_2, SIGNAL(clicked()), this, SLOT(validar_tam()));
+
     QObject::connect(ui->setDendograma,SIGNAL(clicked()),this,SLOT(set_dend()));
     QObject::connect(ui->setNada,SIGNAL(clicked()),this,SLOT(set_nada()));
     QObject::connect(ui->setArbol, SIGNAL(clicked()), this, SLOT(set_tree()));
@@ -234,12 +234,11 @@ void MainWindow::addList(const std::string& st){
 }
 
 
-void MainWindow::igual_tam(){
-	openGLWidget2d->select_tam_den(false);
-}
 
-void MainWindow::dif_tam(){
+
+void MainWindow::validar_tam(){
  	openGLWidget2d->select_tam_den(true);
+    openGLWidget2d->variableTam(ui->tamanoComboBox->currentIndex());
 }
 
 void MainWindow::checkBoxStateChanged(int state) {
@@ -267,6 +266,12 @@ void MainWindow::initGrosorComboBox(){
 	ui->grosorComboBox->addItem("Nodos terminales");
 	
 	
+}
+
+void MainWindow::initTamComboBox(){
+    ui->tamanoComboBox->addItem("Tamaño real");
+    ui->tamanoComboBox->addItem("distancia punto punto");
+    ui->tamanoComboBox->addItem("unitario");
 }
 
 void MainWindow::set_dend() {

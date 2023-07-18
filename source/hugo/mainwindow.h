@@ -73,15 +73,13 @@ public Q_SLOTS:
     void pintar();
     void reset();
     void load();
-    
-    
-    void igual_tam();
-    void dif_tam();
+
     void dif_grosor();
     void igual_grosor();
     void set_dend();
     void set_nada();
     void set_tree();
+    void validar_tam();
     
 private slots:
     void on_igual_ang_clicked();
@@ -94,6 +92,8 @@ private:
     void creat_list();
     void checkBoxStateChanged(int state);
     void initGrosorComboBox();
+    void initTamComboBox();
+
 protected:
     QString _lastOpenedFileName;
     QString _lastOpenedDirectory;

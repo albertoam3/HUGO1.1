@@ -18,6 +18,7 @@ neurite_g::neurite_g(nsol::Neurite* _neurite){
     tree=false;
     neurites_grosor=false;
     variable_grosor=VariableEstado::Tamano;
+    variable_longitud=VariableLongitud::unitario;
     max_volumen_seccion = new float;
     min_volumen_seccion = new float;
     max_tam_seccion = new float;
@@ -182,31 +183,11 @@ void neurite_g::setTamMult(float t){
 void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 		
 		bool g;
-    float max,min=0;
+    float *max=new float;
+    float *min=new float;
     if(neurites_grosor==true){
         g=true;
-        float aux,n;
-        switch(variable_grosor){
-            case VariableEstado::Volumen:
-
-                max=(*max_volumen_seccion);
-                min=(*min_volumen_seccion);
-                aux=(firstSection->getVolumenSeccion()-min)/(max-min);
-                break;
-            case VariableEstado::nodosTerminales:
-                max=(firstSection->terminalNodes());
-                min=1;
-                aux=(firstSection->terminalNodes()-min)/(max-min);
-                break;
-            case VariableEstado::Tamano:
-                max=(*max_tam_seccion);
-                min=(*min_tam_seccion);
-                aux=(firstSection->getTamSection()-min)/(max-min);
-
-                break;
-        }
-        n=aux*4 +1;
-        glLineWidth(n);
+        variableGrosorAux(max,min);
 
     }
 		else{
@@ -231,7 +212,7 @@ void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 		float dif_angle=0.7;
 		float distancia=std::sqrt(std::pow(mult*(x-displacementX),2)+pow(mult*(y-displacementY),2));
 		hipotenusa=distancia/std::cos(0.52359878)*0.4;
-		firstSection->drawSectionsTree(x,y,angle,hipotenusa,dif_angle,g,max,min,variable_grosor);
+		firstSection->drawSectionsTree(x,y,angle,hipotenusa,dif_angle,g,*max,*min,variable_grosor);
 
 		if(selected){
 			drawSelc(windowPaint);
@@ -242,31 +223,11 @@ void neurite_g::drawTree(QOpenGLWidget* windowPaint){
 }
 void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     bool g;
-    float max,min=0;
+    float *max=new float;
+    float *min=new float;
     if(neurites_grosor==true){
         g=true;
-        float aux,n;
-        switch(variable_grosor){
-            case VariableEstado::Volumen:
-
-                max=(*max_volumen_seccion);
-                min=(*min_volumen_seccion);
-                aux=(firstSection->getVolumenSeccion()-min)/(max-min);
-                break;
-            case VariableEstado::nodosTerminales:
-                max=(firstSection->terminalNodes());
-                min=1;
-                aux=(firstSection->terminalNodes()-min)/(max-min);
-                break;
-            case VariableEstado::Tamano:
-                max=(*max_tam_seccion);
-                min=(*min_tam_seccion);
-                aux=(firstSection->getTamSection()-min)/(max-min);
-
-                break;
-        }
-        n=aux*4 +1;
-        glLineWidth(n);
+        variableGrosorAux(max,min);
 
     }
     else{
@@ -275,7 +236,6 @@ void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     }
     glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
     glColor3f(1.0, 1.0, 1.0);
-    float mult;
 
     float x=0.5*(init_x)+ displacementX+init_x;
     float y=0.5*(init_y)+ displacementY+init_y;
@@ -288,7 +248,7 @@ void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     glVertex2f(x,y);
     glEnd();
     int n=0;
-    firstSection->drawSectionsDendograma(x,y,angle_hueco,angle,init_x*0.5,init_y*0.5,terminal_nodes,&n,g,max,min,variable_grosor);
+    firstSection->drawSectionsDendograma(x,y,angle_hueco,angle,terminal_nodes,&n,g,*max,*min,variable_grosor,variable_longitud);
 }
 
 
@@ -331,6 +291,47 @@ void neurite_g::setVariableGrosor(int a){
 	
 }
 
+void neurite_g::variableGrosorAux(float *max,float *min){
+    float aux,n;
+    switch(variable_grosor){
+        case VariableEstado::Volumen:
+
+            *max=(*max_volumen_seccion);
+            *min=(*min_volumen_seccion);
+            aux=(firstSection->getVolumenSeccion()-*min)/(*max-*min);
+            break;
+        case VariableEstado::nodosTerminales:
+            *max=(firstSection->terminalNodes());
+            *min=1;
+            aux=(firstSection->terminalNodes()-*min)/(*max-*min);
+            break;
+        case VariableEstado::Tamano:
+            *max=(*max_tam_seccion);
+            *min=(*min_tam_seccion);
+            aux=(firstSection->getTamSection()-*min)/(*max-*min);
+
+            break;
+    }
+    n=aux*4 +1;
+    glLineWidth(n);
+}
+
+void neurite_g::setVariableTam(int a){
+    switch ( a )
+    {
+        case 0:
+            variable_longitud=VariableLongitud::TamanoSeccion;
+            break;
+        case 1:
+            variable_longitud=VariableLongitud::TamanoPuntoInitPuntoFinal;
+            break;
+        case 2:
+            variable_longitud=VariableLongitud::unitario;
+            break;
+        default:
+            variable_longitud=VariableLongitud::unitario;
+    }
+}
 
 
 

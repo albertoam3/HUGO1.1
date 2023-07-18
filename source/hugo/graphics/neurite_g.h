@@ -11,6 +11,7 @@
 #include "sectionH.h"
 #include <QLineEdit>
 #include "VariableEstado.h"
+#include "VariableLongitud.h"
 
 
 
@@ -27,6 +28,7 @@ private:
     float tam_mult{};
     float grosor{};
     VariableEstado variable_grosor;
+    VariableLongitud variable_longitud;
     float max_terminal_nodes{};
     float min_terminal_nodes{};
     float max_longitud{};
@@ -91,6 +93,9 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 	
 	void setVariableGrosor(int a);
 
+
+    void setVariableTam(int a);
+
     void setAngleHueco(float a);
 
     void selectSection(QOpenGLWidget* windowPaint,float x,float y);
@@ -102,6 +107,7 @@ protected:
 
 private:
     float terminalNodes();
+    void variableGrosorAux(float *max,float *min);
 
 };
 

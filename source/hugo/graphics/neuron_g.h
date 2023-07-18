@@ -61,6 +61,7 @@ public:
     void tamNeurite();
     void grosorNeurite();
     void setNeuritesVariableGrosor(float a);
+    void setNeuritesVariableTam(float a);
 	void displacementN(float x,float y,float z);
 	
 	void calculateMaxMinNodosTerminales();

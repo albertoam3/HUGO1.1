@@ -303,6 +303,17 @@ void neuron_g::setNeuritesVariableGrosor(float a){
         	}
 }
 
+
+
+
+void neuron_g::setNeuritesVariableTam(float a){
+    ax[0]->setVariableTam(a);
+    for (auto & item : dends) {
+        item.setVariableTam(a);
+    }
+}
+
+
 void neuron_g::calculateMaxMinNodosTerminales(){
 	int aux=ax[0]->getTerminalNodes();
 	int max=aux;
