@@ -24,7 +24,6 @@ private:
     float translationX,translationY;
     float ejeXAux{},ejeYAux{};
     float scala,scalaTotal{};
-    float rotationX,rotationY;
     bool _rotation;
     bool _translation;
     

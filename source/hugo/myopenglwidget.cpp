@@ -19,8 +19,6 @@ myopenglwidget::myopenglwidget(QWidget *parent)
     setFocusPolicy(Qt::StrongFocus);
     rotation=Eigen::Matrix3f::Identity( );
     position=Eigen::Vector3f(0, 0, 0);
-    rotationX=0;
-    rotationY=0;
     QSurfaceFormat format;
     format.setSamples(22); // Número de muestras para antialiasing
     this->setFormat(format);
@@ -76,7 +74,6 @@ void myopenglwidget::paintGL() {
     for (auto &i: gobject) {
     	i->setScala(scalaTotal);
         i->draw(this,true);
-        //i->draw(this);
     }
 }
 
@@ -118,7 +115,7 @@ void myopenglwidget::mousePressEvent(QMouseEvent *event_) {
     scala = 0;
     translationX = 0;
     translationY = 0;
-    rotationX=0;
+
     float x = event_->x();
     float y = height() - event_->y();
     //Convertir la posición del ratón en la ventana en una posición normalizada

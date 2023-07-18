@@ -9,12 +9,9 @@ myopenglwidget2d::myopenglwidget2d(QWidget *parent)  : QOpenGLWidget{parent} {
     scala = 0.0f;
     scalaTotal=1.0f;
     _rotation=false;
-    _translation=false;
     setFocusPolicy(Qt::StrongFocus);
     rotation=Eigen::Matrix3f::Identity( );
     position=Eigen::Vector3f(0, 0, 0);
-    rotationX=0;
-    rotationY=0;
     QSurfaceFormat format;
     format.setSamples(22); // Número de muestras para antialiasing
     this->setFormat(format);
@@ -267,9 +264,6 @@ void myopenglwidget2d::setDendograma(bool a) {
     }
     update();
 }
-
-
-
 
 void myopenglwidget2d::keyPressEvent(QKeyEvent* event){
     if (event->key() == Qt::Key_Control)

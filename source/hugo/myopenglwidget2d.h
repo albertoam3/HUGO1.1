@@ -28,8 +28,6 @@ private:
 	Eigen::Matrix3f rotation;
 	Eigen::Vector3f result;
     float translationX,translationY;
-    bool _translation;
-    float rotationX,rotationY;
     float ejeXAux{},ejeYAux{};
     bool controlPressed,rPressed,tPressed;
     myopenglwidget *mogw;
