@@ -302,21 +302,17 @@ void sectionH::getLineWidth(VariableEstado variable_grosor,sectionH sec,float ma
 
 float sectionH::getPoint2(VariableLongitud var_long,float max,float min){
     switch (var_long) {
-        float aux;
         case VariableLongitud::TamanoSeccion:
-            aux=(tamSeccion-min)/(max-min);
-            return aux*1.5;
+
+            return (tamSeccion-min)/(max-min)*1.4;
 
         case VariableLongitud::TamanoPuntoInitPuntoFinal:
-           aux=(tamPuntoInicialPuntoFinal-min)/(max-min);
-            return aux*1.5;
+            return (tamPuntoInicialPuntoFinal-min)/(max-min)*1.4;
 
         case VariableLongitud::unitario:
             return 0.25;
-
         default:
             return 0.25;
-
     }
 
 }

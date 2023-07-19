@@ -26,7 +26,7 @@ neurite_g::neurite_g(nsol::Neurite* _neurite){
     max_punto_a_punto_seccion=new float;
     min_punto_a_punto_seccion=new float;
 
-    tam=firstSection->getTamTotal(max_tam_seccion,min_tam_seccion)/100;
+    tam=getTamTotal()/100;
     getDistacia_A_B(max_punto_a_punto_seccion,min_punto_a_punto_seccion);
 
 
@@ -42,7 +42,6 @@ void neurite_g::draw(QOpenGLWidget* windowPaint){
 
     }
 	else{
-		
 		float aux,n;
 		if(neurites_grosor){
 			switch(variable_grosor){
@@ -244,8 +243,8 @@ void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
     glColor3f(1.0, 1.0, 1.0);
 
-    float x=0.5*(init_x)+ displacementX+init_x;
-    float y=0.5*(init_y)+ displacementY+init_y;
+    float x= getValPoint2(variable_longitud,*max_long,*min_long)*(init_x)+ displacementX+init_x;
+    float y= getValPoint2(variable_longitud,*max_long,*min_long)*(init_y)+ displacementY+init_y;
     glVertex2f(displacementX+init_x, displacementY+init_y); // Especificar las coordenadas del punto a dibujar
     glVertex2f(x,y);
     glEnd();
@@ -411,6 +410,54 @@ void neurite_g::draw3d(float x, float y, float z) {
    firstSection->draw3d(x,y,z);
 }
 
+float *neurite_g::getMaxTamSeccion() const {
+    return max_tam_seccion;
+}
+
+float *neurite_g::getMinTamSeccion() const {
+    return min_tam_seccion;
+}
+
+void neurite_g::setMaxTamSeccion(float maxTamSeccion) {
+    *max_tam_seccion = maxTamSeccion;
+}
+
+void neurite_g::setMinTamSeccion(float minTamSeccion) {
+    *min_tam_seccion = minTamSeccion;
+}
+
+float *neurite_g::getMaxPuntoAPuntoSeccion() const {
+    return max_punto_a_punto_seccion;
+}
+
+void neurite_g::setMaxPuntoAPuntoSeccion(float maxPuntoAPuntoSeccion) {
+    *max_punto_a_punto_seccion = maxPuntoAPuntoSeccion;
+}
+
+float *neurite_g::getMinPuntoAPuntoSeccion() const {
+    return min_punto_a_punto_seccion;
+}
+
+void neurite_g::setMinPuntoAPuntoSeccion(float minPuntoAPuntoSeccion) {
+    *min_punto_a_punto_seccion = minPuntoAPuntoSeccion;
+}
 
 
-	
+
+
+float neurite_g::getValPoint2(VariableLongitud var_long,float max,float min){
+    switch (var_long) {
+        case VariableLongitud::TamanoSeccion:
+
+            return (firstSection->getTamSection()-min)/(max-min)*1.4;
+
+        case VariableLongitud::TamanoPuntoInitPuntoFinal:
+            return (firstSection->getTamSection()-min)/(max-min)*1.4;
+
+        case VariableLongitud::unitario:
+            return 0.5;
+        default:
+            return 0.5;
+    }
+
+}

@@ -67,6 +67,11 @@ public:
 	void calculateMaxMinNodosTerminales();
 	void calculateMaxMinLongitud();
 	void selectSection(QOpenGLWidget* windowPaint,float x,float y);
+
+
+private:
+    void tam_max_seccion();
+    void tam_max_p1_p2_seccion();
 	
 };
 

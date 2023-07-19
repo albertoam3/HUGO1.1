@@ -43,6 +43,13 @@ neuron_g::neuron_g(nsol::Neuron *_neu){
 	calculateMaxMinNodosTerminales();
 	calculateMaxMinLongitud();
 
+    tam_max_seccion();
+    tam_max_p1_p2_seccion();
+
+
+
+
+
 }
 void neuron_g::draw(QOpenGLWidget* windowPaint){
 
@@ -364,6 +371,45 @@ void neuron_g::selectSection(QOpenGLWidget* windowPaint,float x, float y) {
     ax[0]->selectSection(windowPaint,x,y);
     for (auto & item : dends) {
         item.selectSection(windowPaint,x,y);
+    }
+}
+
+void neuron_g::tam_max_seccion() {
+    float max,min;
+    max=*ax[0]->getMaxTamSeccion();
+    min=*ax[0]->getMinTamSeccion();
+    for (auto & item : dends) {
+        if(max<*item.getMaxTamSeccion())
+            max=*item.getMaxTamSeccion();
+        if(min>*item.getMinTamSeccion())
+            min=*item.getMinTamSeccion();
+    }
+
+    ax[0]->setMaxTamSeccion(max);
+    ax[0]->setMinTamSeccion(min);
+    for (auto & item : dends) {
+        item.setMaxTamSeccion(max);
+        item.setMinTamSeccion(min);
+    }
+
+}
+
+void neuron_g::tam_max_p1_p2_seccion() {
+    float max,min;
+    max=*ax[0]->getMaxPuntoAPuntoSeccion();
+    min=*ax[0]->getMinPuntoAPuntoSeccion();
+    for (auto & item : dends) {
+        if(max<*item.getMaxPuntoAPuntoSeccion())
+            max=*item.getMaxPuntoAPuntoSeccion();
+        if(min>*item.getMinPuntoAPuntoSeccion())
+            min=*item.getMinPuntoAPuntoSeccion();
+    }
+
+    ax[0]->setMaxPuntoAPuntoSeccion(max);
+    ax[0]->setMinPuntoAPuntoSeccion(min);
+    for (auto & item : dends) {
+        item.setMaxPuntoAPuntoSeccion(max);
+        item.setMinPuntoAPuntoSeccion(min);
     }
 }
 

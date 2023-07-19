@@ -105,6 +105,21 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     void selectSection(QOpenGLWidget* windowPaint,float x,float y);
     void draw3d(float x,float y,float z);
 
+    float *getMaxTamSeccion() const;
+
+    float *getMinTamSeccion() const;
+
+    void setMaxTamSeccion(float maxTamSeccion);
+
+    void setMinTamSeccion(float minTamSeccion);
+
+    float *getMaxPuntoAPuntoSeccion() const;
+
+    void setMaxPuntoAPuntoSeccion(float maxPuntoAPuntoSeccion);
+
+    float *getMinPuntoAPuntoSeccion() const;
+
+    void setMinPuntoAPuntoSeccion(float minPuntoAPuntoSeccion);
 
 protected:
     virtual void put_color()=0 ;
@@ -113,6 +128,7 @@ private:
     float terminalNodes();
     void variableGrosorAux(float *max,float *min);
     void variableLongitudAux(float *max_long,float *min_long);
+    float getValPoint2(VariableLongitud var_long,float max,float min);
 
 };
 
