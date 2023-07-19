@@ -23,8 +23,11 @@ neurite_g::neurite_g(nsol::Neurite* _neurite){
     min_volumen_seccion = new float;
     max_tam_seccion = new float;
     min_tam_seccion = new float;
-    tam=firstSection->getTamTotal(max_tam_seccion,min_tam_seccion)/100;
+    max_punto_a_punto_seccion=new float;
+    min_punto_a_punto_seccion=new float;
 
+    tam=firstSection->getTamTotal(max_tam_seccion,min_tam_seccion)/100;
+    getDistacia_A_B(max_punto_a_punto_seccion,min_punto_a_punto_seccion);
 
 
 }
@@ -225,15 +228,19 @@ void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     bool g;
     float *max=new float;
     float *min=new float;
+
+    float *max_long=new float;
+    float *min_long= new float;
+
     if(neurites_grosor==true){
         g=true;
         variableGrosorAux(max,min);
-
     }
     else{
         g=false;
         glLineWidth(1);
     }
+    variableLongitudAux(max_long,min_long);
     glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
     glColor3f(1.0, 1.0, 1.0);
 
@@ -248,7 +255,7 @@ void neurite_g::drawDendograma(QOpenGLWidget *windowPaint) {
     glVertex2f(x,y);
     glEnd();
     int n=0;
-    firstSection->drawSectionsDendograma(x,y,angle_hueco,angle,terminal_nodes,&n,g,*max,*min,variable_grosor,variable_longitud);
+    firstSection->drawSectionsDendograma(x,y,angle_hueco,angle,terminal_nodes,&n,g,*max,*min,variable_grosor,variable_longitud,*max_long,*min_long);
 }
 
 
@@ -316,6 +323,25 @@ void neurite_g::variableGrosorAux(float *max,float *min){
     glLineWidth(n);
 }
 
+void neurite_g::variableLongitudAux(float *max_long, float *min_long) {
+    switch (variable_longitud) {
+        case VariableLongitud::unitario:
+            *max_long=0.25;
+            *min_long=0;
+            break;
+        case VariableLongitud::TamanoPuntoInitPuntoFinal:
+            *max_long=*max_punto_a_punto_seccion;
+            *min_long=*min_punto_a_punto_seccion;
+            break;
+        case VariableLongitud::TamanoSeccion:
+            *max_long=*max_tam_seccion;
+            *min_long=*min_tam_seccion;
+            break;
+
+    }
+}
+
+
 void neurite_g::setVariableTam(int a){
     switch ( a )
     {
@@ -370,6 +396,13 @@ float neurite_g::getTamTotal() {
     return firstSection->getTamTotal(max_tam_seccion,min_tam_seccion);
 }
 
+void neurite_g::getDistacia_A_B(float *max,float *min){
+    *max_punto_a_punto_seccion=firstSection->getTamPuntoInicialPuntoFinal();
+    *min_punto_a_punto_seccion=firstSection->getTamPuntoInicialPuntoFinal();
+    firstSection->getTamTotalP1_P2(max_punto_a_punto_seccion,min_punto_a_punto_seccion);
+}
+
+
 void neurite_g::selectSection(QOpenGLWidget* windowPaint,float x, float y) {
     firstSection->selected( windowPaint,x,y);
 }
@@ -377,5 +410,7 @@ void neurite_g::selectSection(QOpenGLWidget* windowPaint,float x, float y) {
 void neurite_g::draw3d(float x, float y, float z) {
    firstSection->draw3d(x,y,z);
 }
+
+
 
 	

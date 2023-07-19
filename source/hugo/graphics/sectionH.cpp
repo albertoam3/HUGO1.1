@@ -181,7 +181,8 @@ bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
         return false;
 }
 
-void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g, float max, float min, VariableEstado variable_grosor,VariableLongitud var_long) {
+void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g,
+                                      float max, float min, VariableEstado variable_grosor,VariableLongitud var_long,float max_long,float min_long) {
     coord_x=x;
     coord_y=y;
 
@@ -200,8 +201,8 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
         }
         float x2;
         float y2;
-        x2 = x+ sec1->getPoint2(var_long) * cos(angle - angle_hueco * (*cont) / terminal_nodes);
-        y2 =y+ sec1->getPoint2(var_long) * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+        x2 = x+ sec1->getPoint2(var_long,max_long,min_long) * cos(angle - angle_hueco * (*cont) / terminal_nodes);
+        y2 =y+ sec1->getPoint2(var_long,max_long,min_long) * sin(angle - angle_hueco * (*cont) / terminal_nodes);
 
 
 
@@ -209,7 +210,7 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
         drawPoint(x2, y2);
 
         sec1->drawSectionsDendograma(x2, y2, angle_hueco, angle, terminal_nodes, cont,
-                                     g, max, min, variable_grosor,var_long);
+                                     g, max, min, variable_grosor,var_long,max_long,min_long);
         (*cont)++;
 
         float modulo = sqrt(pow(x - displacementX, 2) + pow(y - displacementY, 2));
@@ -218,8 +219,8 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
 
 
 
-        float nix = sec2->getPoint2(var_long) * cos(angle - angle_hueco * (*cont) / terminal_nodes);
-        float niy = sec2->getPoint2(var_long) * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+        float nix = sec2->getPoint2(var_long,max_long,min_long) * cos(angle - angle_hueco * (*cont) / terminal_nodes);
+        float niy = sec2->getPoint2(var_long,max_long,min_long) * sin(angle - angle_hueco * (*cont) / terminal_nodes);
 
         drawArco( x, y, nx, ny, angle, angle_hueco,cont, terminal_nodes, modulo);
         if (g) {
@@ -229,7 +230,7 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
         drawPoint(nx+nix,ny+niy);
 
         sec2->drawSectionsDendograma(nx + nix, ny + niy, angle_hueco, angle, terminal_nodes, cont, g, max,
-                                      min, variable_grosor,var_long);
+                                      min, variable_grosor,var_long,max_long,min_long);
     }
 
 }
@@ -299,13 +300,16 @@ void sectionH::getLineWidth(VariableEstado variable_grosor,sectionH sec,float ma
 
 }
 
-float sectionH::getPoint2(VariableLongitud var_long){
+float sectionH::getPoint2(VariableLongitud var_long,float max,float min){
     switch (var_long) {
+        float aux;
         case VariableLongitud::TamanoSeccion:
-            return tamSeccion;
+            aux=(tamSeccion-min)/(max-min);
+            return aux*1.5;
 
         case VariableLongitud::TamanoPuntoInitPuntoFinal:
-           return tamPuntoInicialPuntoFinal;
+           aux=(tamPuntoInicialPuntoFinal-min)/(max-min);
+            return aux*1.5;
 
         case VariableLongitud::unitario:
             return 0.25;
@@ -317,8 +321,6 @@ float sectionH::getPoint2(VariableLongitud var_long){
 
 }
 
-
-
 void sectionH::coordinates() {
 
 }
@@ -329,10 +331,10 @@ void sectionH::seeToolTip(QString texto,QOpenGLWidget *windowPaint){
 void sectionH::draw3d( float x, float y, float z) {
             glBegin(GL_LINES);
             if(selecionada){
-                glColor4f(x, y, z,1);
+                glColor3f(1,1,1);
             }
             else{
-                glColor4f(x, y, z,0.5);
+                glColor3f(x, y, z);
             }
             for(nsol::Node* n: sec->nodes()){
                 if(n==sec->firstNode() || n==sec->lastNode())
@@ -381,4 +383,16 @@ float sectionH::getTamPuntoInicialPuntoFinal() {
     float dist=distanciaEntreRegistros(s,a);
 
     return dist;
+}
+
+void sectionH::getTamTotalP1_P2(float *max, float *min) {
+    float vol=0;
+    for (sectionH* s : sectionsHijas) {
+        s->getTamTotalP1_P2(max,min);
+    }
+    if(getTamPuntoInicialPuntoFinal()>(*max))
+        (*max)=getTamPuntoInicialPuntoFinal();
+    else if (getTamPuntoInicialPuntoFinal()<(*min))
+        (*min)=getTamPuntoInicialPuntoFinal();
+
 }

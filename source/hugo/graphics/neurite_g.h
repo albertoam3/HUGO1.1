@@ -38,6 +38,9 @@ private:
     float *max_tam_seccion;
     float *min_tam_seccion;
 
+    float *max_punto_a_punto_seccion;
+    float *min_punto_a_punto_seccion;
+
 protected:
     Eigen::Vector3f color;
 public:
@@ -89,7 +92,8 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 	void setMaxLongitud(float a);
 	
 	void setMinLongitud(float a);
-	
+
+    void getDistacia_A_B(float* max,float* min);
 	
 	void setVariableGrosor(int a);
 
@@ -108,6 +112,7 @@ protected:
 private:
     float terminalNodes();
     void variableGrosorAux(float *max,float *min);
+    void variableLongitudAux(float *max_long,float *min_long);
 
 };
 

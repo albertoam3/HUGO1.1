@@ -39,9 +39,11 @@ public:
     float terminalNodes();
     nsol::NeuronMorphologySection getSection();
     void drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g,float max,float min,VariableEstado variable_grosor);
-    void drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g, float max, float min, VariableEstado variable_grosor,VariableLongitud var_long);
+    void drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g,
+                                float max, float min, VariableEstado variable_grosor,VariableLongitud var_long,float max_long,float min_long);
     bool selected(QOpenGLWidget* windowPaint,float x,float y);
-    float getPoint2(VariableLongitud var_long);
+    float getPoint2(VariableLongitud var_long,float max,float min);
+    void getTamTotalP1_P2(float *max,float *min);
 
     void seleccion();
     void draw3d( float x,float y,float z);
