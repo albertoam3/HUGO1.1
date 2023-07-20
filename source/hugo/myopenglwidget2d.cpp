@@ -74,7 +74,7 @@ void myopenglwidget2d::select_grosor_den(bool a) {
 
 void myopenglwidget2d::variableGrosor(float a){
 	for (auto &i: neuronG) {
-        i->setNeuritesVariableTam(a);
+        i->setNeuritesVariableGrosor(a);
     }
     update();
 	

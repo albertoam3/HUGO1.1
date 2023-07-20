@@ -185,6 +185,7 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
                                       float max, float min, VariableEstado variable_grosor,VariableLongitud var_long,float max_long,float min_long) {
     coord_x=x;
     coord_y=y;
+    std::cout << static_cast<int>(variable_grosor) << " y " << static_cast<int>(var_long) << "\n";
 
     if (sectionsHijas.size() == 2) {
         sectionH *sec1, *sec2;
@@ -303,12 +304,9 @@ void sectionH::getLineWidth(VariableEstado variable_grosor,sectionH sec,float ma
 float sectionH::getPoint2(VariableLongitud var_long,float max,float min){
     switch (var_long) {
         case VariableLongitud::TamanoSeccion:
-
             return (tamSeccion-min)/(max-min)*1.4;
-
         case VariableLongitud::TamanoPuntoInitPuntoFinal:
             return (tamPuntoInicialPuntoFinal-min)/(max-min)*1.4;
-
         case VariableLongitud::unitario:
             return 0.25;
         default:
