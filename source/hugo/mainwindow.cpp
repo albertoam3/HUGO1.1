@@ -47,7 +47,7 @@ MainWindow::~MainWindow() {
 //Método para el botón
 void MainWindow::connectButtons() {
     QObject::connect(ui->draw, SIGNAL(clicked()), this, SLOT(pintar()));
-    QObject::connect(ui->reset, SIGNAL(cFlicked()), this, SLOT(reset()));
+    QObject::connect(ui->reset, SIGNAL(clicked()), this, SLOT(reset()));
     QObject::connect(ui->load, SIGNAL(clicked()), this, SLOT(load()));
     QObject::connect(ui->validar_tam_2, SIGNAL(clicked()), this, SLOT(validarTam()));
 
