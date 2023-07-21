@@ -1,11 +1,11 @@
-#include "myopenglwidget.h"
+#include "myOpenGLWidget.h"
 #include <QOpenGLContext>
 #include <GL/gl.h>
 
 
 constexpr float ROTATION_FACTOR = 0.01f;
 
-myopenglwidget::myopenglwidget(QWidget *parent)
+myOpenGLWidget::myOpenGLWidget(QWidget *parent)
         : QOpenGLWidget{parent} {
     buttonDrawActive = false;
     mouseX = 0;
@@ -25,7 +25,7 @@ myopenglwidget::myopenglwidget(QWidget *parent)
 }
 
 //Métodos necesarios para la utilización de la pantalla QOpenGLWidget : initializeGL,paintGL,resizeGL
-void myopenglwidget::initializeGL() {
+void myOpenGLWidget::initializeGL() {
     initializeOpenGLFunctions();
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glEnable(GL_DEPTH_TEST);
@@ -43,7 +43,7 @@ void myopenglwidget::initializeGL() {
     glEnable(GL_MULTISAMPLE);
 }
 
-void myopenglwidget::paintGL() {
+void myOpenGLWidget::paintGL() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
     if (buttonDrawActive) {
@@ -77,7 +77,7 @@ void myopenglwidget::paintGL() {
     }
 }
 
-void myopenglwidget::resizeGL(int w, int h) {
+void myOpenGLWidget::resizeGL(int w, int h) {
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -85,7 +85,7 @@ void myopenglwidget::resizeGL(int w, int h) {
 }
 
 //Cada vez que le doy al botón draw, pongo pintar a true, y pongo mouseX y mouseY a 0
-void myopenglwidget::setDraw(bool a) {
+void myOpenGLWidget::setDraw(bool a) {
     buttonDrawActive = a;
     mouseX = 0;
     mouseY = 0;
@@ -98,12 +98,12 @@ void myopenglwidget::setDraw(bool a) {
 
 }
 
-void myopenglwidget::setGraphicsObject(neuron_g *gobj) {
+void myOpenGLWidget::setGraphicsObject(neuronG *gobj) {
     gobject.push_back(gobj);
 
 }
 
-void myopenglwidget::resetList() {
+void myOpenGLWidget::resetList() {
     gobject.clear();
     update();
 }
@@ -111,7 +111,7 @@ void myopenglwidget::resetList() {
 
 //Cuando pincho en un lado de la pantalla arrasto el objeto alli
 
-void myopenglwidget::mousePressEvent(QMouseEvent *event_) {
+void myOpenGLWidget::mousePressEvent(QMouseEvent *event_) {
     scala = 0;
     translationX = 0;
     translationY = 0;
@@ -141,7 +141,7 @@ void myopenglwidget::mousePressEvent(QMouseEvent *event_) {
 }
 
 //Cuando arrastro el ratón pulsando la tecla arrastro el objeto alli.
-void myopenglwidget::mouseMoveEvent(QMouseEvent *event_) {
+void myOpenGLWidget::mouseMoveEvent(QMouseEvent *event_) {
     scala = 0;
     //Posición del ratón en la ventana
     float x = event_->x();
@@ -180,7 +180,7 @@ void myopenglwidget::mouseMoveEvent(QMouseEvent *event_) {
 
 
 
-void myopenglwidget::wheelEvent(QWheelEvent *event) {
+void myOpenGLWidget::wheelEvent(QWheelEvent *event) {
     if (event->modifiers() & Qt::ControlModifier) { // Verificar si se presionó la tecla de control
         int delta = event->angleDelta().y(); // Obtener el desplazamiento de la rueda del ratón
 
@@ -200,7 +200,7 @@ void myopenglwidget::wheelEvent(QWheelEvent *event) {
 
 
 //metodo auxiliar que habria que cambiar
-void myopenglwidget::positionDraws() {
+void myOpenGLWidget::positionDraws() {
     int i = gobject.size();
     int j = (i - 1) / 3;
     int k = (i - 1) % 3 + 1;
@@ -238,7 +238,7 @@ void myopenglwidget::positionDraws() {
 }
 
 
-void myopenglwidget::rotate(float x,float y,float z){
+void myOpenGLWidget::rotate(float x, float y, float z){
     Eigen::Matrix3f rot;
     Eigen::Matrix3f rYaw;
     Eigen::Matrix3f rPitch;
@@ -269,7 +269,7 @@ void myopenglwidget::rotate(float x,float y,float z){
 }
 
 
-void myopenglwidget::transform() {
+void myOpenGLWidget::transform() {
     //Punto de origen
     Eigen::Vector3f p(mouseX, mouseY, 0.0f);
 

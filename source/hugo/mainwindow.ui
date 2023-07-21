@@ -22,7 +22,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
-     <widget class="myopenglwidget2d" name="openGLWidget2D" native="true">
+     <widget class="myOpenGLWidget2D" name="openGLWidget2D" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -74,7 +74,7 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="0" column="0">
-           <widget class="myopenglwidget" name="openGLWidget" native="true">
+           <widget class="myOpenGLWidget" name="openGLWidget" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
               <horstretch>0</horstretch>
@@ -214,14 +214,14 @@
                    </property>
                    <layout class="QGridLayout" name="gridLayout_5">
                     <item row="1" column="0" colspan="2">
-                     <widget class="QRadioButton" name="dif_grosor">
+                     <widget class="QRadioButton" name="difGrosor">
                       <property name="text">
                        <string>Diferente</string>
                       </property>
                      </widget>
                     </item>
                     <item row="0" column="0">
-                     <widget class="QRadioButton" name="igual_grosor">
+                     <widget class="QRadioButton" name="igualGrosor">
                       <property name="text">
                        <string>Igual</string>
                       </property>
@@ -380,15 +380,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>myopenglwidget</class>
+   <class>myOpenGLWidget</class>
    <extends>QWidget</extends>
-   <header>myopenglwidget.h</header>
+   <header>myOpenGLWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>myopenglwidget2d</class>
+   <class>myOpenGLWidget2D</class>
    <extends>QWidget</extends>
-   <header location="global">myopenglwidget2d.h</header>
+   <header location="global">myOpenGLWidget2D.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

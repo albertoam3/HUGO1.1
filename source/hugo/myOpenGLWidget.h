@@ -6,19 +6,19 @@
 #include <QColor>
 
 #include <QMouseEvent>
-#include "graphics/graphic_objects.h"
-#include "graphics/neuron_g.h"
+#include "graphics/graphicObjects.h"
+#include "graphics/neuronG.h"
 #include <Eigen/Dense>
 
 
-class myopenglwidget : public QOpenGLWidget, public QOpenGLFunctions
+class myOpenGLWidget : public QOpenGLWidget, public QOpenGLFunctions
 
 {
     Q_OBJECT
 private:
     float mouseX,mouseY;
     bool buttonDrawActive;
-    std::vector<neuron_g*> gobject;
+    std::vector<neuronG*> gobject;
 
 
     float translationX,translationY;
@@ -40,9 +40,9 @@ public:
 
 
 
-    myopenglwidget(QWidget *parent =nullptr);
+    myOpenGLWidget(QWidget *parent =nullptr);
     void setDraw(bool a);
-    void setGraphicsObject(neuron_g *gobj);
+    void setGraphicsObject(neuronG *gobj);
     void resetList();
 
 

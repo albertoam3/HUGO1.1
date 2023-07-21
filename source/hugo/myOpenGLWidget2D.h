@@ -6,13 +6,13 @@
 #include <QColor>
 
 #include <QMouseEvent>
-#include "graphics/graphic_objects.h"
-#include "graphics/neuron_g.h"
+#include "graphics/graphicObjects.h"
+#include "graphics/neuronG.h"
 #include <Eigen/Dense>
-#include "myopenglwidget.h"
+#include "myOpenGLWidget.h"
 
 
-class myopenglwidget2d : public QOpenGLWidget, public QOpenGLFunctions
+class myOpenGLWidget2D : public QOpenGLWidget, public QOpenGLFunctions
 
 {
 	
@@ -20,7 +20,7 @@ class myopenglwidget2d : public QOpenGLWidget, public QOpenGLFunctions
 private:
     float mouseX,mouseY;
     bool buttonDrawActive;
-    std::vector<neuron_g*> neuronG;	
+    std::vector<neuronG*> neuronGraphic;
     float scala,scalaTotal{};
     bool _rotation;
     Eigen::Vector3f position;
@@ -30,11 +30,11 @@ private:
     float translationX,translationY;
     float ejeXAux{},ejeYAux{};
     bool controlPressed,rPressed,tPressed;
-    myopenglwidget *mogw;
+    myOpenGLWidget *mogw;
 	Q_OBJECT
 public:
-  myopenglwidget2d(QWidget *parent =nullptr);
-  void setNeuronG(neuron_g *neuG);
+  myOpenGLWidget2D(QWidget *parent =nullptr);
+  void setNeuronGraphic(neuronG *neuG);
   void resetList();
   void setDraw(bool a); 
   void select_draw_den(bool a);
@@ -45,7 +45,7 @@ public:
   void variableGrosor(float a);
   void variableTam(float a);
 
-  void otherWidget(myopenglwidget *mogw);
+  void otherWidget(myOpenGLWidget *mogw);
 
 
 

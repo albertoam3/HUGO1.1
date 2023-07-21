@@ -1,8 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <myopenglwidget.h>
-#include <myopenglwidget2d.h>
+#include <myOpenGLWidget.h>
+#include <myOpenGLWidget2D.h>
 
 //Qt
 #include <QMainWindow>
@@ -22,11 +22,11 @@
 #include <QListWidgetItem>
 
 
-#include "graphics/soma_g.h"
-#include "graphics/neuron_g.h"
-#include "graphics/axon_g.h"
-#include "graphics/dendrite_g.h"
-#include "base_datos_objetos.h"
+#include "graphics/somaG.h"
+#include "graphics/neuronG.h"
+#include "graphics/axonG.h"
+#include "graphics/dendriteG.h"
+#include "baseDatosObjetos.h"
 
 #include <nsol/nsol.h>
 
@@ -43,9 +43,9 @@ private:
   
     QComboBox* elementosCargados;
  
-    myopenglwidget *_openGLWidget;
-    myopenglwidget2d* openGLWidget2d;
-    base_datos_objetos* base;
+    myOpenGLWidget *_openGLWidget;
+    myOpenGLWidget2D* openGLWidget2d;
+    baseDatosObjetos* base;
     nsol::NeuronsMap neurons;
 
     QString path;
@@ -53,7 +53,7 @@ private:
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void connect_buttons();
+    void connectButtons();
     void selecction();
 
     void openSWCFile( const std::string& fileName );
@@ -74,22 +74,22 @@ public Q_SLOTS:
     void reset();
     void load();
 
-    void dif_grosor();
-    void igual_grosor();
+    void difGrosor();
+    void igualGrosor();
     void set_dend();
     void set_nada();
     void set_tree();
-    void validar_tam();
+    void validarTam();
     
 private slots:
-    void on_igual_ang_clicked();
+    void onIgualAngClicked();
 
-    void on_terminales_ang_clicked();
+    void onTerminalesAngClicked();
     
 
 private:
     Ui::MainWindow *ui;
-    void creat_list();
+    void createList();
     void checkBoxStateChanged(int state);
     void initGrosorComboBox();
     void initTamComboBox();

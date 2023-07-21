@@ -1,6 +1,6 @@
-#include "myopenglwidget2d.h"
+#include "myOpenGLWidget2D.h"
 
-myopenglwidget2d::myopenglwidget2d(QWidget *parent)  : QOpenGLWidget{parent} {
+myOpenGLWidget2D::myOpenGLWidget2D(QWidget *parent)  : QOpenGLWidget{parent} {
 	buttonDrawActive = false;
     mouseX = 0;
     mouseY = 0;
@@ -22,20 +22,20 @@ myopenglwidget2d::myopenglwidget2d(QWidget *parent)  : QOpenGLWidget{parent} {
     mogw=nullptr;
 }
 
-void myopenglwidget2d::setNeuronG(neuron_g *neuG){
-	  neuronG.push_back(neuG);
+void myOpenGLWidget2D::setNeuronGraphic(neuronG *neuG){
+	  neuronGraphic.push_back(neuG);
 	  
 }
 
-void myopenglwidget2d::resetList() {
-    neuronG.clear();
+void myOpenGLWidget2D::resetList() {
+    neuronGraphic.clear();
     update();
 }
-void myopenglwidget2d::setDraw(bool a) {
+void myOpenGLWidget2D::setDraw(bool a) {
     buttonDrawActive = a;
     mouseX = 0;
     mouseY = 0;
-    for (auto &i: neuronG) {
+    for (auto &i: neuronGraphic) {
         i->displacementN(mouseX, mouseY,0);
         i->resetSelect();
     }
@@ -43,52 +43,52 @@ void myopenglwidget2d::setDraw(bool a) {
     update();
 }
 
-void myopenglwidget2d::select_draw_den(bool a) {
+void myOpenGLWidget2D::select_draw_den(bool a) {
   
-    for (auto &i: neuronG) {
+    for (auto &i: neuronGraphic) {
         i->setAngleXTam(a);
     }
     update();
 }
-void myopenglwidget2d::select_tam_den(bool a) {
+void myOpenGLWidget2D::select_tam_den(bool a) {
   
-    for (auto &i: neuronG) {
+    for (auto &i: neuronGraphic) {
         i->setNeuritesTam(a);
     }
     update();
 }
 
-void myopenglwidget2d::setTree(bool a){
-	 for (auto &i: neuronG) {
+void myOpenGLWidget2D::setTree(bool a){
+	 for (auto &i: neuronGraphic) {
         i->setTree(a);
     }
 	update();
 }
-void myopenglwidget2d::select_grosor_den(bool a) {
-    for (auto &i: neuronG) {
+void myOpenGLWidget2D::select_grosor_den(bool a) {
+    for (auto &i: neuronGraphic) {
         i->setNeuritesGrosor(a);
     }
     update();
 }
 
 
-void myopenglwidget2d::variableGrosor(float a){
-	for (auto &i: neuronG) {
+void myOpenGLWidget2D::variableGrosor(float a){
+	for (auto &i: neuronGraphic) {
         i->setNeuritesVariableGrosor(a);
     }
     update();
 	
 }
 
-void myopenglwidget2d::variableTam(float a){
-    for (auto &i: neuronG) {
+void myOpenGLWidget2D::variableTam(float a){
+    for (auto &i: neuronGraphic) {
         i->setNeuritesVariableTam(a);
     }
     update();
 
 }
 //propias de openGLWidget
-void myopenglwidget2d::initializeGL() {
+void myOpenGLWidget2D::initializeGL() {
     initializeOpenGLFunctions();
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glEnable(GL_DEPTH_TEST);
@@ -108,7 +108,7 @@ void myopenglwidget2d::initializeGL() {
 
     QSurfaceFormat format = this->format();
 }
-void myopenglwidget2d::paintGL() {
+void myOpenGLWidget2D::paintGL() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
     if (buttonDrawActive) {
@@ -116,7 +116,7 @@ void myopenglwidget2d::paintGL() {
         buttonDrawActive = false;
         scalaTotal = 1;
         rotation=Eigen::Matrix3f::Identity();
-        for (auto &i: neuronG) {
+        for (auto &i: neuronGraphic) {
             i->setDisplacements(0, 0);
             
         }
@@ -137,7 +137,7 @@ void myopenglwidget2d::paintGL() {
         model_view=*reinterpret_cast<Eigen::Matrix4f *>(modelview_matrix);
 
     }
-    for (auto &i: neuronG) {
+    for (auto &i: neuronGraphic) {
     	i->setScala(scalaTotal);
         i->draw(this,false);
         //i->draw(this);
@@ -145,14 +145,14 @@ void myopenglwidget2d::paintGL() {
     
     
 }
-void myopenglwidget2d::resizeGL(int w, int h) {
+void myOpenGLWidget2D::resizeGL(int w, int h) {
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glMatrixMode(GL_MODELVIEW);
 }
 
-void myopenglwidget2d::wheelEvent(QWheelEvent *event) {
+void myOpenGLWidget2D::wheelEvent(QWheelEvent *event) {
     if (event->modifiers() & Qt::ControlModifier) { // Verificar si se presionó la tecla de control
         int delta = event->angleDelta().y(); // Obtener el desplazamiento de la rueda del ratón
         scala = 0;
@@ -167,7 +167,7 @@ void myopenglwidget2d::wheelEvent(QWheelEvent *event) {
     }
 }
 
-void myopenglwidget2d::mousePressEvent(QMouseEvent *event_) {
+void myOpenGLWidget2D::mousePressEvent(QMouseEvent *event_) {
 
     float x = event_->x();
     float y = height() - event_->y();
@@ -176,7 +176,7 @@ void myopenglwidget2d::mousePressEvent(QMouseEvent *event_) {
     mouseY = ((2.0f * y) / height() - 1.0f) ;
     transform();
     if (event_->button() == Qt::RightButton) {
-        for (auto &i: neuronG) {
+        for (auto &i: neuronGraphic) {
             if (i != nullptr)
                 i->select(this, result.x(), result.y(), result.z());
         }
@@ -185,7 +185,7 @@ void myopenglwidget2d::mousePressEvent(QMouseEvent *event_) {
 }
 
 //Cuando arrastro el ratón pulsando la tecla arrastro el objeto alli.
-void myopenglwidget2d::mouseMoveEvent(QMouseEvent *event_) {
+void myOpenGLWidget2D::mouseMoveEvent(QMouseEvent *event_) {
     scala = 0;
     //Posición del ratón en la ventana
     float x = event_->x();
@@ -196,7 +196,7 @@ void myopenglwidget2d::mouseMoveEvent(QMouseEvent *event_) {
     transform();
     if (controlPressed && tPressed) {
         bool encontrado = false;
-        for (auto &i: neuronG) {
+        for (auto &i: neuronGraphic) {
             if (i != nullptr && i->isSelected()) {
                 encontrado = true;
                 if (i->coord_include(result.x(), result.y()))
@@ -219,7 +219,7 @@ void myopenglwidget2d::mouseMoveEvent(QMouseEvent *event_) {
         update();
     }
     else{
-        for (auto &i: neuronG) {
+        for (auto &i: neuronGraphic) {
             i->selectSection(this,result.x(),result.y());
         }
     }
@@ -232,7 +232,7 @@ void myopenglwidget2d::mouseMoveEvent(QMouseEvent *event_) {
 
 //privadas
 
-void myopenglwidget2d::transform() {
+void myOpenGLWidget2D::transform() {
     //Punto de origen
     Eigen::Vector3f p(mouseX, mouseY, 0.0f);
 
@@ -245,7 +245,7 @@ void myopenglwidget2d::transform() {
 }
 
 
-void myopenglwidget2d::rotate(float x,float y,float z){
+void myOpenGLWidget2D::rotate(float x, float y, float z){
     Eigen::Matrix3f rot;
 
     float angle = std::atan2(y, x);  // Calcula el ángulo a partir de las coordenadas x e y
@@ -264,14 +264,14 @@ void myopenglwidget2d::rotate(float x,float y,float z){
 
 }
 
-void myopenglwidget2d::setDendograma(bool a) {
-    for (auto &i: neuronG) {
+void myOpenGLWidget2D::setDendograma(bool a) {
+    for (auto &i: neuronGraphic) {
         i->setDendograma(a);
     }
     update();
 }
 
-void myopenglwidget2d::keyPressEvent(QKeyEvent* event){
+void myOpenGLWidget2D::keyPressEvent(QKeyEvent* event){
     if (event->key() == Qt::Key_Control)
         controlPressed = true; // Tecla Control presionada
 
@@ -281,7 +281,7 @@ void myopenglwidget2d::keyPressEvent(QKeyEvent* event){
         tPressed=true;
 }
 
-void myopenglwidget2d::keyReleaseEvent(QKeyEvent* event){
+void myOpenGLWidget2D::keyReleaseEvent(QKeyEvent* event){
     if (event->key() == Qt::Key_Control){
         controlPressed = false; // Tecla Control liberada
     }
@@ -291,6 +291,6 @@ void myopenglwidget2d::keyReleaseEvent(QKeyEvent* event){
         tPressed=false;
 }
 
-void myopenglwidget2d::otherWidget(myopenglwidget *mogw) {
+void myOpenGLWidget2D::otherWidget(myOpenGLWidget *mogw) {
     this->mogw=mogw;
 }

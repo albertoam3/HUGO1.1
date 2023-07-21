@@ -6,13 +6,13 @@
 #ifndef HUGO_DENDRITE_G_H
 #define HUGO_DENDRITE_G_H
 
-#include "graphic_objects.h"
+#include "graphicObjects.h"
 #include "nsol/nsol.h"
 #include "sectionH.h"
-#include "neurite_g.h"
+#include "neuriteG.h"
 
 
-class dendrite_g : public neurite_g{
+class dendriteG : public neuriteG{
 
 public:
     typedef enum TDendriteType
@@ -21,8 +21,8 @@ public:
         APICAL
     } TDendriteType;
 
-    dendrite_g(nsol::Dendrite* _dend);
-    void put_color();
+    dendriteG(nsol::Dendrite* _dend);
+    void putColor();
     void setTDendriteType(TDendriteType den);
 private:
     TDendriteType _dendriteType;

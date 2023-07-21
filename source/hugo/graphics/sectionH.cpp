@@ -15,8 +15,8 @@ sectionH::sectionH(nsol::NeuronMorphologySection* _sec){
      sec=_sec;
      selecionada=false;
      getTamSection();
-     coord_x=0;
-     coord_y=0;
+    coordX=0;
+    coordY=0;
      displacementX=0;
      displacementY=0;
 
@@ -121,11 +121,11 @@ nsol::NeuronMorphologySection sectionH::getSection(){
 	return *sec;
 }
 
-void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g,float max,float min,VariableEstado variable_grosor){
+void sectionH::drawSectionsTree(float x1, float x2, float angle, float hipotenusa, float dif_angle, bool g, float max, float min, VarEstado variable_grosor){
 
 		float valorX,valorY,valorX2,valorY2;
-		coord_x=x1;
-        coord_y=x2;
+    coordX=x1;
+    coordY=x2;
 
 		hipotenusa*=0.8;
 		valorX=x1+cos(angle-1.30899694*dif_angle)*hipotenusa;
@@ -160,7 +160,7 @@ void sectionH::drawSectionsTree(float x1, float x2,float angle,float hipotenusa,
 }
 
 bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
-    if(coord_x+0.05>x && coord_x-0.05<x && coord_y+0.05>y && coord_y-0.05<y){
+    if(coordX + 0.05 > x && coordX - 0.05 < x && coordY + 0.05 > y && coordY - 0.05 < y){
         QString texto="Soy la seleccionada ";
         seeToolTip(texto,windowPaint);
         selected_hijas(true);
@@ -182,9 +182,9 @@ bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
 }
 
 void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g,
-                                      float max, float min, VariableEstado variable_grosor,VariableLongitud var_long,float max_long,float min_long) {
-    coord_x=x;
-    coord_y=y;
+                                      float max, float min, VarEstado variable_grosor, VarLongitud var_long, float max_long, float min_long) {
+    coordX=x;
+    coordY=y;
     std::cout << static_cast<int>(variable_grosor) << " y " << static_cast<int>(var_long) << "\n";
 
     if (sectionsHijas.size() == 2) {
@@ -283,16 +283,16 @@ void sectionH::drawPoint(float x1,float y1){
     glEnd();
 }
 
-void sectionH::getLineWidth(VariableEstado variable_grosor,sectionH sec,float max,float min){
+void sectionH::getLineWidth(VarEstado variable_grosor, sectionH sec, float max, float min){
     float aux, n;
     switch (variable_grosor) {
-        case VariableEstado::Volumen:
+        case VarEstado::Volumen:
             aux = (sec.getVolumenSeccion() - min) / (max - min);
             break;
-        case VariableEstado::nodosTerminales:
+        case VarEstado::nodosTerminales:
             aux = (sec.terminalNodes() - min) / (max - min);
             break;
-        case VariableEstado::Tamano:
+        case VarEstado::Tamano:
             aux = (sec.getTamSection() - min) / (max - min);
             break;
     }
@@ -301,13 +301,13 @@ void sectionH::getLineWidth(VariableEstado variable_grosor,sectionH sec,float ma
 
 }
 
-float sectionH::getPoint2(VariableLongitud var_long,float max,float min){
+float sectionH::getPoint2(VarLongitud var_long, float max, float min){
     switch (var_long) {
-        case VariableLongitud::TamanoSeccion:
+        case VarLongitud::TamanoSeccion:
             return (tamSeccion-min)/(max-min)*1.4;
-        case VariableLongitud::TamanoPuntoInitPuntoFinal:
+        case VarLongitud::TamanoPuntoInitPuntoFinal:
             return (tamPuntoInicialPuntoFinal-min)/(max-min)*1.4;
-        case VariableLongitud::unitario:
+        case VarLongitud::unitario:
             return 0.25;
         default:
             return 0.25;
@@ -379,10 +379,10 @@ float sectionH::getTamPuntoInicialPuntoFinal() {
     return dist;
 }
 
-void sectionH::getTamTotalP1_P2(float *max, float *min) {
+void sectionH::getTamTotalP1P2(float *max, float *min) {
     float vol=0;
     for (sectionH* s : sectionsHijas) {
-        s->getTamTotalP1_P2(max,min);
+        s->getTamTotalP1P2(max, min);
     }
     if(getTamPuntoInicialPuntoFinal()>(*max))
         (*max)=getTamPuntoInicialPuntoFinal();

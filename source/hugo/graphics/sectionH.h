@@ -9,8 +9,8 @@
 #include <QOpenGLWidget>
 #include <QToolTip>
 #include "math.h"
-#include "VariableEstado.h"
-#include "VariableLongitud.h"
+#include "VarEstado.h"
+#include "VarLongitud.h"
 
 class sectionH {
 private:
@@ -19,8 +19,8 @@ private:
     static const double PI;
 
 
-    float coord_x;
-    float coord_y;
+    float coordX;
+    float coordY;
     bool selecionada;
     std::vector<sectionH*> sectionsHijas;
     float displacementX,displacementY;
@@ -38,12 +38,12 @@ public:
     float getVolumenSeccion();
     float terminalNodes();
     nsol::NeuronMorphologySection getSection();
-    void drawSectionsTree(float x1, float x2,float angle,float hipotenusa,float dif_angle,bool g,float max,float min,VariableEstado variable_grosor);
+    void drawSectionsTree(float x1, float x2, float angle, float hipotenusa, float dif_angle, bool g, float max, float min, VarEstado variable_grosor);
     void drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g,
-                                float max, float min, VariableEstado variable_grosor,VariableLongitud var_long,float max_long,float min_long);
+                                float max, float min, VarEstado variable_grosor, VarLongitud var_long, float max_long, float min_long);
     bool selected(QOpenGLWidget* windowPaint,float x,float y);
-    float getPoint2(VariableLongitud var_long,float max,float min);
-    void getTamTotalP1_P2(float *max,float *min);
+    float getPoint2(VarLongitud var_long, float max, float min);
+    void getTamTotalP1P2(float *max, float *min);
 
     void seleccion();
     void draw3d( float x,float y,float z);
@@ -56,7 +56,7 @@ private:
     float distanciaEntreRegistros(nsol::Node* r1, nsol::Node* r2);
     float areaCono(nsol::Node* r1,nsol::Node* r2);
     float volumenCono(nsol::Node* r1, nsol::Node* r2);
-    void getLineWidth(VariableEstado variable_grosor,sectionH sec,float max,float min);
+    void getLineWidth(VarEstado variable_grosor, sectionH sec, float max, float min);
     void drawArco(float x1,float y1,float x2,float y2,float angle,float angle_hueco, int* cont,float terminal_nodes,float modulo);
     void drawLine(float x1,float y1,float x2,float y2);
     void drawPoint(float x1,float y1);

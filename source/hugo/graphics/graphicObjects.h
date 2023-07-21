@@ -11,27 +11,27 @@
 #include <QToolTip>
 #include <QPoint>
 
-class graphic_objects{
+class graphicObjects{
 protected:
     bool selected;
-    float min_X;
-    float max_X;
-    float min_Y;
-    float max_Y;
-    float min_Z;
-    float max_Z;
+    float minX;
+    float maxX;
+    float minY;
+    float maxY;
+    float minZ;
+    float maxZ;
 
     float displacementX;
     float displacementY;
     float displacementZ;
 
     QString name;
-    float init_x;
-    float init_y;
-    float init_z;
+    float initX;
+    float initY;
+    float initZ;
     bool angleXTam;
-    bool neurites_tam;
-    bool neurites_grosor;
+    bool neuritesTam;
+    bool neuritesGros;
     bool dimension;
 
     float scala;
@@ -39,7 +39,7 @@ protected:
     bool tree;
     bool dendograma;
     
-    float variableGrosor;
+    float variableGros;
     
 public:
 
@@ -55,9 +55,9 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 
     //Coordenadas que se desplaza el objeto
     void displacement(float x, float y,float z){
-            displacementX= x - init_x;
-            displacementY= y - init_y;
-            displacementZ= z-init_z;
+            displacementX= x - initX;
+            displacementY= y - initY;
+            displacementZ= z - initZ;
 
     }
 
@@ -67,8 +67,8 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     //Cuando pintamos el objeto desde 0, quita el boton selected en caso de que estuviera.
     virtual bool resetSelect()=0;
      void coordInitials(float x, float y){
-        init_x=x;
-        init_y=y;
+         initX=x;
+         initY=y;
     }
 
     const QString &getName() const {
@@ -76,14 +76,14 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     }
 
     void setName(const QString &name_) {
-        graphic_objects::name = name_;
+        graphicObjects::name = name_;
     }
 
     virtual bool isSelected()=0 ;
 
     bool coord_include(float x,float y){
         coordinates();
-        if (x > min_X -0.05 && x < max_X +0.05 && y > min_Y -0.05 && y < max_Y + 0.05){
+        if (x > minX - 0.05 && x < maxX + 0.05 && y > minY - 0.05 && y < maxY + 0.05){
             return true;
         }
         return false;
@@ -100,7 +100,7 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     }
     
     void setNeuritesGrosor(bool grosor){
-		neurites_grosor=grosor;
+        neuritesGros=grosor;
 	}
     
     void setDimension(bool a){
@@ -111,12 +111,12 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     	scala=scalaX;
     }
     void setNeuritesTam(bool c){
-    	neurites_tam=c;
+        neuritesTam=c;
     }
     
 
     void setNeuritesVariableGrosor(float a){
-		variableGrosor=a;
+        variableGros=a;
 		
 	}
     

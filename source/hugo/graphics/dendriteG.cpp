@@ -2,14 +2,14 @@
 // Created by alberto on 03/05/23.
 //
 
-#include "dendrite_g.h"
+#include "dendriteG.h"
 
 
-dendrite_g::dendrite_g(nsol::Dendrite* _dend): neurite_g( _dend)
+dendriteG::dendriteG(nsol::Dendrite* _dend): neuriteG(_dend)
   {
-      put_color();
+      putColor();
 }
-void dendrite_g::put_color(){
+void dendriteG::putColor(){
     switch (_dendriteType) {
         case(TDendriteType::APICAL):
             color.x()=0.0f;
@@ -29,7 +29,7 @@ void dendrite_g::put_color(){
     }
 }
 
-void dendrite_g::setTDendriteType(TDendriteType den) {
+void dendriteG::setTDendriteType(TDendriteType den) {
     _dendriteType=den;
 }
 

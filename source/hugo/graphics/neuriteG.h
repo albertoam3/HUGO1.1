@@ -6,47 +6,47 @@
 #ifndef HUGO_NEURITE_G_H
 #define HUGO_NEURITE_G_H
 
-#include "graphic_objects.h"
+#include "graphicObjects.h"
 #include "nsol/nsol.h"
 #include "sectionH.h"
 #include <QLineEdit>
-#include "VariableEstado.h"
-#include "VariableLongitud.h"
+#include "VarEstado.h"
+#include "VarLongitud.h"
 
 
 
 
-class neurite_g : public graphic_objects{
+class neuriteG : public graphicObjects{
 private:
     nsol::Neurite *neurite;
-    float terminal_nodes;
+    float terminalNodes;
     float angle{};
-    float angle_hueco;
+    float angleGap;
 
     sectionH* firstSection;
     float tam;
-    float tam_mult{};
+    float tamMult{};
     float grosor{};
-    VariableEstado variable_grosor;
-    VariableLongitud variable_longitud;
-    float max_terminal_nodes{};
-    float min_terminal_nodes{};
-    float max_longitud{};
-    float min_longitud{};
-    float *max_volumen_seccion;
-    float *min_volumen_seccion;
-    float *max_tam_seccion;
-    float *min_tam_seccion;
+    VarEstado variableGrosor;
+    VarLongitud variableLongitud;
+    float maxTerminalNodes{};
+    float minTerminalNodes{};
+    float maxLongitud{};
+    float minLongitud{};
+    float *maxVolumenSeccion;
+    float *minVolumenSeccion;
+    float *maxTamSeccion;
+    float *minTamSeccion;
 
-    float *max_punto_a_punto_seccion;
-    float *min_punto_a_punto_seccion;
+    float *maxPuntoAPuntoSeccion;
+    float *minPuntoAPuntoSeccion;
 
 protected:
     Eigen::Vector3f color;
 public:
 
 
-    neurite_g(nsol::Neurite* _neurite);
+    neuriteG(nsol::Neurite* _neurite);
 /*Metodo que esta definido en cada clase hijo, quieres pintaran lo que necesiten en la pantalla openGLWidget
 con un desplazamiento de X y otro desplazamiento de Y*/
     void draw(QOpenGLWidget* windowPaint);
@@ -122,13 +122,13 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     void setMinPuntoAPuntoSeccion(float minPuntoAPuntoSeccion);
 
 protected:
-    virtual void put_color()=0 ;
+    virtual void putColor()=0 ;
 
 private:
-    float terminalNodes();
+    float terminalNodesFunction();
     void variableGrosorAux(float *max,float *min);
     void variableLongitudAux(float *max_long,float *min_long);
-    float getValPoint2(VariableLongitud var_long,float max,float min);
+    float getValPoint2(VarLongitud var_long, float max, float min);
 
 };
 

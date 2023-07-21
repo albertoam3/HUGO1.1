@@ -7,27 +7,27 @@
 
 
 #include <QOpenGLWidget>
-#include "graphic_objects.h"
+#include "graphicObjects.h"
 #include <nsol/nsol.h>
-#include "soma_g.h"
-#include "axon_g.h"
-#include "dendrite_g.h"
+#include "somaG.h"
+#include "axonG.h"
+#include "dendriteG.h"
 #include "sectionH.h"
 
 #include "vector"
 #include "cmath"
 
-class neuron_g : public graphic_objects{
+class neuronG : public graphicObjects{
 private:
     nsol::Neuron *neu;
-    std::vector<axon_g*> ax;
-    soma_g* som;
-    std::vector<dendrite_g> dends;
-    float tam_max_neurite;
+    std::vector<axonG*> ax;
+    somaG* som;
+    std::vector<dendriteG> dends;
+    float tamMaxNeurite;
 
     
 public:
-    neuron_g(nsol::Neuron *_neu);
+    neuronG(nsol::Neuron *_neu);
 
     //Dibujar la neurona
     void draw(QOpenGLWidget* windowPaint);
@@ -53,8 +53,8 @@ public:
     bool resetSelect();
 
     bool isSelected();
-    float angle_equal();
-    float angle_tam();
+    float angleEqual();
+    float angleTam();
     void auxDrawAngleEqual(QOpenGLWidget* windowPaint);
     void auxDrawAngleTam(QOpenGLWidget* windowPaint);
     float getTam();
@@ -70,8 +70,8 @@ public:
 
 
 private:
-    void tam_max_seccion();
-    void tam_max_p1_p2_seccion();
+    void tamMaxSeccion();
+    void tamMaxP1P2Seccion();
 	
 };
 

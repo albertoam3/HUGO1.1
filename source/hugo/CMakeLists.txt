@@ -18,7 +18,7 @@ find_package(Qt5Gui 5.4 REQUIRED)
 
 
 
-set(CMAKE_PREFIX_PATH "/home/alberto/hbp/nsol/build" ${CMAKE_PREFIX_PATH})
+set(CMAKE_PREFIX_PATH "/home/urjcadmin/Code/nsol/build" ${CMAKE_PREFIX_PATH})
 
 find_package(nsol REQUIRED)
 
@@ -35,25 +35,25 @@ add_executable(hugo
           hugo.cpp
           mainwindow.cpp
           mainwindow.h
-          myopenglwidget.cpp
-          myopenglwidget.h
+        myOpenGLWidget.cpp
+        myOpenGLWidget.h
           mainwindow.ui
-          myopenglwidget2d.h
-          myopenglwidget2d.cpp
-          graphics/graphic_objects.h
-          graphics/neuron_g.h
-          graphics/neuron_g.cpp
-          graphics/soma_g.h
-          graphics/soma_g.cpp
-          graphics/axon_g.h
-          graphics/axon_g.cpp
-          graphics/neurite_g.h
-          graphics/neurite_g.cpp
-          graphics/dendrite_g.h
-          graphics/dendrite_g.cpp
+        myOpenGLWidget2D.h
+        myOpenGLWidget2D.cpp
+        graphics/graphicObjects.h
+        graphics/neuronG.h
+        graphics/neuronG.cpp
+        graphics/somaG.h
+        graphics/somaG.cpp
+        graphics/axonG.h
+        graphics/axonG.cpp
+        graphics/neuriteG.h
+        graphics/neuriteG.cpp
+        graphics/dendriteG.h
+        graphics/dendriteG.cpp
           graphics/sectionH.h
           graphics/sectionH.cpp
-          base_datos_objetos.cpp 
-          base_datos_objetos.h  graphics/VariableEstado.h graphics/VariableLongitud.h)
+        baseDatosObjetos.cpp
+        baseDatosObjetos.h graphics/VarEstado.h graphics/VarLongitud.h)
 
 target_link_libraries(hugo ${HUGO_DEPENDENT_LIBRARIES})

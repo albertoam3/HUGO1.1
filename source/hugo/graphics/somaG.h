@@ -5,17 +5,17 @@
 #ifndef HUGO_SOMA_G_H
 #define HUGO_SOMA_G_H
 
-#include "graphic_objects.h"
+#include "graphicObjects.h"
 #include "nsol/nsol.h"
 
-class soma_g :public graphic_objects{
+class somaG : public graphicObjects{
 private:
     nsol::Soma *som;
 
 public:
 
 
-    soma_g(nsol::Soma* _som);
+    somaG(nsol::Soma* _som);
 /*Metodo que esta definido en cada clase hijo, quieres pintaran lo que necesiten en la pantalla openGLWidget
 con un desplazamiento de X y otro desplazamiento de Y*/
     void draw(QOpenGLWidget* windowPaint);

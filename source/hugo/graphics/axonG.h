@@ -5,18 +5,18 @@
 #ifndef HUGO_AXON_G_H
 #define HUGO_AXON_G_H
 
-#include "graphic_objects.h"
+#include "graphicObjects.h"
 #include "nsol/nsol.h"
 #include "sectionH.h"
-#include "neurite_g.h"
+#include "neuriteG.h"
 
 
-class axon_g : public neurite_g{
+class axonG : public neuriteG{
 
 public:
 
-    axon_g(nsol::Axon* _ax);
-    void put_color();
+    axonG(nsol::Axon* _ax);
+    void putColor();
 };
 
 

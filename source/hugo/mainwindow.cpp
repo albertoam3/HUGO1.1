@@ -20,16 +20,16 @@ MainWindow::MainWindow(QWidget *parent)
     openGLWidget2d= ui->openGLWidget2D;
 	openGLWidget2d->setFocus();
     openGLWidget2d->otherWidget(_openGLWidget);
-    connect_buttons();
+    connectButtons();
 
     //Creo cuatro objetos para probar distintas formas de pintar, esto tambien es momentaneo
 
 
-    base = new base_datos_objetos();
+    base = new baseDatosObjetos();
 
 	initGrosorComboBox();
     initTamComboBox();
-    creat_list();
+    createList();
     
     ui->listWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 	
@@ -45,18 +45,18 @@ MainWindow::~MainWindow() {
 }
 
 //Método para el botón
-void MainWindow::connect_buttons() {
+void MainWindow::connectButtons() {
     QObject::connect(ui->draw, SIGNAL(clicked()), this, SLOT(pintar()));
-    QObject::connect(ui->reset, SIGNAL(clicked()), this, SLOT(reset()));
+    QObject::connect(ui->reset, SIGNAL(cFlicked()), this, SLOT(reset()));
     QObject::connect(ui->load, SIGNAL(clicked()), this, SLOT(load()));
-    QObject::connect(ui->validar_tam_2, SIGNAL(clicked()), this, SLOT(validar_tam()));
+    QObject::connect(ui->validar_tam_2, SIGNAL(clicked()), this, SLOT(validarTam()));
 
     QObject::connect(ui->setDendograma,SIGNAL(clicked()),this,SLOT(set_dend()));
     QObject::connect(ui->setNada,SIGNAL(clicked()),this,SLOT(set_nada()));
     QObject::connect(ui->setArbol, SIGNAL(clicked()), this, SLOT(set_tree()));
 
-    QObject::connect(ui->igual_grosor, SIGNAL(clicked()), this, SLOT(igual_grosor()));
-    QObject::connect(ui->dif_grosor, SIGNAL(clicked()), this, SLOT(dif_grosor()));
+    QObject::connect(ui->igualGrosor, SIGNAL(clicked()), this, SLOT(igualGrosor()));
+    QObject::connect(ui->difGrosor, SIGNAL(clicked()), this, SLOT(difGrosor()));
     
     
 
@@ -83,23 +83,23 @@ void MainWindow::selecction() {
     int index = ui->list->currentIndex();
     if(index<base->getList().size()){
         _openGLWidget->setGraphicsObject(base->get(index));
-        openGLWidget2d->setNeuronG(base->get(index));
+        openGLWidget2d->setNeuronGraphic(base->get(index));
         elementosCargados->addItem(base->get(index)->getName());
     }
 }
 
-void MainWindow::creat_list() {
+void MainWindow::createList() {
     for (int i = 0; i < base->getList().size(); i++) {
         ui->list->addItem(base->get(i)->getName());
     }
 }
 
-void MainWindow::on_igual_ang_clicked()
+void MainWindow::onIgualAngClicked()
 {
     openGLWidget2d->select_draw_den(false);
 }
 
-void MainWindow::on_terminales_ang_clicked()
+void MainWindow::onTerminalesAngClicked()
 {
     openGLWidget2d->select_draw_den(true);
 }
@@ -122,7 +122,7 @@ void MainWindow::loadData( const std::string& m_fileName, const std::string& arg
 
     writeText();
     for (auto& neuronPair : neurons) {
-    	 base->add(new neuron_g(neuronPair.second));
+    	 base->add(new neuronG(neuronPair.second));
          this->addList(std::to_string(neuronPair.first));
     }
 }
@@ -236,7 +236,7 @@ void MainWindow::addList(const std::string& st){
 
 
 
-void MainWindow::validar_tam(){
+void MainWindow::validarTam(){
  	openGLWidget2d->select_tam_den(true);
     openGLWidget2d->variableTam(ui->tamanoComboBox->currentIndex());
 }
@@ -248,13 +248,13 @@ void MainWindow::checkBoxStateChanged(int state) {
 }
 
 
-void MainWindow::igual_grosor(){
+void MainWindow::igualGrosor(){
 	openGLWidget2d->select_grosor_den(false);
 	
 	
 }
 
-void MainWindow::dif_grosor(){
+void MainWindow::difGrosor(){
 	 openGLWidget2d->select_grosor_den(true);
 	 openGLWidget2d->variableGrosor(ui->grosorComboBox->currentIndex());
 	
