@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 #include <string>
 #include <vector>
+#include <stdexcept>
 
 MainWindow::MainWindow(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -26,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     base = new baseDatosObjetos();
+
+    mapaBase = new mapaNombreFicheroNeurona;
 
 	initGrosorComboBox();
     initTamComboBox();
@@ -104,28 +107,42 @@ void MainWindow::onTerminalesAngClicked()
     openGLWidget2d->select_draw_den(true);
 }
 
-void MainWindow::loadData( const std::string& m_fileName, const std::string& arg2 ,
-                           const std::string& type )
+void MainWindow::loadData(const std::string& m_fileName, const std::string& arg2, const std::string& type)
 {
-    nsol::DataSet* m_dataset = new nsol::DataSet( );
-    m_dataset->loadNeuronFromFile< nsol::Node ,
-            nsol::NeuronMorphologySection ,
-            nsol::Dendrite ,
-            nsol::Axon ,
-            nsol::Soma ,
-            nsol::NeuronMorphology ,
-            nsol::Neuron >( m_fileName , 1 );
+    nsol::DataSet* m_dataset = new nsol::DataSet();
 
-    std::cout << "Fichero leído con éxito\n";
-//Ahora mismo añado todo a mi base de datos y borro lo anterior, el objetivo seria añadir todo pero sin borrar lo anterior
-    neurons = m_dataset->neurons();
+    try {
+        m_dataset->loadNeuronFromFile<nsol::Node,
+                nsol::NeuronMorphologySection,
+                nsol::Dendrite,
+                nsol::Axon,
+                nsol::Soma,
+                nsol::NeuronMorphology,
+                nsol::Neuron>(m_fileName, 1);
 
-    writeText();
-    for (auto& neuronPair : neurons) {
-    	 base->add(new neuronG(neuronPair.second));
-         this->addList(std::to_string(neuronPair.first));
+        std::cout << "Fichero leído con éxito\n";
+        neurons = m_dataset->neurons();
+        writeText();
+        for (auto& neuronPair : neurons) {
+            base->add(new neuronG(neuronPair.second));
+            mapaBase->emplace(m_fileName, new neuronG(neuronPair.second));
+            this->addList(std::to_string(neuronPair.first));
+        }
+    } catch (const std::exception& e) {
+        QTextEdit* textEdit = this->centralWidget()->findChild<QTextEdit*>("texto_neurona");
+        std::cerr << "Error al cargar el fichero: " << e.what() << std::endl;
+        std::cout << "Fichero no disponible para lectura\n";
+
+        std::stringstream errorMessage;
+        errorMessage << "Error al cargar la neurona. Ref: \n" << e.what();
+        textEdit->setText(QString::fromStdString(errorMessage.str()));
     }
+
+    // Si llegamos a este punto, independientemente de si hubo una excepción o no,
+    // ya no necesitamos el objeto DataSet, así que liberamos la memoria
+    delete m_dataset;
 }
+
 
 void MainWindow::writeText(){
 
@@ -163,6 +180,7 @@ void MainWindow::writeText(){
         }
 
     }
+    std::cout << "Objetos actuales en el mapa:" << mapaBase->size() << "\n";
     text = QString::fromStdString(neuronData);
 
     textEdit->setText(text);

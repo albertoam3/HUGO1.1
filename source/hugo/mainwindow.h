@@ -30,14 +30,19 @@
 
 #include <nsol/nsol.h>
 
+#include <map>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 private:
+
+    typedef std::map<std::string, neuronG*> mapaNombreFicheroNeurona;
  
     QComboBox *list;
   
@@ -46,6 +51,7 @@ private:
     myOpenGLWidget *_openGLWidget;
     myOpenGLWidget2D* openGLWidget2d;
     baseDatosObjetos* base;
+    mapaNombreFicheroNeurona * mapaBase;
     nsol::NeuronsMap neurons;
 
     QString path;
