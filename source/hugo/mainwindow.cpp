@@ -38,8 +38,11 @@ MainWindow::MainWindow(QWidget *parent)
 	
 	auto temp = new QListWidgetItem("Cargue un directorio");
 	ui->listWidget->addItem(temp);
-	
-	QObject::connect(ui->listWidget, &QListWidget::itemDoubleClicked, this, &MainWindow::openFile);
+
+    loadedNeuron = false;
+
+	QObject::connect(ui->listWidget, &QListWidget::currentItemChanged, this, &MainWindow::openFile);
+
 
 }
 
@@ -81,13 +84,36 @@ void MainWindow::load() {
     this->selecction();
 }
 
+////Selecciono el objeto de la list que pinto y se lo mando a qopenGLWidget
+//void MainWindow::selecction() {
+//    int index = ui->list->currentIndex();
+//    if(index<base->getList().size()){
+//        _openGLWidget->setGraphicsObject(base->get(index));
+//        openGLWidget2d->setNeuronGraphic(base->get(index));
+//        elementosCargados->addItem(base->get(index)->getName());
+//    }
+//}
+
 //Selecciono el objeto de la list que pinto y se lo mando a qopenGLWidget
 void MainWindow::selecction() {
-    int index = ui->list->currentIndex();
-    if(index<base->getList().size()){
-        _openGLWidget->setGraphicsObject(base->get(index));
-        openGLWidget2d->setNeuronGraphic(base->get(index));
-        elementosCargados->addItem(base->get(index)->getName());
+
+    auto it = mapaBase->find(ui->listWidget->currentItem()->text());
+
+    if(loadedNeuron){
+        _openGLWidget->resetList();
+        openGLWidget2d->resetList();
+        loadedNeuron = false;
+    }
+
+    if (it != mapaBase->end()) {
+        // La clave existe, podemos acceder al valor asociado
+        neuronG *neuron = it->second;
+        _openGLWidget->setGraphicsObject(neuron);
+        openGLWidget2d->setNeuronGraphic(neuron);
+        loadedNeuron = true;
+    } else {
+        // La clave no existe en el mapa
+        std::cout << "La clave no existe en el mapa" << std::endl;
     }
 }
 
@@ -124,8 +150,16 @@ void MainWindow::loadData(const std::string& m_fileName, const std::string& arg2
         neurons = m_dataset->neurons();
         writeText();
         for (auto& neuronPair : neurons) {
+            //Base antigua
             base->add(new neuronG(neuronPair.second));
-            mapaBase->emplace(m_fileName, new neuronG(neuronPair.second));
+            //Casteo a QString para poder usar el Mapa
+            QString castedFileName = QString::fromStdString(m_fileName);
+            //Trunco para quedarme únicamente con el nombre del fichero
+
+            int lastSlashIndex = castedFileName.lastIndexOf('/');
+            QString fileName = castedFileName.remove(0, lastSlashIndex + 1);
+            //Meto en el mapa el par <NombreFichero, NeuronaG>
+            mapaBase->emplace(fileName, new neuronG(neuronPair.second));
             this->addList(std::to_string(neuronPair.first));
         }
     } catch (const std::exception& e) {
@@ -137,6 +171,12 @@ void MainWindow::loadData(const std::string& m_fileName, const std::string& arg2
         errorMessage << "Error al cargar la neurona. Ref: \n" << e.what();
         textEdit->setText(QString::fromStdString(errorMessage.str()));
     }
+
+    //Parte  de pintar
+
+    this->selecction();
+
+    this->pintar();
 
     // Si llegamos a este punto, independientemente de si hubo una excepción o no,
     // ya no necesitamos el objeto DataSet, así que liberamos la memoria
@@ -225,12 +265,14 @@ void MainWindow::showDirectory(const QString& path){
 	} 
 }
 
-void MainWindow::openFile(QListWidgetItem *item) {
-    QString fileName = ui->listWidget->item(ui->listWidget->row(item))->text();
-    QString folderPath = this->path;
-    std::string folderPathString = folderPath.toStdString();
-    std::string fileNameString = fileName.toStdString();
-    openSWCFile(folderPathString + "/" + fileNameString);
+void MainWindow::openFile(QListWidgetItem *item, QListWidgetItem *previous) {
+    if(item != previous){
+        QString fileName = ui->listWidget->item(ui->listWidget->row(item))->text();
+        QString folderPath = this->path;
+        std::string folderPathString = folderPath.toStdString();
+        std::string fileNameString = fileName.toStdString();
+        openSWCFile(folderPathString + "/" + fileNameString);
+    }
 }
 
 void MainWindow::openSWCFileThroughDialog()

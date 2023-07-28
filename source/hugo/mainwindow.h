@@ -42,7 +42,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 private:
 
-    typedef std::map<std::string, neuronG*> mapaNombreFicheroNeurona;
+    typedef std::map<QString, neuronG*> mapaNombreFicheroNeurona;
  
     QComboBox *list;
   
@@ -53,6 +53,8 @@ private:
     baseDatosObjetos* base;
     mapaNombreFicheroNeurona * mapaBase;
     nsol::NeuronsMap neurons;
+
+    bool loadedNeuron;
 
     QString path;
 
@@ -68,7 +70,7 @@ public:
                    const std::string& arg2 ,
                    const std::string& type);
                    
-    void openFile(QListWidgetItem *item);
+    void openFile(QListWidgetItem *item, QListWidgetItem *previous);
     void addList(const std::string& st);
 
 public Q_SLOTS:
