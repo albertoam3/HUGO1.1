@@ -185,7 +185,7 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
                                       float max, float min, VarEstado variable_grosor, VarLongitud var_long, float max_long, float min_long) {
     coordX=x;
     coordY=y;
-    std::cout << static_cast<int>(variable_grosor) << " y " << static_cast<int>(var_long) << "\n";
+
 
     if (sectionsHijas.size() == 2) {
         sectionH *sec1, *sec2;
