@@ -64,6 +64,8 @@ void MainWindow::connectButtons() {
 
     QObject::connect(ui->igualGrosor, SIGNAL(clicked()), this, SLOT(igualGrosor()));
     QObject::connect(ui->difGrosor, SIGNAL(clicked()), this, SLOT(difGrosor()));
+    QObject::connect(ui->igual_ang, SIGNAL(clicked()),this,SLOT(onIgualAngClicked()));
+    QObject::connect(ui->terminales_ang,SIGNAL(clicked()),this,SLOT(onTerminalesAngClicked()));
     
     
 
