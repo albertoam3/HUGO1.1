@@ -41,6 +41,7 @@ public:
   void select_tam_den(bool a);
   void setTree(bool a);
   void setDendograma(bool a);
+  void setEsquema(bool a);
   void select_grosor_den(bool a);
   void variableGrosor(float a);
   void variableTam(float a);

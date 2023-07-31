@@ -38,6 +38,7 @@ protected:
     
     bool tree;
     bool dendograma;
+    bool esquema;
     
     float variableGros;
     
@@ -127,6 +128,10 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 	void setTree(bool a){
 		tree=a;
 	}
+
+    void setEsquema(bool a){
+        esquema=a;
+    }
 
     void setDendograma(bool a){
         dendograma=a;

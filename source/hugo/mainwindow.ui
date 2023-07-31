@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1126</width>
-    <height>828</height>
+    <height>857</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -262,13 +262,6 @@
                     <string>Forma de pintar</string>
                    </property>
                    <layout class="QGridLayout" name="gridLayout_7">
-                    <item row="0" column="0">
-                     <widget class="QRadioButton" name="setDendograma">
-                      <property name="text">
-                       <string>Dendograma</string>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="1" column="0">
                      <widget class="QRadioButton" name="setArbol">
                       <property name="text">
@@ -276,10 +269,24 @@
                       </property>
                      </widget>
                     </item>
-                    <item row="2" column="0">
+                    <item row="3" column="0">
                      <widget class="QRadioButton" name="setNada">
                       <property name="text">
                        <string>nada</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QRadioButton" name="setDendograma">
+                      <property name="text">
+                       <string>Dendograma</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QRadioButton" name="setEsquema">
+                      <property name="text">
+                       <string>Esquema</string>
                       </property>
                      </widget>
                     </item>

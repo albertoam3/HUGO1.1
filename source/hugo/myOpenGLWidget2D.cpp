@@ -64,6 +64,15 @@ void myOpenGLWidget2D::setTree(bool a){
     }
 	update();
 }
+
+void myOpenGLWidget2D::setEsquema(bool a){
+    for (auto &i: neuronGraphic) {
+        i->setEsquema(a);
+    }
+    update();
+}
+
+
 void myOpenGLWidget2D::select_grosor_den(bool a) {
     for (auto &i: neuronGraphic) {
         i->setNeuritesGrosor(a);

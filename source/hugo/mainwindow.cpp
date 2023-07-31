@@ -60,6 +60,7 @@ void MainWindow::connectButtons() {
     QObject::connect(ui->setDendograma,SIGNAL(clicked()),this,SLOT(set_dend()));
     QObject::connect(ui->setNada,SIGNAL(clicked()),this,SLOT(set_nada()));
     QObject::connect(ui->setArbol, SIGNAL(clicked()), this, SLOT(set_tree()));
+    QObject::connect(ui->setEsquema, SIGNAL(clicked()), this, SLOT(set_esq()));
 
     QObject::connect(ui->igualGrosor, SIGNAL(clicked()), this, SLOT(igualGrosor()));
     QObject::connect(ui->difGrosor, SIGNAL(clicked()), this, SLOT(difGrosor()));
@@ -337,11 +338,15 @@ void MainWindow::initTamComboBox(){
 void MainWindow::set_dend() {
     openGLWidget2d->setDendograma(true);
     openGLWidget2d->setTree(false);
+    openGLWidget2d->setEsquema(false);
+
 }
 
 void MainWindow::set_nada(){
     openGLWidget2d->setDendograma(false);
     openGLWidget2d->setTree(false);
+    openGLWidget2d->setEsquema(false);
+
 
 
 }
@@ -349,6 +354,14 @@ void MainWindow::set_nada(){
 void MainWindow::set_tree() {
     openGLWidget2d->setDendograma(false);
     openGLWidget2d->setTree(true);
+    openGLWidget2d->setEsquema(false);
+
+}
+
+void MainWindow::set_esq() {
+    openGLWidget2d->setDendograma(false);
+    openGLWidget2d->setTree(false);
+    openGLWidget2d->setEsquema(true);
 }
 
 

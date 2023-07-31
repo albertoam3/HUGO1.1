@@ -87,6 +87,7 @@ public Q_SLOTS:
     void set_dend();
     void set_nada();
     void set_tree();
+    void set_esq();
     void validarTam();
     
 private slots:
