@@ -12,6 +12,7 @@ somaG::somaG(nsol::Soma* _som){
     displacementY=0;
 }
 void somaG::draw(QOpenGLWidget* windowPaint){
+    glPointSize(1);
     glBegin(GL_LINES);
     glColor3f(0.7f, 0.5f, 0.2f);
     float calcX,calcY;

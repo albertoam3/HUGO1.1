@@ -102,6 +102,7 @@ private:
     void checkBoxStateChanged(int state);
     void initGrosorComboBox();
     void initTamComboBox();
+    void resetButtons();
 
 protected:
     QString _lastOpenedFileName;

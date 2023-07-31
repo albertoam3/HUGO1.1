@@ -43,6 +43,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 	QObject::connect(ui->listWidget, &QListWidget::currentItemChanged, this, &MainWindow::openFile);
 
+    ui->igualGrosor->setChecked(true);
+    ui->setNada->setChecked(true);
+    ui->igual_ang->setChecked(true);
 
 }
 
@@ -177,9 +180,12 @@ void MainWindow::loadData(const std::string& m_fileName, const std::string& arg2
 
     //Parte  de pintar
 
+    this->resetButtons();
     this->selecction();
 
+
     this->pintar();
+
 
     // Si llegamos a este punto, independientemente de si hubo una excepción o no,
     // ya no necesitamos el objeto DataSet, así que liberamos la memoria
@@ -364,6 +370,23 @@ void MainWindow::set_esq() {
     openGLWidget2d->setDendograma(false);
     openGLWidget2d->setTree(false);
     openGLWidget2d->setEsquema(true);
+}
+
+void MainWindow::resetButtons() {
+
+    ui->igualGrosor->setChecked(true);
+    ui->setNada->setChecked(true);
+    ui->igual_ang->setChecked(true);
+
+     ui->validar_tam_2->setChecked(false);
+     ui->setDendograma->setChecked(false);
+    ui->setArbol->setChecked(false);
+    ui->setEsquema->setChecked(false);
+
+    ui->difGrosor->setChecked(false);
+
+    ui->terminales_ang->setChecked(false);
+
 }
 
 
