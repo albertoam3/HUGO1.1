@@ -94,6 +94,7 @@ private slots:
     void onIgualAngClicked();
 
     void onTerminalesAngClicked();
+    void setCirculos();
     
 
 private:

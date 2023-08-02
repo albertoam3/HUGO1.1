@@ -69,6 +69,8 @@ void MainWindow::connectButtons() {
     QObject::connect(ui->difGrosor, SIGNAL(clicked()), this, SLOT(difGrosor()));
     QObject::connect(ui->igual_ang, SIGNAL(clicked()),this,SLOT(onIgualAngClicked()));
     QObject::connect(ui->terminales_ang,SIGNAL(clicked()),this,SLOT(onTerminalesAngClicked()));
+
+    QObject::connect(ui->setCirculos,SIGNAL(clicked()),this,SLOT(setCirculos()));
     
     
 
@@ -341,6 +343,7 @@ void MainWindow::initTamComboBox(){
     ui->tamanoComboBox->addItem("Tamaño real");
     ui->tamanoComboBox->addItem("distancia punto punto");
     ui->tamanoComboBox->addItem("unitario");
+    ui->tamanoComboBox->setCurrentIndex(2);
 }
 
 void MainWindow::set_dend() {
@@ -386,7 +389,12 @@ void MainWindow::resetButtons() {
     ui->difGrosor->setChecked(false);
 
     ui->terminales_ang->setChecked(false);
+    ui->tamanoComboBox->setCurrentIndex(2);
 
+}
+
+void MainWindow::setCirculos() {
+   openGLWidget2d->setDrawCircle(ui->setCirculos->isChecked());
 }
 
 

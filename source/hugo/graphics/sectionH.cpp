@@ -136,7 +136,6 @@ void sectionH::drawSectionsTree(float x1, float x2, float angle, float hipotenus
 		int i=0;
         for (sectionH* s : sectionsHijas) {
 			if(i==0){
-
                 if(g) {
 
                     getLineWidth( variable_grosor, *s, max, min);
@@ -180,6 +179,21 @@ bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
     else
         return false;
 }
+
+
+/* drawSectionsDendograma()
+ *     elegirSeccionPrimeraYSegunda();
+ *     calcularPuntosSeccionPrimera();
+ *     drawSeccionRecta();
+ *     llamadaRecursiva();
+ *     calcularPuntosSeccionSEgunda();
+ *     drawArco();
+ *     drawSeccion2();
+ *     llamadaRecursiva();
+ *
+ *
+ */
+
 
 void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g,
                                       float max, float min, VarEstado variable_grosor, VarLongitud var_long, float max_long, float min_long) {

@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/241/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /snap/clion/246/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/241/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /snap/clion/246/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-d
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/241/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/246/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/241/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/246/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -142,125 +142,125 @@ hugo_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo_autogen.dir/build.make CMakeFiles/hugo_autogen.dir/build
 .PHONY : hugo_autogen/fast
 
-base_datos_objetos.o: base_datos_objetos.cpp.o
-.PHONY : base_datos_objetos.o
+baseDatosObjetos.o: baseDatosObjetos.cpp.o
+.PHONY : baseDatosObjetos.o
 
 # target to build an object file
-base_datos_objetos.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/base_datos_objetos.cpp.o
-.PHONY : base_datos_objetos.cpp.o
+baseDatosObjetos.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/baseDatosObjetos.cpp.o
+.PHONY : baseDatosObjetos.cpp.o
 
-base_datos_objetos.i: base_datos_objetos.cpp.i
-.PHONY : base_datos_objetos.i
+baseDatosObjetos.i: baseDatosObjetos.cpp.i
+.PHONY : baseDatosObjetos.i
 
 # target to preprocess a source file
-base_datos_objetos.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/base_datos_objetos.cpp.i
-.PHONY : base_datos_objetos.cpp.i
+baseDatosObjetos.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/baseDatosObjetos.cpp.i
+.PHONY : baseDatosObjetos.cpp.i
 
-base_datos_objetos.s: base_datos_objetos.cpp.s
-.PHONY : base_datos_objetos.s
+baseDatosObjetos.s: baseDatosObjetos.cpp.s
+.PHONY : baseDatosObjetos.s
 
 # target to generate assembly for a file
-base_datos_objetos.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/base_datos_objetos.cpp.s
-.PHONY : base_datos_objetos.cpp.s
+baseDatosObjetos.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/baseDatosObjetos.cpp.s
+.PHONY : baseDatosObjetos.cpp.s
 
-graphics/axon_g.o: graphics/axon_g.cpp.o
-.PHONY : graphics/axon_g.o
+graphics/axonG.o: graphics/axonG.cpp.o
+.PHONY : graphics/axonG.o
 
 # target to build an object file
-graphics/axon_g.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/axon_g.cpp.o
-.PHONY : graphics/axon_g.cpp.o
+graphics/axonG.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/axonG.cpp.o
+.PHONY : graphics/axonG.cpp.o
 
-graphics/axon_g.i: graphics/axon_g.cpp.i
-.PHONY : graphics/axon_g.i
+graphics/axonG.i: graphics/axonG.cpp.i
+.PHONY : graphics/axonG.i
 
 # target to preprocess a source file
-graphics/axon_g.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/axon_g.cpp.i
-.PHONY : graphics/axon_g.cpp.i
+graphics/axonG.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/axonG.cpp.i
+.PHONY : graphics/axonG.cpp.i
 
-graphics/axon_g.s: graphics/axon_g.cpp.s
-.PHONY : graphics/axon_g.s
+graphics/axonG.s: graphics/axonG.cpp.s
+.PHONY : graphics/axonG.s
 
 # target to generate assembly for a file
-graphics/axon_g.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/axon_g.cpp.s
-.PHONY : graphics/axon_g.cpp.s
+graphics/axonG.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/axonG.cpp.s
+.PHONY : graphics/axonG.cpp.s
 
-graphics/dendrite_g.o: graphics/dendrite_g.cpp.o
-.PHONY : graphics/dendrite_g.o
+graphics/dendriteG.o: graphics/dendriteG.cpp.o
+.PHONY : graphics/dendriteG.o
 
 # target to build an object file
-graphics/dendrite_g.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.o
-.PHONY : graphics/dendrite_g.cpp.o
+graphics/dendriteG.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/dendriteG.cpp.o
+.PHONY : graphics/dendriteG.cpp.o
 
-graphics/dendrite_g.i: graphics/dendrite_g.cpp.i
-.PHONY : graphics/dendrite_g.i
+graphics/dendriteG.i: graphics/dendriteG.cpp.i
+.PHONY : graphics/dendriteG.i
 
 # target to preprocess a source file
-graphics/dendrite_g.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.i
-.PHONY : graphics/dendrite_g.cpp.i
+graphics/dendriteG.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/dendriteG.cpp.i
+.PHONY : graphics/dendriteG.cpp.i
 
-graphics/dendrite_g.s: graphics/dendrite_g.cpp.s
-.PHONY : graphics/dendrite_g.s
+graphics/dendriteG.s: graphics/dendriteG.cpp.s
+.PHONY : graphics/dendriteG.s
 
 # target to generate assembly for a file
-graphics/dendrite_g.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/dendrite_g.cpp.s
-.PHONY : graphics/dendrite_g.cpp.s
+graphics/dendriteG.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/dendriteG.cpp.s
+.PHONY : graphics/dendriteG.cpp.s
 
-graphics/neurite_g.o: graphics/neurite_g.cpp.o
-.PHONY : graphics/neurite_g.o
+graphics/neuriteG.o: graphics/neuriteG.cpp.o
+.PHONY : graphics/neuriteG.o
 
 # target to build an object file
-graphics/neurite_g.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neurite_g.cpp.o
-.PHONY : graphics/neurite_g.cpp.o
+graphics/neuriteG.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neuriteG.cpp.o
+.PHONY : graphics/neuriteG.cpp.o
 
-graphics/neurite_g.i: graphics/neurite_g.cpp.i
-.PHONY : graphics/neurite_g.i
+graphics/neuriteG.i: graphics/neuriteG.cpp.i
+.PHONY : graphics/neuriteG.i
 
 # target to preprocess a source file
-graphics/neurite_g.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neurite_g.cpp.i
-.PHONY : graphics/neurite_g.cpp.i
+graphics/neuriteG.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neuriteG.cpp.i
+.PHONY : graphics/neuriteG.cpp.i
 
-graphics/neurite_g.s: graphics/neurite_g.cpp.s
-.PHONY : graphics/neurite_g.s
+graphics/neuriteG.s: graphics/neuriteG.cpp.s
+.PHONY : graphics/neuriteG.s
 
 # target to generate assembly for a file
-graphics/neurite_g.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neurite_g.cpp.s
-.PHONY : graphics/neurite_g.cpp.s
+graphics/neuriteG.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neuriteG.cpp.s
+.PHONY : graphics/neuriteG.cpp.s
 
-graphics/neuron_g.o: graphics/neuron_g.cpp.o
-.PHONY : graphics/neuron_g.o
+graphics/neuronG.o: graphics/neuronG.cpp.o
+.PHONY : graphics/neuronG.o
 
 # target to build an object file
-graphics/neuron_g.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neuron_g.cpp.o
-.PHONY : graphics/neuron_g.cpp.o
+graphics/neuronG.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neuronG.cpp.o
+.PHONY : graphics/neuronG.cpp.o
 
-graphics/neuron_g.i: graphics/neuron_g.cpp.i
-.PHONY : graphics/neuron_g.i
+graphics/neuronG.i: graphics/neuronG.cpp.i
+.PHONY : graphics/neuronG.i
 
 # target to preprocess a source file
-graphics/neuron_g.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neuron_g.cpp.i
-.PHONY : graphics/neuron_g.cpp.i
+graphics/neuronG.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neuronG.cpp.i
+.PHONY : graphics/neuronG.cpp.i
 
-graphics/neuron_g.s: graphics/neuron_g.cpp.s
-.PHONY : graphics/neuron_g.s
+graphics/neuronG.s: graphics/neuronG.cpp.s
+.PHONY : graphics/neuronG.s
 
 # target to generate assembly for a file
-graphics/neuron_g.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neuron_g.cpp.s
-.PHONY : graphics/neuron_g.cpp.s
+graphics/neuronG.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/neuronG.cpp.s
+.PHONY : graphics/neuronG.cpp.s
 
 graphics/sectionH.o: graphics/sectionH.cpp.o
 .PHONY : graphics/sectionH.o
@@ -286,29 +286,29 @@ graphics/sectionH.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/sectionH.cpp.s
 .PHONY : graphics/sectionH.cpp.s
 
-graphics/soma_g.o: graphics/soma_g.cpp.o
-.PHONY : graphics/soma_g.o
+graphics/somaG.o: graphics/somaG.cpp.o
+.PHONY : graphics/somaG.o
 
 # target to build an object file
-graphics/soma_g.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/soma_g.cpp.o
-.PHONY : graphics/soma_g.cpp.o
+graphics/somaG.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/somaG.cpp.o
+.PHONY : graphics/somaG.cpp.o
 
-graphics/soma_g.i: graphics/soma_g.cpp.i
-.PHONY : graphics/soma_g.i
+graphics/somaG.i: graphics/somaG.cpp.i
+.PHONY : graphics/somaG.i
 
 # target to preprocess a source file
-graphics/soma_g.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/soma_g.cpp.i
-.PHONY : graphics/soma_g.cpp.i
+graphics/somaG.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/somaG.cpp.i
+.PHONY : graphics/somaG.cpp.i
 
-graphics/soma_g.s: graphics/soma_g.cpp.s
-.PHONY : graphics/soma_g.s
+graphics/somaG.s: graphics/somaG.cpp.s
+.PHONY : graphics/somaG.s
 
 # target to generate assembly for a file
-graphics/soma_g.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/soma_g.cpp.s
-.PHONY : graphics/soma_g.cpp.s
+graphics/somaG.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/graphics/somaG.cpp.s
+.PHONY : graphics/somaG.cpp.s
 
 hugo.o: hugo.cpp.o
 .PHONY : hugo.o
@@ -382,53 +382,53 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
-myopenglwidget.o: myopenglwidget.cpp.o
-.PHONY : myopenglwidget.o
+myOpenGLWidget.o: myOpenGLWidget.cpp.o
+.PHONY : myOpenGLWidget.o
 
 # target to build an object file
-myopenglwidget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myopenglwidget.cpp.o
-.PHONY : myopenglwidget.cpp.o
+myOpenGLWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myOpenGLWidget.cpp.o
+.PHONY : myOpenGLWidget.cpp.o
 
-myopenglwidget.i: myopenglwidget.cpp.i
-.PHONY : myopenglwidget.i
+myOpenGLWidget.i: myOpenGLWidget.cpp.i
+.PHONY : myOpenGLWidget.i
 
 # target to preprocess a source file
-myopenglwidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myopenglwidget.cpp.i
-.PHONY : myopenglwidget.cpp.i
+myOpenGLWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myOpenGLWidget.cpp.i
+.PHONY : myOpenGLWidget.cpp.i
 
-myopenglwidget.s: myopenglwidget.cpp.s
-.PHONY : myopenglwidget.s
+myOpenGLWidget.s: myOpenGLWidget.cpp.s
+.PHONY : myOpenGLWidget.s
 
 # target to generate assembly for a file
-myopenglwidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myopenglwidget.cpp.s
-.PHONY : myopenglwidget.cpp.s
+myOpenGLWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myOpenGLWidget.cpp.s
+.PHONY : myOpenGLWidget.cpp.s
 
-myopenglwidget2d.o: myopenglwidget2d.cpp.o
-.PHONY : myopenglwidget2d.o
+myOpenGLWidget2D.o: myOpenGLWidget2D.cpp.o
+.PHONY : myOpenGLWidget2D.o
 
 # target to build an object file
-myopenglwidget2d.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myopenglwidget2d.cpp.o
-.PHONY : myopenglwidget2d.cpp.o
+myOpenGLWidget2D.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myOpenGLWidget2D.cpp.o
+.PHONY : myOpenGLWidget2D.cpp.o
 
-myopenglwidget2d.i: myopenglwidget2d.cpp.i
-.PHONY : myopenglwidget2d.i
+myOpenGLWidget2D.i: myOpenGLWidget2D.cpp.i
+.PHONY : myOpenGLWidget2D.i
 
 # target to preprocess a source file
-myopenglwidget2d.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myopenglwidget2d.cpp.i
-.PHONY : myopenglwidget2d.cpp.i
+myOpenGLWidget2D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myOpenGLWidget2D.cpp.i
+.PHONY : myOpenGLWidget2D.cpp.i
 
-myopenglwidget2d.s: myopenglwidget2d.cpp.s
-.PHONY : myopenglwidget2d.s
+myOpenGLWidget2D.s: myOpenGLWidget2D.cpp.s
+.PHONY : myOpenGLWidget2D.s
 
 # target to generate assembly for a file
-myopenglwidget2d.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myopenglwidget2d.cpp.s
-.PHONY : myopenglwidget2d.cpp.s
+myOpenGLWidget2D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myOpenGLWidget2D.cpp.s
+.PHONY : myOpenGLWidget2D.cpp.s
 
 # Help Target
 help:
@@ -440,27 +440,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... hugo_autogen"
 	@echo "... hugo"
-	@echo "... base_datos_objetos.o"
-	@echo "... base_datos_objetos.i"
-	@echo "... base_datos_objetos.s"
-	@echo "... graphics/axon_g.o"
-	@echo "... graphics/axon_g.i"
-	@echo "... graphics/axon_g.s"
-	@echo "... graphics/dendrite_g.o"
-	@echo "... graphics/dendrite_g.i"
-	@echo "... graphics/dendrite_g.s"
-	@echo "... graphics/neurite_g.o"
-	@echo "... graphics/neurite_g.i"
-	@echo "... graphics/neurite_g.s"
-	@echo "... graphics/neuron_g.o"
-	@echo "... graphics/neuron_g.i"
-	@echo "... graphics/neuron_g.s"
+	@echo "... baseDatosObjetos.o"
+	@echo "... baseDatosObjetos.i"
+	@echo "... baseDatosObjetos.s"
+	@echo "... graphics/axonG.o"
+	@echo "... graphics/axonG.i"
+	@echo "... graphics/axonG.s"
+	@echo "... graphics/dendriteG.o"
+	@echo "... graphics/dendriteG.i"
+	@echo "... graphics/dendriteG.s"
+	@echo "... graphics/neuriteG.o"
+	@echo "... graphics/neuriteG.i"
+	@echo "... graphics/neuriteG.s"
+	@echo "... graphics/neuronG.o"
+	@echo "... graphics/neuronG.i"
+	@echo "... graphics/neuronG.s"
 	@echo "... graphics/sectionH.o"
 	@echo "... graphics/sectionH.i"
 	@echo "... graphics/sectionH.s"
-	@echo "... graphics/soma_g.o"
-	@echo "... graphics/soma_g.i"
-	@echo "... graphics/soma_g.s"
+	@echo "... graphics/somaG.o"
+	@echo "... graphics/somaG.i"
+	@echo "... graphics/somaG.s"
 	@echo "... hugo.o"
 	@echo "... hugo.i"
 	@echo "... hugo.s"
@@ -470,12 +470,12 @@ help:
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
-	@echo "... myopenglwidget.o"
-	@echo "... myopenglwidget.i"
-	@echo "... myopenglwidget.s"
-	@echo "... myopenglwidget2d.o"
-	@echo "... myopenglwidget2d.i"
-	@echo "... myopenglwidget2d.s"
+	@echo "... myOpenGLWidget.o"
+	@echo "... myOpenGLWidget.i"
+	@echo "... myOpenGLWidget.s"
+	@echo "... myOpenGLWidget2D.o"
+	@echo "... myOpenGLWidget2D.i"
+	@echo "... myOpenGLWidget2D.s"
 .PHONY : help
 
 
