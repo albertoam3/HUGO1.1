@@ -250,6 +250,26 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
 
 }
 
+void sectionH::drawSectionsEsquema(float x, float y, float terminal_nodes) {
+    coordX=x;
+    coordY=y;
+
+    glBegin(GL_LINES);
+    glColor3f(0.7f, 0.5f, 0.2f);
+    float calcX,calcY;
+    glVertex2f(0.5 + displacementX + x, 0 + displacementY + y);
+    for(float i=0;i<10;i+=0.01){
+        calcX=0.5*cos(i);
+        calcY=0.5*sin(i);
+        glVertex2f(calcX + displacementX + x, calcY + displacementY + y);
+        glVertex2f(calcX + displacementX + x, calcY + displacementY + y);
+    }
+    glVertex2f(calcX + displacementX + x, calcY + displacementY + y);
+    glEnd();
+
+
+}
+
 float sectionH::terminalNodes() {
     float terminal=0;
 
