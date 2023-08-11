@@ -78,6 +78,8 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 
     void drawDendograma(QOpenGLWidget* windowPaint);
 
+    void drawEsquema(QOpenGLWidget *windowPaint);
+
     void setAngle(float a);  
      
 	void setGrosor(float a);
@@ -129,7 +131,6 @@ private:
     void variableGrosorAux(float *max,float *min);
     void variableLongitudAux(float *max_long,float *min_long);
     float getValPoint2(VarLongitud var_long, float max, float min);
-
 };
 
 

@@ -40,8 +40,9 @@ void neuriteG::draw(QOpenGLWidget* windowPaint){
 	}else if(dendograma){
         drawDendograma((windowPaint));
 
-    }
-	else{
+    }else if(esquema){
+        drawEsquema((windowPaint));
+    }else{
 		float aux,n;
 		if(neuritesGros){
 			switch(variableGrosor){
@@ -257,9 +258,20 @@ void neuriteG::drawDendograma(QOpenGLWidget *windowPaint) {
     firstSection->drawSectionsDendograma(x, y, angleGap, angle, terminalNodes, &n, g, *max, *min, variableGrosor, variableLongitud, *max_long, *min_long);
 }
 
+void neuriteG::drawEsquema(QOpenGLWidget* windowPaint){
 
-
-
+    glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
+    glVertex2f(displacementX + initX, displacementY + initY); // Especificar las coordenadas del punto a dibujar
+    glVertex2f(displacementX,displacementY);
+    glEnd();
+//    glBegin(GL_POINTS);
+//    glColor3f(color.x(), color.y(), color.z());
+//    glVertex2f(displacementX + initX, displacementY + initY);
+//    glVertex2f(x,y);
+//    glEnd();
+//    int n=0;
+//    firstSection->drawSectionsDendograma(x, y, angleGap, angle, terminalNodes, &n, g, *max, *min, variableGrosor, variableLongitud, *max_long, *min_long);
+}
 
 
 void neuriteG::setAngle(float a){
