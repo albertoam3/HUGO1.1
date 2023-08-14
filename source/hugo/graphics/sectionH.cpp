@@ -251,6 +251,9 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
 }
 
 void sectionH::drawSectionsEsquema(float x, float y, float terminal_nodes) {
+
+    //Falta por implementar
+
     coordX=x;
     coordY=y;
 
