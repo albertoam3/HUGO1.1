@@ -13,7 +13,7 @@ myOpenGLWidget2D::myOpenGLWidget2D(QWidget *parent)  : QOpenGLWidget{parent} {
     rotation=Eigen::Matrix3f::Identity( );
     position=Eigen::Vector3f(0, 0, 0);
     QSurfaceFormat format;
-    format.setSamples(22); // Número de muestras para antialiasing
+    format.setSamples(64); // Número de muestras para antialiasing
     this->setFormat(format);
     setMouseTracking(true); // Habilitar el seguimiento del ratón
     controlPressed=false;

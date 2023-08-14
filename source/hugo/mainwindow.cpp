@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <stdexcept>
+#include <QDir>
 
 MainWindow::MainWindow(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -11,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
      */
     ui->setupUi(this);
     setWindowTitle("HUGO");
+
 
     ui->list;
     elementosCargados = ui->elemC;
@@ -47,8 +49,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setNada->setChecked(true);
     ui->igual_ang->setChecked(true);
 
-    QIcon icon1(":/Icons/Diapositiva34.PNG");
-    ui->setDendograma->setIcon(icon1);
+   // QIcon icon1(":/Icons/Diapositiva34.PNG");
+    //ui->setDendograma->setIcon(icon1);
+    ui->setDendograma->setIcon(QIcon("../source/hugo/imagenes/Diapositiva34.PNG"));
+    ui->setArbol->setIcon(QIcon("../source/hugo/imagenes/Diapositiva19.PNG"));
+    ui->setNada->setIcon(QIcon("../source/hugo/imagenes/Diapositiva35.PNG"));
+    ui->setEsquema->setIcon(QIcon("../source/hugo/imagenes/Diapositiva14.PNG"));
+
 
 
 }
@@ -75,6 +82,8 @@ void MainWindow::connectButtons() {
     QObject::connect(ui->terminales_ang,SIGNAL(clicked()),this,SLOT(onTerminalesAngClicked()));
 
     QObject::connect(ui->setCirculos,SIGNAL(clicked()),this,SLOT(setCirculos()));
+
+
     
     
 
@@ -354,6 +363,7 @@ void MainWindow::set_dend() {
     openGLWidget2d->setDendograma(true);
     openGLWidget2d->setTree(false);
     openGLWidget2d->setEsquema(false);
+    openGLWidget2d->setDrawCircle(false);
 
 }
 
@@ -361,6 +371,7 @@ void MainWindow::set_nada(){
     openGLWidget2d->setDendograma(false);
     openGLWidget2d->setTree(false);
     openGLWidget2d->setEsquema(false);
+    openGLWidget2d->setDrawCircle(false);
 
 
 
@@ -370,13 +381,14 @@ void MainWindow::set_tree() {
     openGLWidget2d->setDendograma(false);
     openGLWidget2d->setTree(true);
     openGLWidget2d->setEsquema(false);
-
+    openGLWidget2d->setDrawCircle(false);
 }
 
 void MainWindow::set_esq() {
     openGLWidget2d->setDendograma(false);
     openGLWidget2d->setTree(false);
     openGLWidget2d->setEsquema(true);
+    openGLWidget2d->setDrawCircle(false);
 }
 
 void MainWindow::resetButtons() {
@@ -391,14 +403,22 @@ void MainWindow::resetButtons() {
     ui->setEsquema->setChecked(false);
 
     ui->difGrosor->setChecked(false);
+    ui->setEsquema->setChecked(false);
 
     ui->terminales_ang->setChecked(false);
     ui->tamanoComboBox->setCurrentIndex(2);
+    openGLWidget2d->setDrawCircle(false);
 
 }
 
 void MainWindow::setCirculos() {
    openGLWidget2d->setDrawCircle(ui->setCirculos->isChecked());
+   if(ui->setCirculos->isChecked()) {
+       openGLWidget2d->setDendograma(false);
+       openGLWidget2d->setTree(false);
+       openGLWidget2d->setEsquema(false);
+
+   }
 }
 
 

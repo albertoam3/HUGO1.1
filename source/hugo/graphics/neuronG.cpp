@@ -75,6 +75,7 @@ void neuronG::draw2D(QOpenGLWidget* windowPaint){
                 dend.setDisplacements(displacementX,displacementY);
                 dend.setTree(tree);
                 dend.setDendograma(dendograma);
+                dend.setEsquema(esquema);
                 
      }
      ax[0]->setNeuritesTam(neuritesTam);
