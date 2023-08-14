@@ -47,6 +47,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setNada->setChecked(true);
     ui->igual_ang->setChecked(true);
 
+    QIcon icon1(":/Icons/Diapositiva34.PNG");
+    ui->setDendograma->setIcon(icon1);
+
+
 }
 
 MainWindow::~MainWindow() {

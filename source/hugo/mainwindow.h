@@ -20,6 +20,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QListWidgetItem>
+#include <QIcon>
 
 
 #include "graphics/somaG.h"
