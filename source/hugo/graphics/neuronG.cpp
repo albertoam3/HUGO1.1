@@ -34,6 +34,7 @@ neuronG::neuronG(nsol::Neuron *_neu){
     angleXTam=false;
     tree=0;
     dendograma=0;
+    circle=0;
     esquema=0;
     neuritesGros=0;
     neuritesTam=0;
@@ -76,6 +77,7 @@ void neuronG::draw2D(QOpenGLWidget* windowPaint){
                 dend.setTree(tree);
                 dend.setDendograma(dendograma);
                 dend.setEsquema(esquema);
+                dend.setCircle(circle);
                 
      }
      ax[0]->setNeuritesTam(neuritesTam);
@@ -86,6 +88,7 @@ void neuronG::draw2D(QOpenGLWidget* windowPaint){
      ax[0]->setDendograma(dendograma);
 
      ax[0]->setEsquema(esquema);
+     ax[0]->setCircle(circle);
 
 	 (angleXTam == false) ? auxDrawAngleEqual(windowPaint) : auxDrawAngleTam(windowPaint);
 	

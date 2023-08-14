@@ -131,6 +131,7 @@ private:
     void variableGrosorAux(float *max,float *min);
     void variableLongitudAux(float *max_long,float *min_long);
     float getValPoint2(VarLongitud var_long, float max, float min);
+    void drawCirculoAux(float modulo, bool activo);
 };
 
 

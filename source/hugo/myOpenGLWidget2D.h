@@ -31,7 +31,6 @@ private:
     float ejeXAux{},ejeYAux{};
     bool controlPressed,rPressed,tPressed;
     myOpenGLWidget *mogw;
-    bool drawCircle;
 	Q_OBJECT
 public:
   myOpenGLWidget2D(QWidget *parent =nullptr);
@@ -69,8 +68,6 @@ private:
     void transform();
     void rotate(float x,float y,float z);
 
-    void drawCirculo();
-    void drawCirculoAux(float modulo, bool activo);
 };
 
 #endif // MYOPENGLWIDGET2D_H

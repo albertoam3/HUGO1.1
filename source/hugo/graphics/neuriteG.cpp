@@ -42,7 +42,20 @@ void neuriteG::draw(QOpenGLWidget* windowPaint){
 
     }else if(esquema){
         drawEsquema((windowPaint));
-    }else{
+    }else if(circle) {
+        drawEsquema(windowPaint);
+        int a=0;
+        for(float i=0;i<=5;i+=0.2){
+            if(a%4==1){
+                drawCirculoAux(i,true);
+            }else{
+                drawCirculoAux(i,false);
+            }
+            a++;
+        }
+
+    }
+    else{
 		float aux,n;
 		if(neuritesGros){
 			switch(variableGrosor){
@@ -478,4 +491,24 @@ float neuriteG::getValPoint2(VarLongitud var_long, float max, float min){
             return 0.5;
     }
 
+}
+void neuriteG::drawCirculoAux(float modulo, bool activo) {
+
+
+    glLineWidth(1);
+    glBegin(GL_LINES);
+    if(activo)
+        glColor4f(0.3f, 0.5f, 0.2f,1.0f);
+    else
+        glColor4f(0.3f, 0.5f, 0.2f,0.5f);
+    float xAux,yAux;
+    glVertex2f(modulo,0);
+    for (float i = 0; i <= 7 ; i += 0.005) {
+        xAux= modulo * cos(i) ;
+        yAux = modulo * sin(i) ;
+        glVertex2f(xAux , yAux );
+        glVertex2f(xAux , yAux );
+    }
+    glVertex2f(xAux,yAux);
+    glEnd();
 }

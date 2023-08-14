@@ -39,6 +39,7 @@ protected:
     bool tree;
     bool dendograma;
     bool esquema;
+    bool circle;
     
     float variableGros;
     
@@ -135,6 +136,9 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 
     void setDendograma(bool a){
         dendograma=a;
+    }
+    void setCircle(bool a){
+        circle=a;
     }
 };
 #endif //HUGO_GRAPHIC_OBJECTS_H
