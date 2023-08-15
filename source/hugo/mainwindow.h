@@ -82,7 +82,7 @@ public Q_SLOTS:
 
     void pintar();
     void reset();
-    void load();
+    void save();
 
     void difGrosor();
     void igualGrosor();
@@ -111,5 +111,6 @@ private:
 protected:
     QString _lastOpenedFileName;
     QString _lastOpenedDirectory;
+    QString _lastSavedDirectory;
 };
 #endif // MAINWINDOW_H

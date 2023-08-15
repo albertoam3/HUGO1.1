@@ -58,6 +58,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setEsquema->setIcon(QIcon("../source/hugo/imagenes/Diapositiva14.PNG"));
     ui->setEsquema->setToolTip("Esquema");
 
+    ui->save->setIcon(QIcon("../source/hugo/imagenes/Diapositiva0.PNG"));
+
     ui->loadButton->setToolTip("Carga de ruta de ficheros .SWC");
 
 }
@@ -70,7 +72,7 @@ MainWindow::~MainWindow() {
 void MainWindow::connectButtons() {
     QObject::connect(ui->draw, SIGNAL(clicked()), this, SLOT(pintar()));
     QObject::connect(ui->reset, SIGNAL(clicked()), this, SLOT(reset()));
-    QObject::connect(ui->load, SIGNAL(clicked()), this, SLOT(load()));
+    QObject::connect(ui->save, SIGNAL(clicked()), this, SLOT(save()));
     QObject::connect(ui->validar_tam_2, SIGNAL(clicked()), this, SLOT(validarTam()));
 
     QObject::connect(ui->setDendograma,SIGNAL(clicked()),this,SLOT(set_dend()));
@@ -103,8 +105,22 @@ void MainWindow::reset() {
     elementosCargados->clear();
 }
 
-void MainWindow::load() {
-    this->selecction();
+void MainWindow::save() {
+    //this->selecction();
+    QString filePath = QFileDialog::getSaveFileName(
+            this, tr("Guardar archivo PNG"), _lastSavedDirectory,
+            tr("Archivos PNG (*.png);;Todos los archivos (*)"),
+            nullptr, QFileDialog::DontUseNativeDialog);
+
+    if (!filePath.isEmpty()) {
+        if (!filePath.endsWith(".png", Qt::CaseInsensitive)) {
+            filePath += ".png";  // Asegura que la extensión sea .png
+        }
+
+        _lastSavedDirectory = QFileInfo(filePath).path();
+
+        ui->openGLWidget2D->saveOpenGLWidget2DToPNG(filePath);
+    }
 }
 
 ////Selecciono el objeto de la list que pinto y se lo mando a qopenGLWidget

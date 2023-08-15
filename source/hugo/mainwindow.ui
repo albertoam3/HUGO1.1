@@ -200,7 +200,7 @@
                 </sizepolicy>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="tab_2">
                 <attribute name="title">
@@ -323,9 +323,28 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="load">
+                  <widget class="QPushButton" name="save">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>Guardar en .PNG</string>
+                   </property>
                    <property name="text">
-                    <string>Load</string>
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>imagenes/Diapositiva0.png</normaloff>imagenes/Diapositiva0.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>64</width>
+                     <height>78</height>
+                    </size>
                    </property>
                   </widget>
                  </item>

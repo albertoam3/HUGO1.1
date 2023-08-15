@@ -4,6 +4,7 @@
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 #include <QColor>
+#include <QPainter>
 
 #include <QMouseEvent>
 #include "graphics/graphicObjects.h"
@@ -50,6 +51,7 @@ public:
 
   void setDrawCircle(bool draw);
 
+  void saveOpenGLWidget2DToPNG(const QString &filename);
 
 
 

@@ -312,4 +312,22 @@ void myOpenGLWidget2D::setDrawCircle(bool draw) {
     update();
 }
 
+void myOpenGLWidget2D::saveOpenGLWidget2DToPNG(const QString &filename) {
+
+    QImage image(this->size(), QImage::Format_ARGB32);
+
+    // Renderiza el contenido del OpenGLWidget en la imagen
+    QPainter painter(&image);
+    this->render(&painter);
+    painter.end();
+
+    // Voltea verticalmente la imagen (si es necesario)
+    image = image.mirrored(false, true);
+
+    // Guarda la imagen como PNG
+    image.save(filename, "PNG");
+}
+
+
+
 
