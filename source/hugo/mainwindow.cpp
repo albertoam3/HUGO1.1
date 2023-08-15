@@ -49,14 +49,16 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setNada->setChecked(true);
     ui->igual_ang->setChecked(true);
 
-   // QIcon icon1(":/Icons/Diapositiva34.PNG");
-    //ui->setDendograma->setIcon(icon1);
     ui->setDendograma->setIcon(QIcon("../source/hugo/imagenes/Diapositiva34.PNG"));
+    ui->setDendograma->setToolTip("Dendograma");
     ui->setArbol->setIcon(QIcon("../source/hugo/imagenes/Diapositiva19.PNG"));
+    ui->setArbol->setToolTip("Árbol");
     ui->setNada->setIcon(QIcon("../source/hugo/imagenes/Diapositiva35.PNG"));
+    ui->setNada->setToolTip("Por defecto");
     ui->setEsquema->setIcon(QIcon("../source/hugo/imagenes/Diapositiva14.PNG"));
+    ui->setEsquema->setToolTip("Esquema");
 
-
+    ui->loadButton->setToolTip("Carga de ruta de ficheros .SWC");
 
 }
 
