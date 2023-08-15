@@ -252,26 +252,38 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
 
 void sectionH::drawSectionsEsquema(float x, float y, float terminal_nodes) {
 
-    //Falta por implementar
-
-    coordX=x;
-    coordY=y;
+    coordX = x;
+    coordY = y;
 
     glBegin(GL_LINES);
     glColor3f(0.7f, 0.5f, 0.2f);
-    float calcX,calcY;
-    glVertex2f(0.5 + displacementX + x, 0 + displacementY + y);
-    for(float i=0;i<10;i+=0.01){
-        calcX=0.5*cos(i);
-        calcY=0.5*sin(i);
-        glVertex2f(calcX + displacementX + x, calcY + displacementY + y);
-        glVertex2f(calcX + displacementX + x, calcY + displacementY + y);
+    float calcX, calcY;
+
+    switch (static_cast<int>(terminal_nodes)) {
+        case 1:  // Dibujar una neurona con una pata
+            for (float i = 0; i < 10; i += 0.01) {
+                calcX = 0.5 * cos(i);
+                calcY = 0.5 * sin(i);
+                glVertex2f(calcX + displacementX + x, calcY + displacementY + y);
+            }
+            break;
+        case 2:  // Dibujar una neurona con dos patas
+           // Falta implementación
+            break;
+            //Resto de casos
+        default:
+            // En caso de un valor no válido, simplemente dibujar un círculo
+            for (float i = 0; i < 10; i += 0.01) {
+                calcX = 0.5 * cos(i);
+                calcY = 0.5 * sin(i);
+                glVertex2f(calcX + displacementX + x, calcY + displacementY + y);
+            }
+            break;
     }
-    glVertex2f(calcX + displacementX + x, calcY + displacementY + y);
+
     glEnd();
-
-
 }
+
 
 float sectionH::terminalNodes() {
     float terminal=0;
