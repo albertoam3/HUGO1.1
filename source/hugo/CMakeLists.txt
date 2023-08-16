@@ -32,12 +32,13 @@ list( APPEND HUGO_DEPENDENT_LIBRARIES
 
 
 add_executable(hugo
-          hugo.cpp
-          mainwindow.cpp
-          mainwindow.h
+        resources.qrc
+        hugo.cpp
+        mainwindow.cpp
+        mainwindow.h
         myOpenGLWidget.cpp
         myOpenGLWidget.h
-          mainwindow.ui
+        mainwindow.ui
         myOpenGLWidget2D.h
         myOpenGLWidget2D.cpp
         graphics/graphicObjects.h
