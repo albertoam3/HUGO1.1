@@ -45,9 +45,7 @@ void neuriteG::draw(QOpenGLWidget* windowPaint){
     }else if(circle) {
 
         drawSol(windowPaint);
-
-
-    }
+           }
     else{
 		float aux,n;
 		if(neuritesGros){
@@ -349,7 +347,8 @@ void neuriteG::variableGrosorAux(float *max, float *min){
 void neuriteG::variableLongitudAux(float *max_long, float *min_long) {
     switch (variableLongitud) {
         case VarLongitud::unitario:
-            *max_long=0.25;
+            *max_long=sqrt(std::pow( getValPoint2(variableLongitud, *max_long, *min_long) * (initX),2)
+                    + std::pow(getValPoint2(variableLongitud, *max_long, *min_long) * (initY),2));
             *min_long=0;
             break;
         case VarLongitud::TamanoPuntoInitPuntoFinal:

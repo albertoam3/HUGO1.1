@@ -140,6 +140,7 @@ void neuronG::draw3D(QOpenGLWidget* windowPaint){
             d.draw3d(x,y,z);
         }
         ax[0]->draw3d(0.5,0.3,1.0);
+        som->draw3d(0.4,0.9,0.1);
 }
 
 void neuronG::drawSelc(QOpenGLWidget* windowPaint){

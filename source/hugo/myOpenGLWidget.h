@@ -56,8 +56,7 @@ protected:
     void mousePressEvent( QMouseEvent* event_ ) override;
     void mouseMoveEvent( QMouseEvent* event_ ) override;
     void wheelEvent(QWheelEvent *event) override;
-     
-    //int calculatePosition(int i);
+
     void positionDraws();
 
 

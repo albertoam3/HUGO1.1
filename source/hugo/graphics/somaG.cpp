@@ -16,10 +16,10 @@ void somaG::draw(QOpenGLWidget* windowPaint){
     glBegin(GL_LINES);
     glColor3f(0.7f, 0.5f, 0.2f);
     float calcX,calcY;
-    glVertex2f(0.3 + displacementX + initX, 0 + displacementY + initY);
+    glVertex2f(som->meanRadius()/100 + displacementX + initX, 0 + displacementY + initY);
     for(float i=0;i<10;i+=0.01){
-        calcX=0.3*cos(i);
-        calcY=0.3*sin(i);
+        calcX=som->meanRadius()/100*cos(i);
+        calcY=som->meanRadius()/100*sin(i);
         glVertex2f(calcX + displacementX + initX, calcY + displacementY + initY);
         glVertex2f(calcX + displacementX + initX, calcY + displacementY + initY);
     }
@@ -94,10 +94,21 @@ bool somaG::isSelected() {
 }
 
 float somaG::getRadio() {
-    return 0.3;
+    return som->meanRadius()/100;
 }
 
 
 float somaG::getTam(){
 	return 3.1416*som->meanRadius()*som->meanRadius();
+}
+
+void somaG::draw3d(float x, float y, float z) {
+    glPointSize(10);
+    glColor3f(x, y, z);
+
+    glBegin(GL_POINTS);
+    for(nsol::Node* n : som->nodes()){
+        glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+    }
+    glEnd();
 }

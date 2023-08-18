@@ -76,16 +76,18 @@ void myOpenGLWidget::paintGL() {
     	i->setScala(scalaTotal);
         i->draw(this,true);
     }
+
     if(circle){
         int a=0;
         for(float i=0;i<=5;i+=0.2){
             if(a%4==1){
-                drawCirculoAux(i,true);
+                drawCirculoAux(i,true;
             }else{
                 drawCirculoAux(i,false);
             }
             a++;
         }
+
     }
 }
 
@@ -299,7 +301,6 @@ void myOpenGLWidget::setDrawCircle(bool draw) {
 
 
 void myOpenGLWidget::drawCirculoAux(float modulo, bool activo) {
-
     glLineWidth(1);
     glBegin(GL_LINES);
     if(activo)
@@ -316,5 +317,7 @@ void myOpenGLWidget::drawCirculoAux(float modulo, bool activo) {
     }
     glVertex2f(xAux,yAux);
     glEnd();
+
+
 }
 

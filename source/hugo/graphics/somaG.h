@@ -36,6 +36,7 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 
     float getRadio();
     float getTam();
+    void draw3d(float x,float y,float z);
 };
 
 

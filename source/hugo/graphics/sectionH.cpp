@@ -159,7 +159,7 @@ void sectionH::drawSectionsTree(float x1, float x2, float angle, float hipotenus
 }
 
 bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
-    if(coordX + 0.05 > x && coordX - 0.05 < x && coordY + 0.05 > y && coordY - 0.05 < y){
+    if(coordX + 0.005 > x && coordX - 0.005 < x && coordY + 0.005 > y && coordY - 0.005 < y){
         QString texto="Soy la seleccionada ";
         seeToolTip(texto,windowPaint);
         selected_hijas(true);
@@ -357,9 +357,9 @@ float sectionH::getPoint2(VarLongitud var_long, float max, float min){
         case VarLongitud::TamanoPuntoInitPuntoFinal:
             return (tamPuntoInicialPuntoFinal-min)/(max-min)*1.4;
         case VarLongitud::unitario:
-            return 0.25;
+            return max;
         default:
-            return 0.25;
+            return max;
     }
 
 }
