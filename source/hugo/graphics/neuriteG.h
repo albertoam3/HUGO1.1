@@ -79,6 +79,7 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     void drawDendograma(QOpenGLWidget* windowPaint);
 
     void drawEsquema(QOpenGLWidget *windowPaint);
+    void drawSol(QOpenGLWidget *windowPaint);
 
     void setAngle(float a);  
      
@@ -132,6 +133,7 @@ private:
     void variableLongitudAux(float *max_long,float *min_long);
     float getValPoint2(VarLongitud var_long, float max, float min);
     void drawCirculoAux(float modulo, bool activo);
+    float distanciaEntreRegistros(Eigen::Vector3f r1,Eigen::Vector3f  r2);
 };
 
 

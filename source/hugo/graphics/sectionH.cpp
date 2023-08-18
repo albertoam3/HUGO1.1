@@ -15,8 +15,8 @@ sectionH::sectionH(nsol::NeuronMorphologySection* _sec){
      sec=_sec;
      selecionada=false;
      getTamSection();
-    coordX=0;
-    coordY=0;
+     coordX=0;
+     coordY=0;
      displacementX=0;
      displacementY=0;
 
@@ -117,8 +117,8 @@ float sectionH::volumenCono(nsol::Node* r1,nsol::Node* r2) {
 }
 
 
-nsol::NeuronMorphologySection sectionH::getSection(){
-	return *sec;
+nsol::NeuronMorphologySection *sectionH::getSection(){
+    return sec;
 }
 
 void sectionH::drawSectionsTree(float x1, float x2, float angle, float hipotenusa, float dif_angle, bool g, float max, float min, VarEstado variable_grosor){
@@ -437,5 +437,74 @@ void sectionH::getTamTotalP1P2(float *max, float *min) {
         (*max)=getTamPuntoInicialPuntoFinal();
     else if (getTamPuntoInicialPuntoFinal()<(*min))
         (*min)=getTamPuntoInicialPuntoFinal();
+
+}
+
+nsol::NeuronMorphologySection *sectionH::getSec() const {
+    return sec;
+}
+
+void
+sectionH::drawSol(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g, float max,
+                  float min, VarEstado variable_grosor) {
+    coordX=x;
+    coordY=y;
+
+
+    if (sectionsHijas.size() == 2) {
+        sectionH *sec1, *sec2;
+        //ahora mismo se va siempre por la rama más grande, con una variable de estado podriamos decidir si lo queremos asi o queremos que siga el camino que nos dan
+        if (sectionsHijas[0]->terminalNodes() > sectionsHijas[1]->terminalNodes()) {
+            sec1 = sectionsHijas[0];
+            sec2 = sectionsHijas[1];
+        } else {
+            sec1 = sectionsHijas[1];
+            sec2 = sectionsHijas[0];
+        }
+        if (g) {
+            getLineWidth(variable_grosor, *sec1, max, min);
+        }
+        float x2;
+        float y2;
+
+        Eigen::Vector3f na(0,0,0);
+
+        float dist= distanciaEntreRegistrosV(na, sec1->getSection()->lastNode()->point()) / 1000;
+        x2 = x+ dist * cos(angle - angle_hueco * (*cont) / terminal_nodes);
+        y2 =y+ dist * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+
+
+
+        drawLine(x, y, x2, y2);
+        drawPoint(x2, y2);
+
+        sec1->drawSol(x2, y2, angle_hueco, angle, terminal_nodes, cont,
+                                    g, max, min, variable_grosor);
+        (*cont)++;
+
+        float modulo = sqrt(pow(x - displacementX, 2) + pow(y - displacementY, 2));
+        float nx = modulo * cos(angle - angle_hueco * (*cont) / terminal_nodes) + displacementX;
+        float ny = modulo * sin(angle - angle_hueco * (*cont) / terminal_nodes) + displacementY;
+
+
+        float dist2= distanciaEntreRegistrosV(na, sec2->getSection()->lastNode()->point()) / 1000;
+        float nix = dist2 * cos(angle - angle_hueco * (*cont) / terminal_nodes);
+        float niy = dist2 * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+
+        drawArco( x, y, nx, ny, angle, angle_hueco,cont, terminal_nodes, modulo);
+        if (g) {
+            getLineWidth( variable_grosor,*sec2, max, min);
+        }
+        drawLine(nx,ny,nx+nix,ny+niy);
+        drawPoint(nx+nix,ny+niy);
+
+        sec2->drawSol(nx + nix, ny + niy, angle_hueco, angle, terminal_nodes, cont, g, max,
+                                     min, variable_grosor);
+    }
+}
+float sectionH::distanciaEntreRegistrosV(Eigen::Vector3f r1, Eigen::Vector3f r2){
+    return std::sqrt( std::pow(r1[0] - r2[0], 2) +
+                      std::pow(r1[1] - r2[1], 2) +
+                      std::pow(r1[2] - r2[2], 2));
 
 }

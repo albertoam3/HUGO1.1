@@ -38,12 +38,12 @@ void neuriteG::draw(QOpenGLWidget* windowPaint){
     if(tree){
 		drawTree(windowPaint);
 	}else if(dendograma){
-        drawDendograma((windowPaint));
+        drawDendograma(windowPaint);
 
     }else if(esquema){
-        drawEsquema((windowPaint));
-    }else if(circle) {
         drawEsquema(windowPaint);
+    }else if(circle) {
+        drawSol(windowPaint);
         int a=0;
         for(float i=0;i<=5;i+=0.2){
             if(a%4==1){
@@ -511,4 +511,52 @@ void neuriteG::drawCirculoAux(float modulo, bool activo) {
     }
     glVertex2f(xAux,yAux);
     glEnd();
+}
+
+void neuriteG::drawSol(QOpenGLWidget *windowPaint) {
+    bool g;
+    float *max=new float;
+    float *min=new float;
+
+    float *max_long=new float;
+    float *min_long= new float;
+
+    if(neuritesGros == true){
+        g=true;
+        variableGrosorAux(max,min);
+    }
+    else{
+        g=false;
+        glLineWidth(1);
+    }
+    glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
+    glColor3f(1.0, 1.0, 1.0);
+
+    //calcular la distancia de el primer punto al centro del soma
+    //primero como si el soma siempre estuviera en el 0.0
+    Eigen::Vector3f na(0,0,0);
+
+//el error de compilacion esta en esta linea
+    float dist= distanciaEntreRegistros(na, firstSection->getSection()->lastNode()->point()) / 1000;
+
+    float x=  dist*initX+ displacementX + initX;
+    float y= dist*initY + displacementY + initY;
+
+    glVertex2f(displacementX + initX, displacementY + initY); // Especificar las coordenadas del punto a dibujar
+    glVertex2f(x,y);
+    glEnd();
+    glBegin(GL_POINTS);
+    glColor3f(color.x(), color.y(), color.z());
+    glVertex2f(displacementX + initX, displacementY + initY);
+    glVertex2f(x,y);
+    glEnd();
+    int n=0;
+    firstSection->drawSol(x, y, angleGap, angle, terminalNodes, &n, g, *max, *min, variableGrosor);
+
+}
+float neuriteG::distanciaEntreRegistros(Eigen::Vector3f r1, Eigen::Vector3f r2){
+    return std::sqrt( std::pow(r1[0] - r2[0], 2) +
+                      std::pow(r1[1] - r2[1], 2) +
+                      std::pow(r1[2] - r2[2], 2));
+
 }

@@ -27,6 +27,7 @@ void somaG::draw(QOpenGLWidget* windowPaint){
     glEnd();
     if(selected)
         drawSelc(windowPaint);
+
 }
 
 void somaG::drawSelc(QOpenGLWidget* windowPaint){
