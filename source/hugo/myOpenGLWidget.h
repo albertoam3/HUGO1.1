@@ -26,6 +26,7 @@ private:
     float scala,scalaTotal{};
     bool _rotation;
     bool _translation;
+    bool circle;
     
 
     Eigen::Vector3f position;
@@ -44,6 +45,7 @@ public:
     void setDraw(bool a);
     void setGraphicsObject(neuronG *gobj);
     void resetList();
+    void setDrawCircle(bool draw);
 
 
 protected:
@@ -57,13 +59,15 @@ protected:
      
     //int calculatePosition(int i);
     void positionDraws();
-    
-    
+
+
+
+
 private:
     void rotate(float x,float y,float z);
     
     void transform();
-
+    void drawCirculoAux(float modulo, bool activo);
 };
 
 #endif // MYOPENGLWIDGET_H

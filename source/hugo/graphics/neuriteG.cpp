@@ -43,16 +43,9 @@ void neuriteG::draw(QOpenGLWidget* windowPaint){
     }else if(esquema){
         drawEsquema(windowPaint);
     }else if(circle) {
+
         drawSol(windowPaint);
-        int a=0;
-        for(float i=0;i<=5;i+=0.2){
-            if(a%4==1){
-                drawCirculoAux(i,true);
-            }else{
-                drawCirculoAux(i,false);
-            }
-            a++;
-        }
+
 
     }
     else{

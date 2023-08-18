@@ -382,6 +382,7 @@ void MainWindow::set_dend() {
     openGLWidget2d->setTree(false);
     openGLWidget2d->setEsquema(false);
     openGLWidget2d->setDrawCircle(false);
+    _openGLWidget->setDrawCircle(false);
 
 }
 
@@ -390,6 +391,7 @@ void MainWindow::set_nada(){
     openGLWidget2d->setTree(false);
     openGLWidget2d->setEsquema(false);
     openGLWidget2d->setDrawCircle(false);
+    _openGLWidget->setDrawCircle(false);
 
 
 
@@ -400,6 +402,7 @@ void MainWindow::set_tree() {
     openGLWidget2d->setTree(true);
     openGLWidget2d->setEsquema(false);
     openGLWidget2d->setDrawCircle(false);
+    _openGLWidget->setDrawCircle(false);
 }
 
 void MainWindow::set_esq() {
@@ -407,6 +410,7 @@ void MainWindow::set_esq() {
     openGLWidget2d->setTree(false);
     openGLWidget2d->setEsquema(true);
     openGLWidget2d->setDrawCircle(false);
+    _openGLWidget->setDrawCircle(false);
 }
 
 void MainWindow::resetButtons() {
@@ -431,6 +435,7 @@ void MainWindow::resetButtons() {
 
 void MainWindow::setCirculos() {
    openGLWidget2d->setDrawCircle(ui->setCirculos->isChecked());
+   _openGLWidget->setDrawCircle(ui->setCirculos->isChecked());
    if(ui->setCirculos->isChecked()) {
        openGLWidget2d->setDendograma(false);
        openGLWidget2d->setTree(false);

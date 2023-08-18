@@ -16,10 +16,10 @@ void somaG::draw(QOpenGLWidget* windowPaint){
     glBegin(GL_LINES);
     glColor3f(0.7f, 0.5f, 0.2f);
     float calcX,calcY;
-    glVertex2f(0.5 + displacementX + initX, 0 + displacementY + initY);
+    glVertex2f(0.3 + displacementX + initX, 0 + displacementY + initY);
     for(float i=0;i<10;i+=0.01){
-        calcX=0.5*cos(i);
-        calcY=0.5*sin(i);
+        calcX=0.3*cos(i);
+        calcY=0.3*sin(i);
         glVertex2f(calcX + displacementX + initX, calcY + displacementY + initY);
         glVertex2f(calcX + displacementX + initX, calcY + displacementY + initY);
     }
@@ -94,7 +94,7 @@ bool somaG::isSelected() {
 }
 
 float somaG::getRadio() {
-    return 0.5;
+    return 0.3;
 }
 
 
