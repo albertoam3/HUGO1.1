@@ -19,6 +19,7 @@ sectionH::sectionH(nsol::NeuronMorphologySection* _sec){
      coordY=0;
      displacementX=0;
      displacementY=0;
+     seleccionada_primera=false;
 
     for(nsol::Section* s : sec->children()){
         nsol::NeuronMorphologySection* section = dynamic_cast<nsol::NeuronMorphologySection*>(s);
@@ -159,14 +160,18 @@ void sectionH::drawSectionsTree(float x1, float x2, float angle, float hipotenus
 }
 
 bool sectionH::selected(QOpenGLWidget* windowPaint,float x, float y) {
-    if(coordX + 0.005 > x && coordX - 0.005 < x && coordY + 0.005 > y && coordY - 0.005 < y){
+    if(coordX + 0.01 > x && coordX - 0.01 < x && coordY + 0.01 > y && coordY - 0.01 < y){
         QString texto="Soy la seleccionada ";
         seeToolTip(texto,windowPaint);
+        seleccionada_primera=true;
         selected_hijas(true);
+
         return true;
+
 
     }
     else{
+        seleccionada_primera=false;
         selected_hijas(false);
     }
     if (sectionsHijas.size() == 2) {
@@ -372,6 +377,16 @@ void sectionH::seeToolTip(QString texto,QOpenGLWidget *windowPaint){
 }
 
 void sectionH::draw3d( float x, float y, float z) {
+
+            if(seleccionada_primera){
+                std::cout<<"hola\n";
+                glPointSize(10.0);
+                glBegin(GL_POINTS);
+                glColor3f(1.0f, 0.0f, 0.0f);
+                glVertex3f(sec->lastNode()->point()[0]/100,sec->lastNode()->point()[1]/100,sec->lastNode()->point()[2]/100);
+                glEnd();
+            }
+
             glBegin(GL_LINES);
             if(selecionada){
                 glColor3f(1,1,1);

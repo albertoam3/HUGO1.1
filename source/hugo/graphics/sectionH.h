@@ -72,6 +72,7 @@ private:
     void seeToolTip(QString texto,QOpenGLWidget *windowPaint);
 
     float distanciaEntreRegistrosV(Eigen::Vector3f r1, Eigen::Vector3f r2);
+    bool seleccionada_primera;
 
 };
 
