@@ -81,7 +81,7 @@ void myOpenGLWidget::paintGL() {
 
     if(circle){
         int a=0;
-        for(float i=0;i<=5;i+=0.2){
+        for(float i=0;i<=7;i+=0.2){
             if(a%4==1){
                 drawCirculoAux(i,true);
             }else{

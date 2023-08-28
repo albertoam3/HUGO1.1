@@ -525,7 +525,7 @@ void neuriteG::drawSol(QOpenGLWidget *windowPaint) {
     //primero como si el soma siempre estuviera en el 0.0
     Eigen::Vector3f na(0,0,0);
 
-//el error de compilacion esta en esta linea
+
     float dist= distanciaEntreRegistros(na, firstSection->getSection()->lastNode()->point());
 
     float x=  dist*initX+ displacementX + initX;

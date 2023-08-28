@@ -379,7 +379,7 @@ void sectionH::seeToolTip(QString texto,QOpenGLWidget *windowPaint){
 void sectionH::draw3d( float x, float y, float z) {
 
             if(seleccionada_primera){
-                std::cout<<"hola\n";
+
                 glPointSize(10.0);
                 glBegin(GL_POINTS);
                 glColor3f(1.0f, 0.0f, 0.0f);
