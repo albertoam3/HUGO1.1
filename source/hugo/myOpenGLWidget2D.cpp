@@ -355,10 +355,11 @@ void myOpenGLWidget2D::drawCirculoAux(float modulo, bool activo) {
     for (float i = 0; i <= 7 ; i += 0.005) {
         xAux= modulo * cos(i) ;
         yAux = modulo * sin(i) ;
-        glVertex2f(xAux , yAux );
+        glVertex2f(xAux , yAux);
         glVertex2f(xAux , yAux );
     }
     glVertex2f(xAux,yAux);
     glEnd();
+
 }
 

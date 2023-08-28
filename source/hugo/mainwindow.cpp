@@ -57,6 +57,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setNada->setToolTip("Por defecto");
     ui->setEsquema->setIcon(QIcon(":/imagenes/Diapositiva14.PNG"));
     ui->setEsquema->setToolTip("Esquema");
+    ui->setCirculos->setIcon(QIcon(":/imagenes/Diapositiva38.PNG"));
+    ui->setCirculos->setToolTip("Sol");
+
 
     ui->save->setIcon(QIcon(":/imagenes/Diapositiva0.PNG"));
 

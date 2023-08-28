@@ -469,9 +469,10 @@ sectionH::drawSol(float x, float y, float angle_hueco, float angle, float termin
 
         Eigen::Vector3f na(0,0,0);
 
-        float dist= distanciaEntreRegistrosV(na, sec1->getSection()->lastNode()->point()) / 1000;
-        x2 = x+ dist * cos(angle - angle_hueco * (*cont) / terminal_nodes);
-        y2 =y+ dist * sin(angle - angle_hueco * (*cont) / terminal_nodes);
+        float dist= distanciaEntreRegistrosV(na, sec1->getSection()->lastNode()->point());
+
+        x2 = dist * cos(angle - angle_hueco * (*cont) / terminal_nodes);
+        y2 = dist * sin(angle - angle_hueco * (*cont) / terminal_nodes);
 
 
 
@@ -487,7 +488,7 @@ sectionH::drawSol(float x, float y, float angle_hueco, float angle, float termin
         float ny = modulo * sin(angle - angle_hueco * (*cont) / terminal_nodes) + displacementY;
 
 
-        float dist2= distanciaEntreRegistrosV(na, sec2->getSection()->lastNode()->point()) / 1000;
+        float dist2= distanciaEntreRegistrosV(na, sec2->getSection()->lastNode()->point());
         float nix = dist2 * cos(angle - angle_hueco * (*cont) / terminal_nodes);
         float niy = dist2 * sin(angle - angle_hueco * (*cont) / terminal_nodes);
 
@@ -495,16 +496,16 @@ sectionH::drawSol(float x, float y, float angle_hueco, float angle, float termin
         if (g) {
             getLineWidth( variable_grosor,*sec2, max, min);
         }
-        drawLine(nx,ny,nx+nix,ny+niy);
-        drawPoint(nx+nix,ny+niy);
+        drawLine(nx,ny,nix,niy);
+        drawPoint(nix,niy);
 
-        sec2->drawSol(nx + nix, ny + niy, angle_hueco, angle, terminal_nodes, cont, g, max,
+        sec2->drawSol(nix, niy, angle_hueco, angle, terminal_nodes, cont, g, max,
                                      min, variable_grosor);
     }
 }
 float sectionH::distanciaEntreRegistrosV(Eigen::Vector3f r1, Eigen::Vector3f r2){
-    return std::sqrt( std::pow(r1[0] - r2[0], 2) +
-                      std::pow(r1[1] - r2[1], 2) +
-                      std::pow(r1[2] - r2[2], 2));
+    return std::sqrt( std::pow(r1[0] - r2[0]/100, 2) +
+                      std::pow(r1[1] - r2[1]/100, 2) +
+                      std::pow(r1[2] - r2[2]/100, 2));
 
 }

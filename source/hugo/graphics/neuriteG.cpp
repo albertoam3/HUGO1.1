@@ -510,9 +510,6 @@ void neuriteG::drawSol(QOpenGLWidget *windowPaint) {
     float *max=new float;
     float *min=new float;
 
-    float *max_long=new float;
-    float *min_long= new float;
-
     if(neuritesGros == true){
         g=true;
         variableGrosorAux(max,min);
@@ -529,7 +526,7 @@ void neuriteG::drawSol(QOpenGLWidget *windowPaint) {
     Eigen::Vector3f na(0,0,0);
 
 //el error de compilacion esta en esta linea
-    float dist= distanciaEntreRegistros(na, firstSection->getSection()->lastNode()->point()) / 1000;
+    float dist= distanciaEntreRegistros(na, firstSection->getSection()->lastNode()->point());
 
     float x=  dist*initX+ displacementX + initX;
     float y= dist*initY + displacementY + initY;
@@ -547,8 +544,8 @@ void neuriteG::drawSol(QOpenGLWidget *windowPaint) {
 
 }
 float neuriteG::distanciaEntreRegistros(Eigen::Vector3f r1, Eigen::Vector3f r2){
-    return std::sqrt( std::pow(r1[0] - r2[0], 2) +
-                      std::pow(r1[1] - r2[1], 2) +
-                      std::pow(r1[2] - r2[2], 2));
+    return std::sqrt( std::pow(r1[0] - r2[0]/100, 2) +
+                      std::pow(r1[1] - r2[1]/100, 2) +
+                      std::pow(r1[2] - r2[2]/100, 2));
 
 }

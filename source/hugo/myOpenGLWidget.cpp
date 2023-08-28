@@ -47,6 +47,8 @@ void myOpenGLWidget::initializeGL() {
 void myOpenGLWidget::paintGL() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
+
+
     if (buttonDrawActive) {
         position=Eigen::Vector3f(0, 0, 0);
         buttonDrawActive = false;
@@ -66,7 +68,7 @@ void myOpenGLWidget::paintGL() {
         Eigen::Matrix4f *aux= reinterpret_cast<Eigen::Matrix4f *>(modelview_matrix);
         aux->block< 3, 3 >( 0, 0 ) = rotation;
         glLoadMatrixf(aux->data());
-        glScalef(scalaTotal, scalaTotal, 1.0f);
+        glScalef(scalaTotal, scalaTotal, scalaTotal);
         glGetFloatv(GL_MODELVIEW_MATRIX, modelview_matrix);
 
         model_view=*reinterpret_cast<Eigen::Matrix4f *>(modelview_matrix);
@@ -81,7 +83,7 @@ void myOpenGLWidget::paintGL() {
         int a=0;
         for(float i=0;i<=5;i+=0.2){
             if(a%4==1){
-                drawCirculoAux(i,true;
+                drawCirculoAux(i,true);
             }else{
                 drawCirculoAux(i,false);
             }
@@ -89,6 +91,7 @@ void myOpenGLWidget::paintGL() {
         }
 
     }
+
 }
 
 void myOpenGLWidget::resizeGL(int w, int h) {
@@ -301,6 +304,9 @@ void myOpenGLWidget::setDrawCircle(bool draw) {
 
 
 void myOpenGLWidget::drawCirculoAux(float modulo, bool activo) {
+
+
+
     glLineWidth(1);
     glBegin(GL_LINES);
     if(activo)
@@ -308,14 +314,51 @@ void myOpenGLWidget::drawCirculoAux(float modulo, bool activo) {
     else
         glColor4f(0.3f, 0.5f, 0.2f,0.5f);
     float xAux,yAux;
-    glVertex2f(modulo,0);
+    glVertex3f(modulo,0,0);
     for (float i = 0; i <= 7 ; i += 0.005) {
         xAux= modulo * cos(i) ;
         yAux = modulo * sin(i) ;
-        glVertex2f(xAux , yAux );
-        glVertex2f(xAux , yAux );
+        glVertex3f(xAux , yAux,0.0f );
+        glVertex3f(xAux , yAux,0.0f );
     }
-    glVertex2f(xAux,yAux);
+    glVertex3f(xAux,yAux,0.0f);
+    glEnd();
+
+
+    glLineWidth(1);
+    glBegin(GL_LINES);
+    if(activo)
+        glColor4f(0.3f, 0.5f, 0.2f,1.0f);
+    else
+        glColor4f(0.3f, 0.5f, 0.2f,0.5f);
+    glVertex3f(modulo,0,0);
+    for (float i = 0; i <= 7 ; i += 0.005) {
+        xAux= modulo * cos(i) ;
+        yAux = modulo * sin(i) ;
+        glVertex3f(xAux ,0.0f, yAux );
+        glVertex3f(xAux ,0.0f, yAux );
+    }
+    glVertex3f(xAux,0.0f,yAux);
+    glEnd();
+
+
+    glLineWidth(1);
+    glBegin(GL_LINES);
+    if(activo)
+        glColor4f(0.3f, 0.5f, 0.2f,1.0f);
+    else
+        glColor4f(0.3f, 0.5f, 0.2f,0.5f);
+    glVertex3f(0.0f,modulo,0);
+    for (float i = 0; i <= 7 ; i += 0.005) {
+        xAux= modulo * cos(i) ;
+        yAux = modulo * sin(i) ;
+        glVertex3f(0.0f,xAux , yAux );
+        glVertex3f(0.0f,xAux , yAux );
+    }
+    glVertex3f(0.0f,xAux,yAux);
+
+
+
     glEnd();
 
 

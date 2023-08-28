@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1126</width>
-    <height>900</height>
+    <height>949</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -83,14 +83,14 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
-              <height>0</height>
+              <width>350</width>
+              <height>350</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>500</width>
-              <height>500</height>
+              <width>400</width>
+              <height>400</height>
              </size>
             </property>
             <property name="layoutDirection">
@@ -200,7 +200,7 @@
                 </sizepolicy>
                </property>
                <property name="currentIndex">
-                <number>1</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="tab_2">
                 <attribute name="title">
@@ -254,26 +254,6 @@
                      </widget>
                     </item>
                    </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QGroupBox" name="groupBox_5">
-                   <property name="title">
-                    <string>Circulos concentricos</string>
-                   </property>
-                   <widget class="QRadioButton" name="setCirculos">
-                    <property name="geometry">
-                     <rect>
-                      <x>20</x>
-                      <y>20</y>
-                      <width>112</width>
-                      <height>23</height>
-                     </rect>
-                    </property>
-                    <property name="text">
-                     <string>circulos</string>
-                    </property>
-                   </widget>
                   </widget>
                  </item>
                  <item>
@@ -355,65 +335,7 @@
              <item row="0" column="0">
               <widget class="QFrame" name="frame_6">
                <layout class="QGridLayout" name="gridLayout_8">
-                <item row="0" column="0">
-                 <widget class="QPushButton" name="setDendograma">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset>
-                    <normaloff>../../../../../Imágenes/Iconos Hu8go 1/34.ico</normaloff>../../../../../Imágenes/Iconos Hu8go 1/34.ico</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>64</width>
-                    <height>64</height>
-                   </size>
-                  </property>
-                  <property name="checkable">
-                   <bool>true</bool>
-                  </property>
-                  <property name="autoExclusive">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
                 <item row="0" column="2">
-                 <widget class="QPushButton" name="setEsquema">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset>
-                    <normaloff>../../../../../Imágenes/Iconos Hu8go 1/14.ico</normaloff>../../../../../Imágenes/Iconos Hu8go 1/14.ico</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>64</width>
-                    <height>64</height>
-                   </size>
-                  </property>
-                  <property name="checkable">
-                   <bool>true</bool>
-                  </property>
-                  <property name="autoExclusive">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
                  <widget class="QPushButton" name="setArbol">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -443,6 +365,35 @@
                  </widget>
                 </item>
                 <item row="0" column="3">
+                 <widget class="QPushButton" name="setEsquema">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../../../../../Imágenes/Iconos Hu8go 1/14.ico</normaloff>../../../../../Imágenes/Iconos Hu8go 1/14.ico</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>64</width>
+                    <height>64</height>
+                   </size>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="autoExclusive">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="4">
                  <widget class="QPushButton" name="setNada">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -456,6 +407,60 @@
                   <property name="icon">
                    <iconset>
                     <normaloff>../../../../../Imágenes/Iconos Hu8go 1/35.ico</normaloff>../../../../../Imágenes/Iconos Hu8go 1/35.ico</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>64</width>
+                    <height>64</height>
+                   </size>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="autoExclusive">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QPushButton" name="setDendograma">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../../../../../Imágenes/Iconos Hu8go 1/34.ico</normaloff>../../../../../Imágenes/Iconos Hu8go 1/34.ico</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>64</width>
+                    <height>64</height>
+                   </size>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="autoExclusive">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="5">
+                 <widget class="QPushButton" name="setCirculos">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
                   </property>
                   <property name="iconSize">
                    <size>
