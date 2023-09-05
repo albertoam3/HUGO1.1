@@ -363,3 +363,10 @@ void myOpenGLWidget2D::drawCirculoAux(float modulo, bool activo) {
 
 }
 
+void myOpenGLWidget2D::setPosDendrita(VarPosDendritas vpd) {
+    for (auto &i: neuronGraphic) {
+        i->setVarPosDend(vpd);
+    }
+    update();
+}
+

@@ -24,6 +24,7 @@ public:
     dendriteG(nsol::Dendrite* _dend);
     void putColor();
     void setTDendriteType(TDendriteType den);
+    
 private:
     TDendriteType _dendriteType;
 };

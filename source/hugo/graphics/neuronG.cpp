@@ -38,12 +38,15 @@ neuronG::neuronG(nsol::Neuron *_neu){
     esquema=0;
     neuritesGros=0;
     neuritesTam=0;
+    varPosDend=VarPosDendritas::Normal;
+
   
 
 	tamNeurite();
     grosorNeurite();
 	calculateMaxMinNodosTerminales();
 	calculateMaxMinLongitud();
+
 
     tamMaxSeccion();
     tamMaxP1P2Seccion();
@@ -68,7 +71,10 @@ void neuronG::draw(QOpenGLWidget* windowPaint, bool dim){
 }
 
 void neuronG::draw2D(QOpenGLWidget* windowPaint){
-	
+    if(varPosDend==VarPosDendritas::Tamano)
+        std::sort(dends.begin(), dends.end(), compararTamDend);
+    else if(varPosDend==VarPosDendritas::Grosor)
+        std::sort(dends.begin(), dends.end(), compararGrosorDend);
      for(auto & dend : dends){
 				
                 dend.setNeuritesTam(neuritesTam);
@@ -261,7 +267,13 @@ void neuronG::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
 
     float radio=som->getRadio();
     float i=0;
+    std::vector<dendriteG>::iterator it;
+  //  it=dends.begin();
+/*
+    while(it != dends.end()){
 
+    }
+*/
     i+=ax[0]->getTerminalNodes();
     ax[0]->setDisplacements(displacementX, displacementY);
     ax[0]->setAngle(i / angleTam() * 2 * pi);
@@ -420,6 +432,26 @@ void neuronG::tamMaxP1P2Seccion() {
         item.setMaxPuntoAPuntoSeccion(max);
         item.setMinPuntoAPuntoSeccion(min);
     }
+}
+
+VarPosDendritas neuronG::getVarPosDend() const {
+    return varPosDend;
+}
+
+void neuronG::setVarPosDend(VarPosDendritas varPosDend) {
+    neuronG::varPosDend = varPosDend;
+}
+
+bool neuronG::compararTamDend(const dendriteG& d1,const dendriteG& d2) {
+    return d1.getTamm()<d2.getTamm();
+}
+
+bool neuronG::compararGrosorDend(const dendriteG &d1, const dendriteG &d2) {
+    return d1.getGrosor()<d2.getGrosor();
+}
+
+bool neuronG::compararNodosDend(const dendriteG &d1, const dendriteG &d2) {
+    return false;
 }
 
 

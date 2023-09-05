@@ -28,6 +28,7 @@
 #include "graphics/axonG.h"
 #include "graphics/dendriteG.h"
 #include "baseDatosObjetos.h"
+#include "graphics/VarPosDendritas.h"
 
 #include <nsol/nsol.h>
 
@@ -60,6 +61,7 @@ private:
 
     QString path;
 
+
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -91,6 +93,12 @@ public Q_SLOTS:
     void set_tree();
     void set_esq();
     void validarTam();
+
+    void set_dend_ord_normal();
+    void set_dend_ord_tam();
+    void set_dend_ord_grosor();
+    void set_dend_ord_nodos();
+
     
 private slots:
     void onIgualAngClicked();

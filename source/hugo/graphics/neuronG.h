@@ -13,6 +13,7 @@
 #include "axonG.h"
 #include "dendriteG.h"
 #include "sectionH.h"
+#include "VarPosDendritas.h"
 
 #include "vector"
 #include "cmath"
@@ -24,6 +25,8 @@ private:
     somaG* som;
     std::vector<dendriteG> dends;
     float tamMaxNeurite;
+    VarPosDendritas varPosDend;
+
 
     
 public:
@@ -68,10 +71,17 @@ public:
 	void calculateMaxMinLongitud();
 	void selectSection(QOpenGLWidget* windowPaint,float x,float y);
 
+    VarPosDendritas getVarPosDend() const;
+
+    void setVarPosDend(VarPosDendritas varPosDend);
 
 private:
     void tamMaxSeccion();
     void tamMaxP1P2Seccion();
+
+    static bool compararTamDend(const dendriteG& d1,const dendriteG& d2);
+    static bool compararNodosDend(const dendriteG& d1,const dendriteG& d2);
+    static bool compararGrosorDend(const dendriteG& d1,const dendriteG& d2);
 	
 };
 

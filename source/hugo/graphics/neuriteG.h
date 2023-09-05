@@ -22,7 +22,6 @@ private:
     float terminalNodes;
     float angle{};
     float angleGap;
-
     sectionH* firstSection;
     float tam;
     float tamMult{};
@@ -40,6 +39,8 @@ private:
 
     float *maxPuntoAPuntoSeccion;
     float *minPuntoAPuntoSeccion;
+
+    float gr;
 
 protected:
     Eigen::Vector3f color;
@@ -123,6 +124,9 @@ con un desplazamiento de X y otro desplazamiento de Y*/
     float *getMinPuntoAPuntoSeccion() const;
 
     void setMinPuntoAPuntoSeccion(float minPuntoAPuntoSeccion);
+
+    float getTamm() const;
+    float getGrosor() const;
 
 protected:
     virtual void putColor()=0 ;

@@ -28,7 +28,7 @@ neuriteG::neuriteG(nsol::Neurite* _neurite){
 
     tam=getTamTotal()/100;
     getDistacia_A_B(maxPuntoAPuntoSeccion, minPuntoAPuntoSeccion);
-
+    gr=grosorTotal();
 
 }
 void neuriteG::draw(QOpenGLWidget* windowPaint){
@@ -548,4 +548,12 @@ float neuriteG::distanciaEntreRegistros(Eigen::Vector3f r1, Eigen::Vector3f r2){
                       std::pow(r1[1] - r2[1]/100, 2) +
                       std::pow(r1[2] - r2[2]/100, 2));
 
+}
+
+float neuriteG::getTamm() const {
+    return tam;
+}
+
+float neuriteG::getGrosor() const {
+    return gr;
 }

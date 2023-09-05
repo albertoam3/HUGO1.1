@@ -48,6 +48,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->igualGrosor->setChecked(true);
     ui->setNada->setChecked(true);
     ui->igual_ang->setChecked(true);
+    ui->dendritas_ord_normal->setChecked(true);
+
 
     ui->setDendograma->setIcon(QIcon(":/imagenes/Diapositiva34.PNG"));
     ui->setDendograma->setToolTip("Dendograma");
@@ -64,6 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->save->setIcon(QIcon(":/imagenes/Diapositiva0.PNG"));
 
     ui->loadButton->setToolTip("Carga de ruta de ficheros .SWC");
+
 
 }
 
@@ -89,6 +92,12 @@ void MainWindow::connectButtons() {
     QObject::connect(ui->terminales_ang,SIGNAL(clicked()),this,SLOT(onTerminalesAngClicked()));
 
     QObject::connect(ui->setCirculos,SIGNAL(clicked()),this,SLOT(setCirculos()));
+
+    //ordenacion dendritras
+    QObject::connect(ui->dendritas_ord_normal,SIGNAL(clicked()),this,SLOT(set_dend_ord_normal()));
+    QObject::connect(ui->dendritas_ord_tam,SIGNAL(clicked()),this,SLOT(set_dend_ord_tam()));
+    QObject::connect(ui->dendritas_ord_nodos,SIGNAL(clicked()),this,SLOT(set_dend_ord_grosor()));
+    QObject::connect(ui->dendritas_ord_volumen,SIGNAL(clicked()),this,SLOT(set_dend_ord_nodos()));
 
 
     
@@ -445,6 +454,22 @@ void MainWindow::setCirculos() {
        openGLWidget2d->setEsquema(false);
 
    }
+}
+
+void MainWindow::set_dend_ord_normal() {
+    openGLWidget2d->setPosDendrita(VarPosDendritas::Normal);
+}
+
+void MainWindow::set_dend_ord_tam() {
+    openGLWidget2d->setPosDendrita(VarPosDendritas::Tamano);
+}
+
+void MainWindow::set_dend_ord_grosor() {
+    openGLWidget2d->setPosDendrita(VarPosDendritas::Grosor);
+}
+
+void MainWindow::set_dend_ord_nodos() {
+    openGLWidget2d->setPosDendrita(VarPosDendritas::Nodos);
 }
 
 

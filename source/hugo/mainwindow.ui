@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -254,6 +257,74 @@
                      </widget>
                     </item>
                    </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="groupBox_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>45</height>
+                    </size>
+                   </property>
+                   <property name="title">
+                    <string>Orden de las dendritas</string>
+                   </property>
+                   <widget class="QRadioButton" name="dendritas_ord_normal">
+                    <property name="enabled">
+                     <bool>true</bool>
+                    </property>
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>20</y>
+                      <width>112</width>
+                      <height>23</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>Normal</string>
+                    </property>
+                   </widget>
+                   <widget class="QRadioButton" name="dendritas_ord_tam">
+                    <property name="geometry">
+                     <rect>
+                      <x>100</x>
+                      <y>20</y>
+                      <width>112</width>
+                      <height>23</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>Tamaño</string>
+                    </property>
+                   </widget>
+                   <widget class="QRadioButton" name="dendritas_ord_nodos">
+                    <property name="geometry">
+                     <rect>
+                      <x>200</x>
+                      <y>20</y>
+                      <width>112</width>
+                      <height>23</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>Nodos</string>
+                    </property>
+                   </widget>
+                   <widget class="QRadioButton" name="dendritas_ord_volumen">
+                    <property name="geometry">
+                     <rect>
+                      <x>300</x>
+                      <y>20</y>
+                      <width>112</width>
+                      <height>23</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>Volumen</string>
+                    </property>
+                   </widget>
                   </widget>
                  </item>
                  <item>

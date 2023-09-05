@@ -11,6 +11,7 @@
 #include "graphics/neuronG.h"
 #include <Eigen/Dense>
 #include "myOpenGLWidget.h"
+#include "graphics/VarPosDendritas.h"
 
 
 class myOpenGLWidget2D : public QOpenGLWidget, public QOpenGLFunctions
@@ -54,7 +55,7 @@ public:
 
   void saveOpenGLWidget2DToPNG(const QString &filename);
 
-
+  void setPosDendrita(VarPosDendritas vpd);
 
 protected:
     void paintGL() override;
