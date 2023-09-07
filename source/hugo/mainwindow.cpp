@@ -202,7 +202,7 @@ void MainWindow::loadData(const std::string& m_fileName, const std::string& arg2
         writeText();
         for (auto& neuronPair : neurons) {
             //Base antigua
-            base->add(new neuronG(neuronPair.second));  //AQUI ENTRA EL FALLO
+            base->add(new neuronG(neuronPair.second));
             //Casteo a QString para poder usar el Mapa
             QString castedFileName = QString::fromStdString(m_fileName);
             //Trunco para quedarme únicamente con el nombre del fichero c
@@ -246,7 +246,7 @@ void MainWindow::writeText(){
 
     QString text = "";
 
-    for (auto &neuronPair: neurons) {
+    for (auto& neuronPair : neurons) {
         auto gid = neuronPair.first;
         auto &neuron = neuronPair.second;
 
@@ -266,23 +266,14 @@ void MainWindow::writeText(){
 
 
         neuronData += "Soma Radius: " + std::to_string(soma->meanRadius()) + "\n";
-
-        std::cout << neuronData+"\n";
-
-        if (axon != nullptr) {
-            neuronData += "Axon Branch Number: " + std::to_string(axon->numBranches()) + "\n";
-        } else {
-            neuronData += "Axon Branch Number: NO AXON \n";
-        }
-
-        std::cout << neuronData+"\n";
-
+       
+        neuronData += "Axon Branch Number: " + std::to_string(axon->numBranches()) + "\n";
 
         for (auto &dendrite: *dendrites) {
-            neuronData += "Dendrite Branch Number: " + std::to_string(dendrite->numBranches()) + "\n";
+           neuronData += "Dendrite Branch Number: " + std::to_string(dendrite->numBranches()) + "\n";
         }
-    }
 
+    }
     std::cout << "Objetos actuales en el mapa:" << mapaBase->size() << "\n";
     text = QString::fromStdString(neuronData);
 

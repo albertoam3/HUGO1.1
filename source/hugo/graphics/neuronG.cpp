@@ -7,10 +7,8 @@ const float pi = 3.14159265359;
 
 neuronG::neuronG(nsol::Neuron *_neu){
     neu=_neu;
-    if(!ax.empty()){
-        ax.push_back(new axonG(neu->morphology()->axon()));
-        tamMaxNeurite=ax[0]->getTam();
-    }
+    ax.push_back(new axonG(neu->morphology()->axon()));
+    tamMaxNeurite=ax[0]->getTam();
     
     som=new somaG(neu->morphology()->soma());
     const auto &den=neu->morphology()->dendrites();
