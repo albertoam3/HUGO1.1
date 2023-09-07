@@ -7,8 +7,11 @@ const float pi = 3.14159265359;
 
 neuronG::neuronG(nsol::Neuron *_neu){
     neu=_neu;
-    ax.push_back(new axonG(neu->morphology()->axon()));
-    tamMaxNeurite=ax[0]->getTam();
+    if(neu->morphology()->axon()!= nullptr) {
+        std::cout<<"entro aqui\n";
+        ax.push_back(new axonG(neu->morphology()->axon()));
+        tamMaxNeurite = ax[0]->getTam();
+    }
     
     som=new somaG(neu->morphology()->soma());
     const auto &den=neu->morphology()->dendrites();
@@ -23,7 +26,6 @@ neuronG::neuronG(nsol::Neuron *_neu){
     		
     		
     }
-
     selected=false;
     displacementX=0;
     displacementY=0;
@@ -40,20 +42,13 @@ neuronG::neuronG(nsol::Neuron *_neu){
     neuritesTam=0;
     varPosDend=VarPosDendritas::Normal;
 
-  
-
 	tamNeurite();
     grosorNeurite();
 	calculateMaxMinNodosTerminales();
 	calculateMaxMinLongitud();
 
-
     tamMaxSeccion();
     tamMaxP1P2Seccion();
-
-
-
-
 
 }
 void neuronG::draw(QOpenGLWidget* windowPaint){
@@ -75,6 +70,8 @@ void neuronG::draw2D(QOpenGLWidget* windowPaint){
         std::sort(dends.begin(), dends.end(), compararTamDend);
     else if(varPosDend==VarPosDendritas::Grosor)
         std::sort(dends.begin(), dends.end(), compararGrosorDend);
+    else if(varPosDend==VarPosDendritas::Nodos)
+        std::sort(dends.begin(), dends.end(), compararNodosDend);
      for(auto & dend : dends){
 				
                 dend.setNeuritesTam(neuritesTam);
@@ -86,17 +83,16 @@ void neuronG::draw2D(QOpenGLWidget* windowPaint){
                 dend.setCircle(circle);
                 
      }
-     ax[0]->setNeuritesTam(neuritesTam);
-     ax[0]->setNeuritesGrosor(neuritesGros);
-     ax[0]->setDisplacements(displacementX,displacementY);
-     ax[0]->setTree(tree);
-
-     ax[0]->setDendograma(dendograma);
-
-     ax[0]->setEsquema(esquema);
-     ax[0]->setCircle(circle);
-
-	 (angleXTam == false) ? auxDrawAngleEqual(windowPaint) : auxDrawAngleTam(windowPaint);
+    for(auto  axi : ax) {
+        axi->setNeuritesTam(neuritesTam);
+        axi->setNeuritesGrosor(neuritesGros);
+        axi->setDisplacements(displacementX, displacementY);
+        axi->setTree(tree);
+        axi->setDendograma(dendograma);
+        axi->setEsquema(esquema);
+        axi->setCircle(circle);
+    }
+	    (angleXTam == false) ? auxDrawAngleEqual(windowPaint) : auxDrawAngleTam(windowPaint);
 	
 
      som->setDisplacements(displacementX, displacementY);
@@ -109,9 +105,11 @@ void neuronG::draw2D(QOpenGLWidget* windowPaint){
             if(dend.isSelected())
                 dend.drawSelc(windowPaint);
         }
-        if (ax[0]->isSelected())
-            ax[0]->drawSelc(windowPaint);
-        else if (som->isSelected())
+         for(auto  axi : ax) {
+             if (axi->isSelected())
+                 axi->drawSelc(windowPaint);
+         }
+         if (som->isSelected())
             som->drawSelc(windowPaint);
 
      }
@@ -145,7 +143,9 @@ void neuronG::draw3D(QOpenGLWidget* windowPaint){
             }
             d.draw3d(x,y,z);
         }
-        ax[0]->draw3d(0.5,0.3,1.0);
+    for(auto  axi : ax) {
+        axi->draw3d(0.5, 0.3, 1.0);
+    }
         som->draw3d(0.4,0.9,0.1);
 }
 
@@ -187,10 +187,12 @@ bool neuronG::select(QOpenGLWidget* windowPaint, float x, float y, float z)  {
                 selected = true;
                 break;
             }
-        if ( !selected && ax[0]->select(windowPaint, x, y,z) ) {
-            selected = true;
+        for(auto  axi : ax) {
+            if (!selected && axi->select(windowPaint, x, y, z)) {
+                selected = true;
+            }
         }
-        else if (!selected && som->select(windowPaint, x, y,z)) {
+        if (!selected && som->select(windowPaint, x, y,z)) {
             selected = true;
         } 
     }
@@ -200,9 +202,11 @@ bool neuronG::select(QOpenGLWidget* windowPaint, float x, float y, float z)  {
                 selected = dend.select(windowPaint, x, y,z);
                 break;
             }
-        if (ax[0]->isSelected())
-            selected = ax[0]->select(windowPaint, x, y,z);
-        else if (som->isSelected())
+        for(auto  axi : ax) {
+            if (axi->isSelected())
+                selected = axi->select(windowPaint, x, y, z);
+        }
+         if (som->isSelected())
             selected = som->select(windowPaint, x, y,z);
 
     }
@@ -211,7 +215,9 @@ bool neuronG::select(QOpenGLWidget* windowPaint, float x, float y, float z)  {
 
 bool neuronG::resetSelect() {
     selected=false;
-    ax[0]->resetSelect();
+    for(auto  axi : ax) {
+        axi->resetSelect();
+    }
     som->resetSelect();
 
     for (int i = 0; i < dends.size(); i++) {
@@ -242,14 +248,16 @@ void neuronG::auxDrawAngleEqual(QOpenGLWidget* windowPaint) {
     float an= angleEqual();
     float aux=an;
     float radio=som->getRadio();
-    ax[0]->setDisplacements(displacementX, displacementY);
-    ax[0]->coordInitials(initX + radio * cos(an), initY + radio * sin(an));
-    ax[0]->setAngle(an);
-    ax[0]->setScala(scala);
-    ax[0]->setAngleHueco(aux);
-    ax[0]->draw(windowPaint);
+    for(auto  axi : ax) {
+        axi->setDisplacements(displacementX, displacementY);
+        axi->coordInitials(initX + radio * cos(an), initY + radio * sin(an));
+        axi->setAngle(an);
+        axi->setScala(scala);
+        axi->setAngleHueco(aux);
+        axi->draw(windowPaint);
 
-    an+=aux;
+        an += aux;
+    }
     for (auto & item : dends) {
         item.setDisplacements(displacementX, displacementY);
         item.coordInitials(initX + radio * cos(an), initY + radio * sin(an));
@@ -274,14 +282,16 @@ void neuronG::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
 
     }
 */
-    i+=ax[0]->getTerminalNodes();
-    ax[0]->setDisplacements(displacementX, displacementY);
-    ax[0]->setAngle(i / angleTam() * 2 * pi);
-    ax[0]->coordInitials(initX + radio * cos(i / angleTam() * 2 * pi), initY + radio * sin(i / angleTam() * 2 * pi));
-    ax[0]->setAngleHueco(i / angleTam() * 2 * pi - angle_anterior);
-    angle_anterior= i / angleTam() * 2 * pi;
-    ax[0]->draw(windowPaint);
-
+    for(auto  axi : ax) {
+        i += axi->getTerminalNodes();
+        axi->setDisplacements(displacementX, displacementY);
+        axi->setAngle(i / angleTam() * 2 * pi);
+        axi->coordInitials(initX + radio * cos(i / angleTam() * 2 * pi),
+                             initY + radio * sin(i / angleTam() * 2 * pi));
+        axi->setAngleHueco(i / angleTam() * 2 * pi - angle_anterior);
+        angle_anterior = i / angleTam() * 2 * pi;
+        axi->draw(windowPaint);
+    }
     for(auto & item: dends){
         item.setDisplacements(displacementX,displacementY);
         i+=item.getTerminalNodes();
@@ -296,7 +306,9 @@ void neuronG::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
 }
 
 void neuronG::tamNeurite(){
-		ax[0]->setTamMult(2*(ax[0]->getTam() / tamMaxNeurite));
+    for(auto  axi : ax) {
+        axi->setTamMult(2 * (axi->getTam() / tamMaxNeurite));
+    }
 	  	for (auto & item : dends) {
         		item.setTamMult(2*(item.getTam() / tamMaxNeurite));
 	
@@ -304,7 +316,9 @@ void neuronG::tamNeurite(){
 	
 }
 void neuronG::grosorNeurite(){
-		ax[0]->setGrosor(ax[0]->grosorTotal()/100);	
+    for(auto  axi : ax) {
+        axi->setGrosor(axi->grosorTotal() / 100);
+    }
 	  	for (auto & item : dends) {
         		item.setGrosor(item.grosorTotal()/100);
 	
@@ -325,17 +339,21 @@ void neuronG::displacementN(float x, float y, float z){
 
 
 void neuronG::setNeuritesVariableGrosor(float a){
-		ax[0]->setVariableGrosor(a);	
-	  	for (auto & item : dends) {
-        		item.setVariableGrosor(a);
-        	}
+    for(auto  axi : ax) {
+        axi->setVariableGrosor(a);
+    }
+    for (auto & item : dends) {
+        item.setVariableGrosor(a);
+    }
 }
 
 
 
 
 void neuronG::setNeuritesVariableTam(float a){
-    ax[0]->setVariableTam(a);
+    for(auto  axi : ax) {
+        axi->setVariableTam(a);
+    }
     for (auto & item : dends) {
         item.setVariableTam(a);
     }
@@ -343,7 +361,10 @@ void neuronG::setNeuritesVariableTam(float a){
 
 
 void neuronG::calculateMaxMinNodosTerminales(){
-	int aux=ax[0]->getTerminalNodes();
+	int aux;
+    for(auto  axi : ax) {
+        aux = axi->getTerminalNodes();
+    }
 	int max=aux;
 	int min=aux;
 	
@@ -356,9 +377,10 @@ void neuronG::calculateMaxMinNodosTerminales(){
 					min=aux;
 			}
        }
-       
-       ax[0]->setMaxTerminalNodes(max);
-       ax[0]->setMinTerminalNodes(min);
+    for(auto  axi : ax) {
+        axi->setMaxTerminalNodes(max);
+        axi->setMinTerminalNodes(min);
+    }
        for (auto & item : dends) {
        		item.setMaxTerminalNodes(max);
        		item.setMinTerminalNodes(min);
@@ -366,7 +388,11 @@ void neuronG::calculateMaxMinNodosTerminales(){
 }
 
 void neuronG::calculateMaxMinLongitud(){
-	float aux=ax[0]->getTam();
+
+    float aux;
+    for(auto  axi : ax) {
+        aux = axi->getTam();
+    }
 	float max=aux;
 	float min=aux;
 	
@@ -379,9 +405,10 @@ void neuronG::calculateMaxMinLongitud(){
 					min=aux;
 			}
        }
-       
-       ax[0]->setMaxLongitud(max);
-       ax[0]->setMinLongitud(min);
+    for(auto  axi : ax) {
+        axi->setMaxLongitud(max);
+        axi->setMinLongitud(min);
+    }
        for (auto & item : dends) {
        		item.setMaxLongitud(max);
        		item.setMinLongitud(min);
@@ -389,7 +416,9 @@ void neuronG::calculateMaxMinLongitud(){
 }
 
 void neuronG::selectSection(QOpenGLWidget* windowPaint, float x, float y) {
-    ax[0]->selectSection(windowPaint,x,y);
+    for(auto  axi : ax) {
+        axi->selectSection(windowPaint, x, y);
+    }
     for (auto & item : dends) {
         item.selectSection(windowPaint,x,y);
     }
@@ -397,17 +426,20 @@ void neuronG::selectSection(QOpenGLWidget* windowPaint, float x, float y) {
 
 void neuronG::tamMaxSeccion() {
     float max,min;
-    max=*ax[0]->getMaxTamSeccion();
-    min=*ax[0]->getMinTamSeccion();
+    for(auto  axi : ax) {
+        max = *axi->getMaxTamSeccion();
+        min = *axi->getMinTamSeccion();
+    }
     for (auto & item : dends) {
         if(max<*item.getMaxTamSeccion())
             max=*item.getMaxTamSeccion();
         if(min>*item.getMinTamSeccion())
             min=*item.getMinTamSeccion();
     }
-
-    ax[0]->setMaxTamSeccion(max);
-    ax[0]->setMinTamSeccion(min);
+    for(auto  axi : ax) {
+        axi->setMaxTamSeccion(max);
+        axi->setMinTamSeccion(min);
+    }
     for (auto & item : dends) {
         item.setMaxTamSeccion(max);
         item.setMinTamSeccion(min);
@@ -417,17 +449,20 @@ void neuronG::tamMaxSeccion() {
 
 void neuronG::tamMaxP1P2Seccion() {
     float max,min;
-    max=*ax[0]->getMaxPuntoAPuntoSeccion();
-    min=*ax[0]->getMinPuntoAPuntoSeccion();
+    for(auto  axi : ax) {
+        max = *axi->getMaxPuntoAPuntoSeccion();
+        min = *axi->getMinPuntoAPuntoSeccion();
+    }
     for (auto & item : dends) {
         if(max<*item.getMaxPuntoAPuntoSeccion())
             max=*item.getMaxPuntoAPuntoSeccion();
         if(min>*item.getMinPuntoAPuntoSeccion())
             min=*item.getMinPuntoAPuntoSeccion();
     }
-
-    ax[0]->setMaxPuntoAPuntoSeccion(max);
-    ax[0]->setMinPuntoAPuntoSeccion(min);
+    for(auto  axi : ax) {
+        axi->setMaxPuntoAPuntoSeccion(max);
+        axi->setMinPuntoAPuntoSeccion(min);
+    }
     for (auto & item : dends) {
         item.setMaxPuntoAPuntoSeccion(max);
         item.setMinPuntoAPuntoSeccion(min);
@@ -451,7 +486,7 @@ bool neuronG::compararGrosorDend(const dendriteG &d1, const dendriteG &d2) {
 }
 
 bool neuronG::compararNodosDend(const dendriteG &d1, const dendriteG &d2) {
-    return false;
+    return d1.getTerminalNodes()<d2.getTerminalNodes();
 }
 
 
