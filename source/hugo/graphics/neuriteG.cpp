@@ -557,3 +557,4 @@ float neuriteG::getTamm() const {
 float neuriteG::getGrosor() const {
     return gr;
 }
+

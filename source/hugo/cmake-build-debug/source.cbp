@@ -152,10 +152,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.cpp">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/baseDatosObjetos.cpp">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/base_datos_objetos.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/baseDatosObjetos.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/EWIEGA46WW/qrc_resources.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/EWIEGA46WW/qrc_resources.cpp.rule">
 			<Option target="hugo"/>
 		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/include/ui_mainwindow.h">
@@ -164,37 +170,40 @@
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-debug/hugo_autogen/mocs_compilation.cpp">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableEstado.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VarEstado.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VariableLongitud.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VarLongitud.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.cpp">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/VarPosDendritas.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axon_g.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axonG.cpp">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.cpp">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/axonG.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendrite_g.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendriteG.cpp">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphic_objects.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/dendriteG.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.cpp">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/graphicObjects.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neurite_g.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuriteG.cpp">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.cpp">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuriteG.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuron_g.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuronG.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/neuronG.h">
 			<Option target="hugo"/>
 		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.cpp">
@@ -203,10 +212,10 @@
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/sectionH.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/soma_g.cpp">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/somaG.cpp">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/soma_g.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/graphics/somaG.h">
 			<Option target="hugo"/>
 		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/hugo.cpp">
@@ -221,19 +230,25 @@
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/mainwindow.ui">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.cpp">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myOpenGLWidget.cpp">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myOpenGLWidget.h">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.cpp">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myOpenGLWidget2D.cpp">
 			<Option target="hugo"/>
 		</Unit>
-		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myopenglwidget2d.h">
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myOpenGLWidget2D.h">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/resources.qrc">
 			<Option target="hugo"/>
 		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/resources.qrc">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake">

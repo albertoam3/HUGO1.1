@@ -96,8 +96,8 @@ void MainWindow::connectButtons() {
     //ordenacion dendritras
     QObject::connect(ui->dendritas_ord_normal,SIGNAL(clicked()),this,SLOT(set_dend_ord_normal()));
     QObject::connect(ui->dendritas_ord_tam,SIGNAL(clicked()),this,SLOT(set_dend_ord_tam()));
-    QObject::connect(ui->dendritas_ord_nodos,SIGNAL(clicked()),this,SLOT(set_dend_ord_grosor()));
-    QObject::connect(ui->dendritas_ord_volumen,SIGNAL(clicked()),this,SLOT(set_dend_ord_nodos()));
+    QObject::connect(ui->dendritas_ord_nodos,SIGNAL(clicked()),this,SLOT(set_dend_ord_nodos()));
+    QObject::connect(ui->dendritas_ord_volumen,SIGNAL(clicked()),this,SLOT(set_dend_ord_grosor()));
 
 
     
