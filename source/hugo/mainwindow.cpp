@@ -266,7 +266,7 @@ void MainWindow::writeText(){
 
 
         neuronData += "Soma Radius: " + std::to_string(soma->meanRadius()) + "\n";
-       
+       if(axon!= nullptr)
         neuronData += "Axon Branch Number: " + std::to_string(axon->numBranches()) + "\n";
 
         for (auto &dendrite: *dendrites) {
