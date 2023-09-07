@@ -278,7 +278,7 @@ void MainWindow::writeText(){
     text = QString::fromStdString(neuronData);
 
     textEdit->setText(text);
-
+    //ok
 }
 
 void MainWindow::openSWCFile( const std::string& fileName )
