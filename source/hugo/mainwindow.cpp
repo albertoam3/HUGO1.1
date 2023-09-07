@@ -205,7 +205,7 @@ void MainWindow::loadData(const std::string& m_fileName, const std::string& arg2
             base->add(new neuronG(neuronPair.second));  //AQUI ENTRA EL FALLO
             //Casteo a QString para poder usar el Mapa
             QString castedFileName = QString::fromStdString(m_fileName);
-            //Trunco para quedarme únicamente con el nombre del fichero
+            //Trunco para quedarme únicamente con el nombre del fichero c
 
             int lastSlashIndex = castedFileName.lastIndexOf('/');
             QString fileName = castedFileName.remove(0, lastSlashIndex + 1);
