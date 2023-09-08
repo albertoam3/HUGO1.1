@@ -8,7 +8,6 @@ const float pi = 3.14159265359;
 neuronG::neuronG(nsol::Neuron *_neu){
     neu=_neu;
     if(neu->morphology()->axon()!= nullptr) {
-        std::cout<<"entro aqui\n";
         ax.push_back(new axonG(neu->morphology()->axon()));
         tamMaxNeurite = ax[0]->getTam();
     }
@@ -124,7 +123,6 @@ void neuronG::draw3D(QOpenGLWidget* windowPaint){
     	for(nsol::Node* n: neu->morphology()->soma()->nodes()){
     		glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
     	}
-
         for(dendriteG d: dends){
             i++;
             if(i%1==0){
@@ -146,7 +144,8 @@ void neuronG::draw3D(QOpenGLWidget* windowPaint){
     for(auto  axi : ax) {
         axi->draw3d(0.5, 0.3, 1.0);
     }
-        som->draw3d(0.4,0.9,0.1);
+
+    som->draw3d(0.4,0.9,0.1);
 }
 
 void neuronG::drawSelc(QOpenGLWidget* windowPaint){
@@ -248,59 +247,89 @@ void neuronG::auxDrawAngleEqual(QOpenGLWidget* windowPaint) {
     float an= angleEqual();
     float aux=an;
     float radio=som->getRadio();
-    for(auto  axi : ax) {
-        axi->setDisplacements(displacementX, displacementY);
-        axi->coordInitials(initX + radio * cos(an), initY + radio * sin(an));
-        axi->setAngle(an);
-        axi->setScala(scala);
-        axi->setAngleHueco(aux);
-        axi->draw(windowPaint);
+    std::vector<dendriteG>::iterator it;
+    it=dends.begin();
+    bool axa=false;
+    while(it != dends.end()){
+        if(!axa && !ax.empty() && ((varPosDend==VarPosDendritas::Grosor && ax[0]->getGrosor()<it->getGrosor())
+                                   || (varPosDend==VarPosDendritas::Nodos && ax[0]->getTerminalNodes()< it->getTerminalNodes()) ||
+                                   (varPosDend==VarPosDendritas::Tamano && ax[0]->getTamm()< it->getTamm()))){
+            ax[0]->setDisplacements(displacementX, displacementY);
+            ax[0]->coordInitials(initX + radio * cos(an), initY + radio * sin(an));
+            ax[0]->setAngle(an);
+            ax[0]->setScala(scala);
+            ax[0]->setAngleHueco(aux);
+            ax[0]->draw(windowPaint);
 
-        an += aux;
+            an += aux;
+            axa=true;
+        }
+
+        else{
+            it->setDisplacements(displacementX, displacementY);
+            it->coordInitials(initX + radio * cos(an), initY + radio * sin(an));
+            it->setScala(scala);
+            it->setAngle(an);
+            it->setAngleHueco(aux);
+            it->draw(windowPaint);
+            an+=aux;
+            ++it;
+        }
     }
-    for (auto & item : dends) {
-        item.setDisplacements(displacementX, displacementY);
-        item.coordInitials(initX + radio * cos(an), initY + radio * sin(an));
-        item.setScala(scala);
-        item.setAngle(an);
-        item.setAngleHueco(aux);
-        item.draw(windowPaint);
-        an+=aux;
+    if(!axa && !ax.empty()){
+        ax[0]->setDisplacements(displacementX, displacementY);
+        ax[0]->coordInitials(initX + radio * cos(an), initY + radio * sin(an));
+        ax[0]->setAngle(an);
+        ax[0]->setScala(scala);
+        ax[0]->setAngleHueco(aux);
+        ax[0]->draw(windowPaint);
     }
 
 }
 void neuronG::auxDrawAngleTam(QOpenGLWidget *windowPaint) {
     float angle_anterior=0;
-
-
     float radio=som->getRadio();
     float i=0;
     std::vector<dendriteG>::iterator it;
-  //  it=dends.begin();
-/*
+   it=dends.begin();
+    bool axa=false;
     while(it != dends.end()){
+        if(!axa && !ax.empty() && ((varPosDend==VarPosDendritas::Grosor && ax[0]->getGrosor()<it->getGrosor())
+        || (varPosDend==VarPosDendritas::Nodos && ax[0]->getTerminalNodes()< it->getTerminalNodes()) ||
+        (varPosDend==VarPosDendritas::Tamano && ax[0]->getTamm()< it->getTamm()))){
+            i += ax[0]->getTerminalNodes();
+            ax[0]->setDisplacements(displacementX, displacementY);
+            ax[0]->setAngle(i / angleTam() * 2 * pi);
+            ax[0]->coordInitials(initX + radio * cos(i / angleTam() * 2 * pi),
+                                 initY + radio * sin(i / angleTam() * 2 * pi));
+            ax[0]->setAngleHueco(i / angleTam() * 2 * pi - angle_anterior);
+            angle_anterior = i / angleTam() * 2 * pi;
+            ax[0]->draw(windowPaint);
+            axa=true;
+        }
 
+        else{
+            it->setDisplacements(displacementX,displacementY);
+            i+=it->getTerminalNodes();
+            it->setAngle(i / angleTam() * 2 * pi);
+            it->coordInitials(initX + radio * cos(i / angleTam() * 2 * pi), initY + radio * sin(i / angleTam() * 2 * pi));
+            it->setScala(scala);
+            it->setAngleHueco(i / angleTam() * 2 * pi - angle_anterior);
+            angle_anterior= i / angleTam() * 2 * pi;
+            it->draw(windowPaint);
+            ++it;
+        }
     }
-*/
-    for(auto  axi : ax) {
-        i += axi->getTerminalNodes();
-        axi->setDisplacements(displacementX, displacementY);
-        axi->setAngle(i / angleTam() * 2 * pi);
-        axi->coordInitials(initX + radio * cos(i / angleTam() * 2 * pi),
+    if(!axa && !ax.empty()){
+        i += ax[0]->getTerminalNodes();
+        ax[0]->setDisplacements(displacementX, displacementY);
+        ax[0]->setAngle(i / angleTam() * 2 * pi);
+        ax[0]->coordInitials(initX + radio * cos(i / angleTam() * 2 * pi),
                              initY + radio * sin(i / angleTam() * 2 * pi));
-        axi->setAngleHueco(i / angleTam() * 2 * pi - angle_anterior);
+        ax[0]->setAngleHueco(i / angleTam() * 2 * pi - angle_anterior);
         angle_anterior = i / angleTam() * 2 * pi;
-        axi->draw(windowPaint);
-    }
-    for(auto & item: dends){
-        item.setDisplacements(displacementX,displacementY);
-        i+=item.getTerminalNodes();
-        item.setAngle(i / angleTam() * 2 * pi);
-        item.coordInitials(initX + radio * cos(i / angleTam() * 2 * pi), initY + radio * sin(i / angleTam() * 2 * pi));
-        item.setScala(scala);
-        item.setAngleHueco(i / angleTam() * 2 * pi - angle_anterior);
-        angle_anterior= i / angleTam() * 2 * pi;
-        item.draw(windowPaint);
+        ax[0]->draw(windowPaint);
+
     }
 
 }
