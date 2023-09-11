@@ -29,6 +29,7 @@
 #include "graphics/dendriteG.h"
 #include "baseDatosObjetos.h"
 #include "graphics/VarPosDendritas.h"
+#include "openGLDialog.h"
 
 #include <nsol/nsol.h>
 
@@ -106,7 +107,8 @@ private slots:
     void onTerminalesAngClicked();
 
     void setCirculos();
-    
+    void create_graphic();
+
 
 private:
     Ui::MainWindow *ui;

@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1126</width>
-    <height>949</height>
+    <width>1066</width>
+    <height>1000</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -24,28 +24,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
-     <widget class="myOpenGLWidget2D" name="openGLWidget2D" native="true">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>6000</width>
-        <height>4000</height>
-       </size>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="1">
      <widget class="QFrame" name="frame">
       <property name="sizePolicy">
@@ -203,7 +181,7 @@
                 </sizepolicy>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="tab_2">
                 <attribute name="title">
@@ -353,6 +331,13 @@
                  <string>Herramientas</string>
                 </attribute>
                 <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <item>
+                  <widget class="QPushButton" name="grafica_sol">
+                   <property name="text">
+                    <string>Gráfica sol</string>
+                   </property>
+                  </widget>
+                 </item>
                  <item>
                   <widget class="QComboBox" name="elemC"/>
                  </item>
@@ -559,6 +544,28 @@
       </layout>
      </widget>
     </item>
+    <item row="0" column="0">
+     <widget class="myOpenGLWidget2D" name="openGLWidget2D" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>6000</width>
+        <height>4000</height>
+       </size>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -566,7 +573,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1126</width>
+     <width>1066</width>
      <height>22</height>
     </rect>
    </property>

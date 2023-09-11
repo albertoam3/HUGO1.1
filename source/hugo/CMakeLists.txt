@@ -56,6 +56,8 @@ add_executable(hugo
           graphics/sectionH.cpp
         baseDatosObjetos.cpp
         baseDatosObjetos.h graphics/VarEstado.h graphics/VarLongitud.h
-        graphics/VarPosDendritas.h)
+        graphics/VarPosDendritas.h
+        openGLDialog.cpp
+        openGLDialog.h)
 
 target_link_libraries(hugo ${HUGO_DEPENDENT_LIBRARIES})

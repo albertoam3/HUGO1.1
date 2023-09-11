@@ -99,8 +99,8 @@ void MainWindow::connectButtons() {
     QObject::connect(ui->dendritas_ord_nodos,SIGNAL(clicked()),this,SLOT(set_dend_ord_nodos()));
     QObject::connect(ui->dendritas_ord_volumen,SIGNAL(clicked()),this,SLOT(set_dend_ord_grosor()));
 
+    QObject::connect(ui->grafica_sol,SIGNAL(clicked()),this,SLOT(create_graphic()));
 
-    
     
 
 }
@@ -470,6 +470,22 @@ void MainWindow::set_dend_ord_grosor() {
 
 void MainWindow::set_dend_ord_nodos() {
     openGLWidget2d->setPosDendrita(VarPosDendritas::Nodos);
+}
+
+void MainWindow::create_graphic() {
+    QDialog dialog(this);
+    dialog.setWindowTitle("Ventana Emergente");
+    dialog.setGeometry(300, 300, 500, 500);
+
+    openGLDialog* glWidget = new openGLDialog(&dialog);
+
+
+    QVBoxLayout* layout = new QVBoxLayout(&dialog);
+    glWidget->update();
+    layout->addWidget(glWidget);
+    dialog.setLayout(layout);
+
+    dialog.exec();
 }
 
 
