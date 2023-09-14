@@ -75,6 +75,9 @@ public:
 
     void setVarPosDend(VarPosDendritas varPosDend);
 
+    void cont_points_neu(int aux[9],float separador,float crecimiento);
+
+
 private:
     void tamMaxSeccion();
     void tamMaxP1P2Seccion();

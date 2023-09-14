@@ -57,6 +57,8 @@ public:
 
   void setPosDendrita(VarPosDendritas vpd);
 
+    const std::vector<neuronG *> &getNeuronGraphic() const;
+
 protected:
     void paintGL() override;
     void resizeGL(int w,int h) override;

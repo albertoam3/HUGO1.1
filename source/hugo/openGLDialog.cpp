@@ -2,6 +2,7 @@
 // Created by alberto on 11/09/23.
 //
 
+#include <iostream>
 #include "openGLDialog.h"
 
 void openGLDialog::paintGL() {
@@ -10,20 +11,52 @@ void openGLDialog::paintGL() {
     QFont font;
     font.setPixelSize(24); // Tamaño de fuente
     painter.setFont(font);
-    painter.drawLine(30, 450, 30,30 );
+    painter.drawLine(45, 450, 45,30 );
     painter.drawLine(20, 430, 430, 430);
+    int alto=0;
+    for(int i=0;i<9;i++){
+        if(alto<nodos_por_punto[i])
+            alto=nodos_por_punto[i];
 
-    painter.drawText(50, 450, "1");
-    painter.drawText(85, 450, "2");
-    painter.drawText(120, 450, "3");
-    painter.drawText(155, 450, "4");
-    painter.drawText(190, 450, "5");
-    painter.drawText(225, 450, "6");
-    painter.drawText(260, 450, "7");
-    painter.drawText(295, 450, "8");
-    painter.drawText(330, 450, "9");
-    painter.drawText(365, 450, "10");
-    painter.drawText(400, 450, "11");
+    }
+    float alto_aux=(alto/9 +1)*(9);
+
+    int a=55;
+    int b=420;
+    int c=45;
+    float pintar=0;
+    QBrush brush(Qt::blue); // Establece el color del pincel como rojo
+    painter.setBrush(brush);
+    for(int i=0;i<9;i++){
+        QString qstr = QString::number(i+1);
+        QString qstr2 = QString::number((alto/9 +1)*(i+1));
+
+        std::cout<<nodos_por_punto[i]<<"\n";
+
+        if(nodos_por_punto[i]!=0)
+            pintar=340*nodos_por_punto[i]/alto_aux;
+
+        painter.drawText(a, 450, qstr);
+        painter.drawText(3, b, qstr2);
+        a+=35;
+        b-=40;
+        c+=35;
+
+        if(nodos_por_punto[i]>alto/9) {
+            painter.drawRect(c, 430, 35, -pintar);
+        }
+        else if(nodos_por_punto[i]!=0){
+            painter.drawRect(c,430,35,- (20*nodos_por_punto[i]/(alto/9 +1)));
+        }
+        painter.drawRect(c,430,35,0);
+
+
+
+    }
+
+
+
+
 }
 
 
@@ -53,4 +86,10 @@ void openGLDialog::initializeGL() {
     glEnable(GL_MULTISAMPLE);
 
     QSurfaceFormat format = this->format();
+}
+
+void openGLDialog::anadir_nodos_por_punto(int aux[9]) {
+    for (int i=0;i<9;i++){
+        nodos_por_punto[i]=aux[i];
+    }
 }

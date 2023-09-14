@@ -518,6 +518,17 @@ bool neuronG::compararNodosDend(const dendriteG &d1, const dendriteG &d2) {
     return d1.getTerminalNodes()<d2.getTerminalNodes();
 }
 
+void neuronG::cont_points_neu(int *aux, float separador,float crecimiento) {
+    for(auto  axi : ax) {
+        axi->cont_points_neu(aux,separador,crecimiento);
+    }
+    for (auto & item : dends) {
+        item.cont_points_neu(aux,separador,crecimiento);
+
+    }
+
+}
+
 
 	
 

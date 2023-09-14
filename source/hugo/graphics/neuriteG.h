@@ -127,6 +127,7 @@ con un desplazamiento de X y otro desplazamiento de Y*/
 
     float getTamm() const;
     float getGrosor() const;
+    void cont_points_neu(int aux[9],float separador,float crecimiento);
 
 protected:
     virtual void putColor()=0 ;

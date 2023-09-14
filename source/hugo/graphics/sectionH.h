@@ -59,6 +59,8 @@ public:
 
     nsol::NeuronMorphologySection *getSec() const;
 
+    void cont_points_neu(int aux[9],float separador,float crecimiento);
+
 private:
     float distanciaEntreRegistros(nsol::Node* r1, nsol::Node* r2);
     float areaCono(nsol::Node* r1,nsol::Node* r2);

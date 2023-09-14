@@ -558,3 +558,7 @@ float neuriteG::getGrosor() const {
     return gr;
 }
 
+void neuriteG::cont_points_neu(int *aux, float separador,float crecimiento) {
+        firstSection->cont_points_neu(aux,separador,crecimiento);
+}
+

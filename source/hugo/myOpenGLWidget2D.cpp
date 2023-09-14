@@ -370,3 +370,7 @@ void myOpenGLWidget2D::setPosDendrita(VarPosDendritas vpd) {
     update();
 }
 
+const std::vector<neuronG *> &myOpenGLWidget2D::getNeuronGraphic() const {
+    return neuronGraphic;
+}
+

@@ -67,6 +67,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->loadButton->setToolTip("Carga de ruta de ficheros .SWC");
 
+    ui->grafica_sol->setEnabled(false);
+
 
 }
 
@@ -135,15 +137,6 @@ void MainWindow::save() {
     }
 }
 
-////Selecciono el objeto de la list que pinto y se lo mando a qopenGLWidget
-//void MainWindow::selecction() {
-//    int index = ui->list->currentIndex();
-//    if(index<base->getList().size()){
-//        _openGLWidget->setGraphicsObject(base->get(index));
-//        openGLWidget2d->setNeuronGraphic(base->get(index));
-//        elementosCargados->addItem(base->get(index)->getName());
-//    }
-//}
 
 //Selecciono el objeto de la list que pinto y se lo mando a qopenGLWidget
 void MainWindow::selecction() {
@@ -395,6 +388,7 @@ void MainWindow::set_dend() {
     openGLWidget2d->setEsquema(false);
     openGLWidget2d->setDrawCircle(false);
     _openGLWidget->setDrawCircle(false);
+    ui->grafica_sol->setEnabled(false);
 
 }
 
@@ -404,6 +398,7 @@ void MainWindow::set_nada(){
     openGLWidget2d->setEsquema(false);
     openGLWidget2d->setDrawCircle(false);
     _openGLWidget->setDrawCircle(false);
+    ui->grafica_sol->setEnabled(false);
 
 
 
@@ -415,6 +410,7 @@ void MainWindow::set_tree() {
     openGLWidget2d->setEsquema(false);
     openGLWidget2d->setDrawCircle(false);
     _openGLWidget->setDrawCircle(false);
+    ui->grafica_sol->setEnabled(false);
 }
 
 void MainWindow::set_esq() {
@@ -423,7 +419,21 @@ void MainWindow::set_esq() {
     openGLWidget2d->setEsquema(true);
     openGLWidget2d->setDrawCircle(false);
     _openGLWidget->setDrawCircle(false);
+    ui->grafica_sol->setEnabled(false);
 }
+
+void MainWindow::setCirculos() {
+    openGLWidget2d->setDrawCircle(ui->setCirculos->isChecked());
+    _openGLWidget->setDrawCircle(ui->setCirculos->isChecked());
+    ui->grafica_sol->setEnabled(true);
+    if(ui->setCirculos->isChecked()) {
+        openGLWidget2d->setDendograma(false);
+        openGLWidget2d->setTree(false);
+        openGLWidget2d->setEsquema(false);
+
+    }
+}
+
 
 void MainWindow::resetButtons() {
 
@@ -442,19 +452,14 @@ void MainWindow::resetButtons() {
     ui->terminales_ang->setChecked(false);
     ui->tamanoComboBox->setCurrentIndex(2);
     openGLWidget2d->setDrawCircle(false);
+    _openGLWidget->setDrawCircle(false);
+
+    ui->grafica_sol->setEnabled(false);
+
 
 }
 
-void MainWindow::setCirculos() {
-   openGLWidget2d->setDrawCircle(ui->setCirculos->isChecked());
-   _openGLWidget->setDrawCircle(ui->setCirculos->isChecked());
-   if(ui->setCirculos->isChecked()) {
-       openGLWidget2d->setDendograma(false);
-       openGLWidget2d->setTree(false);
-       openGLWidget2d->setEsquema(false);
 
-   }
-}
 
 void MainWindow::set_dend_ord_normal() {
     openGLWidget2d->setPosDendrita(VarPosDendritas::Normal);
@@ -474,17 +479,33 @@ void MainWindow::set_dend_ord_nodos() {
 
 void MainWindow::create_graphic() {
     QDialog dialog(this);
-    dialog.setWindowTitle("Ventana Emergente");
+    dialog.setWindowTitle("Histograma");
     dialog.setGeometry(300, 300, 500, 500);
+    if(!openGLWidget2d->getNeuronGraphic().empty()) {
 
-    openGLDialog* glWidget = new openGLDialog(&dialog);
+
+        neuronG *neu;
+
+        neu = openGLWidget2d->getNeuronGraphic()[0];
+        int* aux=new int[9];
+        for(int i=0;i<9;i++){
+            aux[i]=0;
+        }
+        neu->cont_points_neu(aux,0.2,0.8);
+
+        openGLDialog *glWidget = new openGLDialog(&dialog);
+        glWidget->anadir_nodos_por_punto(aux);
+
+        QVBoxLayout *layout = new QVBoxLayout(&dialog);
+        glWidget->update();
+        layout->addWidget(glWidget);
+        dialog.setLayout(layout);
 
 
-    QVBoxLayout* layout = new QVBoxLayout(&dialog);
-    glWidget->update();
-    layout->addWidget(glWidget);
-    dialog.setLayout(layout);
+    }else{
+        dialog.setWindowTitle("No esta activada esta opcion");
 
+    }
     dialog.exec();
 }
 

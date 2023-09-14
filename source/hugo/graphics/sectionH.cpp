@@ -524,3 +524,28 @@ float sectionH::distanciaEntreRegistrosV(Eigen::Vector3f r1, Eigen::Vector3f r2)
                       std::pow(r1[2] - r2[2]/100, 2));
 
 }
+
+void sectionH::cont_points_neu(int *aux, float separador,float crecimiento) {
+    Eigen::Vector3f na(0,0,0);
+    float valor= distanciaEntreRegistrosV(na,sec->firstNode()->point());
+    int i=0;
+    bool encontrado=false;
+    float sep=separador;
+    do{
+        if(valor<sep){
+            encontrado=true;
+            aux[i]=aux[i]+1;
+        }
+        sep+=crecimiento;
+        i++;
+    } while(i<8 && !encontrado);
+
+    if(!encontrado){
+        aux[8]=aux[8]+1;
+    }
+    if (sectionsHijas.size() == 2) {
+        sectionsHijas[0]->cont_points_neu(aux,separador,crecimiento);
+        sectionsHijas[1]->cont_points_neu(aux,separador,crecimiento);
+
+    }
+}
