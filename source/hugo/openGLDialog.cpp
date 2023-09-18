@@ -11,6 +11,7 @@ void openGLDialog::paintGL() {
     QFont font;
     font.setPixelSize(24); // Tamaño de fuente
     painter.setFont(font);
+
     painter.drawLine(45, 450, 45,30 );
     painter.drawLine(20, 430, 430, 430);
     int alto=0;
@@ -25,9 +26,12 @@ void openGLDialog::paintGL() {
     int b=420;
     int c=45;
     float pintar=0;
-    QBrush brush(Qt::blue); // Establece el color del pincel como rojo
+    QBrush brush(Qt::blue);
     painter.setBrush(brush);
+    QPen pen;
+
     for(int i=0;i<9;i++){
+
         QString qstr = QString::number(i+1);
         QString qstr2 = QString::number((alto/9 +1)*(i+1));
 
@@ -36,11 +40,14 @@ void openGLDialog::paintGL() {
         if(nodos_por_punto[i]!=0)
             pintar=340*nodos_por_punto[i]/alto_aux;
 
+        pen.setColor(Qt::white);
+        painter.setPen(pen);
+
         painter.drawText(a, 450, qstr);
         painter.drawText(3, b, qstr2);
-        a+=35;
-        b-=40;
-        c+=35;
+
+        pen.setColor(Qt::red);
+        painter.setPen(pen);
 
         if(nodos_por_punto[i]>alto/9) {
             painter.drawRect(c, 430, 35, -pintar);
@@ -48,8 +55,9 @@ void openGLDialog::paintGL() {
         else if(nodos_por_punto[i]!=0){
             painter.drawRect(c,430,35,- (20*nodos_por_punto[i]/(alto/9 +1)));
         }
-        painter.drawRect(c,430,35,0);
-
+        a+=35;
+        b-=40;
+        c+=35;
 
 
     }
