@@ -242,6 +242,12 @@
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/myOpenGLWidget2D.h">
 			<Option target="hugo"/>
 		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/openGLDialog.cpp">
+			<Option target="hugo"/>
+		</Unit>
+		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/openGLDialog.h">
+			<Option target="hugo"/>
+		</Unit>
 		<Unit filename="/home/alberto/CLionProjects/HUGO1.1/source/hugo/resources.qrc">
 			<Option target="hugo"/>
 		</Unit>

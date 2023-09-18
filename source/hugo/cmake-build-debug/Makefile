@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/249/bin/cmake/linux/x64/bin/cmake
+CMAKE_COMMAND = /snap/clion/250/bin/cmake/linux/x64/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/249/bin/cmake/linux/x64/bin/cmake -E rm -f
+RM = /snap/clion/250/bin/cmake/linux/x64/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/alberto/CLionProjects/HUGO1.1/source/hugo/cmake-build-d
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/249/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/250/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/249/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/250/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -454,6 +454,30 @@ myOpenGLWidget2D.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/myOpenGLWidget2D.cpp.s
 .PHONY : myOpenGLWidget2D.cpp.s
 
+openGLDialog.o: openGLDialog.cpp.o
+.PHONY : openGLDialog.o
+
+# target to build an object file
+openGLDialog.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/openGLDialog.cpp.o
+.PHONY : openGLDialog.cpp.o
+
+openGLDialog.i: openGLDialog.cpp.i
+.PHONY : openGLDialog.i
+
+# target to preprocess a source file
+openGLDialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/openGLDialog.cpp.i
+.PHONY : openGLDialog.cpp.i
+
+openGLDialog.s: openGLDialog.cpp.s
+.PHONY : openGLDialog.s
+
+# target to generate assembly for a file
+openGLDialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hugo.dir/build.make CMakeFiles/hugo.dir/openGLDialog.cpp.s
+.PHONY : openGLDialog.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -503,6 +527,9 @@ help:
 	@echo "... myOpenGLWidget2D.o"
 	@echo "... myOpenGLWidget2D.i"
 	@echo "... myOpenGLWidget2D.s"
+	@echo "... openGLDialog.o"
+	@echo "... openGLDialog.i"
+	@echo "... openGLDialog.s"
 .PHONY : help
 
 

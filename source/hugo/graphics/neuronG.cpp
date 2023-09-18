@@ -121,7 +121,7 @@ void neuronG::draw3D(QOpenGLWidget* windowPaint){
 	float z=0;
 	int i=0;
     	for(nsol::Node* n: neu->morphology()->soma()->nodes()){
-    		glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+    		glVertex3f(n->point()[0]/300,n->point()[1]/300,n->point()[2]/300);
     	}
         for(dendriteG d: dends){
             i++;

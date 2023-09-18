@@ -383,7 +383,7 @@ void sectionH::draw3d( float x, float y, float z) {
                 glPointSize(10.0);
                 glBegin(GL_POINTS);
                 glColor3f(1.0f, 0.0f, 0.0f);
-                glVertex3f(sec->lastNode()->point()[0]/100,sec->lastNode()->point()[1]/100,sec->lastNode()->point()[2]/100);
+                glVertex3f(sec->lastNode()->point()[0]/300,sec->lastNode()->point()[1]/300,sec->lastNode()->point()[2]/300);
                 glEnd();
             }
 
@@ -396,10 +396,10 @@ void sectionH::draw3d( float x, float y, float z) {
             }
             for(nsol::Node* n: sec->nodes()){
                 if(n==sec->firstNode() || n==sec->lastNode())
-                    glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+                    glVertex3f(n->point()[0]/300,n->point()[1]/300,n->point()[2]/300);
                 else{
-                    glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
-                    glVertex3f(n->point()[0]/100,n->point()[1]/100,n->point()[2]/100);
+                    glVertex3f(n->point()[0]/300,n->point()[1]/300,n->point()[2]/300);
+                    glVertex3f(n->point()[0]/300,n->point()[1]/300,n->point()[2]/300);
                 }
             }
             glEnd();
@@ -519,15 +519,15 @@ sectionH::drawSol(float x, float y, float angle_hueco, float angle, float termin
     }
 }
 float sectionH::distanciaEntreRegistrosV(Eigen::Vector3f r1, Eigen::Vector3f r2){
-    return std::sqrt( std::pow(r1[0] - r2[0]/100, 2) +
-                      std::pow(r1[1] - r2[1]/100, 2) +
-                      std::pow(r1[2] - r2[2]/100, 2));
+    return std::sqrt( std::pow(r1[0] - r2[0]/300, 2) +
+                      std::pow(r1[1] - r2[1]/300, 2) +
+                      std::pow(r1[2] - r2[2]/300, 2));
 
 }
 
 void sectionH::cont_points_neu(int *aux, float separador,float crecimiento) {
     Eigen::Vector3f na(0,0,0);
-    float valor= distanciaEntreRegistrosV(na,sec->firstNode()->point());
+    float valor= distanciaEntreRegistrosV(na,sec->lastNode()->point());
     int i=0;
     bool encontrado=false;
     float sep=separador;

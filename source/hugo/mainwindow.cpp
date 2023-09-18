@@ -491,7 +491,7 @@ void MainWindow::create_graphic() {
         for(int i=0;i<9;i++){
             aux[i]=0;
         }
-        neu->cont_points_neu(aux,0.2,0.8);
+        neu->cont_points_neu(aux,0.1,0.4);
 
         openGLDialog *glWidget = new openGLDialog(&dialog);
         glWidget->anadir_nodos_por_punto(aux);
