@@ -254,7 +254,7 @@ void sectionH::drawSectionsDendograma(float x, float y, float angle_hueco, float
     }
 
 }
-
+/*
 void sectionH::drawSectionsEsquema(float x, float y, float terminal_nodes) {
 
     coordX = x;
@@ -288,6 +288,65 @@ void sectionH::drawSectionsEsquema(float x, float y, float terminal_nodes) {
 
     glEnd();
 }
+*/
+ void sectionH::drawSectionsEsquema(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g,
+                                   float max, float min, VarEstado variable_grosor, VarLongitud var_long, float max_long, float min_long,int contador) {
+    coordX=x;
+    coordY=y;
+    contador++;
+    if(contador<4) {
+
+        if (sectionsHijas.size() == 2) {
+            sectionH *sec1, *sec2;
+            //ahora mismo se va siempre por la rama más grande, con una variable de estado podriamos decidir si lo queremos asi o queremos que siga el camino que nos dan
+            if (sectionsHijas[0]->terminalNodes() > sectionsHijas[1]->terminalNodes()) {
+                sec1 = sectionsHijas[0];
+                sec2 = sectionsHijas[1];
+            } else {
+                sec1 = sectionsHijas[1];
+                sec2 = sectionsHijas[0];
+            }
+            if (g) {
+                getLineWidth(variable_grosor, *sec1, max, min);
+            }
+            float x2;
+            float y2;
+            x2 = x +
+                 sec1->getPoint2(var_long, max_long, min_long) * cos(angle - angle_hueco * (*cont) / 8);
+            y2 = y +
+                 sec1->getPoint2(var_long, max_long, min_long) * sin(angle - angle_hueco * (*cont) / 8);
+
+
+            drawLine(x, y, x2, y2);
+            drawPoint(x2, y2);
+
+            sec1->drawSectionsEsquema(x2, y2, angle_hueco, angle, terminal_nodes, cont,
+                                         g, max, min, variable_grosor, var_long, max_long, min_long,contador);
+            (*cont)++;
+
+            float modulo = sqrt(pow(x - displacementX, 2) + pow(y - displacementY, 2));
+            float nx = modulo * cos(angle - angle_hueco * (*cont) / 8) + displacementX;
+            float ny = modulo * sin(angle - angle_hueco * (*cont) / 8) + displacementY;
+
+
+            float nix =
+                    sec2->getPoint2(var_long, max_long, min_long) * cos(angle - angle_hueco * (*cont) / 8);
+            float niy =
+                    sec2->getPoint2(var_long, max_long, min_long) * sin(angle - angle_hueco * (*cont) / 8);
+
+            drawArco(x, y, nx, ny, angle, angle_hueco, cont, 8, modulo);
+            if (g) {
+                getLineWidth(variable_grosor, *sec2, max, min);
+            }
+            drawLine(nx, ny, nx + nix, ny + niy);
+            drawPoint(nx + nix, ny + niy);
+
+            sec2->drawSectionsEsquema(nx + nix, ny + niy, angle_hueco, angle, terminal_nodes, cont, g, max,
+                                         min, variable_grosor, var_long, max_long, min_long,contador);
+        }
+    }
+}
+
 
 
 float sectionH::terminalNodes() {

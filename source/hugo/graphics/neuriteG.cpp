@@ -263,8 +263,39 @@ void neuriteG::drawDendograma(QOpenGLWidget *windowPaint) {
 }
 
 void neuriteG::drawEsquema(QOpenGLWidget* windowPaint){
+    bool g;
+    float *max=new float;
+    float *min=new float;
 
-    float xFinal = 2*(initX) + displacementX + initX;
+    float *max_long=new float;
+    float *min_long= new float;
+
+    if(neuritesGros == true){
+        g=true;
+        variableGrosorAux(max,min);
+    }
+    else{
+        g=false;
+        glLineWidth(1);
+    }
+    variableLongitudAux(max_long,min_long);
+    glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
+    glColor3f(1.0, 1.0, 1.0);
+
+    float x= getValPoint2(variableLongitud, *max_long, *min_long) * (initX) + displacementX + initX;
+    float y= getValPoint2(variableLongitud, *max_long, *min_long) * (initY) + displacementY + initY;
+    glVertex2f(displacementX + initX, displacementY + initY); // Especificar las coordenadas del punto a dibujar
+    glVertex2f(x,y);
+    glEnd();
+    glBegin(GL_POINTS);
+    glColor3f(color.x(), color.y(), color.z());
+    glVertex2f(displacementX + initX, displacementY + initY);
+    glVertex2f(x,y);
+    glEnd();
+    int n=0;
+    //firstSection->drawSectionsDendograma(x, y, angleGap, angle, terminalNodes, &n, g, *max, *min, variableGrosor, variableLongitud, *max_long, *min_long);
+
+   /* float xFinal = 2*(initX) + displacementX + initX;
     float yFinal = 2 * (initY) + displacementY + initY;
 
     glBegin(GL_LINES); // Iniciar el modo de dibujo de linea
@@ -280,7 +311,9 @@ void neuriteG::drawEsquema(QOpenGLWidget* windowPaint){
         drawSelc(windowPaint);
     }
     glEnd();
-    firstSection->drawSectionsEsquema(xFinal, yFinal,terminalNodes);
+    */
+    firstSection->drawSectionsEsquema(x, y, angleGap, angle, terminalNodes, &n, g, *max, *min, variableGrosor, variableLongitud, *max_long, *min_long,0);
+
 }
 
 

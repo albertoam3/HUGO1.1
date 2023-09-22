@@ -41,7 +41,9 @@ public:
     void drawSectionsTree(float x1, float x2, float angle, float hipotenusa, float dif_angle, bool g, float max, float min, VarEstado variable_grosor);
     void drawSectionsDendograma(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g,
                                 float max, float min, VarEstado variable_grosor, VarLongitud var_long, float max_long, float min_long);
-    void drawSectionsEsquema(float x, float y, float terminal_nodes);
+    void drawSectionsEsquema(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g,
+                                float max, float min, VarEstado variable_grosor, VarLongitud var_long, float max_long, float min_long,int contador);
+    //void drawSectionsEsquema(float x, float y, float terminal_nodes);
 
     void drawSol(float x, float y, float angle_hueco, float angle, float terminal_nodes, int *cont, bool g,
                  float max, float min, VarEstado variable_grosor);
